@@ -1,0 +1,27 @@
+         :,NAME, NEW DTRAN
+C Commands: 7
+C Constants: 0
+C BSS: 0
+C Memory size: 7
+C Header: 0
+C Symbols: 0
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 12
+C Symbol table offset is 12
+ ,NTR,3
+ ,NTR,22B
+ ,WTC,40364B
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,40311B
+ ,ARX,
+ ,UZA,40311B
+ 14,VTM,40330B
+ ,ITA,14
+ 7,AOX,1
+ ,WTC,40364B
+ 14,VTM,
+ ,ITS,14
+ ,END,

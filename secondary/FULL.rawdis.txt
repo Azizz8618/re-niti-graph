@@ -1,0 +1,32 @@
+﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/FULL.bin
+         Type: Binary
+         Code: 72 (014) words
+      Address: 0
+
+				СТАРТ	'0'
+* next insn used as data
+    0 00 000 0000 	START	зп	START
+      00 000 0000 		зп	START
+    1 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+    2 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+    3 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+    4 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+    5 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+    6 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+    7 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+   10 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+   11 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+   12 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+   13 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+				ФИНИШ

@@ -1,0 +1,762 @@
+===== MDBUFF: zone=581(0o1105) word=800(0o1440) load=47 =====
+  header: {'head': 18, 'sym': 31, 'debug': 31, 'set': 0, 'data': 26625, 'long': 9987, 'cmd': 16585, 'bss': 29206, 'const': 1920}
+  disk_length(header)=55200
+  first 6 raw words:
+    +  0 0037000300370022  ' Ы Ц Ы 2'
+    +  1 0234036400100000  'БПЦT (  '
+    +  2 0036007102640311  ' + YБTЦ)'
+    +  3 0013000002640311  ' Й  БTЦ)'
+    +  4 7244033000420016  'ZDЦ8 B Ж'
+    +  5 3415000102340364  'ПЯ .БПЦT'
+  dtran [dms] rc=1 stdout=227B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/MDBUFF.bin\nFormat: DMS\nFile was too short: 47, expected 55200'
+  dtran [dms -e -c] rc=1 stdout=227B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/MDBUFF.bin\nFormat: DMS\nFile was too short: 47, expected 55200'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/MDBUFF.bin\nCould not detect format; use -F dms|pa|pb'
+  disbesm6 rc=0 lines=96
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/MDBUFF.bin
+           Type: Binary
+           Code: 282 (057) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 037 0003 	START	ржа	'3'
+        00 037 0022 		ржа	'22'
+      1 00 23 40364 		мод	'40364'
+        00 010 0000 		сч	START
+      2 00 036 0071 		сда	64-7
+        00 26 40311 		по	'40311'
+      3 00 013 0000 		слц	START
+        00 26 40311 		по	'40311'
+      4 16 24 40330 		уиа	'40330'(М16)
+        00 042 0016 		счи	М16
+      5 07 015 0001 		или	1(М7)
+        00 23 40364 		мод	'40364'
+      6 16 24 00000 		уиа	0(М16)
+        00 043 0016 		счим	М16
+      7 15 31 74002 		пв	'74002'(М15)
+     10 07 000 0032 		зп	26(М7)
+        00 037 0003 		ржа	'3'
+     11 07 010 0026 		сч	22(М7)
+
+===== PLOT: zone=581(0o1105) word=576(0o1100) load=184 =====
+  header: {'head': 802, 'sym': 321, 'debug': 32, 'set': 9749, 'data': 2668, 'long': 18701, 'cmd': 0, 'bss': 0, 'const': 20480}
+  disk_length(header)=52756
+  first 6 raw words:
+    +  0 0040300405011442  ' З8ДФ.ЛB'
+    +  1 1444150515423025  'ЛDЯФЯB85'
+    +  2 0500000000000000  'Ф       '
+    +  3 0041146415413005  ' AЛTЯA8Ф'
+    +  4 0101146414400000  '..ЛTЛЗ  '
+    +  5 0140104214632045  '.З(BЛS0E'
+  dtran [dms] rc=-11 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/PLOT.bin\nFormat: DMS'
+  dtran [dms -e -c] rc=-11 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/PLOT.bin\nFormat: DMS'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/PLOT.bin\nCould not detect format; use -F dms|pa|pb'
+  disbesm6 rc=0 lines=183
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/PLOT.bin
+           Type: Binary
+           Code: 1104 (0270) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 040 3004 	START	уи	М4
+        01 101 1442 		зпм	'71442'(М1)
+      1 03 044 1505 		уии	М5(М3)
+        03 142 3025 		счи	М25(М3)
+      2 01 100 0000 		зп	'70000'(М1)
+        00 000 0000 		зп	START
+      3 00 041 1464 		уим	М24
+        03 141 3005 		уим	М5(М3)
+      4 00 101 1464 		зпм	'71464'
+        03 040 0000 		уи	(М3)
+      5 00 140 1042 		уи	М2
+        03 063 2045 		Э63	'2045'(М3)
+      6 00 127 0106 		рж	'70106'
+        04 040 0000 		уи	(М4)
+      7 04 043 2446 		счим	М6(М4)
+        01 140 2403 		уи	М3(М1)
+     10 01 042 1063 		счи	М23(М1)
+        04 140 0000 		уи	(М4)
+
+===== GROPEN: zone=581(0o1105) word=384(0o0600) load=130 =====
+  header: {'head': 249, 'sym': 40, 'debug': 24, 'set': 14663, 'data': 3634, 'long': 18448, 'cmd': 0, 'bss': 9216, 'const': 69832}
+  disk_length(header)=106893
+  first 6 raw words:
+    +  0 0030036600500371  ' 8ЦV HЦY'
+    +  1 0440200706234507  'ДЗ0ИГ3EИ'
+    +  2 2103102200000000  '1Ц(2    '
+    +  3 0443104212214000  'ДC(B*1З '
+    +  4 0201447122043003  'Б.DY2Д8Ц'
+    +  5 0044100000000000  ' D(     '
+  dtran [dms] rc=1 stdout=227B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/GROPEN.bin\nFormat: DMS\nFile was too short: 130, expected 41357'
+  dtran [dms -e -c] rc=1 stdout=227B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/GROPEN.bin\nFormat: DMS\nFile was too short: 130, expected 41357'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/GROPEN.bin\nCould not detect format; use -F dms|pa|pb'
+  disbesm6 rc=0 lines=143
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/GROPEN.bin
+           Type: Binary
+           Code: 780 (0202) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 030 0366 	START	счрж	'366'
+        00 050 0371 		Э50	'371'
+      1 01 040 2007 		уи	М7(М1)
+        01 22 34507 		мода	'34507'(М1)
+      2 04 103 1022 		счм	'71022'(М4)
+        00 000 0000 		зп	START
+      3 01 043 1042 		счим	М2(М1)
+        02 22 14000 		мода	'14000'(М2)
+      4 02014471  		конк	в'02014471'
+        22043003  		конк	в'22043003'
+      5 0044100000000000		конд	п'2I0000'
+      6 0201447122043466		конд	в'0201447122043466'
+      7 0543310520631022		конд	в'0543310520631022'
+     10 0060000000000000		конд	п'300000'
+     11 0220302521244502		конд	в'0220302521244502'
+     12 2220440615442503		конд	п'U96ЦNJ'
+     13 1441100300000000		конд	в'1441100300000000'
+     14 2203443102001422		конд	в'2203443102001422'
+
+===== WRITC: zone=581(0o1105) word=288(0o0440) load=74 =====
+  header: {'head': 418, 'sym': 80, 'debug': 96, 'set': 398, 'data': 17931, 'long': 6659, 'cmd': 406, 'bss': 11274, 'const': 3589}
+  disk_length(header)=29580
+  first 6 raw words:
+    +  0 0140053701200642  '.ЗФЫ.0ГB'
+    +  1 0150034301300616  '.HЦC.8ГЖ'
+    +  2 0070052601200626  ' XФ6.0Г6'
+    +  3 0130053201300633  '.8ФЬ.8Г,'
+    +  4 0120052601400626  '.0Ф6.ЗГ6'
+    +  5 0060034600600630  ' PЦF PГ8'
+  dtran [dms] rc=1 stdout=228B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/WRITC.bin\nFormat: DMS\nFile was too short: 74, expected 29580'
+  dtran [dms -e -c] rc=1 stdout=228B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/WRITC.bin\nFormat: DMS\nFile was too short: 74, expected 29580'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/WRITC.bin\nCould not detect format; use -F dms|pa|pb'
+  disbesm6 rc=0 lines=102
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/WRITC.bin
+           Type: Binary
+           Code: 444 (0112) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 140 0537 	START	уи	М37
+        00 120 0642 		сбр	'70642'
+      1 00 150 0343 		Э50	'70343'
+        00 130 0616 		счрж	'70616'
+      2 00 070 0526 		Э70	'526'
+        00 120 0626 		сбр	'70626'
+      3 00 130 0532 		счрж	'70532'
+        00 130 0633 		счрж	'70633'
+      4 00 120 0526 		сбр	'70526'
+        00 140 0626 		уи	М26
+      5 00 060 0346 		Э60	'346'
+        00 060 0630 		Э60	'630'
+      6 00 170 0474 		Э70	'70474'
+        00 170 0474 		Э70	'70474'
+      7 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+     10 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+
+===== ENDPG: zone=581(0o1105) word=160(0o0240) load=108 =====
+  header: {'head': 1, 'sym': 1, 'debug': 0, 'set': 0, 'data': 0, 'long': 0, 'cmd': 21, 'bss': 0, 'const': 469}
+  disk_length(header)=495
+  first 6 raw words:
+    +  0 0000000000010001  '     . .'
+    +  1 0000000000000000  '        '
+    +  2 0007250000000025  ' И5    5'
+    +  3 4244000003040001  'BD  ЦД .'
+    +  4 0041001400410011  ' A Л A )'
+    +  5 0041001200410013  ' A * A Й'
+  dtran [dms] rc=1 stdout=202B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/ENDPG.bin\nFormat: DMS\nFile was too short: 108, expected 495'
+  dtran [dms -e -c] rc=1 stdout=202B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/ENDPG.bin\nFormat: DMS\nFile was too short: 108, expected 495'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/ENDPG.bin\nCould not detect format; use -F dms|pa|pb'
+  disbesm6 rc=0 lines=113
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/ENDPG.bin
+           Type: Binary
+           Code: 648 (0154) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 000 0000 	START	зп	START
+        00 001 0001 		зпм	D00001
+  * next insn used as data
+      1 00 000 0000 	D00001	зп	START
+        00 000 0000 		зп	START
+      2 00 007 2500 		вчаб	'2500'
+        00 000 0025 		зп	D00025
+      3 10 24 40000 		уиа	'40000'(М10)
+        00 30 40001 		пб	'40001'
+      4 0041001400410011		конд	в'0041001400410011'
+      5 0041001200410013		конд	в'0041001200410013'
+      6 4001073700300077		конд	в'4001073700300077'
+      7 4000074054100000		конд	в'4000074054100000'
+     10 0040001300370003		конд	в'0040001300370003'
+     11 4230073700100000		конд	в'4230073700100000'
+     12 5657400142200012		конд	в'5657400142200012'
+     13 5740000000360070		конд	в'5740000000360070'
+     14 4300000702200000		конд	в'4300000702200000'
+
+===== PAGE: zone=580(0o1104) word=928(0o1640) load=180 =====
+  header: {'head': 0, 'sym': 0, 'debug': 0, 'set': 0, 'data': 0, 'long': 0, 'cmd': 0, 'bss': 0, 'const': 0}
+  disk_length(header)=3
+  first 6 raw words:
+    +  0 0000000000000000  '        '
+    +  1 0000000000000000  '        '
+    +  2 0000000000000000  '        '
+    +  3 0000000000000000  '        '
+    +  4 0000000000000000  '        '
+    +  5 0000000000000000  '        '
+  dtran [dms] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/PAGE.bin\nFormat: DMS'
+  dtran [dms -e -c] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/PAGE.bin\nFormat: DMS'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/PAGE.bin\nCould not detect format; use -F dms|pa|pb'
+  chose [dms] -> PAGE.mad
+  --- first 25 lines ---
+           :,NAME, NEW DTRAN
+  C Commands: 0
+  C Constants: 0
+  C BSS: 0
+  C Memory size: 0
+  C Header: 0
+  C Symbols: 0
+  C Long symbols: 0
+  C Debug: 0
+  C Data: 0 + set: 0
+  C Actual length of the object file is 3
+  C Symbol table offset is 3
+   ,END,
+  disbesm6 rc=0 lines=290
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/PAGE.bin
+           Type: Binary
+           Code: 1080 (0264) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 000 0000 	START	зп	START
+        00 000 0000 		зп	START
+  * next insn used as data
+      1 00 000 0000 	D00001	зп	START
+        00 000 0000 		зп	START
+      2 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      3 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      4 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      5 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      6 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      7 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+     10 00 000 0000 		зп	START
+
+===== SET: zone=580(0o1104) word=832(0o1500) load=77 =====
+  header: {'head': 0, 'sym': 0, 'debug': 0, 'set': 0, 'data': 0, 'long': 0, 'cmd': 0, 'bss': 0, 'const': 0}
+  disk_length(header)=3
+  first 6 raw words:
+    +  0 0000000000000000  '        '
+    +  1 0000000000000000  '        '
+    +  2 0000000000000000  '        '
+    +  3 0000000000000000  '        '
+    +  4 0000000000000000  '        '
+    +  5 0000000000000000  '        '
+  dtran [dms] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/SET.bin\nFormat: DMS'
+  dtran [dms -e -c] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/SET.bin\nFormat: DMS'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/SET.bin\nCould not detect format; use -F dms|pa|pb'
+  chose [dms] -> SET.mad
+  --- first 25 lines ---
+           :,NAME, NEW DTRAN
+  C Commands: 0
+  C Constants: 0
+  C BSS: 0
+  C Memory size: 0
+  C Header: 0
+  C Symbols: 0
+  C Long symbols: 0
+  C Debug: 0
+  C Data: 0 + set: 0
+  C Actual length of the object file is 3
+  C Symbol table offset is 3
+   ,END,
+  disbesm6 rc=0 lines=162
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/SET.bin
+           Type: Binary
+           Code: 462 (0115) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 000 0000 	START	зп	START
+        00 000 0000 		зп	START
+      1 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      2 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      3 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      4 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      5 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      6 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      7 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+     10 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+
+===== LPL: zone=579(0o1103) word=0(0o0000) load=2094 =====
+  header: {'head': 510, 'sym': 498, 'debug': 458, 'set': 25028, 'data': 5179, 'long': 30599, 'cmd': 25028, 'bss': 30779, 'const': 32647}
+  disk_length(header)=119950
+  first 6 raw words:
+    +  0 0712073607620776  'И*И+ИRИЧ'
+    +  1 0736071207360704  'И+И*И+ИД'
+    +  2 0776077407360704  'ИЧИЭИ+ИД'
+    +  3 0736077607740734  'И+ИЧИЭИП'
+    +  4 0736077607740734  'И+ИЧИЭИП'
+    +  5 0712073607040734  'И*И+ИДИП'
+  dtran [dms] rc=-11 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/LPL.bin\nFormat: DMS'
+  dtran [dms -e -c] rc=-11 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/LPL.bin\nFormat: DMS'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/LPL.bin\nCould not detect format; use -F dms|pa|pb'
+  disbesm6 rc=0 lines=3353
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/LPL.bin
+           Type: Binary
+           Code: 12288 (04000) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 01 31 20736 	START	пв	'20736'(М1)
+        01 36 20776 		пио36	'20776'(М1)
+      1 01 33 60712 		стоп	25034(М1)
+        01 33 60704 		стоп	25028(М1)
+      2 01 37 60774 		цикл	'60774'(М1)
+        01 33 60704 		стоп	25028(М1)
+      3 01 33 60776 		стоп	25086(М1)
+        01 37 40734 		цикл	'40734'(М1)
+      4 01 33 60776 		стоп	25086(М1)
+        01 37 40734 		цикл	'40734'(М1)
+      5 01 31 20736 		пв	'20736'(М1)
+        01 30 40734 		пб	'40734'(М1)
+      6 01 27 20700 		пе	'20700'(М1)
+        01 35 40770 		пино	'40770'(М1)
+      7 01 37 00712 		цикл	A00712(М1)
+        01 30 00704 		пб	A00712-6(М1)
+     10 0770075407540734		конд	в'0770075407540734'
+     11 0656077006720700		конд	в'0656077006720700'
+
+===== BROKEN: zone=578(0o1102) word=992(0o1740) load=26 =====
+  header: {'head': 0, 'sym': 0, 'debug': 0, 'set': 0, 'data': 0, 'long': 0, 'cmd': 0, 'bss': 0, 'const': 0}
+  disk_length(header)=3
+  first 6 raw words:
+    +  0 0000000000000000  '        '
+    +  1 0000000000000000  '        '
+    +  2 0000000000000000  '        '
+    +  3 0000000000000000  '        '
+    +  4 0000000000000000  '        '
+    +  5 0000000000000000  '        '
+  dtran [dms] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/BROKEN.bin\nFormat: DMS'
+  dtran [dms -e -c] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/BROKEN.bin\nFormat: DMS'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/BROKEN.bin\nCould not detect format; use -F dms|pa|pb'
+  chose [dms] -> BROKEN.mad
+  --- first 25 lines ---
+           :,NAME, NEW DTRAN
+  C Commands: 0
+  C Constants: 0
+  C BSS: 0
+  C Memory size: 0
+  C Header: 0
+  C Symbols: 0
+  C Long symbols: 0
+  C Debug: 0
+  C Data: 0 + set: 0
+  C Actual length of the object file is 3
+  C Symbol table offset is 3
+   ,END,
+  disbesm6 rc=0 lines=60
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/BROKEN.bin
+           Type: Binary
+           Code: 156 (032) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 000 0000 	START	зп	START
+        00 000 0000 		зп	START
+      1 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      2 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      3 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      4 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      5 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      6 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      7 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+     10 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+
+===== FULL: zone=578(0o1102) word=960(0o1700) load=12 =====
+  header: {'head': 0, 'sym': 0, 'debug': 0, 'set': 0, 'data': 0, 'long': 0, 'cmd': 0, 'bss': 0, 'const': 0}
+  disk_length(header)=3
+  first 6 raw words:
+    +  0 0000000000000000  '        '
+    +  1 0000000000000000  '        '
+    +  2 0000000000000000  '        '
+    +  3 0000000000000000  '        '
+    +  4 0000000000000000  '        '
+    +  5 0000000000000000  '        '
+  dtran [dms] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/FULL.bin\nFormat: DMS'
+  dtran [dms -e -c] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/FULL.bin\nFormat: DMS'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/FULL.bin\nCould not detect format; use -F dms|pa|pb'
+  chose [dms] -> FULL.mad
+  --- first 25 lines ---
+           :,NAME, NEW DTRAN
+  C Commands: 0
+  C Constants: 0
+  C BSS: 0
+  C Memory size: 0
+  C Header: 0
+  C Symbols: 0
+  C Long symbols: 0
+  C Debug: 0
+  C Data: 0 + set: 0
+  C Actual length of the object file is 3
+  C Symbol table offset is 3
+   ,END,
+  disbesm6 rc=0 lines=32
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/FULL.bin
+           Type: Binary
+           Code: 72 (014) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 000 0000 	START	зп	START
+        00 000 0000 		зп	START
+      1 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      2 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      3 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      4 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      5 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      6 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      7 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+     10 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+
+===== BRLINE: zone=578(0o1102) word=704(0o1300) load=233 =====
+  header: {'head': 0, 'sym': 0, 'debug': 0, 'set': 0, 'data': 0, 'long': 0, 'cmd': 0, 'bss': 0, 'const': 0}
+  disk_length(header)=3
+  first 6 raw words:
+    +  0 0000000000000000  '        '
+    +  1 0000000000000000  '        '
+    +  2 0000000000000000  '        '
+    +  3 0000000000000000  '        '
+    +  4 0000000000000000  '        '
+    +  5 0000000000000000  '        '
+  dtran [dms] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/BRLINE.bin\nFormat: DMS'
+  dtran [dms -e -c] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/BRLINE.bin\nFormat: DMS'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/BRLINE.bin\nCould not detect format; use -F dms|pa|pb'
+  chose [dms] -> BRLINE.mad
+  --- first 25 lines ---
+           :,NAME, NEW DTRAN
+  C Commands: 0
+  C Constants: 0
+  C BSS: 0
+  C Memory size: 0
+  C Header: 0
+  C Symbols: 0
+  C Long symbols: 0
+  C Debug: 0
+  C Data: 0 + set: 0
+  C Actual length of the object file is 3
+  C Symbol table offset is 3
+   ,END,
+  disbesm6 rc=0 lines=474
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/BRLINE.bin
+           Type: Binary
+           Code: 1398 (0351) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 000 0000 	START	зп	START
+        00 000 0000 		зп	START
+      1 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      2 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      3 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      4 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      5 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      6 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      7 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+     10 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+
+===== MOVE: zone=578(0o1102) word=512(0o1000) load=116 =====
+  header: {'head': 0, 'sym': 0, 'debug': 0, 'set': 0, 'data': 0, 'long': 0, 'cmd': 0, 'bss': 0, 'const': 0}
+  disk_length(header)=3
+  first 6 raw words:
+    +  0 0000000000000000  '        '
+    +  1 0000000000000000  '        '
+    +  2 0000000000000000  '        '
+    +  3 0000000000000000  '        '
+    +  4 0000000000000000  '        '
+    +  5 0000000000000000  '        '
+  dtran [dms] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/MOVE.bin\nFormat: DMS'
+  dtran [dms -e -c] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/MOVE.bin\nFormat: DMS'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/MOVE.bin\nCould not detect format; use -F dms|pa|pb'
+  chose [dms] -> MOVE.mad
+  --- first 25 lines ---
+           :,NAME, NEW DTRAN
+  C Commands: 0
+  C Constants: 0
+  C BSS: 0
+  C Memory size: 0
+  C Header: 0
+  C Symbols: 0
+  C Long symbols: 0
+  C Debug: 0
+  C Data: 0 + set: 0
+  C Actual length of the object file is 3
+  C Symbol table offset is 3
+   ,END,
+  disbesm6 rc=0 lines=240
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/MOVE.bin
+           Type: Binary
+           Code: 696 (0164) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 000 0000 	START	зп	START
+        00 000 0000 		зп	START
+      1 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      2 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      3 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      4 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      5 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      6 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      7 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+     10 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+
+===== SYMBOL: zone=578(0o1102) word=288(0o0440) load=259 =====
+  header: {'head': 0, 'sym': 0, 'debug': 0, 'set': 0, 'data': 0, 'long': 0, 'cmd': 0, 'bss': 0, 'const': 0}
+  disk_length(header)=3
+  first 6 raw words:
+    +  0 0000000000000000  '        '
+    +  1 0000000000000000  '        '
+    +  2 0000000000000000  '        '
+    +  3 0000000000000000  '        '
+    +  4 0000000000000000  '        '
+    +  5 0000000000000000  '        '
+  dtran [dms] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/SYMBOL.bin\nFormat: DMS'
+  dtran [dms -e -c] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/SYMBOL.bin\nFormat: DMS'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/SYMBOL.bin\nCould not detect format; use -F dms|pa|pb'
+  chose [dms] -> SYMBOL.mad
+  --- first 25 lines ---
+           :,NAME, NEW DTRAN
+  C Commands: 0
+  C Constants: 0
+  C BSS: 0
+  C Memory size: 0
+  C Header: 0
+  C Symbols: 0
+  C Long symbols: 0
+  C Debug: 0
+  C Data: 0 + set: 0
+  C Actual length of the object file is 3
+  C Symbol table offset is 3
+   ,END,
+  disbesm6 rc=0 lines=526
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/SYMBOL.bin
+           Type: Binary
+           Code: 1554 (0403) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 000 0000 	START	зп	START
+        00 000 0000 		зп	START
+      1 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      2 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      3 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      4 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      5 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      6 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      7 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+     10 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+
+===== ARC: zone=578(0o1102) word=104(0o0150) load=209 =====
+  header: {'head': 0, 'sym': 0, 'debug': 0, 'set': 201, 'data': 2, 'long': 0, 'cmd': 198, 'bss': 3, 'const': 0}
+  disk_length(header)=404
+  first 6 raw words:
+    +  0 0000000000000000  '        '
+    +  1 0000000000200311  '     0Ц)'
+    +  2 0000000000300306  '     8ЦГ'
+    +  3 0000000000100305  '     (ЦФ'
+    +  4 0000000000500300  '     HЦ '
+    +  5 0000000001400264  '    .ЗБT'
+  dtran [dms] rc=1 stdout=203B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/ARC.bin\nFormat: DMS\nFile was too short: 209, expected 404'
+  dtran [dms -e -c] rc=1 stdout=203B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/ARC.bin\nFormat: DMS\nFile was too short: 209, expected 404'
+  dtran [raw] rc=0 stdout=2712B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/ARC.bin\nFormat: Pascal-A'
+  chose [raw] -> ARC.mad
+  --- first 25 lines ---
+   00010_311:,NAME, NEW DTRAN
+  C Memory size: 264
+  C Code start: 255
+  C Program start: 255
+   ,LOG,400251
+   ,INT,32936 . 0100250
+   ,LOG,600242
+   ,INT,0 . 00
+   ,LOG,300237
+   ,LOG,500232
+   ,LOG,300227
+   ,LOG,200225
+   ,LOG,300222
+   ,LOG,200220
+   ,LOG,200216
+   ,LOG,300213
+   ,LOG,300210
+   ,INT,32903 . 0100207
+   ,INT,32902 . 0100206
+   ,INT,0 . 00
+   ,LOG,300203
+   ,LOG,400177
+   ,INT,0 . 00
+   ,INT,32894 . 0100176
+   ,INT,0 . 00
+  disbesm6 rc=0 lines=497
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/ARC.bin
+           Type: Binary
+           Code: 1254 (0321) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 000 0000 	START	зп	START
+        00 000 0000 		зп	START
+  * next insn used as data
+      1 00 000 0000 	D00001	зп	START
+        00 020 0311 		сбр	D00311
+  * next insn used as data
+      2 00 000 0000 	D00002	зп	START
+        00 030 0306 		счрж	'306'
+  * next insn used as data
+      3 00 000 0000 	D00003	зп	START
+        00 010 0305 		сч	D00305
+      4 00 000 0000 		зп	START
+        00 050 0300 		Э50	'300'
+  * next insn used as data
+      5 00 000 0000 	D00005	зп	START
+        00 140 0264 		уи	М24
+      6 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+
+===== XYSORT: zone=578(0o1102) word=0(0o0000) load=73 =====
+  header: {'head': 0, 'sym': 0, 'debug': 0, 'set': 0, 'data': 0, 'long': 0, 'cmd': 0, 'bss': 0, 'const': 0}
+  disk_length(header)=3
+  first 6 raw words:
+    +  0 0000000000000000  '        '
+    +  1 0000000000000000  '        '
+    +  2 0000000000000000  '        '
+    +  3 0000000000000000  '        '
+    +  4 0000000000000000  '        '
+    +  5 0000000000300517  '     8Ф/'
+  dtran [dms] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/XYSORT.bin\nFormat: DMS'
+  dtran [dms -e -c] rc=0 stdout=229B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/XYSORT.bin\nFormat: DMS'
+  dtran [raw] rc=1 stdout=0B stderr='Decompiling file /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/XYSORT.bin\nCould not detect format; use -F dms|pa|pb'
+  chose [dms] -> XYSORT.mad
+  --- first 25 lines ---
+           :,NAME, NEW DTRAN
+  C Commands: 0
+  C Constants: 0
+  C BSS: 0
+  C Memory size: 0
+  C Header: 0
+  C Symbols: 0
+  C Long symbols: 0
+  C Debug: 0
+  C Data: 0 + set: 0
+  C Actual length of the object file is 3
+  C Symbol table offset is 3
+   ,END,
+  disbesm6 rc=0 lines=154
+  --- disbesm6 first 25 lines ---
+  ﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/XYSORT.bin
+           Type: Binary
+           Code: 438 (0111) words
+        Address: 0
+  
+  				СТАРТ	'0'
+  * next insn used as data
+      0 00 000 0000 	START	зп	START
+        00 000 0000 		зп	START
+      1 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      2 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      3 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      4 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+      5 00 000 0000 		зп	START
+        00 030 0517 		счрж	'517'
+      6 00 000 0000 		зп	START
+        00 030 0517 		счрж	'517'
+      7 00 000 0000 		зп	START
+        00 030 0517 		счрж	'517'
+     10 00 000 0000 		зп	START
+        00 000 0000 		зп	START
+

@@ -1,0 +1,497 @@
+﻿          File: /home/azizz/Yandex.Disk/re-niti-graph/secondary/bin/ARC.bin
+         Type: Binary
+         Code: 1254 (0321) words
+      Address: 0
+
+				СТАРТ	'0'
+* next insn used as data
+    0 00 000 0000 	START	зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+    1 00 000 0000 	D00001	зп	START
+      00 020 0311 		сбр	D00311
+* next insn used as data
+    2 00 000 0000 	D00002	зп	START
+      00 030 0306 		счрж	'306'
+* next insn used as data
+    3 00 000 0000 	D00003	зп	START
+      00 010 0305 		сч	D00305
+    4 00 000 0000 		зп	START
+      00 050 0300 		Э50	'300'
+* next insn used as data
+    5 00 000 0000 	D00005	зп	START
+      00 140 0264 		уи	М24
+    6 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+    7 00 000 0000 		зп	START
+      00 030 0261 		счрж	'261'
+* next insn used as data
+   10 00 000 0000 	D00010	зп	START
+      00 040 0255 		уи	М15
+* next insn used as data
+   11 00 000 0000 	D00011	зп	START
+      00 040 0251 		уи	М11
+   12 00 000 0000 		зп	START
+      00 010 0250 		сч	D00250
+* next insn used as data
+   13 00 000 0000 	D00013	зп	START
+      00 060 0242 		Э60	D00242
+* next insn used as data
+   14 00 000 0000 	D00014	зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+   15 00 000 0000 	D00015	зп	START
+      00 030 0237 		счрж	'237'
+* next insn used as data
+   16 00 000 0000 	D00016	зп	START
+      00 050 0232 		Э50	'232'
+   17 00 000 0000 		зп	START
+      00 030 0227 		счрж	'227'
+* next insn used as data
+   20 00 000 0000 	D00020	зп	START
+      00 020 0225 		сбр	D00225
+* next insn used as data
+   21 00 000 0000 	D00021	зп	START
+      00 030 0222 		счрж	'222'
+   22 00 000 0000 		зп	START
+      00 020 0220 		сбр	D00220
+   23 00 000 0000 		зп	START
+      00 020 0216 		сбр	D00216
+   24 00 000 0000 		зп	START
+      00 030 0213 		счрж	'213'
+   25 00 000 0000 		зп	START
+      00 030 0210 		счрж	'210'
+   26 00 000 0000 		зп	START
+      00 010 0207 		сч	D00207
+   27 00 000 0000 		зп	START
+      00 010 0206 		сч	D00206
+* next insn used as data
+   30 00 000 0000 	D00030	зп	START
+      00 000 0000 		зп	START
+   31 00 000 0000 		зп	START
+      00 030 0203 		счрж	'203'
+   32 00 000 0000 		зп	START
+      00 040 0177 		уи	М37
+   33 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+   34 00 000 0000 		зп	START
+      00 010 0176 		сч	D00176
+   35 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+   36 00 000 0000 		зп	START
+      00 010 0175 		сч	D00175
+   37 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+   40 00 000 0000 	D00040	зп	START
+      00 000 0000 		зп	START
+   41 00 000 0000 		зп	START
+      00 030 0172 		счрж	'172'
+* next insn used as data
+   42 00 000 0000 	D00042	зп	START
+      00 040 0166 		уи	М26
+   43 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+   44 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+   45 00 000 0000 		зп	START
+      00 010 0165 		сч	D00165
+   46 00 000 0000 		зп	START
+      00 030 0162 		счрж	'162'
+* next insn used as data
+   47 00 000 0000 	D00047	зп	START
+      00 020 0160 		сбр	D00160
+* next insn used as data
+   50 00 000 0000 	D00050	зп	START
+      00 020 0156 		сбр	D00156
+* next insn used as data
+   51 00 000 0000 	D00051	зп	START
+      00 000 0000 		зп	START
+   52 00 000 0000 		зп	START
+      00 020 0154 		сбр	D00154
+   53 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+   54 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+   55 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+   56 00 000 0000 	D00056	зп	START
+      00 000 0000 		зп	START
+   57 00 000 0000 		зп	START
+      00 020 0152 		сбр	D00152
+* next insn used as data
+   60 00 000 0000 	D00060	зп	START
+      00 020 0150 		сбр	D00150
+* next insn used as data
+   61 00 000 0000 	D00061	зп	START
+      00 020 0146 		сбр	D00146
+* next insn used as data
+   62 00 000 0000 	D00062	зп	START
+      00 020 0144 		сбр	D00144
+* next insn used as data
+   63 00 000 0000 	D00063	зп	START
+      00 010 0143 		сч	D00143
+   64 00 000 0000 		зп	START
+      00 010 0142 		сч	D00142
+* next insn used as data
+   65 00 000 0000 	D00065	зп	START
+      00 010 0141 		сч	D00141
+* next insn used as data
+   66 00 000 0000 	D00066	зп	START
+      00 010 0140 		сч	D00140
+* next insn used as data
+   67 00 000 0000 	D00067	зп	START
+      00 010 0137 		сч	D00137
+* next insn used as data
+   70 00 000 0000 	D00070	зп	START
+      00 030 0134 		счрж	'134'
+   71 00 000 0000 		зп	START
+      00 010 0133 		сч	D00133
+* next insn used as data
+   72 00 000 0000 	D00072	зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+   73 00 000 0000 	D00073	зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+   74 00 000 0000 	D00074	зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+   75 00 000 0000 	D00075	зп	START
+      00 010 0132 		сч	D00132
+* next insn used as data
+   76 00 000 0000 	D00076	зп	START
+      00 030 0127 		счрж	'127'
+* next insn used as data
+   77 00 000 0000 	D00077	зп	START
+      00 010 0126 		сч	D00126
+* next insn used as data
+  100 00 000 0000 	D00100	зп	START
+      00 020 0124 		сбр	D00124
+* next insn used as data
+  101 00 000 0000 	D00101	зп	START
+      00 040 0120 		уи	М20
+  102 00 000 0000 		зп	START
+      00 040 0114 		уи	М14
+* next insn used as data
+  103 00 000 0000 	D00103	зп	START
+      00 000 0000 		зп	START
+  104 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  105 00 000 0000 	D00105	зп	START
+      00 000 0000 		зп	START
+  106 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  107 00 000 0000 	D00107	зп	START
+      00 010 0113 		сч	D00113
+  110 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  111 00 000 0000 	D00111	зп	START
+      00 010 0112 		сч	D00112
+* next insn used as data
+  112 00 000 0000 	D00112	зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  113 00 000 0000 	D00113	зп	START
+      00 010 0111 		сч	D00111
+  114 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  115 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  116 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  117 00 000 0000 	D00117	зп	START
+      00 000 0000 		зп	START
+  120 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  121 00 000 0000 	D00121	зп	START
+      00 020 0107 		сбр	D00107
+  122 00 000 0000 		зп	START
+      00 020 0105 		сбр	D00105
+  123 00 000 0000 		зп	START
+      00 020 0105 		сбр	D00105
+* next insn used as data
+  124 00 000 0000 	D00124	зп	START
+      00 020 0103 		сбр	D00103
+  125 00 000 0000 		зп	START
+      00 020 0103 		сбр	D00103
+* next insn used as data
+  126 00 000 0000 	D00126	зп	START
+      00 020 0101 		сбр	D00101
+  127 00 000 0000 		зп	START
+      00 020 0101 		сбр	D00101
+  130 00 000 0000 		зп	START
+      00 010 0100 		сч	D00100
+  131 00 000 0000 		зп	START
+      00 010 0100 		сч	D00100
+* next insn used as data
+  132 00 000 0000 	D00132	зп	START
+      00 010 0077 		сч	D00077
+* next insn used as data
+  133 00 000 0000 	D00133	зп	START
+      00 010 0076 		сч	D00076
+  134 00 000 0000 		зп	START
+      00 010 0075 		сч	D00075
+  135 00 000 0000 		зп	START
+      00 010 0074 		сч	D00074
+  136 00 000 0000 		зп	START
+      00 010 0073 		сч	D00073
+* next insn used as data
+  137 00 000 0000 	D00137	зп	START
+      00 010 0072 		сч	D00072
+* next insn used as data
+  140 00 000 0000 	D00140	зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  141 00 000 0000 	D00141	зп	START
+      00 020 0070 		сбр	D00070
+* next insn used as data
+  142 00 000 0000 	D00142	зп	START
+      00 010 0067 		сч	D00067
+* next insn used as data
+  143 00 000 0000 	D00143	зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  144 00 000 0000 	D00144	зп	START
+      00 010 0066 		сч	D00066
+  145 00 000 0000 		зп	START
+      00 010 0065 		сч	D00065
+* next insn used as data
+  146 00 000 0000 	D00146	зп	START
+      00 020 0063 		сбр	D00063
+  147 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  150 00 000 0000 	D00150	зп	START
+      00 010 0062 		сч	D00062
+  151 00 000 0000 		зп	START
+      00 010 0061 		сч	D00061
+* next insn used as data
+  152 00 000 0000 	D00152	зп	START
+      00 010 0060 		сч	D00060
+  153 00 000 0000 		зп	START
+      00 020 0056 		сбр	D00056
+* next insn used as data
+  154 00 000 0000 	D00154	зп	START
+      00 000 0000 		зп	START
+  155 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  156 00 000 0000 	D00156	зп	START
+      00 000 0000 		зп	START
+  157 00 000 0000 		зп	START
+      00 030 0053 		счрж	'53'
+* next insn used as data
+  160 00 000 0000 	D00160	зп	START
+      00 020 0051 		сбр	D00051
+  161 00 000 0000 		зп	START
+      00 020 0047 		сбр	D00047
+  162 00 000 0000 		зп	START
+      00 040 0043 		уи	М3
+  163 00 000 0000 		зп	START
+      00 010 0042 		сч	D00042
+  164 00 000 0000 		зп	START
+      00 020 0040 		сбр	D00040
+* next insn used as data
+  165 00 000 0000 	D00165	зп	START
+      00 030 0035 		счрж	'35'
+  166 00 000 0000 		зп	START
+      00 040 0031 		уи	М31
+  167 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  170 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  171 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  172 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  173 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  174 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  175 00 000 0000 	D00175	зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  176 00 000 0000 	D00176	зп	START
+      00 030 0026 		счрж	'26'
+  177 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  200 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  201 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  202 00 000 0000 		зп	START
+      00 040 0022 		уи	М22
+  203 00 000 0000 		зп	START
+      00 040 0016 		уи	М16
+  204 00 000 0000 		зп	START
+      00 030 0013 		счрж	'13'
+  205 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  206 00 000 0000 	D00206	зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  207 00 000 0000 	D00207	зп	START
+      00 020 0011 		сбр	D00011
+  210 00 000 0000 		зп	START
+      00 010 0010 		сч	D00010
+  211 00 000 0000 		зп	START
+      00 030 0005 		счрж	'5'
+  212 00 000 0000 		зп	START
+      00 020 0003 		сбр	D00003
+  213 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  214 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  215 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  216 00 000 0000 	D00216	зп	START
+      00 000 0000 		зп	START
+  217 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  220 00 000 0000 	D00220	зп	START
+      00 000 0000 		зп	START
+  221 00 000 0000 		зп	START
+      00 010 0002 		сч	D00002
+  222 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  223 00 000 0000 		зп	START
+      00 010 0001 		сч	D00001
+  224 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  225 00 000 0000 	D00225	зп	START
+      00 000 0000 		зп	START
+  226 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  227 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  230 00 000 0000 		зп	START
+      00 020 0121 		сбр	D00121
+  231 00 000 0000 		зп	START
+      00 020 0117 		сбр	D00117
+  232 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  233 00 000 0000 		зп	START
+      00 040 0113 		уи	М13
+  234 00 000 0000 		зп	START
+      00 010 0112 		сч	D00112
+  235 00 000 0000 		зп	START
+      00 010 0111 		сч	D00111
+  236 00 000 0000 		зп	START
+      00 020 0107 		сбр	D00107
+  237 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  240 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  241 00 000 0000 		зп	START
+      00 060 0101 		Э60	D00101
+* next insn used as data
+  242 00 000 0000 	D00242	зп	START
+      00 000 0000 		зп	START
+  243 00 000 0000 		зп	START
+      00 010 0100 		сч	D00100
+  244 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  245 00 000 0000 		зп	START
+      00 100 0070 		зп	'70070'
+  246 00 000 0000 		зп	START
+      00 100 0060 		зп	'70060'
+  247 00 000 0000 		зп	START
+      00 070 0051 		Э70	D00051
+* next insn used as data
+  250 00 000 0000 	D00250	зп	START
+      00 010 0050 		сч	D00050
+  251 00 000 0000 		зп	START
+      00 010 0047 		сч	D00047
+  252 00 000 0000 		зп	START
+      00 050 0042 		Э50	'42'
+  253 00 000 0000 		зп	START
+      00 040 0036 		уи	М36
+  254 00 000 0000 		зп	START
+      00 060 0030 		Э60	D00030
+  255 00 000 0000 		зп	START
+      00 050 0023 		Э50	'23'
+  256 00 000 0000 		зп	START
+      00 020 0021 		сбр	D00021
+  257 00 000 0000 		зп	START
+      00 010 0020 		сч	D00020
+  260 00 000 0000 		зп	START
+      00 020 0016 		сбр	D00016
+  261 00 000 0000 		зп	START
+      00 010 0015 		сч	D00015
+  262 00 000 0000 		зп	START
+      00 010 0014 		сч	D00014
+  263 00 000 0000 		зп	START
+      00 010 0013 		сч	D00013
+  264 00 000 0000 		зп	START
+      00 060 0005 		Э60	D00005
+  265 00 000 0000 		зп	START
+      00 020 0003 		сбр	D00003
+  266 00 000 0000 		зп	START
+      00 020 0001 		сбр	D00001
+  267 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  270 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  271 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  272 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  273 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  274 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  275 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  276 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  277 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  300 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  301 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  302 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  303 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  304 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  305 00 000 0000 	D00305	зп	START
+      00 000 0000 		зп	START
+  306 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  307 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  310 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+* next insn used as data
+  311 00 000 0000 	D00311	зп	START
+      00 000 0000 		зп	START
+  312 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  313 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  314 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  315 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  316 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  317 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+  320 00 000 0000 		зп	START
+      00 000 0000 		зп	START
+				ФИНИШ

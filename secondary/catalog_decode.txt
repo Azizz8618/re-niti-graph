@@ -1,0 +1,165 @@
+=== secondary catalog 0o1163: 90 nonzero words ===
+  w0000 (   0) 0000000002113540  '    Б)-З'
+  w0002 (   2) 5544426546460000  'MDBUFF  '
+  w0003 (   3) 3450450005700000  'ПHE ФX  '
+  w0004 (   4) 6054576400000000  'PLOT    '
+  w0005 (   5) 3110450027000000  '9(E 7   '
+  w0006 (   6) 5756574646000000  'ONOFF   '
+  w0007 (   7) 0000000000000127  '      .7'
+  w0008 (   8) 6045560000000000  'PEN     '
+  w0009 (   9) 0000000000000165  '      .U'
+  w0010 (  10) 4662415545000000  'FRAME   '
+  w0011 (  11) 0000000000000172  '      .Z'
+  w0012 (  12) 4662414755000000  'FRAGM   '
+  w0013 (  13) 0000000000000200  '      Б '
+  w0014 (  14) 4546624147550000  'EFRAGM  '
+  w0015 (  15) 0000000000000206  '      БГ'
+  w0016 (  16) 4762576045560000  'GROPEN  '
+  w0017 (  17) 2610450020200000  '6(E 00  '
+  w0018 (  18) 4762676251640000  'GRWRIT  '
+  w0019 (  19) 0000000000000051  '       I'
+  w0020 (  20) 4762435457630000  'GRCLOS  '
+  w0021 (  21) 0000000000000071  '       Y'
+  w0022 (  22) 4762565764720000  'GRNOTZ  '
+  w0023 (  23) 0000000000000122  '      .2'
+  w0024 (  24) 4762564155450000  'GRNAME  '
+  w0025 (  25) 0000000000000134  '      .П'
+  w0026 (  26) 6762516443000000  'WRITC   '
+  w0027 (  27) 2450450011200000  '4HE )0  '
+  w0028 (  28) 4556446047000000  'ENDPG   '
+  w0029 (  29) 2250450015400000  '2HE ЯЗ  '
+  w0030 (  30) 6041474500000000  'PAGE    '
+  w0031 (  31) 3650440026400000  '+HD 6З  '
+  w0032 (  32) 6345640000000000  'SET     '
+  w0033 (  33) 3510440011500000  '-(D )H  '
+  w0034 (  34) 5144455664000000  'IDENT   '
+  w0035 (  35) 0000000000000001  '       .'
+  w0036 (  36) 5164415451430000  'ITALIC  '
+  w0037 (  37) 0000000000000002  '       Б'
+  w0038 (  38) 5555630000000000  'MMS     '
+  w0039 (  39) 0000000000000003  '       Ц'
+  w0040 (  40) 4355630000000000  'CMS     '
+  w0041 (  41) 0000000000000004  '       Д'
+  w0042 (  42) 5156435045630000  'INCHES  '
+  w0043 (  43) 0000000000000005  '       Ф'
+  w0044 (  44) 6244420000000000  'RDB     '
+  w0045 (  45) 0000000000000006  '       Г'
+  w0046 (  46) 5162444200000000  'IRDB    '
+  w0047 (  47) 0000000000000007  '       И'
+  w0048 (  48) 6744420000000000  'WDB     '
+  w0049 (  49) 0000000000000010  '       ('
+  w0050 (  50) 5167444200000000  'IWDB    '
+  w0051 (  51) 0000000000000011  '       )'
+  w0052 (  52) 5460540000000000  'LPL     '
+  w0053 (  53) 2010430405600000  '0(CДФP  '
+  w0054 (  54) 5460542100000000  'LPL1    '
+  w0055 (  55) 0000000000000001  '       .'
+  w0056 (  56) 5460542200000000  'LPL2    '
+  w0057 (  57) 0000000000000002  '       Б'
+  w0058 (  58) 5460542300000000  'LPL3    '
+  w0059 (  59) 0000000000000003  '       Ц'
+  w0060 (  60) 4262575345560000  'BROKEN  '
+  w0061 (  61) 3750420003200000  'ЫHB Ц0  '
+  w0062 (  62) 4665545400000000  'FULL    '
+  w0063 (  63) 3710420001400000  'Ы(B .З  '
+  w0064 (  64) 4262545156450000  'BRLINE  '
+  w0065 (  65) 3310420035100000  ',(B -(  '
+  w0066 (  66) 5557664500000000  'MOVE    '
+  w0067 (  67) 3010420016400000  '8(B ЖЗ  '
+  w0068 (  68) 6371554257540000  'SYMBOL  '
+  w0069 (  69) 2450420040300000  '4HB З8  '
+  w0070 (  70) 4162430000000000  'ARC     '
+  w0071 (  71) 2150420032100000  '1HB Ь(  '
+  w0072 (  72) 7071635762640000  'XYSORT  '
+  w0073 (  73) 2010420011100000  '0(B )(  '
+  w0075 (  75) 7777777777777777  'ЮЮЮЮЮЮЮЮ'
+  w0076 (  76) 2304450224440522  '3ДEБ4DФ2'
+  w0077 (  77) 2622011725020040  '62./5Б З'
+  w0078 (  78) 1443145614034456  'ЛCЛNЛЦDN'
+  w0079 (  79) 1603144023230440  'ЖЦЛЗ33ДЗ'
+  w0080 (  80) 1244611120451101  '*DQ)0E).'
+  w0081 (  81) 2445445214231052  '4EDJЛ3(J'
+  w0082 (  82) 3044052424040513  '8DФ44ДФЙ'
+  w0083 (  83) 2364105210020040  '3T(J(Б З'
+  w0084 (  84) 1002004010020040  '(Б З(Б З'
+  w0085 (  85) 1002004010020040  '(Б З(Б З'
+  w0086 (  86) 1002004010020040  '(Б З(Б З'
+  w0087 (  87) 1002004010020040  '(Б З(Б З'
+  w0088 (  88) 1002004010020040  '(Б З(Б З'
+  w0089 (  89) 1002004010020040  '(Б З(Б З'
+  w0090 (  90) 1002004010020040  '(Б З(Б З'
+  w0091 (  91) 1002004010020040  '(Б З(Б З'
+
+=== descriptor decode (assume pairs name@even, info@odd) ===
+      Б)-З w000 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  MDBUFF   w002 A=0o3450 B=0o45 C=0o000570 D=0 relzone=0o05 carry=1 word= 799 (0o1437) body_zone=0o1105 load=47
+  PLOT     w004 A=0o3110 B=0o45 C=0o002700 D=0 relzone=0o05 carry=1 word= 575 (0o1077) body_zone=0o1105 load=184
+  ONOFF    w006 A=0o0000 B=0o00 C=0o000000 D=87 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  PEN      w008 A=0o0000 B=0o00 C=0o000000 D=117 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  FRAME    w010 A=0o0000 B=0o00 C=0o000000 D=122 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  FRAGM    w012 A=0o0000 B=0o00 C=0o000000 D=128 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  EFRAGM   w014 A=0o0000 B=0o00 C=0o000000 D=134 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  GROPEN   w016 A=0o2610 B=0o45 C=0o002020 D=0 relzone=0o05 carry=1 word= 383 (0o0577) body_zone=0o1105 load=130
+  GRWRIT   w018 A=0o0000 B=0o00 C=0o000000 D=41 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  GRCLOS   w020 A=0o0000 B=0o00 C=0o000000 D=57 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  GRNOTZ   w022 A=0o0000 B=0o00 C=0o000000 D=82 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  GRNAME   w024 A=0o0000 B=0o00 C=0o000000 D=92 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  WRITC    w026 A=0o2450 B=0o45 C=0o001120 D=0 relzone=0o05 carry=1 word= 287 (0o0437) body_zone=0o1105 load=74
+  ENDPG    w028 A=0o2250 B=0o45 C=0o001540 D=0 relzone=0o05 carry=1 word= 159 (0o0237) body_zone=0o1105 load=108
+  PAGE     w030 A=0o3650 B=0o44 C=0o002640 D=0 relzone=0o04 carry=1 word= 927 (0o1637) body_zone=0o1104 load=180
+  SET      w032 A=0o3510 B=0o44 C=0o001150 D=0 relzone=0o04 carry=1 word= 831 (0o1477) body_zone=0o1104 load=77
+  IDENT    w034 A=0o0000 B=0o00 C=0o000000 D=1 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  ITALIC   w036 A=0o0000 B=0o00 C=0o000000 D=2 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  MMS      w038 A=0o0000 B=0o00 C=0o000000 D=3 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  CMS      w040 A=0o0000 B=0o00 C=0o000000 D=4 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  INCHES   w042 A=0o0000 B=0o00 C=0o000000 D=5 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  RDB      w044 A=0o0000 B=0o00 C=0o000000 D=6 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  IRDB     w046 A=0o0000 B=0o00 C=0o000000 D=7 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  WDB      w048 A=0o0000 B=0o00 C=0o000000 D=8 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  IWDB     w050 A=0o0000 B=0o00 C=0o000000 D=9 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  LPL      w052 A=0o2010 B=0o43 C=0o040560 D=0 relzone=0o03 carry=1 word=  -1 (0o-001) body_zone=0o1103 load=2094
+  LPL1     w054 A=0o0000 B=0o00 C=0o000000 D=1 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  LPL2     w056 A=0o0000 B=0o00 C=0o000000 D=2 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  LPL3     w058 A=0o0000 B=0o00 C=0o000000 D=3 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+  BROKEN   w060 A=0o3750 B=0o42 C=0o000320 D=0 relzone=0o02 carry=1 word= 991 (0o1737) body_zone=0o1102 load=26
+  FULL     w062 A=0o3710 B=0o42 C=0o000140 D=0 relzone=0o02 carry=1 word= 959 (0o1677) body_zone=0o1102 load=12
+  BRLINE   w064 A=0o3310 B=0o42 C=0o003510 D=0 relzone=0o02 carry=1 word= 703 (0o1277) body_zone=0o1102 load=233
+  MOVE     w066 A=0o3010 B=0o42 C=0o001640 D=0 relzone=0o02 carry=1 word= 511 (0o0777) body_zone=0o1102 load=116
+  SYMBOL   w068 A=0o2450 B=0o42 C=0o004030 D=0 relzone=0o02 carry=1 word= 287 (0o0437) body_zone=0o1102 load=259
+  ARC      w070 A=0o2150 B=0o42 C=0o003210 D=0 relzone=0o02 carry=1 word=  95 (0o0137) body_zone=0o1102 load=209
+  XYSORT   w072 A=0o2010 B=0o42 C=0o001110 D=0 relzone=0o02 carry=1 word=  -1 (0o-001) body_zone=0o1102 load=73
+           w074 A=0o7777 B=0o77 C=0o777777 D=4095 relzone=0o37 carry=1 word=3062 (0o5766) body_zone=0o1137 load=32767
+  3ДEБ4DФ2 w076 A=0o2622 B=0o01 C=0o172502 D=32 relzone=0o41 carry=0 word= 394 (0o0612) body_zone=0o1141 load=7848
+  ЛCЛNЛЦDN w078 A=0o1603 B=0o14 C=0o402323 D=288 relzone=0o54 carry=0 word=-133 (0o-205) body_zone=0o1154 load=16538
+  *DQ)0E). w080 A=0o2445 B=0o44 C=0o521423 D=554 relzone=0o04 carry=1 word= 284 (0o0434) body_zone=0o1104 load=21602
+  8DФ44ДФЙ w082 A=0o2364 B=0o10 C=0o521002 D=32 relzone=0o50 carry=0 word= 236 (0o0354) body_zone=0o1150 load=21568
+  (Б З(Б З w084 A=0o1002 B=0o00 C=0o401002 D=32 relzone=0o40 carry=0 word=-518 (0o-1006) body_zone=0o1140 load=16448
+  (Б З(Б З w086 A=0o1002 B=0o00 C=0o401002 D=32 relzone=0o40 carry=0 word=-518 (0o-1006) body_zone=0o1140 load=16448
+  (Б З(Б З w088 A=0o1002 B=0o00 C=0o401002 D=32 relzone=0o40 carry=0 word=-518 (0o-1006) body_zone=0o1140 load=16448
+  (Б З(Б З w090 A=0o1002 B=0o00 C=0o401002 D=32 relzone=0o40 carry=0 word=-518 (0o-1006) body_zone=0o1140 load=16448
+           w092 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w094 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w096 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w098 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w100 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w102 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w104 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w106 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w108 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w110 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w112 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w114 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w116 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+           w118 A=0o0000 B=0o00 C=0o000000 D=0 relzone=0o40 carry=0 word=-1032 (0o-2010) body_zone=0o1140 load=0
+
+=== scan body zones for plausible DMS headers head=1 ===
+-- zone 0o1102 (578): 2 candidate headers
+   word  251 (0o0373) len=  12 headname=''         cmd=0 const=0 bss=0 data=0 set=0 sym=8 long=0 debug=0
+   word  286 (0o0436) len=  20 headname=''         cmd=0 const=0 bss=0 data=0 set=0 sym=16 long=0 debug=0
+-- zone 0o1104 (580): 0 candidate headers
+-- zone 0o1105 (581): 5 candidate headers
+   word    0 (0o0000) len= 142 headname='BCD'      cmd=79 const=59 bss=0 data=0 set=0 sym=0 long=0 debug=0
+   word  133 (0o0205) len=  56 headname=' З ЙЗE Й' cmd=6 const=0 bss=0 data=0 set=46 sym=0 long=0 debug=0
+   word  160 (0o0240) len= 495 headname='SYMTAB'   cmd=21 const=469 bss=0 data=0 set=0 sym=1 long=0 debug=0
+   word  672 (0o1240) len= 251 headname='NUMBER'   cmd=211 const=19 bss=16 data=0 set=0 sym=12 long=5 debug=0
+   word  928 (0o1640) len=  56 headname='LIMITS'   cmd=44 const=6 bss=9 data=0 set=0 sym=2 long=0 debug=0
