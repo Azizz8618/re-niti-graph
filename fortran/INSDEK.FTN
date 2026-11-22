@@ -13,6 +13,7 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       REAL X, Y, XB(50), YB(50), A, B, DX, DY, R, C, D
       COMMON /DRINFN/ DRINFN(3)
       COMMON /DRIN/   DRIN(26)
+      COMMON /GFAFTR/ GFAFTR(2)
       IF (N .LE. 0) RETURN
       IF (DRIN(9) .NE. 0.0) RETURN
       K = 0
@@ -36,6 +37,9 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
    10 CONTINUE
       RETURN
       ENTRY NUMBER(QQ1,QQ2,QQ3,QQ4)
+      GFAFTR(1) = QQ1
+      GFAFTR(2) = QQ2
+      CALL PLOT()
       RETURN
       ENTRY ITPLBV(QQ1,QQ2,QQ3,QQ4,QQ5,QQ6)
       QQ5 = 1

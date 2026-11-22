@@ -18,8 +18,9 @@ C [I] exact meaning of the three parameter triples is not documented.
       GFBFTR(1) = Z0
       GFBFTR(2) = Z1
       RETURN
-      ENTRY ARCIA(QQ1,QQ2,QQ3)
-      RETURN
+C     [I] The MADLEN CIRC secondary point ARCIA was a no-op alias. It
+C     shadowed the real ARCIA interpolator in the PERSO load chain, so the
+C     catalog entry is removed here and resolved from ARCIA.FTN instead.
       ENTRY MOVE(QQ1,QQ2,QQ3,QQ4)
       RETURN
       END

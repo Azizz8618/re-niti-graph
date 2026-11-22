@@ -6,18 +6,25 @@ C     SIN/COS loop of CIRCLE.mad. R*ST*I is replaced by FLOAT.
       REAL XC,YC,RX,RY
       REAL T,DT,X,Y
       INTEGER I
-      EXTERNAL MOVE
+      COMMON /GFAFTR/ GFAFTR(2)
+      COMMON /GFBFTR/ GFBFTR(2)
       IF (N .LT. 3) RETURN
       DT = 6.2831853 / FLOAT(N)
       T = 0.0
       X = XC + RX
       Y = YC
-      CALL MOVE(X,Y)
+      GFAFTR(1) = X
+      GFAFTR(2) = Y
+      CALL PLOT()
       DO 10 I = 1, N
          T = T + DT
          X = XC + RX*COS(T)
          Y = YC + RY*SIN(T)
-         CALL MOVE(X,Y)
+         GFAFTR(1) = X
+         GFAFTR(2) = Y
+         CALL PLOT()
    10 CONTINUE
+      GFBFTR(1) = X
+      GFBFTR(2) = Y
       RETURN
       END

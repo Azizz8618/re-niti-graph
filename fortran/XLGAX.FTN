@@ -10,6 +10,7 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       REAL QQ1, QQ2, QQ3, QQ4
       INTEGER NT, I, K, IV, IX, M, J
       REAL XMIN, XMAX, Y, A, B, L0, L1, W, T, U, V, P, R, C, D, X
+      COMMON /GFAFTR/ GFAFTR(2)
       IV = 0
       K = 1
       IF (XMIN .LE. 0.0 .OR. XMAX .LE. 0.0) RETURN
@@ -37,8 +38,14 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       CONTINUE
       RETURN
       ENTRY NUMBER(QQ1,QQ2,QQ3,QQ4)
+      GFAFTR(1) = QQ1
+      GFAFTR(2) = QQ2
+      CALL PLOT()
       RETURN
       ENTRY SYMBOL(QQ1,QQ2,QQ3,QQ4)
+      GFAFTR(1) = QQ1
+      GFAFTR(2) = QQ2
+      CALL PLOT()
       RETURN
       ENTRY RDB(QQ1,QQ2)
       QQ2 = 0.0

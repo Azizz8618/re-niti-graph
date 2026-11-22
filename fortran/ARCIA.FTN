@@ -17,6 +17,7 @@ C     ARCIA - principal arc interpolator; emits points with MOVE.
       REAL A, S, C, R, X, Y
       INTEGER I
       COMMON /GFBFTR/ GFBFTR(2)
+      COMMON /GFAFTR/ GFAFTR(2)
       REAL B
       INTEGER K
       REAL V
@@ -27,11 +28,15 @@ C     ARCIA - principal arc interpolator; emits points with MOVE.
          CALL ARCTG(A, S, C)
          X = X0 + R*C
          Y = Y0 + R*S
+         GFAFTR(1) = X
+         GFAFTR(2) = Y
          CALL PLOT()
          A = A + DA
    20 CONTINUE
       RETURN
       ENTRY MOVE(Q0, Q1)
+      GFAFTR(1) = Q0
+      GFAFTR(2) = Q1
       CALL PLOT()
       RETURN
       ENTRY RDB(Q2, Q3)

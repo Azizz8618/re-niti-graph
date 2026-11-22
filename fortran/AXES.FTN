@@ -13,6 +13,7 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       INTEGER NX, NY, IV, K, I, NDEC, IFAC, IX, M, J
       REAL XMIN, XMAX, YMIN, YMAX, XSTEP, YSTEP, T, V, A, B, R, S, C, D
       REAL X, Y
+      COMMON /GFAFTR/ GFAFTR(2)
       IV = 0
       IF (IV .NE. 0) RETURN
       K = 1
@@ -45,6 +46,9 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       QQ2 = IFIX(QQ1)
       RETURN
       ENTRY SYMBOL(QQ1,QQ2,QQ3,QQ4)
+      GFAFTR(1) = QQ1
+      GFAFTR(2) = QQ2
+      CALL PLOT()
       RETURN
       ENTRY IBCD(QQ1,QQ2)
       QQ2 = IFIX(QQ1)

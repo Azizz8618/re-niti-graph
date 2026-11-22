@@ -5,6 +5,7 @@ C [I] Exact glyph table and digit placement follow the MADLEN branch
 C     tree at lines 65-392; a readable decimal rendering is kept.
       REAL X, Y, VAL, A, T, P
       INTEGER ND, I, N, K, IP(12)
+      COMMON /GFAFTR/ GFAFTR(2)
       EXTERNAL SYMBOL, IBCD, BCD
       ND = 6
       A = ABS(VAL)
@@ -24,5 +25,8 @@ C     tree at lines 65-392; a readable decimal rendering is kept.
          X = X + 1.0
          CALL SYMBOL(X,Y,IP(I),2)
 20    CONTINUE
+      GFAFTR(1) = X
+      GFAFTR(2) = Y
+      CALL PLOT()
       RETURN
       END

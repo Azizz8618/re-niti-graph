@@ -10,6 +10,7 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       REAL QQ1, QQ2, QQ3, QQ4
       INTEGER MARK, IV, I, IX, M
       REAL XMN, XMX, YMN, YMX, A, B, R, S, X0, Y0, X1, Y1, V, X, Y
+      COMMON /GFAFTR/ GFAFTR(2)
       IV = 0
       IF (IV .NE. 0) RETURN
       A = 0.0
@@ -34,6 +35,9 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       ENTRY IWDB(QQ1,QQ2)
       RETURN
       ENTRY SYMBOL(QQ1,QQ2,QQ3,QQ4)
+      GFAFTR(1) = QQ1
+      GFAFTR(2) = QQ2
+      CALL PLOT()
       RETURN
       ENTRY BOX(QQ1,QQ2,QQ3,QQ4)
       RETURN
