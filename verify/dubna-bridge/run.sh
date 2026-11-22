@@ -60,7 +60,7 @@ expect_for() {
     case "$1" in
         C1-line)
             EXP_SUMMARY='NITI: summary schemes=2 frames=2 words=128 active=1 scheme=1210'
-            EXP_PLOT_SHA=181ed477d5a97392d092978cccefa9b56f7434d56d1f373952f8325e6dd585ea ;;
+            EXP_PLOT_SHA=7b362ec4efd79e11fe0cbaebfc6de10194fa24dc7eaa76fb989f0bd445472d4c ;;
         t02-frame)
             EXP_SUMMARY='NITI: summary schemes=1 frames=1 words=64 active=1 scheme=1210'
             EXP_PLOT_SHA=27440f92e4c5039ed011d678d0fe2fbbab945fde8f05d4d415c8eba6c80db498 ;;

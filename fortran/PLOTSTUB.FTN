@@ -14,10 +14,30 @@ C       GRCLOS -> GRCLOS (6), GRNOTZ -> GRNOTZ (6),
 C       GRNAME -> GRNAME (6), WRITC -> WRITC, ENDPG -> ENDPG,
 C       PAGE -> PAGE, IDENT -> IDENT, ITALIC -> ITALIC (6),
 C       PLOT -> PLOT, PEN -> PEN, SET -> SET.
+C
+C     PLOT -> PDEV frame contract (agreed with dispak/dispak/extra.c):
+C       /PDEVXY/ holds INTEGER X/Y in 0.1 mm steps and the pen state.
+C       PDEV is MADLEN and cannot resolve FOREX COMMON symbols by name,
+C       so its absolute addresses are hard-coded in PDEV.mad, the same way
+C       re-forex docs/plan-f77-full/33-arfa-perso-lib.md treats /FILMAP/.
+C       PDEV copies the three words into the 64-word frame at absolute
+C       0o50, which is where ЭК 01211 reads the frame from.
       SUBROUTINE PLOT()
       EXTERNAL PDEV
       COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      COMMON /GFAFTR/ GFAFTR(2)
+      COMMON /PDEVXY/ FRAME(64)
+      INTEGER FRAME, I
       NPLOT = NPLOT + 1
+C     MOVE/ARCIA store the point in /GFAFTR/ as REAL; the frame wants an
+C     octal integer count of 0.1 mm steps.  PLOT means "pen down".
+C     Words 4..64 must be cleared explicitly: MADLEN BSS is not zeroed.
+      DO 10 I = 4, 64
+         FRAME(I) = 0
+   10 CONTINUE
+      FRAME(1) = INT(GFAFTR(1))
+      FRAME(2) = INT(GFAFTR(2))
+      FRAME(3) = 1
       CALL PDEV()
       RETURN
       END

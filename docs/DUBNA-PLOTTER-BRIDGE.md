@@ -170,7 +170,7 @@
 
 2. Регрессия `plot.dat`. Прогнать `C1-line.b6` и `t02-frame.b6` с
    `BESM6_NITI_DECODE=proven BESM6_DUDKA_TEST=1` и сверить SHA:
-   C1 `181ed477d5a97392d092978cccefa9b56f7434d56d1f373952f8325e6dd585ea`,
+   C1 `7b362ec4efd79e11fe0cbaebfc6de10194fa24dc7eaa76fb989f0bd445472d4c`,
    t02 `27440f92e4c5039ed011d678d0fe2fbbab945fde8f05d4d415c8eba6c80db498`.
    Изменение любого из них означает, что мост затронул прежний путь.
 

@@ -1,7 +1,24 @@
- PDEV: ,NАМЕ,PDEV
-	1, VTM,
- BUF:  ,BSS,64
-	,*50,1210B
-	,*50,1211B
-	13, UJ,
-	,END,
+C     PDEV - MADLEN bridge from FOREX 4.12 PLOT() to the NITI frame.
+C
+C     FRAME CONTRACT (shared with dispak/dispak/extra.c, du_decode_stream):
+C       word 0 = X in steps of 0.1 mm, octal integer
+C       word 1 = Y in steps of 0.1 mm, octal integer
+C       word 2 = pen state (0 = up, 1 = down)
+C       words 3..63 = 0
+C
+C     FORTRAN -> MADLEN calling convention: PLOT() fills the 64-word frame
+C     in COMMON /PDEVXY/ and calls PDEV with no arguments.  MADLEN cannot
+C     resolve FOREX COMMON symbols by name (re-forex
+C     docs/plan-f77-full/33-arfa-perso-lib.md, section 1 item 4), so the
+C     absolute address of that COMMON is hard-coded as 0o3147 in XTA below.
+C     For verify/C1-line.b6 the linker cross-reference says
+C     `*PDEVXY* C 03147`.  ЭК 01211 takes the buffer address from the
+C     accumulator, so XTA loads it before each ЭК.
+ PDEV: ,NAME,PDEV
+       1, VTM,
+       ,XTA,=:00000000 00003147
+       ,*50,1210B
+       ,XTA,=:00000000 00003147
+       ,*50,1211B
+       13, UJ,
+       ,END,

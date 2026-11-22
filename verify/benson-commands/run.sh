@@ -18,7 +18,11 @@ TIMEOUT=${TIMEOUT:-240}
 DECK=$ROOT/verify/C1-line.b6
 
 EXP_SUMMARY='NITI: summary schemes=2 frames=2 words=128 active=1 scheme=1210'
-EXP_PLOT_SHA=181ed477d5a97392d092978cccefa9b56f7434d56d1f373952f8325e6dd585ea
+# Новый формат кадра (Fortran /PDEVXY/ -> PDEV -> ЭК 1210/1211):
+# word0=X, word1=Y, word2=перо, слова 3..63 = 0.
+EXP_PLOT_SHA=7b362ec4efd79e11fe0cbaebfc6de10194fa24dc7eaa76fb989f0bd445472d4c
+EXP_OUT_SHA=cf84d96a8bf6c845f86ae136aeec66aea5060b854bb159fabe0d9988f9e9284e
+EXP_SVG_SHA=e505aba4e4d494ac9f9099f27160494602b6909f8309d51cb9df7bfc48748a68
 MARKER='[аналог NASA'
 
 for f in "$DISPAK" "$DISKDIR/2048" "$DISKDIR/2053" "$DISKDIR/2099" \
@@ -110,6 +114,9 @@ for round in 1 2; do
         outf=Y
         outsha=$(sha256sum "$rundir/benson.out" | cut -d' ' -f1)
         printf '%s\n' "$outsha" > "$WORK/sha/C1-line-out-r$round.txt"
+        if [ "$outsha" != "$EXP_OUT_SHA" ]; then
+            why="$why [ benson.out SHA $outsha != ${EXP_OUT_SHA:0:12} ]"
+        fi
     else
         why="$why [ нет или пуст benson.out ]"
     fi
@@ -120,6 +127,9 @@ for round in 1 2; do
         svf=Y
         svsha=$(sha256sum "$rundir/benson.svg" | cut -d' ' -f1)
         printf '%s\n' "$svsha" > "$WORK/sha/C1-line-svg-r$round.txt"
+        if [ "$svsha" != "$EXP_SVG_SHA" ]; then
+            why="$why [ benson.svg SHA $svsha != ${EXP_SVG_SHA:0:12} ]"
+        fi
     else
         why="$why [ нет или пуст benson.svg ]"
     fi

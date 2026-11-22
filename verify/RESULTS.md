@@ -74,7 +74,7 @@ NITI: summary schemes=2 frames=2 words=128 active=1 scheme=1210
 
 | Тест | ROUND | Результат | Размер plot.dat | SHA256 (12) | Счётчики | Комментарий |
 |---|---|---|---|---|---|---|
-| C1-line | R2 | PASS | 3200 | `181ed477d5a9` | NPLOT=2, NITI-строк 3 | прямая линия |
+| C1-line | R2 | PASS | 3200 | `181ed477d5a9` (исторический) | NPLOT=2, NITI-строк 3 | прямая линия; после доработки кадра SHA `7b362ec4efd7` |
 | C2-circle | R2 | PASS | 40000 | `e5ba777bb741` | NPLOT=25, NITI-строк 26 | 12 ARCIA + 13 CIRCLE |
 | C3-text | R2 | PASS | 4800 | `6aba44b21d3f` | NPLOT=3, NITI-строк 4 | SYMBOL/NUMBER |
 | C4-page | R2 | PASS | 3200 | `13d47a9fc288` | NPLOT=2, NITI-строк 3 | завершение страницы |

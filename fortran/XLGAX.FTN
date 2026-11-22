@@ -62,6 +62,12 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       ENTRY IPOI(QQ1,QQ2,QQ3)
       QQ3 = QQ1**QQ2
       RETURN
-      ENTRY MOVE(QQ1,QQ2,QQ3,QQ4)
+      ENTRY MOVE(QQ1,QQ2)
+C     This is the last-loaded MOVE entry in the PERSO chain (zone 0o2630),
+C     so it wins over ARCIA's MOVE.  The stub used to drop the coordinates,
+C     leaving /GFAFTR/ at whatever was in uninitialised memory; publish the
+C     point here so PLOTSTUB's PLOT() can build the NITI frame from it.
+      GFAFTR(1) = QQ1
+      GFAFTR(2) = QQ2
       RETURN
       END
