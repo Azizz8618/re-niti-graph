@@ -29,15 +29,21 @@ cp "$DISKDIR/2048" "$DISKDIR/2053" "$DISKDIR/2099" "$REF2148" "$WORK/"
 cp "$REF2348" "$WORK/2348"
 cp "$DISPAK" "$WORK/dispak" && chmod +x "$WORK/dispak"
 
-# PLOTSTUB and MOVE1 come first so zone 0o2400 supplies PAGE/ENDPG/MOVE.
-mapfile -t OTHERS < <(find "$FORTRAN" -maxdepth 1 -name '*.FTN' \
-    ! -name 'PLOTSTUB.FTN' ! -name 'MOVE1.FTN' | sort)
-FILES=("$FORTRAN/PLOTSTUB.FTN" "$FORTRAN/MOVE1.FTN" "${OTHERS[@]}")
+# Groups are pre-balanced by the number of catalog names per zone (max 31).
+# The first group starts with PLOTSTUB and MOVE1 so the early zones supply
+# PAGE/ENDPG/MOVE; see perso-groups.txt.
+GROUPS_FILE=$FORTRAN/verify/perso-groups.txt
+EXPECTED_NAMES=$FORTRAN/verify/expected-names.txt
+[ -f "$GROUPS_FILE" ] || { echo "FAIL: no $GROUPS_FILE" >&2; exit 2; }
+mapfile -t PGROUPS < "$GROUPS_FILE"
+for ((g=0; g<${#PGROUPS[@]}; g++)); do
+    for name in ${PGROUPS[$g]}; do
+        [ -f "$FORTRAN/$name" ] || { echo "FAIL: missing $name" >&2; exit 2; }
+    done
+done
 
 FATAL='ОШИБКА|ERR [0-9]+|НЕДОПУСТИМ|ОТСУТСТВУЕТ|НЕТ ТАКОЙ|БЫЛИ ОШИБКИ|БЫЛИ OШИБKИ|OTCYTCTBYET|OWIBKA'
-CHUNK=12
-N=${#FILES[@]}
-NGROUPS=$(( (N + CHUNK - 1) / CHUNK ))
+NGROUPS=${#PGROUPS[@]}
 
 # Zones free on the pristine 2348 image (verified by catalog dump), starting
 # at 0o2410 in ascending order.  Occupied zones that must stay intact:
@@ -54,7 +60,7 @@ if [ "${#ZONES[@]}" -lt "$((NGROUPS + 1))" ]; then
     exit 2
 fi
 LAST_GROUP=${ZONES[$((NGROUPS - 1))]}
-PDEV_ZONE=${ZONES[$NGROUPS]}
+PDEV_ZONE=$LAST_GROUP
 
 run_deck() {  # $1 deck name
     local deck=$1
@@ -82,41 +88,28 @@ for ((g=0; g<NGROUPS; g++)); do
         printf 'шифр 419999 зс5^\nDIS 41(2148)^\nлен 60(2348-wr)^\nееВ1а3\n'
         printf '*name L%03d\n*call yesmemory\n' "$g"
         if [ "$g" -eq $((NGROUPS-1)) ]; then
-            # Last group: MADLEN PDEV + the remaining Fortran source.  The
-            # *forex path (33-arfa-perso-lib.md) lets both sections share one
-            # *to perso catalog, unlike *TRANS:FOREX3.
             printf '*perso:602300\n*assem\n'
             cat "$PDEV"
-            printf '*forex\n*full list\n'
-            printf '%s\n' "${FILES[@]:g*CHUNK:CHUNK}" | while read -r f; do cat "$f"; done
+            printf '*TRANS:FOREX3*,,411550\n*full list\n'
         else
             printf '*TRANS:FOREX3*,,411550\n*full list\n'
-            printf '%s\n' "${FILES[@]:g*CHUNK:CHUNK}" | while read -r f; do cat "$f"; done
         fi
+        for name in ${PGROUPS[$g]}; do cat "$FORTRAN/$name"; done
         printf '*to perso:60%s\n*end file\n``````\nеконец\n' "$zone"
     } > "$WORK/$deck"
     run_deck "$deck"
     echo "PERSO 0o$zone: OK"
 done
 
-# Dedicated PDEV library in the next free zone after the port groups.
-{
-    printf 'шифр 419999 зс5^\nDIS 41(2148)^\nлен 60(2348-wr)^\nееВ1а3\n'
-    printf '*name PDEV\n*call yesmemory\n*assem\n'
-    cat "$PDEV"
-    printf '*to perso:60%s\n*end file\n``````\nеконец\n' "$PDEV_ZONE"
-} > "$WORK/pdev.b6"
-run_deck pdev.b6
-echo "PERSO 0o$PDEV_ZONE: OK"
-
 BESM6_PATH="$WORK" python3 - "$WORK" "$MANIFEST" "$NGROUPS" \
-    "$LAST_GROUP" "$PDEV_ZONE" "${ZONES[@]}" <<'PY'
+    "$LAST_GROUP" "$PDEV_ZONE" "$EXPECTED_NAMES" "${ZONES[@]}" <<'PY'
 import os, sys, subprocess
 from pathlib import Path
 work, manifest, ngroups = Path(sys.argv[1]), Path(sys.argv[2]), int(sys.argv[3])
 last_group, pdev_zone = sys.argv[4], sys.argv[5]
-zones = sys.argv[6:]
-if len(zones) < ngroups + 1:
+expected = set(Path(sys.argv[6]).read_text().split())
+zones = sys.argv[7:]
+if len(zones) < ngroups:
     raise SystemExit('zone list too short')
 TEXT = [" ", ".", "Б", "Ц", "Д", "Ф", "Г", "И", "(", ")", "*", "Й",
         "Л", "Я", "Ж", "/", "0", "1", "2", "3", "4", "5", "6", "7",
@@ -127,7 +120,7 @@ TEXT = [" ", ".", "Б", "Ц", "Д", "Ф", "Г", "И", "(", ")", "*", "Й",
 def dec(x):
     return ''.join(TEXT[(x >> (42 - 6*i)) & 0x3F] for i in range(8)).rstrip()
 lines = []
-for zone in zones[:ngroups + 1]:
+for zone in zones[:ngroups]:
     raw = work / f'cat-{zone}.bin'
     subprocess.run(['besmtool', 'dump', '2348', f'--start={int(zone,8)}',
                     '--length=4', f'--to-file={raw}'], cwd=work,
@@ -148,8 +141,14 @@ for zone in zones[:ngroups + 1]:
 for zone in (last_group, pdev_zone):
     if not any(f'0o{zone}:' in l and 'PDEV' in l for l in lines):
         raise SystemExit(f'PDEV missing in catalog 0o{zone}')
+present = set()
+for line in lines:
+    present.update(line.split()[1:])
+missing = sorted(expected - present)
+if missing:
+    raise SystemExit(f'missing {len(missing)} catalog names: ' + ' '.join(missing[:20]))
 manifest.write_text('\n'.join(lines) + '\n')
-print('catalogs checked:', len(lines))
+print('catalogs checked:', len(lines), 'names:', len(present))
 PY
 
 cp "$WORK/2348" "$OUT"
