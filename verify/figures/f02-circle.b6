@@ -1,0 +1,91 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name C1LINE
+*call yesmemory
+*perso:602300
+*perso:602400,cont
+*perso:602410,cont
+*perso:602420,cont
+*perso:602430,cont
+*perso:602440,cont
+*perso:602450,cont
+*perso:602460,cont
+*perso:602470,cont
+*perso:602500,cont
+*perso:602510,cont
+*perso:602520,cont
+*perso:602530,cont
+*perso:602540,cont
+*perso:602550,cont
+*perso:602560,cont
+*perso:602570,cont
+*perso:602600,cont
+*perso:602610,cont
+*perso:602620,cont
+*perso:602630,cont
+*perso:602640,cont
+*TRANS:FOREX3*,,411550
+
+C     F02-CIRCLE - regular 24-gon radius 300, center (500,500)
+      PROGRAM C1LINE
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      CALL PAGE()
+      CALL MOVE(800.0,500.0)
+      CALL PLOT()
+      CALL MOVE(790.0,578.0)
+      CALL PLOT()
+      CALL MOVE(760.0,650.0)
+      CALL PLOT()
+      CALL MOVE(712.0,712.0)
+      CALL PLOT()
+      CALL MOVE(650.0,760.0)
+      CALL PLOT()
+      CALL MOVE(578.0,790.0)
+      CALL PLOT()
+      CALL MOVE(500.0,800.0)
+      CALL PLOT()
+      CALL MOVE(422.0,790.0)
+      CALL PLOT()
+      CALL MOVE(350.0,760.0)
+      CALL PLOT()
+      CALL MOVE(288.0,712.0)
+      CALL PLOT()
+      CALL MOVE(240.0,650.0)
+      CALL PLOT()
+      CALL MOVE(210.0,578.0)
+      CALL PLOT()
+      CALL MOVE(200.0,500.0)
+      CALL PLOT()
+      CALL MOVE(210.0,422.0)
+      CALL PLOT()
+      CALL MOVE(240.0,350.0)
+      CALL PLOT()
+      CALL MOVE(288.0,288.0)
+      CALL PLOT()
+      CALL MOVE(350.0,240.0)
+      CALL PLOT()
+      CALL MOVE(422.0,210.0)
+      CALL PLOT()
+      CALL MOVE(500.0,200.0)
+      CALL PLOT()
+      CALL MOVE(578.0,210.0)
+      CALL PLOT()
+      CALL MOVE(650.0,240.0)
+      CALL PLOT()
+      CALL MOVE(712.0,288.0)
+      CALL PLOT()
+      CALL MOVE(760.0,350.0)
+      CALL PLOT()
+      CALL MOVE(790.0,422.0)
+      CALL PLOT()
+      CALL ENDPG()
+      PRINT 900, NPLOT
+  900 FORMAT(' NITI-C1 NPLOT=',I6)
+      END
+*execute
+*end file
+``````
+еконец
+

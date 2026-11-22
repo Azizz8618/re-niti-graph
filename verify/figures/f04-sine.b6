@@ -1,0 +1,99 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name C1LINE
+*call yesmemory
+*perso:602300
+*perso:602400,cont
+*perso:602410,cont
+*perso:602420,cont
+*perso:602430,cont
+*perso:602440,cont
+*perso:602450,cont
+*perso:602460,cont
+*perso:602470,cont
+*perso:602500,cont
+*perso:602510,cont
+*perso:602520,cont
+*perso:602530,cont
+*perso:602540,cont
+*perso:602550,cont
+*perso:602560,cont
+*perso:602570,cont
+*perso:602600,cont
+*perso:602610,cont
+*perso:602620,cont
+*perso:602630,cont
+*perso:602640,cont
+*TRANS:FOREX3*,,411550
+
+C     F04-SINE - two periods, X=50..950, Y=300+150*sin
+      PROGRAM C1LINE
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      CALL PAGE()
+      CALL MOVE(50.0,300.0)
+      CALL PLOT()
+      CALL MOVE(83.0,367.0)
+      CALL PLOT()
+      CALL MOVE(117.0,420.0)
+      CALL PLOT()
+      CALL MOVE(150.0,448.0)
+      CALL PLOT()
+      CALL MOVE(183.0,444.0)
+      CALL PLOT()
+      CALL MOVE(217.0,409.0)
+      CALL PLOT()
+      CALL MOVE(250.0,351.0)
+      CALL PLOT()
+      CALL MOVE(283.0,283.0)
+      CALL PLOT()
+      CALL MOVE(317.0,218.0)
+      CALL PLOT()
+      CALL MOVE(350.0,170.0)
+      CALL PLOT()
+      CALL MOVE(383.0,150.0)
+      CALL PLOT()
+      CALL MOVE(417.0,162.0)
+      CALL PLOT()
+      CALL MOVE(450.0,204.0)
+      CALL PLOT()
+      CALL MOVE(483.0,265.0)
+      CALL PLOT()
+      CALL MOVE(517.0,335.0)
+      CALL PLOT()
+      CALL MOVE(550.0,396.0)
+      CALL PLOT()
+      CALL MOVE(583.0,438.0)
+      CALL PLOT()
+      CALL MOVE(617.0,450.0)
+      CALL PLOT()
+      CALL MOVE(650.0,430.0)
+      CALL PLOT()
+      CALL MOVE(683.0,382.0)
+      CALL PLOT()
+      CALL MOVE(717.0,317.0)
+      CALL PLOT()
+      CALL MOVE(750.0,249.0)
+      CALL PLOT()
+      CALL MOVE(783.0,191.0)
+      CALL PLOT()
+      CALL MOVE(817.0,156.0)
+      CALL PLOT()
+      CALL MOVE(850.0,152.0)
+      CALL PLOT()
+      CALL MOVE(883.0,180.0)
+      CALL PLOT()
+      CALL MOVE(917.0,233.0)
+      CALL PLOT()
+      CALL MOVE(950.0,300.0)
+      CALL PLOT()
+      CALL ENDPG()
+      PRINT 900, NPLOT
+  900 FORMAT(' NITI-C1 NPLOT=',I6)
+      END
+*execute
+*end file
+``````
+еконец
+

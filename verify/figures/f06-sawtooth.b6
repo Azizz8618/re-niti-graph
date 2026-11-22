@@ -1,0 +1,93 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name C1LINE
+*call yesmemory
+*perso:602300
+*perso:602400,cont
+*perso:602410,cont
+*perso:602420,cont
+*perso:602430,cont
+*perso:602440,cont
+*perso:602450,cont
+*perso:602460,cont
+*perso:602470,cont
+*perso:602500,cont
+*perso:602510,cont
+*perso:602520,cont
+*perso:602530,cont
+*perso:602540,cont
+*perso:602550,cont
+*perso:602560,cont
+*perso:602570,cont
+*perso:602600,cont
+*perso:602610,cont
+*perso:602620,cont
+*perso:602630,cont
+*perso:602640,cont
+*TRANS:FOREX3*,,411550
+
+C     F06-SAWTOOTH - 25 points alternating Y=200/700
+      PROGRAM C1LINE
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      CALL PAGE()
+      CALL MOVE(60.0,200.0)
+      CALL PLOT()
+      CALL MOVE(97.0,700.0)
+      CALL PLOT()
+      CALL MOVE(133.0,200.0)
+      CALL PLOT()
+      CALL MOVE(170.0,700.0)
+      CALL PLOT()
+      CALL MOVE(207.0,200.0)
+      CALL PLOT()
+      CALL MOVE(243.0,700.0)
+      CALL PLOT()
+      CALL MOVE(280.0,200.0)
+      CALL PLOT()
+      CALL MOVE(317.0,700.0)
+      CALL PLOT()
+      CALL MOVE(353.0,200.0)
+      CALL PLOT()
+      CALL MOVE(390.0,700.0)
+      CALL PLOT()
+      CALL MOVE(427.0,200.0)
+      CALL PLOT()
+      CALL MOVE(463.0,700.0)
+      CALL PLOT()
+      CALL MOVE(500.0,200.0)
+      CALL PLOT()
+      CALL MOVE(537.0,700.0)
+      CALL PLOT()
+      CALL MOVE(573.0,200.0)
+      CALL PLOT()
+      CALL MOVE(610.0,700.0)
+      CALL PLOT()
+      CALL MOVE(647.0,200.0)
+      CALL PLOT()
+      CALL MOVE(683.0,700.0)
+      CALL PLOT()
+      CALL MOVE(720.0,200.0)
+      CALL PLOT()
+      CALL MOVE(757.0,700.0)
+      CALL PLOT()
+      CALL MOVE(793.0,200.0)
+      CALL PLOT()
+      CALL MOVE(830.0,700.0)
+      CALL PLOT()
+      CALL MOVE(867.0,200.0)
+      CALL PLOT()
+      CALL MOVE(903.0,700.0)
+      CALL PLOT()
+      CALL MOVE(940.0,200.0)
+      CALL PLOT()
+      CALL ENDPG()
+      PRINT 900, NPLOT
+  900 FORMAT(' NITI-C1 NPLOT=',I6)
+      END
+*execute
+*end file
+``````
+еконец
+
