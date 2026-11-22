@@ -586,8 +586,34 @@ Fortran MOVE() -> /GFAFTR/ -> PLOTSTUB (NPLOT++) -> /PDEVXY/
 ```
 
 PERSO-библиотеки порта занимают зоны `0o2400..0o2650` (22 библиотеки,
-не более 12 модулей в каждой). Диск: `fortran/verify/2348-niti.img`,
+не более 12 модулей в каждой). Исходный образ: `fortran/verify/2348-niti.img`,
 скрипт пересборки: `fortran/verify/build-niti-disk.sh`.
+
+Рабочая копия, которую используют все раннеры по умолчанию, лежит в
+`~/.besm6/2348` (вместе с дисками `2048`, `2053`, `2099`, `2148` в том же
+каталоге, `BESM6_PATH=$HOME/.besm6`). В неё дополнительно собрана
+МАДЛЕН-прослойка родной библиотеки 22 в **заранее отведённую зону
+`0o2700`** (`verify/native/shim.b6`): каталог зоны содержит `PAGE`, `ENDPG`,
+`RDB`, `MOVE`, `PLOT`. Деки порта зону `0o2700` не подключают, поэтому их
+`PLOT` по-прежнему берётся из `0o2640`; нативные деки подключают
+`*perso:602700,cont`.
+
+Воссоздание рабочей копии (однократно):
+
+```
+mkdir -p ~/.besm6
+cp /home/azizz/Yandex.Disk/dispak/build/dispak/{2048,2053,2099} ~/.besm6/
+cp /usr/local/share/besm6/2148 ~/.besm6/
+cp fortran/verify/2348-niti.img ~/.besm6/2348
+W=$(mktemp -d /var/tmp/shim2700.XXXXXX)
+cp ~/.besm6/2348 "$W/2348-wr"
+cp verify/native/shim.b6 "$W/"
+( cd "$W" && BESM6_PATH="$HOME/.besm6" \
+  /home/azizz/Yandex.Disk/dispak/build/dispak/dispak -l shim.b6 )
+```
+
+После этого каталог `0o2700` содержит `PAGE ENDPG RDB MOVE PLOT`, а все
+раннеры используют `~/.besm6/2348` без явного `NITI_2348`.
 
 ⚠ В `NITI-EMULATION-PLAN.md:15,84,93` указывается строка `extra.c:1700-1727`
 как обработчик 1211; в текущем HEAD `87f317b` фактический обработчик
@@ -626,7 +652,6 @@ PERSO-библиотеки порта занимают зоны `0o2400..0o2650`
 
 ```
 cd /home/azizz/Yandex.Disk/re-niti-graph
-NITI_2348=$PWD/fortran/verify/2348-niti.img \
 DISPAK_BIN=/home/azizz/Yandex.Disk/dispak/build/dispak/dispak \
 ./verify/run-niti-tests.sh
 ```

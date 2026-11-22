@@ -12,6 +12,8 @@ REF2148=${REF2148:-/usr/local/share/besm6/2148}
 # The PERSO library built in stage A lives on a working copy of disk 2348.
 if [ -n "${NITI_2348:-}" ]; then
     DISK2348=$NITI_2348
+elif [ -f "$HOME/.besm6/2348" ]; then
+    DISK2348=$HOME/.besm6/2348
 elif [ -f "$DISKDIR/2348" ]; then
     DISK2348=$DISKDIR/2348
 elif [ -f "$ROOT/fortran/verify/2348" ]; then

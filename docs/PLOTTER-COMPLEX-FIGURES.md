@@ -49,7 +49,6 @@
 ```
 cd /home/azizz/Yandex.Disk/re-niti-graph
 DISPAK_BIN=/home/azizz/Yandex.Disk/dispak/build/dispak/dispak \
-NITI_2348=/home/azizz/Yandex.Disk/re-niti-graph/fortran/verify/2348-niti.img \
 TMPDIR=/var/tmp KEEP_WORK=1 ./verify/figures/run.sh
 ```
 
@@ -58,7 +57,7 @@ TMPDIR=/var/tmp KEEP_WORK=1 ./verify/figures/run.sh
 | Переменная | Назначение | Значение по умолчанию |
 |---|---|---|
 | `DISPAK_BIN` | бинарник dispak | `/home/azizz/Yandex.Disk/dispak/build/dispak/dispak` |
-| `NITI_2348` | образ диска 2348 с PERSO-библиотекой | `<root>/fortran/verify/2348-niti.img` |
+| `NITI_2348` | рабочая копия диска 2348 с PERSO-библиотекой | `~/.besm6/2348` |
 | `TMPDIR` | корень временных каталогов | `/var/tmp` |
 | `KEEP_WORK` | если задан, рабочий каталог не удаляется | не задан (удаляется через `trap`) |
 | `REF2148`, `TIMEOUT`, `VERBOSE` | вспомогательные | как в `verify/drawings/run.sh` |

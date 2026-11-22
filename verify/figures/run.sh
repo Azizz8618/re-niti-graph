@@ -16,7 +16,7 @@ ROOT=$(cd "$HERE/../.." && pwd)
 DISPAK=${DISPAK_BIN:-/home/azizz/Yandex.Disk/dispak/build/dispak/dispak}
 DISKDIR=$(dirname "$DISPAK")
 REF2148=${REF2148:-/usr/local/share/besm6/2148}
-NITI_2348=${NITI_2348:-$ROOT/fortran/verify/2348-niti.img}
+NITI_2348=${NITI_2348:-$HOME/.besm6/2348}
 TMP_BASE=${TMPDIR:-/var/tmp}
 TIMEOUT=${TIMEOUT:-240}
 

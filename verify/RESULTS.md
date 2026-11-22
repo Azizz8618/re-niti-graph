@@ -38,7 +38,6 @@
 
 Команда:
 ```
-NITI_2348=fortran/verify/2348-niti.img \
 DISPAK_BIN=/home/azizz/Yandex.Disk/dispak/build/dispak/dispak \
 ./verify/run-niti-tests.sh
 ```

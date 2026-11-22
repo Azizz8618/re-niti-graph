@@ -90,7 +90,7 @@ NASA TM-76182 (таблица 2, стр. 6-7 PDF) описывает графо�
 
 ```
 DISPAK_BIN=/home/azizz/Yandex.Disk/dispak/build/dispak/dispak \
-NITI_2348=/home/azizz/Yandex.Disk/re-niti-graph/fortran/verify/2348-niti.img \
+NITI_2348=$HOME/.besm6/2348 \
 KEEP_WORK=1 \
 ./verify/benson-commands/run.sh
 ```
@@ -100,7 +100,7 @@ KEEP_WORK=1 \
 | Переменная | Назначение | Значение по умолчанию |
 |---|---|---|
 | `DISPAK_BIN` | путь к бинарнику dispak с новым бэкендом | `/home/azizz/Yandex.Disk/dispak/build/dispak/dispak` |
-| `NITI_2348` | рабочий диск 2348 с библиотекой PERSO | `$ROOT/fortran/verify/2348-niti.img` |
+| `NITI_2348` | рабочий диск 2348 с библиотекой PERSO | `$HOME/.besm6/2348` |
 | `TMPDIR` | основа для временного каталога | `/tmp/.private/azizz/opencode` |
 | `KEEP_WORK` | если непусто, временный каталог не удаляется | unset |
 | `REF2148` | системный диск 2148 | `/usr/local/share/besm6/2148` |

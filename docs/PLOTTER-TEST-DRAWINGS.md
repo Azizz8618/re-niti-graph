@@ -73,7 +73,7 @@ TMPDIR=/var/tmp ./verify/drawings/run.sh
 | Переменная | По умолчанию | Назначение |
 |---|---|---|
 | `DISPAK_BIN` | `/home/azizz/Yandex.Disk/dispak/build/dispak/dispak` | бинарник dispak с бэкендом БЕНСОНА |
-| `NITI_2348` | `fortran/verify/2348-niti.img` | диск с PERSO-библиотеками зон `0o2400..0o2650` |
+| `NITI_2348` | `~/.besm6/2348` | рабочая копия диска с PERSO-библиотеками зон `0o2400..0o2650` и прослойкой в `0o2700` |
 | `TMPDIR` | `/var/tmp` | каталог для временных файлов |
 | `KEEP_WORK` | не задан | сохранить рабочий каталог для разбора |
 | `REF2148`, `TIMEOUT`, `VERBOSE` | системные / 240 / пусто | доп. настройки |
