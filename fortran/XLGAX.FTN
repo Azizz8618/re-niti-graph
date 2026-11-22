@@ -55,4 +55,6 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       ENTRY IPOI(QQ1,QQ2,QQ3)
       QQ3 = QQ1**QQ2
       RETURN
+      ENTRY MOVE(QQ1,QQ2,QQ3,QQ4)
+      RETURN
       END

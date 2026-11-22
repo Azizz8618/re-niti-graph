@@ -48,4 +48,6 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       ENTRY RSTI(QQ1,QQ2)
       QQ2 = QQ1
       RETURN
+      ENTRY MOVE(QQ1,QQ2,QQ3,QQ4)
+      RETURN
       END

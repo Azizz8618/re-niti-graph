@@ -4,7 +4,7 @@ C     ratio with SIN/COS/SQRT and emits successive points with MOVE.
 C [I] the exact stepping law is reconstructed from the arithmetic
 C chains.
       SUBROUTINE ELIPS(CX,CY,A,B,ANG,N)
-      REAL QQ1, QQ2
+      REAL QQ1, QQ2, QQ3, QQ4
       INTEGER N, I
       REAL CX, CY, A, B, ANG, AA, BB, CS, SN, Q, T, X0, Y0, X1, Y1
       AA = A
@@ -33,5 +33,7 @@ C chains.
       RETURN
       ENTRY RSTI(QQ1,QQ2)
       QQ2 = QQ1
+      RETURN
+      ENTRY MOVE(QQ1,QQ2,QQ3,QQ4)
       RETURN
       END

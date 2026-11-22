@@ -4,7 +4,7 @@ C argument and issues MOVE, ARCIA, MOVE with three parameter triples.
 C     MOVE and ARCIA are MADLEN SUBP points of this module.
 C [I] exact meaning of the three parameter triples is not documented.
       SUBROUTINE CIRC(A)
-      REAL QQ1, QQ2, QQ3
+      REAL QQ1, QQ2, QQ3, QQ4
       REAL A, X, Y, R, Z0, Z1, Z2
       COMMON /GFBFTR/ GFBFTR(2)
       DATA Z0 /0.0/
@@ -19,5 +19,7 @@ C [I] exact meaning of the three parameter triples is not documented.
       GFBFTR(2) = Z1
       RETURN
       ENTRY ARCIA(QQ1,QQ2,QQ3)
+      RETURN
+      ENTRY MOVE(QQ1,QQ2,QQ3,QQ4)
       RETURN
       END

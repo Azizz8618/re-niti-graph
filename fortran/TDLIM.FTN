@@ -42,4 +42,6 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       ENTRY IMUI(QQ1,QQ2,QQ3)
       QQ3 = QQ1*QQ2
       RETURN
+      ENTRY HCNCRD(QQ1,QQ2,QQ3)
+      RETURN
       END

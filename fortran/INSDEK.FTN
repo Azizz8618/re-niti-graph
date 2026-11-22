@@ -45,4 +45,6 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       QQ3 = QQ1
       QQ4 = QQ2
       RETURN
+      ENTRY MOVE(QQ1,QQ2,QQ3,QQ4)
+      RETURN
       END
