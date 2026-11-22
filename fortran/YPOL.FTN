@@ -1,0 +1,10 @@
+C     YPOL - Y coordinate of a parametric curve (SIN auxiliary entry).
+      SUBROUTINE YPOL(ANG, RAD, YC, Y)
+      REAL ANG, RAD, YC, Y
+C     COS(A-PI/2) is used so that the name SIN stays free for the entry.
+      Y = YC + RAD*COS(ANG - 1.5707963267948966)
+      RETURN
+      ENTRY SIN(ANG, RAD, YC, Y)
+      Y = YC + RAD*COS(ANG - 1.5707963267948966)
+      RETURN
+      END

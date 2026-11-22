@@ -1,0 +1,15 @@
+C     WRACC - write circular arc variant C through ARCC1/ARCANG.
+C [I] Five argument words are passed in the original; here three
+C     points X1,Y1,X2 and Y2,X3 are used as an equivalent set.
+      SUBROUTINE WRACC(X1,Y1,X2,Y2,X3)
+      REAL X1,Y1,X2,Y2,X3
+      REAL XC,YC,R,A1,A2
+      COMMON /GFBFTR/ GFBFTR(2)
+      EXTERNAL ARCC1,ARCANG,WRACA
+      GFBFTR(1) = X1
+      GFBFTR(2) = Y1
+      CALL ARCC1(X1,Y1,X2,Y2,X3,XC,YC,R)
+      CALL ARCANG(XC,YC,X2,Y2,X3,R,A1,A2)
+      CALL WRACA(XC,YC,R,A1,A2)
+      RETURN
+      END

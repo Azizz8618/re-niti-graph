@@ -1,0 +1,32 @@
+C     LINEMO - line plotter with a WHERE visibility test and markers.
+C     Reads two integers and four reals, transforms with TMF, clips,
+C     emits with MOVE and places MARKER at visible points.
+      SUBROUTINE LINEMO(N1, N2)
+      INTEGER N1, N2, K1, K2, I
+      REAL X0, Y0, X1, Y1, SX, SY, T, XA, YA
+      EXTERNAL IRDB, RDB, TMF, WHERE, MOVE, MARKER
+      CALL IRDB(2, K1)
+      CALL IRDB(3, K2)
+      CALL RDB(7, X0)
+      CALL RDB(8, Y0)
+      CALL RDB(9, X1)
+      CALL RDB(10, Y1)
+      X1 = X0 + X1
+      Y1 = Y0 + Y1
+      CALL TMF(SX, SY)
+      T = IABS(K1)
+      N1 = K1
+      N2 = K2
+      DO 10 I = 1, T
+         XA = X0 * SX
+         YA = Y0 * SY
+         CALL WHERE(T)
+         IF (T .NE. 0.0) THEN
+            CALL MOVE(XA, YA)
+            CALL MARKER(XA, YA, K2, K1)
+         END IF
+         X0 = X0 + X1 - X0
+         Y0 = Y0 + Y1 - Y0
+   10 CONTINUE
+      RETURN
+      END

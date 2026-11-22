@@ -1,0 +1,22 @@
+      SUBROUTINE TDROT(I,J,K)
+C     3-D rotation of the homogeneous matrix *GFMATR* about an axis.
+C [I] MADLEN builds the row from indirect indices and packs it with
+C     IMUIP; the reconstruction uses SIN/COS of a 90-degree step.
+      COMMON /GFMATR/ GFMATR(34)
+      EXTERNAL HCUNIT, HCMULT, IMUIP
+      INTEGER I, J, K, L
+      REAL C, S
+      C = 0.0
+      S = 1.0
+      CALL HCUNIT(GFMATR(17))
+      DO 10 L = 1, 4
+         GFMATR(I + (L-1)*4) = 0.0
+         GFMATR(J + (L-1)*4) = 0.0
+10    CONTINUE
+      GFMATR(I + (I-1)*4) = C
+      GFMATR(I + (J-1)*4) = S
+      GFMATR(J + (I-1)*4) = -S
+      GFMATR(J + (J-1)*4) = C
+      CALL HCMULT
+      RETURN
+      END

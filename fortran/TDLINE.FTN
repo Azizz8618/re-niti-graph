@@ -1,0 +1,16 @@
+C     TDLINE - draw a 3-D line between two transformed points.
+C     Each endpoint passes HCNCRD, TMF and MOVE; the loop runs N times.
+      SUBROUTINE TDLINE(X, Y, Z, N)
+      REAL X, Y, Z
+      INTEGER N, I
+      COMMON /GFCRD/ GFCRD(3)
+      EXTERNAL HCNCRD, TMF, MOVE
+      DO 10 I = 1, N
+         CALL HCNCRD(X, Y, Z)
+         CALL TMF(GFCRD(1), GFCRD(3))
+         CALL MOVE(I - 1)
+         X = X + GFCRD(2)
+         Y = Y + GFCRD(2)
+   10 CONTINUE
+      RETURN
+      END

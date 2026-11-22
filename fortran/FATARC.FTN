@@ -1,0 +1,16 @@
+C     FATARC - draw a thick arc: two boundary arcs plus end caps.
+C [I] ARCANG/ARCIA of the original are called with the centre and
+C     radius; the width is scaled by R*DI*I (here FLOAT).
+      SUBROUTINE FATARC(XC,YC,R,A1,A2,W)
+      REAL XC,YC,R,A1,A2,W
+      REAL R1,R2,T
+      EXTERNAL ARCANG,ARCIA,MOVA,MOVE
+      R1 = R + W
+      R2 = R - W
+      CALL ARCANG(XC,YC,XC+R,YC,R1,R2,T,T)
+      CALL ARCIA(XC,YC,R1,A1,A2)
+      CALL MOVA(XC+R2*COS(A2),YC+R2*SIN(A2))
+      CALL ARCIA(XC,YC,R2,A2,A1)
+      CALL MOVE(XC+R1*COS(A1),YC+R1*SIN(A1))
+      RETURN
+      END

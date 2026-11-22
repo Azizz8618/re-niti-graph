@@ -1,0 +1,14 @@
+C     SETWGR - set writer-group descriptor field [I].
+C     MADLEN uses IR9 as a descriptor index and IR8 as a caller pointer;
+C     only the mask test and the conditional word store are unambiguous.
+      SUBROUTINE SETWGR(N, IP)
+      INTEGER N, IP, IW
+      COMMON /DATAC/ DATAC(2)
+C [I] DATAC(2) corresponds to the octal 770000 mask (SETWGR.mad:25-26).
+      IF (N .LT. 1 .OR. N .GT. 2) RETURN
+      IW = DATAC(N)
+      IF (IW .EQ. 0) RETURN
+      IF (IAND(IW, DATAC(2)) .EQ. 0) RETURN
+      DATAC(N) = IP
+      RETURN
+      END

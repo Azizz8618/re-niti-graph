@@ -1,0 +1,37 @@
+      SUBROUTINE POLREG()
+C     Regular polar grid: read the spec with IRDB/RDB, write it back
+C     with IWDB/WDB, draw ring arcs with CIRCLE, connectors with MOVE
+C     and radial tick labels with SYMBOL.
+C [I] Constant meanings (DK0/CK0) and exact parameter order are inferred.
+      REAL X0, Y0, R1, R2, DR, A, X, Y, CS, SN
+      INTEGER I, NR, NT
+      EXTERNAL IRDB, RDB, IWDB, WDB, CIRCLE, MOVE, SYMBOL, IABS
+      CALL IRDB(2,NR)
+      CALL IRDB(3,NT)
+      CALL RDB(7,X0)
+      CALL RDB(8,Y0)
+      CALL RDB(9,R1)
+      CALL RDB(16,R2)
+      CALL RDB(17,DR)
+      IF (NR .LT. 1 .OR. R2 .LE. 0.0) RETURN
+      CALL IWDB(2,NR)
+      CALL WDB(9,X0)
+      CALL WDB(10,Y0)
+      DO 10 I = 1, NR
+         R1 = R1 + DR
+         CALL CIRCLE(X0,Y0,R1)
+10    CONTINUE
+      DO 20 I = 1, NT
+         A = 6.2831853 * FLOAT(I-1) / FLOAT(NT)
+         CS = COS(A)
+         SN = SIN(A)
+         X = X0 + R2*CS
+         Y = Y0 + R2*SN
+         CALL MOVE(X0,Y0)
+         CALL MOVE(X,Y)
+         X = X + 0.5*CS
+         Y = Y + 0.5*SN
+         CALL SYMBOL(X,Y,I,3)
+20    CONTINUE
+      RETURN
+      END

@@ -1,0 +1,30 @@
+C     INSIDE - point-in-region test / drawing for the 27-word *DRIN*
+C     descriptor. Flags are tested with XOR, table boundaries are
+C     interpolated by ITPLBV, accepted points are drawn by TMF/MOVE and
+C     optionally labelled by NUMBER.
+      SUBROUTINE INSIDE(N, X, Y, K)
+      INTEGER N, K, I, J
+      REAL X(*), Y(*), XB(50), YB(50), T, V, SX, SY
+      LOGICAL LOK
+      COMMON /DRINFN/ DRINFN(3)
+      COMMON /DRIN/   DRIN(27)
+      IF (N .LT. 1) RETURN
+      DO 20 I = 1, N
+C [I] Bit-flag test of GAL/4 and GAM/3 against the mode argument.
+         LOK = IEOR(K, INT(DRIN(9))) .NE. 0
+         IF (.NOT. LOK) GO TO 10
+         T = FLOAT(I) / FLOAT(N)
+         CALL ITPLBV(T, V)
+         XB(1) = X(I)
+         YB(1) = Y(I)
+         DO 5 J = 2, 50
+            XB(J) = XB(J-1)
+            YB(J) = YB(J-1)
+    5    CONTINUE
+         CALL TMF(XB(1), YB(1), SX, SY)
+         CALL MOVE(SX, SY)
+         IF (K .NE. 0) CALL NUMBER(X(I))
+   10 CONTINUE
+   20 CONTINUE
+      RETURN
+      END

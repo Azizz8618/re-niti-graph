@@ -1,0 +1,36 @@
+C     TDLIML - clip a 3-D line against the *GFLIML* limits.
+C     Endpoints pass HCNCRD, the bounds are clamped with AMIN1/AMAX1,
+C     LIMITS is called and the 3/4 ratio is stored in the limit cell.
+      SUBROUTINE TDLIML(X, Y, Z, N, IFLAG)
+      REAL X, Y, Z, X0, Y0, X1, Y1, T, R
+      INTEGER N, I, IFLAG
+      COMMON /GFMATR/ GFMATR(34)
+      COMMON /GFCRD/ GFCRD(3)
+      COMMON /GFLIML/ GFLIML(4)
+      EXTERNAL HCNCRD, LIMITS
+      IFLAG = IABS(N)
+      I = 0
+   10 IF (I .GE. IFLAG) GOTO 40
+         I = I + 1
+         CALL HCNCRD(X, Y, Z)
+         X0 = GFCRD(1)
+         Y0 = GFCRD(2)
+         X1 = GFCRD(3)
+         Y1 = X0
+         X0 = AMIN1(AMAX1(X0, GFLIML(1)), GFLIML(2))
+         Y0 = AMIN1(AMAX1(Y0, GFLIML(3)), GFLIML(4))
+         X1 = AMIN1(AMAX1(X1, GFLIML(1)), GFLIML(2))
+         Y1 = AMIN1(AMAX1(Y1, GFLIML(3)), GFLIML(4))
+         CALL LIMITS(X0, X1, Y0, Y1, 0, 0, 0, 0)
+         T = GFLIML(2) - GFLIML(1)
+         IF (T .NE. 0.0) THEN
+            R = (GFLIML(4) - GFLIML(3)) / T
+            GFLIML(4) = 0.75
+         END IF
+         X = X + GFCRD(1)
+         Y = Y + GFCRD(2)
+         Z = Z + GFCRD(3)
+      GOTO 10
+   40 CONTINUE
+      RETURN
+      END

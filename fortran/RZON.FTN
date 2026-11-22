@@ -1,0 +1,22 @@
+      SUBROUTINE RZON(MODE)
+C     Zone-read dispatcher (RZON.mad). The original transfers control
+C     to the E70 wrapper and to the *70 handler. E70 in turn calls *70
+C     and NEXTZN; both chains end in the low-level extops *50/*72.
+C     In the port those extops are CALL EXC50 / EXC70 / EXC72 from
+C     SUPPORT.FTN (Э50 task formation, Э70 external-memory exchange).
+C     Here the chain is expressed as direct calls to the ported modules
+C     GDISC, S70 and NEXTZN [I].
+      INTEGER MODE, IM
+C     770000B = 258048 decimal.
+      DATA IM /258048/
+      CALL GDISC(MODE)
+      IF (IAND(MODE, IM) .NE. 0) GOTO 20
+C     E70 path: exchange, then advance to the next zone.
+      CALL S70(MODE)
+      CALL NEXTZN(MODE)
+      RETURN
+   20 CONTINUE
+C     Direct *70 path.
+      CALL S70(MODE)
+      RETURN
+      END

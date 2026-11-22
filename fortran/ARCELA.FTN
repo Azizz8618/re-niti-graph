@@ -1,0 +1,36 @@
+C     ARCELA - ellipse arc variant A: choose one of four quadrant
+C     cases from the signs of the coordinate differences, then ELIPS.
+      SUBROUTINE ARCELA(A1, A2, A3, A4, A5, A6, IOK)
+      REAL A1, A2, A3, A4, A5, A6, XC, YC, P, Q, R
+      INTEGER IOK, K
+      COMMON /GFBFTR/ GFBFTR(2)
+      EXTERNAL ELIPS, IVEST, GFFALS
+      IOK = 1
+      XC = GFBFTR(1)
+      YC = GFBFTR(2)
+      P = ABS(A1)
+      Q = A4 - A5
+      R = ABS(A2)
+      CALL IVEST(XC, YC, P, K)
+      IF (K .EQ. 0) THEN
+         IOK = 0
+         CALL GFFALS(5)
+         RETURN
+      END IF
+      IF (Q .GE. 0.0 .AND. P .GE. 0.0) THEN
+         A1 = A4 + 1.0
+         A2 = A5
+      ELSE IF (Q .GE. 0.0) THEN
+         A1 = A4 + 1.0
+         A2 = A5
+      ELSE IF (P .GE. 0.0) THEN
+         A1 = A5 + 1.0
+         A2 = A4
+      ELSE
+         A1 = A4
+         A2 = A5
+      END IF
+C [I] Exact ELIPS argument order follows ARCELA.mad:97-113.
+      CALL ELIPS(A1, A2, A3, A4, A5, A6, R)
+      RETURN
+      END

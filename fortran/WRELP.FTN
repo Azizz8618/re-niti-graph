@@ -1,0 +1,21 @@
+      SUBROUTINE WRELP(X,Y,A,B)
+C     Write an ellipse element (TEXT 8HDK0) into *GFGEL* and call STRMOD.
+      COMMON /GFGEL/ GFGEL(28)
+      COMMON /GFBFTR/ GFBFTR(2)
+      EXTERNAL STRMOD, RSTI
+      REAL X, Y, A, B, R
+      R = ABS(A)
+      GFBFTR(1) = X
+      GFBFTR(2) = Y
+      GFGEL(2) = X
+      GFGEL(3) = Y
+      GFGEL(4) = A
+      GFGEL(5) = B
+      GFGEL(6) = R
+      GFGEL(7) = B
+      GFGEL(8) = X - A
+      GFGEL(9) = Y - B
+      GFGEL(10) = 0.0
+      CALL STRMOD(0)
+      RETURN
+      END

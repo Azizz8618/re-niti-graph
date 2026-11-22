@@ -1,0 +1,31 @@
+      SUBROUTINE ARCOLL()
+C     Arc of a rotated ellipse from *GFGEL*: solve the determinant,
+C     find endpoint angles with ANGLER, test visibility with IVEST,
+C     then evaluate four endpoint coordinates with SIN/COS.
+C [I] Field offsets follow the GAL/GAM equivalences of ARCOLL.mad.
+      COMMON /GFGEL/ GFGEL(28)
+      EXTERNAL ANGLER, IVEST, GFFALS, RSTI, ABS, RDII
+      REAL A, B, C, D, DET, T1, T2, ANG1, ANG2, R
+      IF (GFGEL(1) .EQ. 0.0) GO TO 90
+      IF (GFGEL(11) .EQ. 0.0) GO TO 90
+      A = GFGEL(5) * GFGEL(14)
+      B = -GFGEL(15) * GFGEL(4)
+      C = GFGEL(6) * GFGEL(15)
+      D = -GFGEL(4) * GFGEL(7)
+      DET = A + C
+      IF (DET .EQ. 0.0) GO TO 90
+      T1 = B / DET
+      T2 = D / DET
+      ANG1 = ANGLER(GFGEL(2)-GFGEL(8),GFGEL(3)-GFGEL(9))
+      ANG2 = ANGLER(GFGEL(17)-GFGEL(12),GFGEL(18)-GFGEL(13))
+      R = GFGEL(28)
+      T1 = T1 * R
+      T2 = T2 * R
+      GFGEL(11) = GFGEL(1) + T1*COS(ANG1)
+      GFGEL(12) = GFGEL(2) + T1*SIN(ANG1)
+      GFGEL(13) = GFGEL(1) + T2*COS(ANG2)
+      GFGEL(14) = GFGEL(2) + T2*SIN(ANG2)
+      RETURN
+90    CALL GFFALS(5)
+      RETURN
+      END

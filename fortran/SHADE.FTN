@@ -1,0 +1,53 @@
+C     SHADE - hatched shading of a 3-D patch.
+C     Reads four corners, transforms them with TFM, derives the edge
+C     angle with SIN/COS/SQRT and sweeps scan lines with LINEO.
+      SUBROUTINE SHADE(NLIN)
+      REAL X(4), Y(4), U(4), V(4), SX, SY, T, R, A, B, C, D
+      REAL DX, DY, ANG, SN, CS, X0, Y0, X1, Y1
+      INTEGER I, J, N
+      COMMON /GFSHAD/ GFSHAD(1000)
+      EXTERNAL RDB, TFM, LINEO
+      CALL RDB(7, X(1))
+      CALL RDB(8, Y(1))
+      CALL RDB(9, X(2))
+      CALL RDB(10, Y(2))
+      X(3) = X(1) + X(2)
+      Y(3) = Y(1) + Y(2)
+      CALL TFM(X(1), Y(1), X(3), Y(3))
+      CALL TFM(X(2), Y(2), X(4), Y(4))
+      DX = X(2) - X(1)
+      DY = Y(2) - Y(1)
+      R = SQRT(DX*DX + DY*DY)
+      IF (R .NE. 0.0) THEN
+         SN = DX / R
+         CS = DY / R
+      ELSE
+         SN = 0.0
+         CS = 1.0
+      END IF
+      T = ABS(DX) * SN + ABS(DY) * CS
+      IF (T .NE. 0.0) THEN
+         A = SN * ABS(DX) / T
+         B = CS * ABS(DY) / T
+      ELSE
+         A = 0.0
+         B = 1.0
+      END IF
+      N = 0
+      DO 10 I = 1, 200
+         SX = A * I
+         SY = B * I
+         X0 = X(1) + SX*CS
+         Y0 = Y(1) + SX*SN
+         X1 = X(2) + SY*CS
+         Y1 = Y(2) + SY*SN
+         GFSHAD(I) = SX
+         GFSHAD(I+200) = SY
+         CALL LINEO(X0, Y0, X1, Y1, 1)
+         N = N + 1
+   10 CONTINUE
+      NLIN = N
+C [I] Source sweeps five nested 200-word scan-line families in
+C     *GFSHAD* and calls STOP* on a degenerate patch (SHADE.mad:1775).
+      RETURN
+      END

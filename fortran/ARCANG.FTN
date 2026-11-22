@@ -1,0 +1,17 @@
+C     ARCANG - compute the two endpoint angles of an arc.
+C [I] The original has eight quadrant/sign branches and calls
+C     IVEST for clipping; here ATAN2 provides the quadrant-safe
+C     angles and SIGN applies the mirror branch.
+      SUBROUTINE ARCANG(XC,YC,X1,Y1,X2,Y2,A1,A2)
+      REAL XC,YC,X1,Y1,X2,Y2,A1,A2
+      REAL DX1,DY1,DX2,DY2
+      DX1 = X1 - XC
+      DY1 = Y1 - YC
+      DX2 = X2 - XC
+      DY2 = Y2 - YC
+      A1 = ATAN2(DY1,DX1)
+      A2 = ATAN2(DY2,DX2)
+      IF (DX1 .LT. 0.0) A1 = SIGN(A1,DY1)
+      IF (DX2 .LT. 0.0) A2 = SIGN(A2,DY2)
+      RETURN
+      END

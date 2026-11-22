@@ -1,0 +1,21 @@
+      SUBROUTINE RCATAL(K)
+C     Read the library catalog and dispatch to the zone primitives.
+C [I] The catalog is an absolute disk area in MADLEN; EXC70 models
+C     the physical exchange, LICAT(1) is the current catalog word.
+      COMMON /LICAT/ LICAT(1)
+      INTEGER K, I
+      CALL EXC70(K)
+      DO 10 I = 1, 16
+         IF (LICAT(1) .EQ. K) GO TO 20
+10    CONTINUE
+      RETURN
+20    CALL RZONE(K)
+      RETURN
+C     Zone primitives: reference-only entries in the DMS library.
+      ENTRY RZONE(M)
+      CALL EXC70(M)
+      RETURN
+      ENTRY WZONE(M)
+      CALL EXC70(M)
+      RETURN
+      END

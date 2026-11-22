@@ -1,0 +1,21 @@
+      SUBROUTINE LSCALE(X1,Y1,X2,Y2)
+C     Scale coordinates by a rotation: ATAN2 -> ROTATE -> ATRAN2.
+C     The MADLEN body has a forward and an inverse branch (lines 26-137).
+C [I] Packed constants 4114441766517106 etc. are replaced by 0.5,1.0.
+      COMMON /GFATRN/ GFATRN(7)
+      EXTERNAL ATAN2, ROTATE, ATRAN2
+      REAL X1, Y1, X2, Y2, DX, DY, ANG, T
+      DATA T /0.5/
+      DX = X1 - X2
+      DY = Y1 - Y2
+      IF (DY .EQ. 0.0 .AND. DX .EQ. 0.0) RETURN
+      ANG = ATAN2(DX,DY) * T
+      CALL ROTATE(ANG,X1,Y1)
+      CALL ATRAN2
+      DX = X1 - X2
+      DY = Y1 - Y2
+      IF (DX .EQ. 0.0 .AND. DY .EQ. 0.0) RETURN
+      ANG = ATAN2(DX,DY) * T
+      CALL ROTATE(ANG,X1,Y1)
+      RETURN
+      END

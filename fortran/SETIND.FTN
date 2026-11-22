@@ -1,0 +1,18 @@
+C     SETIND - pack an index-table descriptor entry.
+C [I] Original uses index registers and 48-bit field masks;
+C     only the field-mask manipulation is reproduced here.
+      SUBROUTINE SETIND(I9,I12,I13,IX,IY,IW)
+      INTEGER I9,I12,I13,IX,IY,IW
+      INTEGER MASK1,MASK2,J
+      DATA MASK1 /16776704/
+      DATA MASK2 /134217727/
+      J = IAND(IX,MASK1)
+      IF (I9 .NE. 0) GOTO 10
+      IW = IOR(J,IAND(IY,MASK1))
+      I12 = J
+      I13 = IAND(IY,MASK2)
+      RETURN
+   10 IW = IAND(IX,MASK2)
+      I13 = IAND(IY,MASK1)
+      RETURN
+      END

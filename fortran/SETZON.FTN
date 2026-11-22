@@ -1,0 +1,16 @@
+C     SETZON - setter of a zone descriptor field.
+C     MADLEN: read mem[IR9], sign-extend the low 9-bit field, store
+C     to mem[IR10+5]. Register interface mapped to explicit arguments.
+      SUBROUTINE SETZON(A, I, B, J)
+      INTEGER A(*), B(*), I, J, K, M
+C [I] ASN,64-9 / ASN,64+9 is interpreted as a 9-bit signed field.
+      K = A(I)
+      M = K / 512
+      IF (K .GE. 0) THEN
+         K = K - M*512
+      ELSE
+         K = -((-K) - ((-K)/512)*512)
+      END IF
+      B(J+5) = K
+      RETURN
+      END

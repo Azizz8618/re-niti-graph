@@ -1,0 +1,13 @@
+C     ARCIB - arc variant B: get angle range, then draw the arc.
+C [I] Original builds dx/dy from GFBFTR and two indirect parameters.
+      SUBROUTINE ARCIB(X,Y,R1,R2,XC,YC)
+      REAL X,Y,R1,R2,XC,YC
+      REAL A1,A2
+      COMMON /GFBFTR/ GFBFTR(2)
+      EXTERNAL ARCANG,ARCIA
+      X = GFBFTR(1)
+      Y = GFBFTR(2)
+      CALL ARCANG(XC,YC,X,Y,R1,R2,A1,A2)
+      CALL ARCIA(XC,YC,R1,A1,A2)
+      RETURN
+      END

@@ -1,0 +1,23 @@
+C     EXTREM - scan points via XPOL / YPOL and accumulate X/Y extrema.
+      SUBROUTINE EXTREM(T1, T2, N, XMIN, XMAX, YMIN, YMAX)
+      INTEGER N, I
+      REAL T1, T2, T, X, Y, XPOL, YPOL
+      REAL XMIN, XMAX, YMIN, YMAX
+      IF (N .LT. 1) RETURN
+      X = XPOL(T1)
+      Y = YPOL(T1)
+      XMIN = X
+      XMAX = X
+      YMIN = Y
+      YMAX = Y
+      DO 10 I = 1, N
+         T = T1 + (T2 - T1)*FLOAT(I) / FLOAT(N)
+         X = XPOL(T)
+         Y = YPOL(T)
+         IF (X .LT. XMIN) XMIN = X
+         IF (X .GT. XMAX) XMAX = X
+         IF (Y .LT. YMIN) YMIN = Y
+         IF (Y .GT. YMAX) YMAX = Y
+   10 CONTINUE
+      RETURN
+      END

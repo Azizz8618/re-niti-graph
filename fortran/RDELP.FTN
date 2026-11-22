@@ -1,0 +1,27 @@
+C     RDELP - write an ellipse record into *GFGEL* (centre, two axes,
+C     five result words).  Degenerate input goes to GFFALS.
+      SUBROUTINE RDELP(AX, AY, IOK)
+      REAL AX, AY, T, V
+      INTEGER IOK
+      COMMON /GFGEL/ GFGEL(28)
+      EXTERNAL ABS, STRMOD, GFFALS
+      IOK = 1
+      IF (GFGEL(9) .EQ. 0.0) THEN
+         CALL STRMOD(AX, AY)
+      END IF
+      T = ABS(GFGEL(9))
+      V = T * AX
+      T = ABS(GFGEL(1) - GFGEL(2))
+      IF (T .NE. 0.0) THEN
+         GFGEL(1) = AX
+         GFGEL(2) = AY
+         GFGEL(3) = V
+         GFGEL(4) = T
+         GFGEL(5) = V / T
+         CALL STRMOD(AX, AY)
+      ELSE
+         IOK = 0
+         CALL GFFALS(6)
+      END IF
+      RETURN
+      END

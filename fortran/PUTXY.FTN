@@ -1,0 +1,13 @@
+C     PUTXY - pack / unpack an X,Y plotter coordinate word.
+C     MADLEN has two internal entries at *0 (pack) and *6B (unpack).
+      SUBROUTINE PUTXY(IX, IY, IW)
+      INTEGER IX, IY, IW
+      IW = IAND(IX, 127)*256 + IAND(IY, 255)
+      RETURN
+C [I] The second MADLEN entry has no symbolic name; PUTXY2 is an
+C     artificial name for it (PUTXY.mad:25-36).
+      ENTRY PUTXY2(IW, IX, IY)
+      IX = IAND(IW, 255)
+      IY = IAND(IW/256, 127)
+      RETURN
+      END

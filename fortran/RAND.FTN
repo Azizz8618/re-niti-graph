@@ -1,0 +1,11 @@
+C     RAND - pseudo-random generator, multiplicative congruential.
+C     Constants: 2**26, 'MH', 5**5 (RAND.mad:67-69).
+      SUBROUTINE RAND(IX, R)
+      INTEGER IX, M
+      REAL R
+      PARAMETER M = 67108864
+      IX = MOD(IX*3125, M)
+      IF (IX .LT. 0) IX = IX + M
+      R = FLOAT(IX) / FLOAT(M)
+      RETURN
+      END

@@ -1,0 +1,22 @@
+C     COMPDT - compare a two-word packed key with the DATA* field.
+      SUBROUTINE COMPDT(K1, K2, IFLG)
+      INTEGER K1, K2, IFLG, A, B
+      INTEGER MASK1, MASK2
+      COMMON /DATAC/ DATAC(2)
+C [I] Decimal forms of the octal masks 740000000000 and
+C     60740000207400 from COMPDT.mad:38-39.
+      DATA MASK1 /64424509440/, MASK2 /3358802533120/
+      IFLG = 1
+      A = SHIFT(K1, 8)
+      IF (A .EQ. 0) THEN
+         DATAC(1) = K1
+         DATAC(2) = K2
+         IFLG = 0
+         RETURN
+      END IF
+      B = IEOR(IAND(A, MASK2), IAND(DATAC(1), MASK2))
+      B = SHIFT(B, -11)
+      B = IEOR(B, DATAC(2))
+      IF (B .EQ. 0) IFLG = 0
+      RETURN
+      END

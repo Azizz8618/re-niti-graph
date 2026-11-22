@@ -1,0 +1,21 @@
+C     ARCELB - ellipse arc variant B: rotate the centre differences
+C     with SIN/COS, convert the parameter and call ARCANG/AREB1/ARCELA.
+      SUBROUTINE ARCELB(A, B, C, D, E, F, G)
+      REAL A, B, C, D, E, F, G, XC, YC, DX, DY, R, SN, CS
+      COMMON /GFBFTR/ GFBFTR(2)
+      EXTERNAL ARCANG, AREB1, ARCELA
+      XC = GFBFTR(1)
+      YC = GFBFTR(2)
+      DX = C - XC
+      DY = D - YC
+      R = ABS(A) * 2.0
+      SN = SIN(B)
+      CS = COS(B)
+      E = DX*CS + DY*SN
+      F = -DX*SN + DY*CS
+      G = F / ABS(R)
+      CALL ARCANG(A, B, C, D, G, E, F)
+      CALL AREB1(A, B, C, D, E, F, G)
+      CALL ARCELA(A, B, C, D, E, F, G)
+      RETURN
+      END

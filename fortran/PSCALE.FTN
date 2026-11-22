@@ -1,0 +1,16 @@
+      SUBROUTINE PSCALE(S)
+C     Build a scaling affine transform and apply it through ATRAN2.
+      COMMON /GFATRN/ GFATRN(7)
+      EXTERNAL ATRAN2
+      REAL S, T
+      T = 1.0 - S
+      GFATRN(1) = 1.0
+      GFATRN(2) = T
+      GFATRN(3) = T
+      GFATRN(4) = 1.0
+      GFATRN(5) = 0.0
+      GFATRN(6) = 0.0
+      GFATRN(7) = 1.0
+      CALL ATRAN2
+      RETURN
+      END

@@ -1,0 +1,25 @@
+C     RDMVE - read the shortest (four-word) vector record from *GFGEL*.
+      SUBROUTINE RDMVE(OUT)
+      REAL OUT(4)
+      COMMON /GFGEL/ GFGEL(28)
+      OUT(1) = GFGEL(1)
+      OUT(2) = GFGEL(2)
+      OUT(3) = GFGEL(6)
+      OUT(4) = GFGEL(7)
+      RETURN
+      ENTRY GFFALS(N)
+      INTEGER N
+      RETURN
+      ENTRY STRMOD(A, B)
+      REAL A, B
+      B = A
+      RETURN
+      ENTRY RSTI(A, K, R)
+      REAL A, R
+      INTEGER K
+      R = A*FLOAT(K)
+      RETURN
+      ENTRY ABS(X)
+      IF (X .LT. 0.0) X = -X
+      RETURN
+      END

@@ -1,0 +1,12 @@
+C     CABIN - set up a cabinet (oblique) 3-D projection in *GFMATR*.
+C     Two SHEAR calls with the half-scale constant 0.5 (CABIN.mad:38,45).
+      SUBROUTINE CABIN(A, B)
+      REAL A, B
+      COMMON /GFMATR/ GFMATR(34)
+C [I] SHEAR argument order is inferred from the index-register setup.
+      CALL SHEAR(2, 3, A, B)
+      CALL SHEAR(2, 3, B, A)
+      GFMATR(33) = A
+      GFMATR(34) = B
+      RETURN
+      END

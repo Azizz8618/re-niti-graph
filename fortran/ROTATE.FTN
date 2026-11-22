@@ -1,0 +1,20 @@
+      SUBROUTINE ROTATE(ANG,X,Y)
+C     Build the 2-D rotation matrix in *GFATRN* and apply ATRAN2.
+C [I] The MADLEN scale constants are packed BESM floats; the angle
+C     conversion below is the standard degrees-to-radians form.
+      COMMON /GFATRN/ GFATRN(7)
+      EXTERNAL ATRAN2
+      REAL ANG, X, Y, C, S, T
+      DATA T /0.017453293/
+      C = COS(ANG * T)
+      S = SIN(ANG * T)
+      GFATRN(1) = C
+      GFATRN(2) = S
+      GFATRN(3) = -S
+      GFATRN(4) = C
+      GFATRN(5) = X
+      GFATRN(6) = Y
+      GFATRN(7) = 1.0
+      CALL ATRAN2
+      RETURN
+      END

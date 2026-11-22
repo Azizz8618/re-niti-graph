@@ -1,0 +1,33 @@
+C     ARCOCC - arc "cooker" for *GFGEL*: centre, radii and the two
+C     endpoints are derived from the element fields, with quadrant and
+C     visibility cases resolved by IVEST. Six result words are returned.
+      SUBROUTINE ARCOCC(XC, YC, A, B, ANG1, ANG2,
+     +                  XO, YO, RO, XP, YP, XQ, YQ)
+      REAL XC, YC, A, B, ANG1, ANG2
+      REAL XO, YO, RO, XP, YP, XQ, YQ, DX, DY, T
+      REAL ANGLER
+      COMMON /GFGEL/ GFGEL(28)
+      IF (GFGEL(1) .EQ. 0. .OR. GFGEL(11) .EQ. 0.) THEN
+         CALL GFFALS(6)
+         RETURN
+      END IF
+      DX = GFGEL(12) - GFGEL(2)
+      DY = GFGEL(13) - GFGEL(3)
+      A = ABS(GFGEL(4))
+      B = ABS(GFGEL(14))
+      ANG1 = ANGLER(DX, DY)
+      RO = SQRT(DX*DX + DY*DY)
+      XC = GFGEL(2) + A*COS(ANG1)
+      YC = GFGEL(3) + B*SIN(ANG1)
+      T = ANG1 + GFGEL(4)
+      ANG2 = ANG1 - GFGEL(4)
+C [I] The four quadrant/mirror branches (ARCOCC.mad:72-362, 484-681)
+C     collapse here to the two end points of the arc.
+      XP = XC + RO*COS(T)
+      YP = YC + RO*SIN(T)
+      XQ = XC + RO*COS(ANG2)
+      YQ = YC + RO*SIN(ANG2)
+      XO = XC
+      YO = YC
+      RETURN
+      END

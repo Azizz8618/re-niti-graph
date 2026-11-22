@@ -1,0 +1,23 @@
+C     WRAEB - elliptic arc variant B: rotate the point differences,
+C     derive the two angles with ARCANG / AREB1 and emit via WRAEA.
+      SUBROUTINE WRAEB(XC, YC, A, B, ANG)
+      REAL XC, YC, A, B, ANG, DX, DY, U, V, T
+      REAL RDI
+      A = ABS(A)
+      B = ABS(B)
+      DX = A
+      DY = B
+      U = COS(ANG)*DX + SIN(ANG)*DY
+      V = -SIN(ANG)*DX + COS(ANG)*DY
+      T = SQRT(U*U + V*V)
+      IF (T .EQ. 0.) T = 1.
+      U = U / T
+      V = V / T
+C [I] R*DI*I is the scaled real division used before ARCANG
+C     (WRAEB.mad:88-91).
+      T = RDI(U, V)
+      CALL ARCANG(XC, YC, A, B, ANG, T)
+      CALL AREB1(XC, YC, A, B, ANG, T)
+      CALL WRAEA(XC, YC, A, B, ANG)
+      RETURN
+      END

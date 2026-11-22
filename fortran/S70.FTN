@@ -1,0 +1,39 @@
+      SUBROUTINE S70(K)
+C     Low-level extracode *70 handler (_s70.mad, module name *70).
+C     In the machine version it interprets the function code in R4 and
+C     issues MADLEN extops: *50,1206B and *50,115B/*50,116B form DISPAK
+C     tasks (Э50) and *72 performs the external-memory exchange (Э70).
+C     In this port these extops are CALL EXC50 / CALL EXC72 from
+C     SUPPORT.FTN. Register save/restore and bit-level address arithmetic
+C     are only approximated [I].
+      INTEGER K, IC, IA, IB
+      INTEGER M32, M1024, M258048, M32767, M65535
+C     40B, 2000B, 770000B, 77777B, 177777B.
+      DATA M32 /32/, M1024 /1024/, M258048 /258048/
+      DATA M32767 /32767/, M65535 /65535/
+      IC = K
+C [I] branch on the low-order function bits of the code word.
+      IF (IC .EQ. 0) GOTO 120
+      IA = IAND(IC, M258048)
+      IF (IA .NE. 0) GOTO 140
+      IB = IAND(IC, M32767)
+      IF (IB .EQ. 0) GOTO 150
+      IF (IAND(IC, M1024) .NE. 0) GOTO 110
+C     Normal path: form the task, exchange, confirm [I].
+   10 CALL EXC50(646)
+      CALL EXC72(K)
+      CALL EXC50(77)
+      CALL EXC50(78)
+      GOTO 160
+  110 CALL EXC50(77)
+      CALL EXC72(K)
+      GOTO 160
+  120 CALL EXC50(77)
+      CALL EXC50(78)
+      GOTO 160
+  140 CALL EXC50(646)
+      CALL EXC72(K)
+      GOTO 160
+  150 CALL EXC50(77)
+  160 RETURN
+      END

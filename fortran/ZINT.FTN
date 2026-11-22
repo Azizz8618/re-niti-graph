@@ -1,0 +1,9 @@
+C     ZINT - interval interpolation helper used by TDSECT.
+C [I] Original reads three indirect words, forms differences and
+C     stores (a-b)/(c-b)-style ratio into a fourth cell. The
+C     exact argument mapping is not recoverable from the MADLEN.
+      SUBROUTINE ZINT(A,B,C,R)
+      REAL A,B,C,R
+      R = (A - B) / (C - B)
+      RETURN
+      END

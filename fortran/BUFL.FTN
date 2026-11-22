@@ -1,0 +1,18 @@
+C     BUFL - flush the line buffer; LININT inserts clipped points.
+C     Buffer/flags live in the 8-word *GFL* common.
+      SUBROUTINE BUFL(X1, Y1, X2, Y2)
+      REAL X1, Y1, X2, Y2
+      COMMON /GFL/ GFL(8)
+C [I] GFL(4)..GFL(6) are clipping status flags (BUFL.mad:24-41).
+      IF (GFL(5) .NE. 0.) RETURN
+      IF (GFL(6) .NE. 0.) RETURN
+      IF (GFL(3) .NE. 0.) GO TO 20
+      IF (GFL(1) .NE. 0.) GO TO 20
+      RETURN
+   20 CONTINUE
+C [I] The original calls LININT recursively to insert clip points;
+C     here the two end points are inserted directly.
+      CALL LININT(X1, Y1, X2, Y2)
+      GFL(3) = 0.
+      RETURN
+      END

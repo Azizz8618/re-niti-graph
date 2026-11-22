@@ -1,0 +1,9 @@
+      SUBROUTINE HCLINE(X,Y,Z,W)
+C [I] Hidden-line line: pass the segment to LINEO only in enabled mode.
+C     The mode cell is a private BSS word in the MADLEN module.
+      INTEGER IFLG
+      DATA IFLG /0/
+      EXTERNAL LINEO
+      IF (IFLG .NE. 0) CALL LINEO(X,Y,Z,W)
+      RETURN
+      END

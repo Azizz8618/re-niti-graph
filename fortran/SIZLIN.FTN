@@ -1,0 +1,11 @@
+C     SIZLIN - copy the four linear-size words of *GFLMN* to outputs.
+C     The common cell default constant is 999 (SIZLIN.mad:53).
+      SUBROUTINE SIZLIN(X1, X2, X3, X4)
+      REAL X1, X2, X3, X4
+      COMMON /GFLMN/ GFLMN(4)
+      X1 = GFLMN(1)
+      X2 = GFLMN(2)
+      X3 = GFLMN(3)
+      X4 = GFLMN(4)
+      RETURN
+      END

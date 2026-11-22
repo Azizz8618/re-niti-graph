@@ -1,0 +1,30 @@
+C     DIMDRO - draw dimension lines with extension lines, arrowheads
+C     and text. Uses the GFGEL element buffer and WR*/RD* helpers.
+      SUBROUTINE DIMDRO(X1, Y1, X2, Y2, D, K)
+      REAL X1, Y1, X2, Y2, D, DX, DY, L, U, V, A
+      INTEGER K
+      REAL ANGLER
+      COMMON /GFGEL/  GFGEL(28)
+      COMMON /GFBFTR/ GFBFTR(2)
+      DX = X2 - X1
+      DY = Y2 - Y1
+      L = SQRT(DX*DX + DY*DY)
+      IF (L .EQ. 0.) THEN
+         CALL GFFALS(10)
+         RETURN
+      END IF
+      A = ANGLER(DX, DY)
+      U = -D*SIN(A)
+      V = D*COS(A)
+C [I] Extension lines and the dimension line follow DIMDRO.mad:111-379.
+      CALL MOVE(X1, Y1)
+      CALL MOVA(X1 + U, Y1 + V)
+      CALL MOVE(X2, Y2)
+      CALL MOVA(X2 + U, Y2 + V)
+      CALL MOVE(X1 + U, Y1 + V)
+      CALL MOVA(X2 + U, Y2 + V)
+      CALL ARROW(X1 + U, Y1 + V, X2 + U, Y2 + V, L)
+      CALL ARROW(X2 + U, Y2 + V, X1 + U, Y1 + V, L)
+      IF (K .NE. 0) CALL WRSTR(L)
+      RETURN
+      END

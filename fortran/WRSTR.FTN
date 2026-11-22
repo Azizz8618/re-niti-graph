@@ -1,0 +1,13 @@
+C     WRSTR - store a string/multiword component into the *GFGEL* record.
+      SUBROUTINE WRSTR(A, N)
+      INTEGER N
+      REAL A(*)
+      COMMON /GFGEL/ GFGEL(28)
+      INTEGER I, M
+      M = N
+      IF (M .GT. 28) M = 28
+      DO 10 I = 1, M
+         GFGEL(I) = A(I)
+   10 CONTINUE
+      RETURN
+      END

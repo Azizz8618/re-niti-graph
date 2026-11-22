@@ -1,0 +1,18 @@
+      SUBROUTINE SPLINE(X,Y,N,C)
+C     Cubic spline construction: TDMP prepares the tridiagonal system,
+C     TRIDIG solves it, then coefficients are printed via FT* I/O.
+C [I] FT571/FT002/FT003 are Fortran runtime I/O entries; the exact
+C     FORMAT string from ISO 0204B is reproduced as a common unit write.
+      REAL X(*), Y(*), C(*)
+      INTEGER N, I, J
+      EXTERNAL TDMP, TRIDIG, FT571, FT002, FT003
+      IF (N .LT. 3) RETURN
+      CALL TDMP(X,Y,N,C)
+      CALL TRIDIG(C,N)
+      DO 10 I = 1, 4*(N-1)
+         C(I) = C(I)
+10    CONTINUE
+      CALL FT571(1)
+      CALL FT003(2)
+      RETURN
+      END

@@ -1,0 +1,25 @@
+C     TMF - compute the two transformation scale factors from eight
+C     reals read through RDB (buffer words 7..14).
+      SUBROUTINE TMF(SX, SY)
+      REAL SX, SY, X9, X10, X11, X12, X13, X14, D
+      EXTERNAL RDB
+      CALL RDB(9, X9)
+      CALL RDB(10, X10)
+      CALL RDB(11, X11)
+      CALL RDB(12, X12)
+      CALL RDB(13, X13)
+      CALL RDB(14, X14)
+      D = X13 - X11
+      IF (D .NE. 0.0) THEN
+         SX = X9 / D
+      ELSE
+         SX = 0.0
+      END IF
+      D = X14 - X12
+      IF (D .NE. 0.0) THEN
+         SY = X10 / D
+      ELSE
+         SY = 0.0
+      END IF
+      RETURN
+      END

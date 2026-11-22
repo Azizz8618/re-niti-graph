@@ -1,0 +1,51 @@
+C     PRSP - perspective drawing of a 3-D object.
+C     Computes the viewport extents and emits the faces/edges with
+C     sixteen 16-argument CORNL calls.
+      SUBROUTINE PRSP(NF)
+      REAL X, Y, Z, S, V, W, A(16)
+      INTEGER I, J
+      COMMON /GFXY/ GFXY(5)
+      COMMON /GFVP/ GFVP(6)
+      COMMON /GFKJ/ GFKJ(2)
+      EXTERNAL CORNL, RDB
+      CALL RDB(9, S)
+      V = GFKJ(2) - GFKJ(1)
+      IF (V .NE. 0.0) THEN
+         GFXY(3) = S / V
+      END IF
+      IF (GFXY(2) .GE. 0.0) THEN
+         GFKJ(2) = GFKJ(2) - 1.0
+      END IF
+      IF (GFVP(5) .GE. 0.0) THEN
+         GFVP(5) = -GFVP(5)
+      END IF
+      DO 10 I = 1, 16
+         DO 20 J = 1, 16
+            A(J) = 0.0
+   20    CONTINUE
+         A(1) = GFVP(1)
+         A(2) = GFVP(2)
+         A(3) = GFVP(3)
+         A(4) = GFVP(4)
+         A(5) = GFVP(5)
+         A(6) = GFVP(6)
+         A(7) = GFXY(1)
+         A(8) = GFXY(2)
+         A(9) = GFXY(3)
+         A(10) = GFXY(4)
+         A(11) = GFXY(5)
+         A(12) = GFKJ(1)
+         A(13) = GFKJ(2)
+         A(14) = I
+         A(15) = 0.0
+         A(16) = 1.0
+         CALL CORNL(A(1), A(2), A(3), A(4), A(5), A(6), A(7),
+     *              A(8), A(9), A(10), A(11), A(12), A(13),
+     *              A(14), A(15), A(16))
+   10 CONTINUE
+      NF = 16
+C [I] The sixteen argument tables differ only in a few cells
+C     (PRSP.mad:297,341,385,429,511,555,637,681,778,822,867,912,
+C     1009,1053,1098,1143); a uniform table is used here.
+      RETURN
+      END

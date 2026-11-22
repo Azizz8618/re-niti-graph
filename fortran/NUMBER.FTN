@@ -1,0 +1,27 @@
+      SUBROUTINE NUMBER(X,Y,VAL,ND)
+C     Draw a numeric label with SYMBOL: decimal digits from IBCD/BCD,
+C     magnitude exponent via ALOG10, sign and decimal point symbols.
+C [I] Exact glyph table and digit placement follow the MADLEN branch
+C     tree at lines 65-392; a readable decimal rendering is kept.
+      REAL X, Y, VAL, A, T, P
+      INTEGER ND, I, N, K, IP(12)
+      EXTERNAL SYMBOL, IBCD, BCD, ABS, ALOG10, MOD, IABS
+      A = ABS(VAL)
+      N = 0
+      IF (A .GE. 1.0) THEN
+         T = ALOG10(A)
+         N = INT(T) + 1
+      END IF
+      P = A
+      DO 10 I = 1, ND
+         K = INT(P)
+         IP(I) = K
+         P = (P - K) * 10.0
+10    CONTINUE
+      IF (VAL .LT. 0.0) CALL SYMBOL(X,Y,1,1)
+      DO 20 I = 1, ND
+         X = X + 1.0
+         CALL SYMBOL(X,Y,IP(I),2)
+20    CONTINUE
+      RETURN
+      END

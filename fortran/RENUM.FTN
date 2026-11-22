@@ -1,0 +1,7 @@
+      SUBROUTINE RENUM(N)
+C     Set the current line-number field of *GFLMN* (offset +3).
+      COMMON /GFLMN/ GFLMN(4)
+      INTEGER N
+      GFLMN(4) = N
+      RETURN
+      END

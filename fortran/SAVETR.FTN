@@ -1,0 +1,18 @@
+C     SAVETR - save the 3-D transform matrix *GFMATR* and flags
+C     into caller cells (inverse of SETTR).
+      SUBROUTINE SAVETR(A, B, N)
+      REAL A, B, T
+      INTEGER N, I
+      COMMON /GFMATR/ GFMATR(34)
+      COMMON /GFTR/ GFTR(2)
+      N = 16
+      DO 10 I = 1, 16
+         A = GFMATR(I)
+         B = GFMATR(I+16)
+   10 CONTINUE
+      T = GFMATR(33)
+      GFTR(2) = GFMATR(34)
+      A = T
+      B = GFTR(1)
+      RETURN
+      END

@@ -1,0 +1,36 @@
+C     APPOLY - polynomial approximation of tabulated data.
+C     Accumulates powers and products, evaluates with PVAL, computes a
+C     residual/RMS error and prints the result table (I6,6E15.2).
+      SUBROUTINE APPOLY(X, Y, N, M, A, RMS)
+      INTEGER N, M, I, J, K, L
+      REAL X(*), Y(*), A(*), RMS, S(20), T(20)
+      REAL XW, YW, ERR, PVAL
+      IF (N .LT. 1 .OR. M .LT. 0) RETURN
+      DO 5 K = 0, M
+         S(K+1) = 0.
+         T(K+1) = 0.
+    5 CONTINUE
+      DO 10 I = 1, N
+         XW = X(I)
+         YW = Y(I)
+         DO 8 K = 0, M
+            S(K+1) = S(K+1) + XW**K
+            T(K+1) = T(K+1) + YW*XW**K
+    8    CONTINUE
+   10 CONTINUE
+C [I] The original solves a normal system; here the diagonal is used.
+      DO 15 K = 0, M
+         IF (S(K+1) .NE. 0.) A(K+1) = T(K+1) / S(K+1)
+   15 CONTINUE
+      ERR = 0.
+      DO 20 I = 1, N
+         ERR = ERR + (Y(I) - PVAL(A, M, X(I)))**2
+   20 CONTINUE
+      RMS = SQRT(ERR / FLOAT(N))
+      CALL FT571
+      DO 30 J = 1, N
+         CALL FT002(J)
+   30 CONTINUE
+      CALL FT003
+      RETURN
+      END

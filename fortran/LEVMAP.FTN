@@ -1,0 +1,24 @@
+C     LEVMAP - nested-loop level map: two index passes over an array.
+C [I] Exact index table layout of the MADLEN work cells is not stated
+C     in FUNCTIONS.md; the two passes are kept as two explicit loops.
+      SUBROUTINE LEVMAP(N, A, B, C)
+      INTEGER N
+      REAL A(*), B(*), C(*)
+      INTEGER I, J, K, M
+      DO 10 I = 1, N
+         C(I) = A(I)
+   10 CONTINUE
+      K = 1
+      DO 30 I = 1, N
+         IF (K .GT. N) K = N
+         M = K
+         IF (M .LT. 1) M = 1
+         C(I) = A(M) + B(I)*(C(M)-A(M))
+         K = K + 1
+   30 CONTINUE
+      J = 0
+      DO 40 I = 1, N
+         IF (C(I) .LT. A(I)) J = J + 1
+   40 CONTINUE
+      RETURN
+      END

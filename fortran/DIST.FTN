@@ -1,0 +1,45 @@
+      SUBROUTINE DIST(D,X,Y)
+C     Distance from a point to a graphic element stored in *GFGEL*.
+C     SECANT/SQRT give the primary distance; IVEST restricts the
+C     computation to the valid interval; ANGLER/SIN/COS resolve the
+C     circle and ellipse branches.
+C [I] The eleven shape cases of DIST.mad:46-793 are represented by
+C     the line, circle and ellipse cases below.
+      COMMON /GFGEL/  GFGEL(28)
+      COMMON /GFBFTR/ GFBFTR(2)
+      REAL D, X, Y, DX, DY, R, A, T, X1, Y1, X2, Y2
+      INTEGER MODE
+      EXTERNAL SECANT, IVEST, ANGLER, GFFALS, STRMOD, RSTI
+      D = 0.0
+      IF (GFGEL(9) .EQ. 0.0) THEN
+         CALL STRMOD(0)
+         RETURN
+      END IF
+      X1 = GFGEL(1)
+      Y1 = GFGEL(2)
+      X2 = GFGEL(6)
+      Y2 = GFGEL(7)
+      DX = X2 - X1
+      DY = Y2 - Y1
+      R = SQRT(DX*DX + DY*DY)
+      IF (R .EQ. 0.0) GO TO 20
+      T = ((X-X1)*DX + (Y-Y1)*DY) / (R*R)
+      IF (T .LT. 0.0) T = 0.0
+      IF (T .GT. 1.0) T = 1.0
+      X1 = X1 + T*DX
+      Y1 = Y1 + T*DY
+20    DX = X - X1
+      DY = Y - Y1
+      D = SQRT(DX*DX + DY*DY)
+      MODE = 0
+      IF (GFGEL(28) .NE. 0.0) MODE = 1
+      IF (MODE .NE. 0) THEN
+         A = ANGLER(DX,DY)
+         R = ABS(GFGEL(6))
+         T = SQRT(DX*DX+DY*DY) - R
+         D = ABS(T)
+         X1 = GFGEL(1) + R*COS(A)
+         Y1 = GFGEL(2) + R*SIN(A)
+      END IF
+      RETURN
+      END

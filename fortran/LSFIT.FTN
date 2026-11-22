@@ -1,0 +1,32 @@
+C     LSFIT - least-squares polynomial fit with optional logarithmic
+C     (power-law) fit, evaluation, plotting and diagnostics.
+      SUBROUTINE LSFIT(N, IDEG)
+      INTEGER N, IDEG, I, K, NT
+      REAL X, Y, A, B, SX, SY, T, F, C(20)
+      EXTERNAL IRDB, IABS, ALOG10, MINMAX, LESQ, PVAL, TMF, MOVE
+      CALL IRDB(2, NT)
+      CALL IRDB(3, K)
+      N = IABS(NT)
+      IDEG = IABS(K)
+      IF (N .LT. 2) THEN
+         PRINT 902
+         RETURN
+      END IF
+      CALL MINMAX(X, Y, SX, SY)
+      A = ALOG10(SX)
+      B = ALOG10(SY)
+      IF (IDEG .GT. N-1) THEN
+         IDEG = N - 1
+         PRINT 901, IDEG
+      END IF
+      CALL LESQ(C, IDEG, N, X, Y)
+      DO 10 I = 1, N
+         CALL PVAL(F, C, IDEG, X)
+         CALL TMF(SX, SY)
+         CALL MOVE(SX, F)
+   10 CONTINUE
+      RETURN
+  901 FORMAT(3X, 'SUBROUTINE LSFIT DEGREE OF THE POLYNOMIAL IS ',
+     *       'DECREASED N=', I3)
+  902 FORMAT(3X, 'ERROR SUBROUTINE LSFIT DATA')
+      END

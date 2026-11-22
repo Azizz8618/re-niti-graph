@@ -1,0 +1,31 @@
+C     WRACA - write circular arc variant A into GFGEL.
+C [I] Computes the two end points of the arc from centre, radius
+C     and the two angles, then stores the GAL/GAM element fields.
+      SUBROUTINE WRACA(XC,YC,R,A1,A2)
+      REAL XC,YC,R,A1,A2
+      REAL X1,Y1,X2,Y2
+      COMMON /GFGEL/ GFGEL(28)
+      COMMON /GFBFTR/ GFBFTR(2)
+      EXTERNAL STRMOD,GFFALS
+      X1 = XC + ABS(R*COS(A1))
+      Y1 = YC + ABS(R*SIN(A1))
+      X2 = XC + ABS(R*COS(A2))
+      Y2 = YC + ABS(R*SIN(A2))
+      GFGEL(1) = X1
+      GFGEL(2) = Y1
+      GFGEL(3) = X2
+      GFGEL(4) = Y2
+      GFGEL(5) = R
+      GFGEL(6) = A1
+      GFGEL(7) = A2
+      GFGEL(8) = ABS(R)
+      GFGEL(9) = 0
+      GFBFTR(1) = X1
+      GFBFTR(2) = Y1
+      IF (GFGEL(9) .LT. 0) THEN
+         CALL GFFALS(5)
+      ELSE
+         CALL STRMOD(0)
+      END IF
+      RETURN
+      END

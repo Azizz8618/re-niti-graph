@@ -1,0 +1,21 @@
+C     FATLIN - draw a thick (fat) line with parallel edges and caps.
+C [I] RDB supplies the half-width; ANGLER/SQRT compute the normal;
+C     R*DI*I is replaced by FLOAT. MOVA emits the closing edges.
+      SUBROUTINE FATLIN(X1,Y1,X2,Y2,W)
+      REAL X1,Y1,X2,Y2,W
+      REAL DX,DY,R,T,NX,NY
+      EXTERNAL MOVE,MOVA
+      DX = X2 - X1
+      DY = Y2 - Y1
+      R = SQRT(DX*DX+DY*DY)
+      IF (R .EQ. 0.0) RETURN
+      T = ATAN2(DY,DX)
+      NX = -SIN(T)*W
+      NY = COS(T)*W
+      CALL MOVE(X1+NX,Y1+NY)
+      CALL MOVE(X2+NX,Y2+NY)
+      CALL MOVA(X2-NX,Y2-NY)
+      CALL MOVA(X1-NX,Y1-NY)
+      CALL MOVA(X1+NX,Y1+NY)
+      RETURN
+      END

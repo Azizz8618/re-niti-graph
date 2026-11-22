@@ -1,0 +1,25 @@
+C     BEGLEV - begin a nested affine transformation level.
+C     Copies *GFATRN* into the *GFATRM* stack and increments the depth.
+      SUBROUTINE BEGLEV(LIM)
+      INTEGER LIM, I
+      COMMON /GFATRN/ GFATRN(7)
+      COMMON /GFATRM/ GFATRM(115)
+      IF (IAND(GFATRN(1), 96) .NE. 0) GO TO 20
+      GFATRM(1) = GFATRN(1)
+      GFATRM(2) = GFATRN(2)
+      GFATRM(3) = GFATRN(3)
+      GFATRM(4) = GFATRN(4)
+      GFATRM(5) = GFATRN(5)
+      GFATRM(6) = GFATRN(6)
+      DO 10 I = 7, 102
+   10 GFATRM(I) = 0.
+      GFATRN(1) = GFATRN(1) + 1
+   20 GFATRM(103) = GFATRM(103) + 1
+      IF (GFATRM(103) .LE. LIM) GO TO 30
+C [I] Original error path calls FT571, FT003, STOP* (BEGLEV.mad:83-87).
+      CALL FT571
+      CALL FT003
+      STOP
+   30 CONTINUE
+      RETURN
+      END

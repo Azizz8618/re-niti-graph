@@ -1,0 +1,11 @@
+C     NUMLIN - store line-number / format fields into *GFLMN* (4 words).
+      SUBROUTINE NUMLIN(N1, N2)
+      INTEGER N1, N2
+      COMMON /GFLMN/ GFLMN(4)
+      GFLMN(1) = N1
+      GFLMN(2) = N2
+      GFLMN(3) = 3
+C [I] The fourth field is the mode constant 666 (NUMLIN.mad:51-52).
+      GFLMN(4) = 666
+      RETURN
+      END

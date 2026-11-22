@@ -1,0 +1,15 @@
+      SUBROUTINE ARCIC(X1,Y1,X2,Y2)
+C     Arc wrapper C: ARCC1 geometry, ARCANG angles, then ARCIA draw.
+C [I] Argument-to-register mapping follows the prologue of ARCIC.mad.
+      COMMON /GFBFTR/ GFBFTR(2)
+      EXTERNAL ARCC1, ARCANG, ARCIA
+      REAL X1, Y1, X2, Y2, DX, DY
+      DX = X2 - X1
+      DY = Y2 - Y1
+      GFBFTR(1) = X1
+      GFBFTR(2) = Y1
+      CALL ARCC1(X1,Y1,DX,DY)
+      CALL ARCANG(X1,Y1,X2,Y2)
+      CALL ARCIA(X1,Y1,X2,Y2)
+      RETURN
+      END

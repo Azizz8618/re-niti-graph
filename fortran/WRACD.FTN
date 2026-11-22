@@ -1,0 +1,26 @@
+      SUBROUTINE WRACD(X,Y,X2,Y2)
+C     Write circular arc variant D: radius from SQRT, direction ANGLER,
+C     then fill the element fields and call STRMOD.
+      COMMON /GFGEL/ GFGEL(28)
+      COMMON /GFBFTR/ GFBFTR(2)
+      EXTERNAL STRMOD, SQRT, ANGLER, RSTI
+      REAL X, Y, X2, Y2, DX, DY, R, ANG, T
+      DX = X2 - X
+      DY = Y2 - Y
+      R = SQRT(DX*DX + DY*DY)
+      ANG = ANGLER(DX,DY)
+      T = R
+      GFBFTR(1) = X
+      GFBFTR(2) = Y
+      GFGEL(2) = X
+      GFGEL(3) = Y
+      GFGEL(4) = T
+      GFGEL(5) = DX
+      GFGEL(6) = DY
+      GFGEL(7) = ANG
+      GFGEL(8) = X2
+      GFGEL(9) = Y2
+      GFGEL(10) = 0.0
+      CALL STRMOD(0)
+      RETURN
+      END

@@ -1,0 +1,14 @@
+C     REBLAN - insert/remove blanking intervals in GFBLAN.
+C [I] Original tests sign flags at GAL/5..GAL/7 and calls MOVE
+C     for the transformed interval; only the table update is kept.
+      SUBROUTINE REBLAN(N,M)
+      INTEGER N,M
+      COMMON /GFATRN/ GFATRN(7)
+      COMMON /GFBLAN/ GFBLAN(11)
+      EXTERNAL MOVE
+      IF (N .LE. 0) RETURN
+      IF (N .GT. 10) RETURN
+      GFBLAN(N) = M
+      IF (GFBLAN(8) .NE. 0) CALL MOVE(GFATRN(1),GFATRN(2))
+      RETURN
+      END

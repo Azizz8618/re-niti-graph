@@ -1,0 +1,31 @@
+C     WRAEA - write an elliptic arc (variant A) into *GFGEL*.
+C     Computes a parameter ratio with ABS/SIN/COS/SQRT, rotates the
+C     endpoints and emits the element through STRMOD.
+      SUBROUTINE WRAEA(A, B, C, D, E, IOK)
+      REAL A, B, C, D, E, S, T, U, V, R, W
+      INTEGER IOK
+      COMMON /GFGEL/ GFGEL(28)
+      COMMON /GFBFTR/ GFBFTR(2)
+      EXTERNAL STRMOD, GFFALS
+      IOK = 1
+      IF (A .EQ. 0.0) THEN
+         IOK = 0
+         CALL GFFALS(5)
+         RETURN
+      END IF
+      S = ABS(A)
+      T = SIN(GFGEL(3))
+      U = T*T
+      V = COS(GFGEL(3))
+      R = SQRT(U + V*V)
+      W = S * V / R
+      GFGEL(1) = GFBFTR(1) + (C+D)*COS(W) - A
+      GFGEL(2) = GFBFTR(2) + (C+D)*SIN(W) - A
+      GFGEL(3) = A
+      GFGEL(4) = B
+      GFGEL(5) = C
+      GFGEL(6) = D
+      GFGEL(7) = E
+      CALL STRMOD(A, B)
+      RETURN
+      END

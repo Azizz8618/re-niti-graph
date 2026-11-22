@@ -1,0 +1,17 @@
+C     WRCRC - write a circle element (DK0) into *GFGEL* and emit it
+C     through STRMOD.
+      SUBROUTINE WRCRC(X, Y, R)
+      REAL X, Y, R
+      REAL RSTI
+      COMMON /GFGEL/ GFGEL(28)
+      COMMON /GFBFTR/ GFBFTR(2)
+      R = ABS(R)
+      CALL STRMOD(0, 2)
+      GFGEL(1) = RSTI(X)
+      GFGEL(2) = RSTI(Y)
+      GFGEL(3) = RSTI(R)
+      GFGEL(6) = RSTI(R)
+      GFGEL(7) = R
+C [I] Field offsets GAL/1..GAL/5 follow WRCRC.mad:18-25,50-68.
+      RETURN
+      END

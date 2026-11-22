@@ -1,0 +1,18 @@
+C     MOVC - move a fraction of the distance from the current point
+C     to a target point, using the Euclidean length (SQRT).
+      SUBROUTINE MOVC(TX, TY, STEP)
+      REAL TX, TY, STEP, X, Y, DX, DY, R, SX, SY
+      COMMON /GFBFTR/ GFBFTR(2)
+      EXTERNAL MOVE
+      X = GFBFTR(1)
+      Y = GFBFTR(2)
+      DX = TX - X
+      DY = TY - Y
+      R = SQRT(DX*DX + DY*DY)
+      IF (R .NE. 0.0) THEN
+         SX = X + STEP*DX/R
+         SY = Y + STEP*DY/R
+         CALL MOVE(SX, SY)
+      END IF
+      RETURN
+      END

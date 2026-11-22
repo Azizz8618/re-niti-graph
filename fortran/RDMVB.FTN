@@ -1,0 +1,19 @@
+C     RDMVB - read a move/vector record B into GFGEL.
+C [I] R*ST*I of the MADLEN source maps to external RSTI;
+C     sign tests on GAK/5 are reproduced as a zero test.
+      SUBROUTINE RDMVB(N)
+      INTEGER N
+      COMMON /GFGEL/ GFGEL(28)
+      EXTERNAL STRMOD,GFFALS,RSTI
+      IF (GFGEL(9) .LT. 0) THEN
+         CALL STRMOD(0)
+         RETURN
+      END IF
+      CALL RSTI(N,GFGEL(10))
+      GFGEL(1) = N
+      GFGEL(2) = GFGEL(6) - GFGEL(1)
+      GFGEL(3) = GFGEL(7) - GFGEL(2)
+      IF (GFGEL(9) .LT. 0) CALL GFFALS(6)
+      CALL STRMOD(0)
+      RETURN
+      END

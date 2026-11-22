@@ -1,0 +1,49 @@
+C     BLANCH - recompute the blanking/window transformation.
+C     Compares old and new viewport corners, derives scale and rotation
+C     with ATAN2/SIN/COS, updates *GFBLAW* and calls MOVBL1.
+      SUBROUTINE BLANCH(IFLAG)
+      REAL D1, D2, S, ANG, SN, CS, X, Y, U, V, T
+      INTEGER IFLAG, I
+      COMMON /GFBLAN/ GFBLAN(11)
+      COMMON /GFATBL/ GFATBL(6)
+      COMMON /GFBLAW/ GFBLAW(4)
+      COMMON /GFATRN/ GFATRN(7)
+      EXTERNAL MOVBL1
+      IFLAG = 0
+      D1 = GFBLAN(4) - GFBLAN(3)
+      D2 = GFBLAN(6) - GFBLAN(5)
+      S = D1*D1 + D2*D2
+      IF (S .EQ. 0.0) THEN
+         D1 = GFBLAN(2) - GFBLAN(1)
+         D2 = GFBLAN(1) - GFBLAN(2)
+         S = D1*D1 + D2*D2
+         IF (S .EQ. 0.0) THEN
+            CALL STOPB(6)
+            RETURN
+         END IF
+      END IF
+      ANG = ATAN2(D2, D1)
+      SN = SIN(ANG)
+      CS = COS(ANG)
+      GFBLAW(1) = CS
+      GFBLAW(2) = SN
+      GFBLAW(3) = -SN
+      GFBLAW(4) = CS
+      DO 10 I = 1, 6
+         X = GFATBL(I)
+         U = X * CS
+         V = X * SN
+         GFATBL(I) = U + V
+   10 CONTINUE
+      T = GFBLAN(2) - GFBLAN(1)
+      IF (T .NE. 0.0) THEN
+         GFBLAW(4) = S / T
+      END IF
+      CALL MOVBL1(GFBLAN(2), GFBLAN(4), GFBLAW(1))
+      IFLAG = 1
+      RETURN
+      ENTRY STOPB(ICODE)
+C [I] STOP* is a fatal library error exit; only its code is recorded.
+      IFLAG = ICODE
+      RETURN
+      END

@@ -1,0 +1,26 @@
+      SUBROUTINE RDACB(X1,Y1,X2,Y2,R)
+C     Read arc element variant B: two radii and two angles, compute
+C     both endpoints with SIN/COS and select by visibility tests.
+C [I] Endpoint branches follow RDACB.mad:128-173.
+      COMMON /GFGEL/ GFGEL(28)
+      EXTERNAL GFFALS, STRMOD, RSTI
+      REAL X1, Y1, X2, Y2, R, A, T
+      IF (GFGEL(9) .EQ. 0.0) THEN
+         CALL STRMOD(0)
+         RETURN
+      END IF
+      R = ABS(GFGEL(2))
+      T = ABS(GFGEL(3))
+      A = GFGEL(7)
+      X1 = GFGEL(1) + R*COS(A)
+      Y1 = GFGEL(2) + R*SIN(A)
+      X2 = GFGEL(1) + T*COS(A)
+      Y2 = GFGEL(2) + T*SIN(A)
+      IF (GFGEL(6) .NE. GFGEL(2)) THEN
+         X2 = GFGEL(1) + R*COS(-A)
+         Y2 = GFGEL(2) + R*SIN(-A)
+      END IF
+      IF (GFGEL(9) .LT. 0.0) CALL GFFALS(6)
+      CALL STRMOD(0)
+      RETURN
+      END

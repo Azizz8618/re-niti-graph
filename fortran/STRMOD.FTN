@@ -1,0 +1,17 @@
+      SUBROUTINE STRMOD(MODE)
+C     Store/modify the 28-word graphic element in *GFGEL*.
+C [I] The MADLEN module copies a 28-word DATA table into the element
+C     and adjusts fields 8..10 according to the mode argument.
+      COMMON /GFGEL/ GFGEL(28)
+      REAL TAB(28)
+      DATA TAB /28*0.0/
+      INTEGER MODE, I
+      IF (MODE .NE. 0) THEN
+         GFGEL(9) = -GFGEL(9)
+         GFGEL(10) = GFGEL(10) + 1.0
+      END IF
+      DO 10 I = 1, 28
+         IF (TAB(I) .NE. 0.0) GFGEL(I) = TAB(I)
+10    CONTINUE
+      RETURN
+      END

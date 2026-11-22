@@ -1,0 +1,16 @@
+C     SHIFT - translate the current affine transform.
+C     ATRAN2 is the MADLEN SUBP (main entry of this module).
+C [I] Only the translation part of the 6-word transform is adjusted;
+C     the original composes a full 7-word matrix via ATRAN2.
+      SUBROUTINE SHIFT(DX,DY)
+      REAL DX,DY
+      COMMON /GFATRN/ GFATRN(7)
+      GFATRN(2) = GFATRN(2) + DX
+      GFATRN(3) = GFATRN(3) + DY
+      RETURN
+      ENTRY ATRAN2(DX,DY)
+      GFATRN(2) = DX
+      GFATRN(3) = DY
+      GFATRN(1) = 1.0
+      RETURN
+      END

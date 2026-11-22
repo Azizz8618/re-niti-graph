@@ -1,0 +1,23 @@
+C     CIRCLE - draw a circle/ellipse by stepping an angle.
+C [I] RDB supplies two radii; the parametric stepping follows the
+C     SIN/COS loop of CIRCLE.mad. R*ST*I is replaced by FLOAT.
+      SUBROUTINE CIRCLE(XC,YC,RX,RY,N)
+      INTEGER N
+      REAL XC,YC,RX,RY
+      REAL T,DT,X,Y
+      INTEGER I
+      EXTERNAL MOVE
+      IF (N .LT. 3) RETURN
+      DT = 6.2831853 / FLOAT(N)
+      T = 0.0
+      X = XC + RX
+      Y = YC
+      CALL MOVE(X,Y)
+      DO 10 I = 1, N
+         T = T + DT
+         X = XC + RX*COS(T)
+         Y = YC + RY*SIN(T)
+         CALL MOVE(X,Y)
+   10 CONTINUE
+      RETURN
+      END

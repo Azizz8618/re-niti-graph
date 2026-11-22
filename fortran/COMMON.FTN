@@ -1,0 +1,43 @@
+C     GRAFOR-SUD library 22: common data areas (MADLEN ,LC,n -> COMMON).
+C     Names are truncated to 6 characters for FOREX 4.12.
+C     copied from ../madlen/*.mad by scanning all ,LC, declarations.
+
+      COMMON /DRFN/   DRFN(3)
+      COMMON /DRIN/   DRIN(27)
+      COMMON /DRINFN/ DRINFN(3)
+      COMMON /DRITP/  DRITP(1)
+      COMMON /DRLM/   DRLM(4)
+      COMMON /GFAFTR/ GFAFTR(2)
+      COMMON /GFATBL/ GFATBL(6)
+      COMMON /GFATRM/ GFATRM(115)
+      COMMON /GFATRN/ GFATRN(7)
+      COMMON /GFB/    GFB(7)
+      COMMON /GFBFTR/ GFBFTR(2)
+      COMMON /GFBLAN/ GFBLAN(11)
+      COMMON /GFBLAW/ GFBLAW(4)
+      COMMON /GFCELL/ GFCELL(9)
+      COMMON /GFCRD/  GFCRD(3)
+      COMMON /GFGEL/  GFGEL(28)
+      COMMON /GFGOBS/ GFGOBS(20)
+      COMMON /GFINT/  GFINT(1)
+      COMMON /GFISOL/ GFISOL(2)
+      COMMON /GFKJ/   GFKJ(2)
+      COMMON /GFL/    GFL(8)
+      COMMON /GFLIM/  GFLIM(4)
+      COMMON /GFLIML/ GFLIML(4)
+      COMMON /GFLMN/  GFLMN(4)
+      COMMON /GFLOOK/ GFLOOK(1)
+      COMMON /GFLSZ/  GFLSZ(1)
+      COMMON /GFMATR/ GFMATR(34)
+      COMMON /GFNTCH/ GFNTCH(51)
+      COMMON /GFSHAD/ GFSHAD(1000)
+      COMMON /GFSUR/  GFSUR(4)
+      COMMON /GFTR/   GFTR(2)
+      COMMON /GFVIEW/ GFVIEW(23)
+      COMMON /GFVP/   GFVP(6)
+      COMMON /GFXY/   GFXY(5)
+C     *LICAT* is not a memory array: 132096 = 0o400140 is the absolute
+C     disk address of the library catalog (RCATAL.mad:13).
+      COMMON /LICAT/  LICAT(1)
+C     DATA* -> DATAC: DATA is a Fortran keyword.
+      COMMON /DATAC/  DATAC(2)

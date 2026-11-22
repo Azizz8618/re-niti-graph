@@ -1,0 +1,18 @@
+C     KEYPO - place markers and numeric labels at key points of a curve.
+C     XPOL / YPOL evaluate the curve, TMF maps it, MOVE / MARKER / NUMB
+C     produce the output (KEYPO.mad:67-123).
+      SUBROUTINE KEYPO(T1, T2, N, K)
+      INTEGER N, K, I
+      REAL T1, T2, T, X, Y, XPOL, YPOL, SX, SY
+      IF (N .LT. 1) RETURN
+      DO 10 I = 0, N
+         T = T1 + (T2 - T1)*FLOAT(I) / FLOAT(N)
+         X = XPOL(T)
+         Y = YPOL(T)
+         CALL TMF(X, Y, SX, SY)
+         CALL MOVE(SX, SY)
+         CALL MARKER(K)
+         CALL NUMB(FLOAT(I))
+   10 CONTINUE
+      RETURN
+      END

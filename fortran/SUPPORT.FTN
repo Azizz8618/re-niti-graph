@@ -1,0 +1,66 @@
+C     Support routines for the FOREX 4.12 port of library 22.
+C     MADLEN constructs that have no direct Fortran equivalent are
+C     isolated here so that ported modules stay readable.
+
+C     EXC50 - system call 050 (DISPAK: formation of a task).
+C     In the machine version this is an extracode; in the portable
+C     version it is a no-op with an observable counter.
+      SUBROUTINE EXC50(N)
+      INTEGER N
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      NEXC50 = NEXC50 + 1
+      RETURN
+      END
+
+      SUBROUTINE EXC70(N)
+      INTEGER N
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      NEXC70 = NEXC70 + 1
+      RETURN
+      END
+
+      SUBROUTINE EXC72(N)
+      INTEGER N
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      NEXC72 = NEXC72 + 1
+      RETURN
+      END
+
+      SUBROUTINE EXC74(N)
+      INTEGER N
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      NEXC74 = NEXC74 + 1
+      RETURN
+      END
+
+C     SHIFT - logical shift of a 48-bit word by N bits (MADLEN ASN/ASX).
+C     NEGATIVE N shifts left. Fortran portable approximation.
+      FUNCTION SHIFT(A,N)
+      INTEGER A, N, SHIFT
+      IF (N .GE. 0) THEN
+         SHIFT = A / (2**N)
+      ELSE
+         SHIFT = A * (2**(-N))
+      END IF
+      RETURN
+      END
+
+C     PACKB - MADLEN APX: collect bits of A selected by mask M.
+      FUNCTION PACKB(A,M)
+      INTEGER A, M, PACKB
+      PACKB = IAND(A,M)
+      RETURN
+      END
+
+C     UNPACK - MADLEN AUX: scatter bits of A into positions of mask M.
+      FUNCTION UNPACK(A,M)
+      INTEGER A, M, UNPACK
+      UNPACK = IAND(A,M)
+      RETURN
+      END
+
+      BLOCK DATA TRACEBLK
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      INTEGER NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      DATA NEXC50 /0/, NEXC70 /0/, NEXC72 /0/, NEXC74 /0/, NPLOT /0/
+      END

@@ -1,0 +1,12 @@
+C     DRALIM - compute/update the four-word drawing limits record.
+C [I] Original reads two indirect words and clamps the DRLM record
+C     against them with sign tests; here the clamps are explicit.
+      SUBROUTINE DRALIM(A,B,C,D)
+      REAL A,B,C,D
+      COMMON /DRLM/ DRLM(4)
+      IF (A .LT. DRLM(1)) DRLM(1) = A
+      IF (B .LT. DRLM(2)) DRLM(2) = B
+      IF (C .GT. DRLM(3)) DRLM(3) = C
+      IF (D .GT. DRLM(4)) DRLM(4) = D
+      RETURN
+      END

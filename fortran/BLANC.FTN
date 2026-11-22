@@ -1,0 +1,23 @@
+C     BLANC - begin blanking: toggle the blanking flag, save eight
+C     groups of 16-word tables and call BLANCH.
+      SUBROUTINE BLANC(K)
+      INTEGER K, I, J
+      INTEGER IT(16)
+      COMMON /GFBLAN/ GFBLAN(11)
+      COMMON /GFATBL/ GFATBL(6)
+      COMMON /GFATRN/ GFATRN(7)
+C [I] GAM/5 = GFBLAN(8) indexes the saved table group (BLANC.mad:51-67).
+      IF (IAND(GFBLAN(8), 16) .NE. 0) GFBLAN(8) = GFBLAN(8) - 16
+      IF (IEOR(GFBLAN(8), 17) .NE. 0) GO TO 10
+      GO TO 30
+   10 CONTINUE
+      DO 20 I = 1, 16
+         IT(I) = 0
+   20 CONTINUE
+      DO 25 I = 1, 6
+         GFATBL(I) = IT(I)
+   25 CONTINUE
+   30 CONTINUE
+      CALL BLANCH(K)
+      RETURN
+      END

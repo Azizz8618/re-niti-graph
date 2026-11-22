@@ -1,0 +1,22 @@
+C     RECT - draw a possibly rotated rectangle with five MOVE calls.
+      SUBROUTINE RECT(X, Y, W, H, ANG)
+      REAL X, Y, W, H, ANG, S, C, X1, Y1, X2, Y2
+      EXTERNAL MOVE
+      S = SIN(ANG/2.0)
+      C = COS(ANG/2.0)
+      CALL MOVE(X, Y)
+      X1 = X - W*S
+      Y1 = Y + W*C
+      CALL MOVE(X1, Y1)
+      X2 = X1 + H*C
+      Y2 = Y1 + H*S
+      CALL MOVE(X2, Y2)
+      X1 = X + W*S
+      Y1 = Y - W*C
+      CALL MOVE(X1, Y1)
+      X2 = X1 + H*C
+      Y2 = Y1 + H*S
+      CALL MOVE(X2, Y2)
+      CALL MOVE(X, Y)
+      RETURN
+      END

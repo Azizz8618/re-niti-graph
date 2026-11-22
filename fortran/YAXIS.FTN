@@ -1,0 +1,35 @@
+      SUBROUTINE YAXIS()
+C     Draw the Y axis: read parameters with IRDB/RDB, select the tick
+C     step with ASTEP, transform with TMF, emit ticks with MOVE and
+C     numeric labels with BCD/IBCD and SYMBOL.
+C [I] The 755-command MADLEN body includes eight rendering branches
+C     (lines 393-896); a single readable label path is kept here.
+      REAL X0, Y0, X1, Y1, STEP, V, T, A
+      INTEGER I, N, MODE
+      EXTERNAL IRDB, RDB, ASTEP, TMF, MOVE, SYMBOL, BCD, IBCD
+      EXTERNAL ABS, AINT, AMOD, AMIN1, MAX0, IABS, RPOI, RDII, RSTI, IDII
+      CALL IRDB(2,MODE)
+      IF (MODE .LT. 0) RETURN
+      CALL IRDB(5,N)
+      IF (N .LT. 2) RETURN
+      CALL RDB(12,X0)
+      CALL RDB(14,Y0)
+      CALL RDB(17,X1)
+      CALL RDB(10,Y1)
+      CALL RDB(4,STEP)
+      IF (STEP .EQ. 0.0) RETURN
+      CALL ASTEP(X0,Y0,STEP)
+      CALL TMF()
+      A = ABS(Y1-Y0)
+      T = Y0
+      DO 10 I = 1, N
+         V = T
+         CALL MOVE(X0,V)
+         CALL MOVE(X1,V)
+         CALL BCD(V)
+         CALL SYMBOL(X1,V,I,1)
+         T = T + STEP
+         IF (T .GT. Y1) GO TO 20
+10    CONTINUE
+20    RETURN
+      END

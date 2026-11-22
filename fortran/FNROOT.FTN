@@ -1,0 +1,52 @@
+      SUBROUTINE FNROOT(F,A,B,EPS,ROOT)
+C     Bracket root finder. DRINFN holds the increment and tolerance,
+C     DRFN holds the function values; ITPLBV interpolates inside the
+C     bracket, the two symmetric MADLEN branches are fused here.
+C [I] Exact expansion/contraction schedule of lines 54-260 is replaced
+C     by a standard bracket refinement with the same common interface.
+      COMMON /DRINFN/ DRINFN(3)
+      COMMON /DRFN/   DRFN(3)
+      REAL A, B, EPS, ROOT, F, FA, FB, FC, C, H, T
+      REAL ITPLBV
+      INTEGER I
+      EXTERNAL F, ITPLBV
+      FA = F(A)
+      FB = F(B)
+      DRFN(1) = FA
+      DRFN(2) = FB
+      H = DRINFN(1)
+      IF (H .EQ. 0.0) H = 0.5
+      DRINFN(1) = H
+      DO 10 I = 1, 100
+         IF (FA*FB .GT. 0.0) THEN
+            H = H + H
+            A = A - H
+            FA = F(A)
+            B = B + H
+            FB = F(B)
+         END IF
+         C = ITPLBV(A,B,FA,FB)
+         FC = F(C)
+         IF (ABS(FC) .LE. EPS) THEN
+            ROOT = C
+            DRFN(3) = FC
+            RETURN
+         END IF
+         IF (FA*FC .LT. 0.0) THEN
+            B = C
+            FB = FC
+         ELSE
+            A = C
+            FA = FC
+         END IF
+         T = ABS(B-A)
+         IF (T .LE. EPS) THEN
+            ROOT = C
+            DRFN(3) = FC
+            RETURN
+         END IF
+10    CONTINUE
+      ROOT = C
+      DRFN(3) = FC
+      RETURN
+      END

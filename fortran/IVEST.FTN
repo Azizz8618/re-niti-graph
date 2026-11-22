@@ -1,0 +1,15 @@
+C     IVEST - visibility/interior test for a point against the frame.
+C     MADLEN tests high-bit flags of the difference and returns a
+C     flag in IR3; the ABS entry is the absolute-value primitive.
+      SUBROUTINE IVEST(X, Y, XMIN, XMAX, YMIN, YMAX, IVIS)
+      REAL X, Y, XMIN, XMAX, YMIN, YMAX
+      INTEGER IVIS
+      IVIS = 0
+      IF (X .LT. XMIN .OR. X .GT. XMAX) RETURN
+      IF (Y .LT. YMIN .OR. Y .GT. YMAX) RETURN
+      IVIS = 1
+      RETURN
+      ENTRY ABS(X)
+      IF (X .LT. 0.0) X = -X
+      RETURN
+      END

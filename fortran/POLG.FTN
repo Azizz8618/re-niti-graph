@@ -1,0 +1,23 @@
+C     POLG - draw a regular polygon using MOVA and SIN.
+C [I] R*DI*I of the original is replaced by FLOAT; the constant
+C     4413200000000000 is the full turn (2*pi) in BESM format.
+      SUBROUTINE POLG(N,X,Y,R,ANG)
+      INTEGER N
+      REAL X,Y,R,ANG
+      REAL DA,T,XP,YP
+      INTEGER I
+      EXTERNAL MOVA
+      IF (N .LT. 3) RETURN
+      DA = 6.2831853 / FLOAT(N)
+      T = ANG
+      XP = X + R*COS(T)
+      YP = Y + R*SIN(T)
+      CALL MOVA(XP,YP)
+      DO 10 I = 1, N
+         T = T + DA
+         XP = X + R*COS(T)
+         YP = Y + R*SIN(T)
+         CALL MOVA(XP,YP)
+   10 CONTINUE
+      RETURN
+      END

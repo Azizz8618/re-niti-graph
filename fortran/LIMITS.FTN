@@ -1,0 +1,28 @@
+C     LIMITS - adjust drawing limits and store them via WDB / IWDB.
+C     Pairs are swapped when the first word is greater than the second.
+      SUBROUTINE LIMITS(X1, X2, Y1, Y2, I1, I2, I3, I4)
+      REAL X1, X2, Y1, Y2, T
+      INTEGER I1, I2, I3, I4, J
+      EXTERNAL WDB, IWDB
+      IF (X1 .GT. X2) THEN
+         T = X1
+         X1 = X2
+         X2 = T
+      END IF
+      IF (Y1 .GT. Y2) THEN
+         T = Y1
+         Y1 = Y2
+         Y2 = T
+      END IF
+      J = I1
+      IF (I2 .LT. J) J = I2
+      IF (I3 .LT. J) J = I3
+      IF (I4 .LT. J) J = I4
+C [I] WDB channel numbers 11..14 and IWDB channel 3 (LIMITS.mad:96-101).
+      CALL WDB(11, X1)
+      CALL WDB(12, X2)
+      CALL WDB(13, Y1)
+      CALL WDB(14, Y2)
+      CALL IWDB(3, J)
+      RETURN
+      END

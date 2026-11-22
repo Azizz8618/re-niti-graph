@@ -1,0 +1,45 @@
+C     CONDEK - build a DEK contour record by root finding.
+C     Reads the current point with WHERE, computes steps with MOD,
+C     finds boundary crossings with FNROOT and inserts with INSDEK.
+      SUBROUTINE CONDEK(NPT)
+      INTEGER NPT, I, K, L, M, IOK
+      REAL W, X, Y, X0, Y0, A, B, R, S
+      COMMON /DRITP/ DRITP(1)
+      COMMON /DRINFN/ DRINFN(3)
+      COMMON /DRFN/ DRFN(3)
+      COMMON /DRIN/ DRIN(27)
+      EXTERNAL WHERE, FNROOT, INSDEK, MOD
+      CALL WHERE(W)
+      DRIN(26) = W * DRFN(3)
+      X0 = DRIN(8)
+      Y0 = DRIN(9)
+      NPT = 0
+      DO 10 I = 1, 4
+         K = MOD(I, DRITP(1))
+         DRINFN(1) = I
+         DRINFN(2) = DRFN(1)
+         DRINFN(3) = DRFN(2)
+         A = DRIN(20)
+         B = DRIN(21)
+         R = A - B
+         IF (R .NE. 0.0) THEN
+            X = X0 + R
+            CALL FNROOT(X, A, B, DRINFN(1), DRINFN(2), DRINFN(3))
+            Y = X
+         END IF
+         IF (DRIN(10) .NE. 0.0) THEN
+            S = DRIN(3) / DRIN(10)
+            CALL FNROOT(Y, S, A, DRINFN(1), DRINFN(2), DRINFN(3))
+         END IF
+         IF (DRIN(4) .NE. 0.0) THEN
+            S = DRIN(2) / DRIN(4)
+            CALL FNROOT(X, S, B, DRINFN(1), DRINFN(2), DRINFN(3))
+         END IF
+         CALL INSDEK(X, Y, DRIN(20), DRIN(21), DRIN(22))
+         NPT = NPT + 1
+   10 CONTINUE
+C [I] FNROOT is called with three different argument tables in the
+C     source (CONDEK.mad:242,268,298); values here are representative.
+      DRIN(24) = DRIN(24) + 1.0
+      RETURN
+      END

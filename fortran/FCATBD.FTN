@@ -1,0 +1,7 @@
+C     FCATBD - one-instruction catalog-buffer stack trampoline.
+C [I] The MADLEN body is only STI + return via R13; no portable
+C     equivalent exists, so this is an observable no-op stub.
+      SUBROUTINE FCATBD(N)
+      INTEGER N
+      RETURN
+      END

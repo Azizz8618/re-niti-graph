@@ -1,0 +1,14 @@
+C     ARCID - arc variant D: radius from dx,dy, angle via ANGLER,
+C     then a signed call to ARCIA.
+      SUBROUTINE ARCID(X, Y, R, A)
+      REAL X, Y, R, A, DX, DY, ANGLER
+      COMMON /GFBFTR/ GFBFTR(2)
+      DX = GFBFTR(1) - X
+      DY = GFBFTR(2) - Y
+      R = SQRT(DX*DX + DY*DY)
+      A = ANGLER(DX, DY)
+C [I] Sign test at ARCID.mad:51-64 selects the complemented arc.
+      IF (A .LT. 0.) R = -R
+      CALL ARCIA(GFBFTR(1), GFBFTR(2), R, A)
+      RETURN
+      END

@@ -1,0 +1,17 @@
+C     BOX - draw a rectangle by five MOVE calls.
+C [I] The corner order follows the five MOVE sites in BOX.mad.
+      SUBROUTINE BOX(X,Y,DX,DY)
+      REAL X,Y,DX,DY
+      REAL X1,Y1,X2,Y2
+      EXTERNAL MOVE
+      X1 = X
+      Y1 = Y
+      X2 = X + DX
+      Y2 = Y + DY
+      CALL MOVE(X1,Y1)
+      CALL MOVE(X2,Y1)
+      CALL MOVE(X2,Y2)
+      CALL MOVE(X1,Y2)
+      CALL MOVE(X1,Y1)
+      RETURN
+      END

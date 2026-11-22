@@ -1,0 +1,31 @@
+C     LOOK - grid-cell lookup engine for contouring.
+C     Uses *GFCELL*, *GFINT* and *GFLOOK*; MOD and strides select the
+C     table entries, CELL/LINT/LINNUM/ZAPIT do the actual work.
+      SUBROUTINE LOOK(I, J, IVAL)
+      INTEGER I, J, IVAL, K, M, N
+      COMMON /GFCELL/ GFCELL(9)
+      COMMON /GFINT/ GFINT(1)
+      COMMON /GFLOOK/ GFLOOK(1)
+      EXTERNAL CELL, LINT, LINNUM, ZAPIT
+      GFLOOK(1) = I
+      N = GFCELL(7)
+      M = MOD(N, 10)
+      IF (M .EQ. 0) THEN
+         K = GFCELL(1) - 1
+      ELSE IF (M .EQ. 1) THEN
+         K = GFCELL(1) - GFCELL(3)
+      ELSE IF (M .EQ. 2) THEN
+         K = GFCELL(2) - 1
+      ELSE
+         K = GFCELL(2) - GFCELL(4)
+      END IF
+      CALL CELL(M, K, J)
+      CALL ZAPIT(K, J, IVAL)
+      GFINT(1) = I
+      CALL LINT(K, J, IVAL)
+      IF (IVAL .EQ. 0) THEN
+         CALL LINNUM(K, J, IVAL)
+      END IF
+      GFLOOK(1) = GFLOOK(1) + 1
+      RETURN
+      END

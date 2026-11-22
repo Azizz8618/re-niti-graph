@@ -1,0 +1,19 @@
+C     PRJT - project a 3-D vertex list through MAP / TMF and draw the
+C     visible edges with MOVE. Projection parameters live in *GFVP*.
+      SUBROUTINE PRJT(X, Y, Z, N, K)
+      INTEGER N, K, I
+      REAL X(*), Y(*), Z(*), U, V, SX, SY
+      COMMON /GFVP/ GFVP(6)
+      IF (N .LT. 1) RETURN
+      DO 10 I = 1, N
+         CALL MAP(X(I), Y(I), Z(I), U, V)
+         CALL TMF(U, V, SX, SY)
+C [I] GAK/6 of GFVP is the visibility switch (PRJT.mad:101-106).
+         IF (GFVP(6) .NE. 0.) THEN
+            CALL MOVE(SX, SY)
+         ELSE
+            CALL MOVE(X(I), Y(I))
+         END IF
+   10 CONTINUE
+      RETURN
+      END

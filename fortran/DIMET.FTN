@@ -1,0 +1,12 @@
+      SUBROUTINE DIMET()
+C     Dimetric projection: two successive TDROT rotations of *GFMATR*.
+C [I] The MADLEN constants 1,2,3 and TEXT 8HBJ are axis indices and
+C     a packed scale; their numeric value is not recoverable.
+      COMMON /GFMATR/ GFMATR(34)
+      EXTERNAL TDROT
+      GFMATR(33) = 1.0
+      GFMATR(34) = 2.0
+      CALL TDROT(1,2,3)
+      CALL TDROT(3,2,1)
+      RETURN
+      END

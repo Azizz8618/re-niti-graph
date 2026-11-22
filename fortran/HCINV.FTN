@@ -1,0 +1,58 @@
+C     HCINV - invert the 4x4 homogeneous matrix in *GFMATR*.
+C     Gauss-Jordan elimination with row pivoting; the original uses
+C     three pivot search loops and an internal R*PO*I power routine.
+      SUBROUTINE HCINV()
+      REAL GFMATR, A, T, P, D
+      INTEGER I, J, K, PIV
+      INTEGER IP(4)
+      COMMON /GFMATR/ GFMATR(34)
+      DIMENSION A(4,8)
+C [I] GFMATR(1..16) holds the 4x4 part; rows 17..32 receive the result.
+      DO 10 I = 1, 4
+         DO 20 J = 1, 4
+            A(I,J) = GFMATR((I-1)*4+J)
+   20    CONTINUE
+         DO 30 J = 5, 8
+            A(I,J) = 0.0
+   30    CONTINUE
+         A(I,I+4) = 1.0
+         IP(I) = I
+   10 CONTINUE
+      DO 100 K = 1, 4
+         P = ABS(A(K,K))
+         PIV = K
+         DO 40 I = K+1, 4
+            IF (ABS(A(I,K)) .GT. P) THEN
+               P = ABS(A(I,K))
+               PIV = I
+            END IF
+   40    CONTINUE
+         IF (PIV .NE. K) THEN
+            DO 50 J = 1, 8
+               T = A(K,J)
+               A(K,J) = A(PIV,J)
+               A(PIV,J) = T
+   50       CONTINUE
+         END IF
+         D = A(K,K)
+         IF (D .NE. 0.0) THEN
+            DO 60 J = 1, 8
+               A(K,J) = A(K,J) / D
+   60       CONTINUE
+         END IF
+         DO 70 I = 1, 4
+            IF (I .NE. K) THEN
+               T = A(I,K)
+               DO 80 J = 1, 8
+                  A(I,J) = A(I,J) - T*A(K,J)
+   80          CONTINUE
+            END IF
+   70    CONTINUE
+  100 CONTINUE
+      DO 110 I = 1, 4
+         DO 120 J = 1, 4
+            GFMATR(16+(I-1)*4+J) = A(I,J+4)
+  120    CONTINUE
+  110 CONTINUE
+      RETURN
+      END

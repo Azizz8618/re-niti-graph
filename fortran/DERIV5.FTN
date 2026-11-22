@@ -1,0 +1,25 @@
+C     DERIV5 - five-point finite-difference derivative.
+C [I] The original selects among several stencils by two integer
+C     arguments (1 and 3) and divides by a step from a constant
+C     cell. The forward five-point stencils below are the portable
+C     equivalent for orders 1..4; KIND selects the order.
+      SUBROUTINE DERIV5(F0,F1,F2,F3,F4,H,KIND,D)
+      REAL F0,F1,F2,F3,F4,H,D
+      INTEGER KIND
+      IF (KIND .EQ. 1) THEN
+         D = (-25.0*F0+48.0*F1-36.0*F2+16.0*F3-3.0*F4)
+         D = D/(12.0*H)
+      ELSE IF (KIND .EQ. 2) THEN
+         D = (35.0*F0-104.0*F1+114.0*F2-56.0*F3+11.0*F4)
+         D = D/(12.0*H*H)
+      ELSE IF (KIND .EQ. 3) THEN
+         D = (-9.0*F0+32.0*F1-39.0*F2+16.0*F3-F4)
+         D = D/(4.0*H*H*H)
+      ELSE IF (KIND .EQ. 4) THEN
+         D = (3.0*F0-14.0*F1+26.0*F2-24.0*F3+9.0*F4)
+         D = D/(H*H*H*H)
+      ELSE
+         D = 0.0
+      END IF
+      RETURN
+      END

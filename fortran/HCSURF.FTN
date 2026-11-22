@@ -1,0 +1,24 @@
+C     HCSURF - draw a hidden-line surface as a sequence of sections.
+C     Section limits are taken from *GFSUR*, clipping from *GFLIM*;
+C     each section is passed to TDSECT.
+      SUBROUTINE HCSURF(NU, NV)
+      INTEGER NU, NV, IU, IV, N1, N2, IS, NSTEP
+      REAL STEP, T
+      COMMON /GFMATR/ GFMATR(34)
+      COMMON /GFCRD/  GFCRD(3)
+      COMMON /GFSUR/  GFSUR(4)
+      COMMON /GFLIM/  GFLIM(4)
+      NSTEP = IABS(INT(GFSUR(2)))
+      IF (NSTEP .LT. 1) NSTEP = 1
+      DO 20 IU = 1, NU
+         N1 = IU
+         N2 = IU + NSTEP
+         IF (N2 .GT. NU) N2 = NU
+         IS = ISIGN(1, N2 - N1)
+         DO 10 IV = 1, NV
+            T = FLOAT(IV) / FLOAT(NV)
+            CALL TDSECT(N1, N2, T, IS)
+   10    CONTINUE
+   20 CONTINUE
+      RETURN
+      END

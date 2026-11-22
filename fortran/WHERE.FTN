@@ -1,0 +1,18 @@
+C     WHERE - current record position in file A (*GFAFTR*).
+C     Two RDB readings are divided and stored in the work cell *0032B.
+      SUBROUTINE WHERE(R)
+      REAL R, A, B
+      COMMON /GFAFTR/ GFAFTR(2)
+C [I] RDB is outside this module; its argument list is not recoverable
+C     from the MADLEN register calls (WHERE.mad:28,32).
+      A = GFAFTR(1)
+      B = GFAFTR(2)
+      CALL RDB(A)
+      CALL RDB(B)
+      IF (B .NE. 0.) THEN
+         R = A / B
+      ELSE
+         R = 0.
+      END IF
+      RETURN
+      END

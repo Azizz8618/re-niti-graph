@@ -1,0 +1,22 @@
+C     E70 - entry to the Э70 (external exchange) handler.
+C     MADLEN SUBP points *70 and NEXTZN are preserved as ENTRY points.
+      SUBROUTINE E70(N)
+      INTEGER N
+      GOTO 10
+      ENTRY S70(N)
+      GOTO 20
+      ENTRY NEXTZN(N)
+      GOTO 30
+   10 CONTINUE
+      CALL S70(N)
+      CALL NEXTZN(N)
+      RETURN
+   20 CONTINUE
+C [I] The real *70 handler issues Э50/Э72; only the wrapper is kept.
+      CALL EXC70(N)
+      RETURN
+   30 CONTINUE
+C [I] NEXTZN walks zones; its body belongs to another library module.
+      CALL EXC70(N)
+      RETURN
+      END

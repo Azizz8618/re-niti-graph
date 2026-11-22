@@ -1,0 +1,24 @@
+      SUBROUTINE RDACA(X,Y,R,ANG)
+C     Read arc element variant A: decode radius/angle from *GFGEL*+8
+C     geometry, compute endpoints with SIN/COS and pass them out.
+C [I] Mode test and field offsets follow RDACA.mad:29-104.
+      COMMON /GFGEL/ GFGEL(28)
+      EXTERNAL GFFALS, STRMOD, RSTI
+      REAL X, Y, R, ANG, A, C, S
+      INTEGER MODE
+      MODE = 0
+      IF (GFGEL(9) .NE. 0.0) MODE = 1
+      IF (MODE .EQ. 0) THEN
+         CALL STRMOD(0)
+         RETURN
+      END IF
+      A = ABS(GFGEL(2))
+      C = COS(GFGEL(3)) * A
+      S = SIN(GFGEL(3)) * A
+      X = GFGEL(1) + C
+      Y = GFGEL(2) + S
+      R = ABS(GFGEL(6))
+      ANG = GFGEL(3)
+      IF (GFGEL(9) .LT. 0.0) CALL GFFALS(6)
+      RETURN
+      END

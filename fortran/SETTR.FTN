@@ -1,0 +1,20 @@
+C     SETTR - load a 3D affine/homogeneous matrix into *GFMATR*.
+C     MADLEN copies 16 words through indirect offsets +16/+32/+33
+C     and sets a flag in *GFTR*.
+      SUBROUTINE SETTR(A, N)
+      INTEGER N
+      REAL A(*)
+      COMMON /GFMATR/ GFMATR(34)
+      COMMON /GFTR/ GFTR(2)
+      INTEGER I, M
+      M = N
+      IF (M .GT. 16) M = 16
+      DO 10 I = 1, M
+         GFMATR(I) = A(I)
+   10 CONTINUE
+      GFMATR(17) = A(1)
+      GFMATR(33) = A(1)
+      GFTR(1) = 1.0
+      GFTR(2) = A(1)
+      RETURN
+      END

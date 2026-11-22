@@ -1,0 +1,32 @@
+C     SMINV - matrix inversion by Gauss-Jordan elimination.
+C [I] I*MU*I of the original is index arithmetic (I-1)*N+J, which
+C     a two-dimensional Fortran array expresses directly. B is the
+C     right-hand identity matrix and receives the inverse.
+      SUBROUTINE SMINV(A,B,N,LDA,IER)
+      INTEGER N,LDA,IER
+      REAL A(LDA,N),B(LDA,N)
+      INTEGER I,J,K
+      REAL PIV,T
+      IER = 0
+      DO 10 K = 1, N
+         PIV = A(K,K)
+         IF (PIV .EQ. 0.0) THEN
+            IER = K
+            RETURN
+         END IF
+         DO 20 J = 1, N
+            A(K,J) = A(K,J)/PIV
+            B(K,J) = B(K,J)/PIV
+   20    CONTINUE
+         DO 30 I = 1, N
+            IF (I .NE. K) THEN
+               T = A(I,K)
+               DO 40 J = 1, N
+                  A(I,J) = A(I,J) - T*A(K,J)
+                  B(I,J) = B(I,J) - T*B(K,J)
+   40          CONTINUE
+            END IF
+   30    CONTINUE
+   10 CONTINUE
+      RETURN
+      END

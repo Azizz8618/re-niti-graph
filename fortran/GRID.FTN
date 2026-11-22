@@ -1,0 +1,23 @@
+C     GRID - draw a coordinate grid by repeated MOVE.
+C [I] The original reads 11 grid cells indirectly and uses FLOAT
+C     for index conversion; here the same limits are arguments.
+      SUBROUTINE GRID(NX,NY,X0,Y0,DX,DY)
+      INTEGER NX,NY
+      REAL X0,Y0,DX,DY
+      REAL X,Y
+      INTEGER I
+      EXTERNAL MOVE
+      X = X0
+      DO 10 I = 0, NY
+         Y = Y0 + FLOAT(I)*DY
+         CALL MOVE(X0,Y)
+         CALL MOVE(X0+DX*FLOAT(NX),Y)
+   10 CONTINUE
+      Y = Y0
+      DO 20 I = 0, NX
+         X = X0 + FLOAT(I)*DX
+         CALL MOVE(X,Y0)
+         CALL MOVE(X,Y0+DY*FLOAT(NY))
+   20 CONTINUE
+      RETURN
+      END

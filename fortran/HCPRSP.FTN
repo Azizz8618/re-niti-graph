@@ -1,0 +1,32 @@
+C     HCPRSP - perspective setup: normalise a matrix row and call HCMULT.
+C     GAK/2 = *GFMATR*+16, GAK/7 = GAK/2+13, GAK/3 = +32, GAK/4 = +33.
+C     HCMULT and HCUNIT are MADLEN SUBP points of the same module.
+C [I] the exact row/column layout of GFMATR is not documented;
+C     the translation follows the arithmetic order of the listing.
+      SUBROUTINE HCPRSP(S)
+      COMMON /GFMATR/ GFMATR(34)
+      REAL S, SUM, W
+      INTEGER I
+C     Main body (MADLEN *0001B).
+      CALL HCUNIT(S)
+      SUM = GFMATR(17)
+      W = GFMATR(18) + GFMATR(19) + GFMATR(20) + GFMATR(21)
+      DO 10 I = 22, 29
+         SUM = SUM + GFMATR(I)
+   10 CONTINUE
+      GFMATR(30) = SUM / W
+      CALL HCMULT(S)
+      RETURN
+C     HCUNIT - normalise a matrix row (MADLEN SUBP).
+      ENTRY HCUNIT(S)
+      DO 20 I = 17, 30
+         GFMATR(I) = GFMATR(I) / S
+   20 CONTINUE
+      RETURN
+C     HCMULT - affine multiply (MADLEN SUBP).
+      ENTRY HCMULT(S)
+      DO 30 I = 33, 34
+         GFMATR(I) = GFMATR(I) * S
+   30 CONTINUE
+      RETURN
+      END

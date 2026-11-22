@@ -1,0 +1,16 @@
+C     RESET - reset the affine transformation in *GFATRM* and ATRAN2.
+      SUBROUTINE RESET(A, B)
+      REAL A, B
+      COMMON /GFATRM/ GFATRM(115)
+      EXTERNAL ATRAN2
+      GFATRM(1) = B
+      GFATRM(2) = A
+      GFATRM(3) = A
+      GFATRM(4) = A
+      GFATRM(5) = B
+      GFATRM(6) = A
+C [I] Exact placement of the identity-like constants follows the
+C     EQU offsets +1..+5 of RESET.mad:14-22.
+      CALL ATRAN2(GFATRM(103), GFATRM(110))
+      RETURN
+      END

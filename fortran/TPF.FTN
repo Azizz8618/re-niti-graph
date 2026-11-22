@@ -1,0 +1,27 @@
+      SUBROUTINE TPF(X,Y)
+C     Transform a point: read parameters with IRDB/RDB, map each axis
+C     through a linear scale, apply AMOD fold-back and optional polar
+C     sine/cosine correction.
+C [I] The exact parameter layout of *0211B..*0236B is not recoverable.
+      REAL X, Y, X0, Y0, SX, SY, T, A
+      INTEGER I, N
+      EXTERNAL IRDB, RDB, IABS, AMOD, AMIN1, AMAX1
+      CALL IRDB(2,N)
+      IF (N .LE. 1) RETURN
+      CALL RDB(3,X0)
+      CALL RDB(4,Y0)
+      CALL RDB(5,SX)
+      CALL RDB(6,SY)
+      X = (X - X0) / SX
+      Y = (Y - Y0) / SY
+      T = AMOD(X,1.0)
+      IF (T .LT. 0.0) T = T + 1.0
+      X = T
+      T = AMOD(Y,1.0)
+      IF (T .LT. 0.0) T = T + 1.0
+      Y = T
+      A = 6.2831853 * X
+      X = X0 + SX * COS(A)
+      Y = Y0 + SY * SIN(A)
+      RETURN
+      END

@@ -1,0 +1,33 @@
+C     CELL - update the nine-word cell record *GFCELL*.
+C     Four mode branches select which edges are moved; MOD wraps the
+C     edge counters and I*MUI* maintains the indirect pointers.
+      SUBROUTINE CELL(MODE, DX, DY)
+      INTEGER MODE, DX, DY, N
+      REAL T
+      COMMON /GFCELL/ GFCELL(9)
+      N = MOD(MODE, 4)
+      IF (N .EQ. 0) THEN
+         GFCELL(1) = GFCELL(1) + DX
+         GFCELL(3) = GFCELL(3) + DX
+         GFCELL(2) = GFCELL(2)
+         GFCELL(4) = GFCELL(4)
+      ELSE IF (N .EQ. 1) THEN
+         GFCELL(1) = GFCELL(1) + DX
+         GFCELL(3) = GFCELL(3) + DX
+         GFCELL(2) = GFCELL(2) + DY
+         GFCELL(4) = GFCELL(4) + DY
+      ELSE IF (N .EQ. 2) THEN
+         GFCELL(1) = GFCELL(1) - DX
+         GFCELL(3) = GFCELL(3) - DX
+      ELSE
+         GFCELL(2) = GFCELL(2) - DY
+         GFCELL(4) = GFCELL(4) - DY
+      END IF
+C [I] MOD at CELL.mad:189,215 uses the divisors 4 and -1.
+      GFCELL(7) = MOD(GFCELL(7)+4, 4)
+      T = GFCELL(5) * GFCELL(6)
+      IF (T .LT. 0.0) THEN
+         GFCELL(8) = GFCELL(8) + 1
+      END IF
+      RETURN
+      END

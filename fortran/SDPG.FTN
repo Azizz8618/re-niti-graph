@@ -1,0 +1,23 @@
+C     SDPG - shaded/segmented patch drawing from two points.
+C     An angle step is computed with SIN/COS; intersections are clamped
+C     with AMIN1/AMAX1 and scaled with R*ST*I; two MOVEs per iteration.
+      SUBROUTINE SDPG(X1, Y1, X2, Y2, N)
+      INTEGER N, I
+      REAL X1, Y1, X2, Y2, A, S, C, T, U, V, LO, HI
+      REAL RSTI
+      IF (N .LT. 1) RETURN
+      A = 0.
+      T = 6.283185307179586 / FLOAT(N)
+      LO = AMIN1(X1, X2)
+      HI = AMAX1(X1, X2)
+      DO 10 I = 1, N
+         S = SIN(A)
+         C = COS(A)
+         U = AMAX1(LO, AMIN1(HI, X1 + S*(X2-X1)))
+         V = AMAX1(LO, AMIN1(HI, Y1 + C*(Y2-Y1)))
+         CALL MOVE(RSTI(U), RSTI(V))
+         CALL MOVE(RSTI(HI-U), RSTI(HI-V))
+         A = A + T
+   10 CONTINUE
+      RETURN
+      END

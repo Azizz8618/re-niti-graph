@@ -1,0 +1,14 @@
+      SUBROUTINE HCIND(IND,MAXI,MODE)
+C [I] Maintain the hidden-line index: advance or retreat cyclically.
+C     Seven private BSS words of the MADLEN body are local state.
+      INTEGER IND, MAXI, MODE
+      IF (MAXI .LT. 1) MAXI = 1
+      IF (MODE .EQ. 0) THEN
+         IND = IND + 1
+         IF (IND .GT. MAXI) IND = 1
+      ELSE
+         IND = IND - 1
+         IF (IND .LT. 1) IND = MAXI
+      END IF
+      RETURN
+      END

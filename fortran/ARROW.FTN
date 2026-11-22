@@ -1,0 +1,30 @@
+C     ARROW - draw an arrow: shaft via MOVE, two head strokes via MOVA
+C     or a curved head via ARCIA, according to the *GFGEL* flags.
+      SUBROUTINE ARROW(X1, Y1, X2, Y2, L)
+      REAL X1, Y1, X2, Y2, L, DX, DY, A, H, ANGLER
+      REAL RSTI
+      COMMON /GFGEL/ GFGEL(28)
+      COMMON /GFBFTR/ GFBFTR(2)
+      DX = X2 - X1
+      DY = Y2 - Y1
+      A = ANGLER(DX, DY)
+      H = SQRT(DX*DX + DY*DY)
+      IF (H .EQ. 0.) THEN
+         CALL GFFALS(6)
+         RETURN
+      END IF
+      CALL STRMOD(0, 2)
+      CALL MOVE(X1, Y1)
+      CALL MOVE(X2, Y2)
+      H = ABS(L) * 0.3
+      IF (GFGEL(9) .NE. 0.) THEN
+C [I] Curved head selected by GAM/0 (ARROW.mad:55-63,329-350).
+         CALL ARCIA(X2, Y2, H, A)
+      ELSE
+         CALL MOVA(X2 - H*COS(A+0.4), Y2 - H*SIN(A+0.4))
+         CALL MOVA(X2, Y2)
+         CALL MOVA(X2 - H*COS(A-0.4), Y2 - H*SIN(A-0.4))
+      END IF
+      CALL STRMOD(0, 2)
+      RETURN
+      END

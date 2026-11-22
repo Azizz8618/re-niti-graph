@@ -1,0 +1,16 @@
+C     FOPEN - low-level file open / descriptor builder.
+C     Calls MDBUFF; the invalid-name path issues *74 (STOP).
+      SUBROUTINE FOPEN(N, IW, IER)
+      INTEGER N, IW, IER
+      EXTERNAL MDBUFF
+      IER = 0
+      IF (N .LE. 0) THEN
+C [I] Descriptor bit packing is machine specific (FOPEN.mad:16-61).
+         CALL EXC74(1)
+         IER = 1
+         RETURN
+      END IF
+      IW = N
+      CALL MDBUFF(IW, IER)
+      RETURN
+      END

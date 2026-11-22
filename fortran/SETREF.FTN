@@ -1,0 +1,23 @@
+C     SETREF - patch a reference-table entry.
+C     Masks and shifts follow SETREF.mad:83-88; the table itself is
+C     addressed through the caller's index words.
+      SUBROUTINE SETREF(I10, I11, IWORD)
+      INTEGER I10, I11, IWORD, W
+      INTEGER M100K, M1, MALL, M77777, M777
+      DATA M100K /100000/, M1 /1/, MALL /533431467378/
+      DATA M77777 /32767/, M777 /511/
+C [I] MALL is the decimal form of 7777700077777777 (octal).
+      W = IWORD
+      IF (IAND(W, M100K) .NE. 0) THEN
+         W = IEOR(W, M1)
+      ELSE
+         W = IAND(W, MALL)
+      END IF
+      IF (IAND(SHIFT(W, -20), M77777) .NE. 0) THEN
+         W = IOR(W, M777)
+      END IF
+      I10 = I10 + 1
+      I11 = I11 + 1
+      IWORD = W
+      RETURN
+      END

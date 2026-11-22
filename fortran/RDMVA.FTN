@@ -1,0 +1,40 @@
+C     RDMVA - read a vector record: two points, length and direction.
+      SUBROUTINE RDMVA(OUT)
+      REAL OUT(4)
+      COMMON /GFGEL/ GFGEL(28)
+      REAL DX, DY, R
+      DX = GFGEL(6) - GFGEL(2)
+      DY = GFGEL(7) - GFGEL(1)
+      OUT(1) = GFGEL(1)
+      OUT(2) = GFGEL(2)
+      R = SQRT(DX*DX + DY*DY)
+      OUT(3) = R
+      IF (R .EQ. 0.0) THEN
+         OUT(4) = 0.0
+      ELSE
+         OUT(4) = ATAN2(DY, DX)
+      END IF
+      RETURN
+      ENTRY GFFALS(N)
+      INTEGER N
+      RETURN
+      ENTRY STRMOD(A, B)
+      REAL A, B
+      B = A
+      RETURN
+      ENTRY RSTI(A, K, R)
+      REAL A, R
+      INTEGER K
+      R = A*FLOAT(K)
+      RETURN
+      ENTRY ABS(X)
+      IF (X .LT. 0.0) X = -X
+      RETURN
+      ENTRY SQRT(X)
+      IF (X .GT. 0.0) X = X**(0.5)
+      RETURN
+      ENTRY ANGLER(DX, DY, ANG)
+      REAL DX, DY, ANG
+      ANG = ATAN2(DY, DX)
+      RETURN
+      END

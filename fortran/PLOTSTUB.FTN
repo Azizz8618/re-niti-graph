@@ -1,0 +1,101 @@
+C     Physical level of the GRAFOR plotter: external entry points from
+C     the secondary catalog of library 22 (zone 0o1163 of volume 2048).
+C
+C     The real device driver is NOT part of library 22. Library modules
+C     (MOVE1/2/3, STRMOD, MOVA, DASHP, ...) only compute coordinates and
+C     transfer control to these entry points. These stubs let the ported
+C     Fortran library run under FOREX 4.12 without a physical plotter;
+C     each call is counted in /TRACE/.
+C
+C     Names are limited to 6 characters. Long catalog names are mapped:
+C       ONOFF -> ONOFF, FRAGM -> FRAGM, EFRAGM -> EFRAGM,
+C       GROPEN -> GROPEN (6), GRWRIT -> GRWRIT (6),
+C       GRCLOS -> GRCLOS (6), GRNOTZ -> GRNOTZ (6),
+C       GRNAME -> GRNAME (6), WRITC -> WRITC, ENDPG -> ENDPG,
+C       PAGE -> PAGE, IDENT -> IDENT, ITALIC -> ITALIC (6),
+C       PLOT -> PLOT, PEN -> PEN, SET -> SET.
+      SUBROUTINE PLOT()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      NPLOT = NPLOT + 1
+      RETURN
+      END
+
+      SUBROUTINE PEN()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE ONOFF()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE FRAME()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE FRAGM()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE EFRAGM()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE GROPEN()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE GRWRIT()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE GRCLOS()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE GRNOTZ()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE GRNAME()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE WRITC()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE ENDPG()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE PAGE()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE SET()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE IDENT()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END
+
+      SUBROUTINE ITALIC()
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      RETURN
+      END

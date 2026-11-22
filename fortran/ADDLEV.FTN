@@ -1,0 +1,24 @@
+C     ADDLEV - add increments to level-array counters with two
+C     nested loops and a division/multiplication step.
+      SUBROUTINE ADDLEV(N, M, INC, RES)
+      INTEGER N, M, INC, RES, I, J, C1, C2, C3
+      C1 = 0
+      C2 = 0
+      C3 = 0
+      DO 10 I = 1, N
+         C1 = C1 + INC
+         C2 = 0
+         DO 20 J = 1, M
+            C2 = C2 + INC
+            IF (C2 .NE. 0) THEN
+               C3 = (C1 / C2) * INC
+            END IF
+   20    CONTINUE
+         CALL IMUI(C1, C2, C3, RES)
+   10 CONTINUE
+      RETURN
+      ENTRY IMUI(C1, C2, C3, RES)
+C [I] I*MU*I helper at ADDLEV.mad:13,35.
+      RES = C3 + C2
+      RETURN
+      END

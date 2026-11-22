@@ -1,0 +1,33 @@
+      SUBROUTINE NEXTZN(K)
+C     Advance/allocate the next free catalog zone (NEXTZN.mad).
+C     The original brackets the operation with VJM GDISC / VJM FDISC;
+C     GDISC contains the *50 extops (Э50) which in the port are
+C     CALL EXC50 from SUPPORT.FTN. FDISC has no body in library 22,
+C     so no call is emitted here [I]. Flags 100000B, 40, 110B, 101B,
+C     102B, 106B, 107B select the descriptor/mask operations [I].
+      INTEGER K, IC, N, I
+      INTEGER NF(16), NS(16)
+      INTEGER M262144, M32, M72, M65, M66, M70, M71
+      DATA M262144 /262144/, M32 /32/, M72 /72/, M65 /65/
+      DATA M66 /66/, M70 /70/, M71 /71/
+      IC = K
+      CALL GDISC(IC)
+      DO 10 I = 1, 16
+         NF(I) = 0
+         NS(I) = 0
+   10 CONTINUE
+C     Descriptor loop and mask tests of *0027B-*0077B [I].
+      N = 1
+   20 CONTINUE
+      IF (N .GT. 16) GOTO 40
+      IF (IAND(IC, M262144) .NE. 0) GOTO 30
+      IF (IAND(IC, M65) .NE. 0) NF(N) = 1
+      IF (IAND(IC, M66) .NE. 0) NS(N) = 1
+      IF (IAND(IC, M70) .NE. 0) GOTO 30
+      IF (IAND(IC, M71) .NE. 0) GOTO 30
+      N = N + 1
+      GOTO 20
+   30 CONTINUE
+      IC = IC + M32
+   40 RETURN
+      END

@@ -1,0 +1,17 @@
+C     POLYG - draw a polygon: centre, radius, sides, rotation.
+      SUBROUTINE POLYG(XC, YC, R, N, ANG)
+      INTEGER N, I
+      REAL XC, YC, R, ANG, STEP, X, Y, PI
+      PARAMETER PI = 3.141592653589793
+      IF (N .LT. 3) RETURN
+      STEP = 2.*PI / FLOAT(N)
+      X = XC + R*COS(ANG)
+      Y = YC + R*SIN(ANG)
+      CALL MOVE(X, Y)
+      DO 10 I = 1, N
+         X = XC + R*COS(ANG + FLOAT(I)*STEP)
+         Y = YC + R*SIN(ANG + FLOAT(I)*STEP)
+         CALL MOVE(X, Y)
+   10 CONTINUE
+      RETURN
+      END

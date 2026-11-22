@@ -1,0 +1,28 @@
+C     POLINE - draw a clipped polyline with optional vertex markers.
+C     Uses IRDB counts, WHERE visibility, TPF transform, MOVE, MARKER.
+      SUBROUTINE POLINE(N1, N2, IFMARK)
+      INTEGER N1, N2, IFMARK, K1, K2, I, IV
+      REAL T, S, X, Y
+      EXTERNAL IRDB, WHERE, TPF, MOVE, MARKER, IABS
+      CALL IRDB(2, K1)
+      CALL IRDB(3, K2)
+      IF (K1 .EQ. 0 .OR. K2 .EQ. 0) THEN
+         N1 = 0
+         N2 = 0
+         RETURN
+      END IF
+      T = IABS(K1)
+      IV = IABS(K2)
+      CALL WHERE(T)
+      DO 10 I = 1, T
+         S = T * IV
+         CALL TPF(X, Y, S, X, Y)
+         CALL MOVE(X, Y)
+         IF (IFMARK .NE. 0) THEN
+            CALL MARKER(X, Y, K2, K1)
+         END IF
+   10 CONTINUE
+      N1 = T
+      N2 = IV
+      RETURN
+      END

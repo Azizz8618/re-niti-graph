@@ -1,0 +1,23 @@
+C     TRIDIG - tridiagonal linear-system solver (back end of SPLINE).
+C     IL contains the indirect indices of the coefficient arrays.
+      SUBROUTINE TRIDIG(N, IL, A, B, C, D, X)
+      INTEGER N, I, K, IL(*)
+      REAL A(*), B(*), C(*), D(*), X(*), W
+      IF (N .LT. 1) RETURN
+      K = IL(1)
+      IF (B(K) .EQ. 0.) B(K) = 1.E-20
+      DO 10 I = 2, N
+         K = IL(I)
+         IF (B(K) .EQ. 0.) B(K) = 1.E-20
+         W = A(K) / B(IL(I-1))
+         B(K) = B(K) - W*C(IL(I-1))
+         D(K) = D(K) - W*D(IL(I-1))
+   10 CONTINUE
+      K = IL(N)
+      X(N) = D(K) / B(K)
+      DO 20 I = N-1, 1, -1
+         K = IL(I)
+         X(I) = (D(K) - C(K)*X(I+1)) / B(K)
+   20 CONTINUE
+      RETURN
+      END

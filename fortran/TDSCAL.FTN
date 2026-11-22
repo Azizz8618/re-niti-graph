@@ -1,0 +1,21 @@
+      SUBROUTINE TDSCAL(S)
+C     3-D scaling: build identity via HCUNIT, pack the factor into the
+C     diagonal with IMUIP and compose with HCMULT.
+C [I] Exact field packing of the MADLEN helper *0031B is not recovered.
+      COMMON /GFMATR/ GFMATR(34)
+      EXTERNAL HCUNIT, HCMULT, IMUIP
+      REAL S
+      INTEGER I, J
+      CALL HCUNIT(GFMATR(17))
+      DO 10 I = 1, 4
+         DO 20 J = 1, 4
+            GFMATR(I + (J-1)*4) = 0.0
+20       CONTINUE
+10    CONTINUE
+      GFMATR(1) = S
+      GFMATR(6) = S
+      GFMATR(11) = S
+      GFMATR(16) = 1.0
+      CALL HCMULT
+      RETURN
+      END

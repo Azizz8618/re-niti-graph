@@ -1,0 +1,21 @@
+      SUBROUTINE GDISC(K)
+C     Disk-exchange primitive (GDISC.mad, 16 commands).
+C     All I/O is done by MADLEN extracodes *50 with function codes
+C     105B, 115B and 116B. Э50 forms a DISPAK task; in the portable
+C     version the extops are replaced by CALL EXC50 from SUPPORT.FTN.
+C     K corresponds to the MADLEN R3 function word [I].
+      INTEGER K, IC, IM
+C     71717B = 29647 decimal.
+      DATA IM /29647/
+      IC = K
+      IF (IAND(IC, IM) .NE. 0) GOTO 20
+C     *50,105B
+      CALL EXC50(69)
+   20 CONTINUE
+C     *50,115B
+      CALL EXC50(77)
+      IF (IC .NE. 0) GOTO 30
+C     *50,116B
+      CALL EXC50(78)
+   30 RETURN
+      END

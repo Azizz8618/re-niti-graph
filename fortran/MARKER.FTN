@@ -1,0 +1,23 @@
+C     MARKER - draw a marker (tick or character) at a plotted point.
+C     Uses the current point in *GFBFTR*, MOD and I*DI*I division.
+      SUBROUTINE MARKER(X, Y, IC, N)
+      REAL X, Y, S, SC
+      INTEGER IC, N, K, J
+      COMMON /GFBFTR/ GFBFTR(2)
+      INTEGER ND(16)
+      DATA ND /1, 2, 3, 4, 5, 6, 33, 7, 8, 9, 10, 66, 65, 49,
+     *         1073, 17185/
+C [I] Character codes are from MARKER.mad:217-232.
+      S = GFBFTR(2) / GFBFTR(1)
+      SC = S * 6.0
+      K = MOD(IC, 16)
+      IF (K .EQ. 0) K = 16
+      J = ND(K)
+      IF (J .NE. 0) THEN
+         SC = SC * J
+      END IF
+      X = GFBFTR(1) + SC
+      Y = GFBFTR(2) + SC
+      N = K
+      RETURN
+      END
