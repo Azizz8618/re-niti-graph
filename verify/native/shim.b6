@@ -1,0 +1,33 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348-wr)^
+ееВ1а3
+*name SHIM
+*call yesmemory
+*perso:602300
+*assem
+ PLOT: ,NАМЕ,PLOT
+ 1, VTM,
+ BUFPL: ,BSS,64
+ ,*50,1210B
+ ,*50,1211B
+ 13, UJ,
+ ,END,
+ MOVE: ,NАМЕ,MOVE
+ PLOT: ,SUBP,
+ 13,VJM,PLOT
+ 13, UJ,
+ ,END,
+ RDB: ,NАМЕ,RDB
+ 13, UJ,
+ ,END,
+ ENDPG: ,NАМЕ,ENDPG
+ 13, UJ,
+ ,END,
+ PAGE: ,NАМЕ,PAGE
+ 13, UJ,
+ ,END,
+*to perso:602700
+*end file
+``````
+еконец

@@ -1,0 +1,24 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name NATMA
+*call yesmemory
+*perso:602700,cont
+*forex
+      PROGRAM NATMA
+      INTEGER N
+      REAL X(10), Y(10)
+      N = 2
+      X(1) = 10.0
+      Y(1) = 10.0
+      X(2) = 110.0
+      Y(2) = 110.0
+      CALL MOVE1(N, X, Y)
+      CALL ARCIA(0.0)
+      END
+*library:22
+*execute
+*end file
+``````
+еконец
