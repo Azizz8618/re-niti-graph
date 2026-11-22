@@ -1,0 +1,44 @@
+ DDIST   :,NAME, NEW DTRAN
+C Commands: 16
+C Constants: 0
+C BSS: 2
+C Memory size: 20
+C Header: 1
+C Symbols: 3
+C Long symbols: 1
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 26
+C Symbol table offset is 21
+ *GFGEL* :,LC,28
+ GAK/2:,EQU,*GFGEL* +18
+ GAK/3:,EQU,*GFGEL* +19
+ 14,VTM,*0001B
+ ,UJ,*0006B
+ *0001B:,UTC,GAK/2
+ ,XTA,
+ ,WTC,*0016B
+ ,ATX,
+ ,UTC,GAK/3
+ ,XTA,
+ ,WTC,*0017B
+ ,ATX,
+ ,UJ,*0014B
+ *0006B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0016B
+ 7,STX,1
+ 7,STX,
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0014B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0016B:,BSS,1
+ *0017B:,BSS,1
+ ,END,

@@ -1,0 +1,102 @@
+ WRCRC   :,NAME, NEW DTRAN
+C Commands: 45
+C Constants: 4
+C BSS: 5
+C Memory size: 56
+C Header: 1
+C Symbols: 15
+C Long symbols: 4
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 76
+C Symbol table offset is 54
+ *GFGEL* :,LC,28
+ *GFBFTR*:,LC,2
+ GAK/3:,EQU,*GFBFTR*+1
+ STRMOD  :,SUBP,
+ ABS     :,SUBP,
+ GAK/6:,EQU,*GFGEL* +9
+ GAK/7:,EQU,*GFGEL* +8
+ R*ST*I  :,SUBP,
+ GAL/1:,EQU,*GFGEL* -32767
+ GAL/2:,EQU,*GFGEL* +1
+ GAL/3:,EQU,*GFGEL* +2
+ GAL/4:,EQU,*GFGEL* +5
+ GAL/5:,EQU,*GFGEL* +6
+ 14,VTM,*0001B
+ ,UJ,*0034B
+ *0001B:,UTC,*GFBFTR*
+ ,XTA,
+ 7,ATX,5
+ ,UTC,GAK/3
+ ,XTA,
+ 7,ATX,6
+ 7,XTA,3
+ ,UTC,GAK/6
+ ,ATX,
+ 14,VTM,GAK/7
+ ,ITA,14
+ 13,VJM,ABS     
+ 14,VTM,*0051B
+ 13,VJM,R*ST*I  
+ 7,XTA,4
+ 7,ATX,7
+ ,NTR,3
+ 7,XTA,1
+ ,NTR,22B
+ ,A+X,
+ ,WTC,*0054B
+ 1,VTM,
+ 1,UTC,GAL/1
+ ,ATX,
+ 7,XTA,5
+ 1,UTC,*GFGEL* 
+ ,ATX,
+ 7,XTA,6
+ 1,UTC,GAL/2
+ ,ATX,
+ ,WTC,*0055B
+ ,XTA,
+ 1,UTC,GAL/3
+ ,ATX,
+ 7,XTA,
+ ,A+X,
+ 1,UTC,GAL/4
+ ,ATX,
+ 7,XTA,2
+ 1,UTC,GAL/5
+ ,ATX,
+ ,UTC,GAK/7
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0033B
+ ,ARX,
+ ,UZA,*0033B
+  :14,VTM,*0045B
+ ,ITS,14
+ 13,VJM,STRMOD  
+ *0033B:,UJ,*0042B
+ *0034B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0045B
+ 7,STX,10B
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0042B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0045B:,INT,0
+ ,INT,2
+ ,TEXT, 8HDK0     
+ ,LOG,4354400000000000
+ *0051B:,BSS,3
+ *0054B:,BSS,1
+ *0055B:,BSS,1
+ ,END,

@@ -1,0 +1,75 @@
+Spot check of dtran output (first 20 lines of each .mad file)
+==============================================================
+
+--- COPDCB (small module) ---
+auto-check: NAME banner=True, MADLEN-like directive/mnemonic lines=9/20
+
+ COPDCB  :,NAME, NEW DTRAN
+C Commands: 14
+C Constants: 1
+C BSS: 0
+C Memory size: 15
+C Header: 1
+C Symbols: 1
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 22
+C Symbol table offset is 20
+ ,STI,10
+ ,ATI,9
+ 9,XTA,
+ 10,ATX,
+ 9,XTA,1
+ 10,ATX,1
+ 9,XTA,3
+ 10,ATX,3
+
+--- LOOK (large module, crosses a zone boundary) ---
+auto-check: NAME banner=True, MADLEN-like directive/mnemonic lines=9/20
+
+ LOOK    :,NAME, NEW DTRAN
+C Commands: 411
+C Constants: 11
+C BSS: 23
+C Memory size: 445
+C Header: 1
+C Symbols: 24
+C Long symbols: 7
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 461
+C Symbol table offset is 425
+ *GFCELL*:,LC,9
+ GAK/2:,EQU,*GFCELL*+1
+ GAK/3:,EQU,*GFCELL*+2
+ GAK/4:,EQU,*GFCELL*+3
+ GAK/5:,EQU,*GFCELL*+4
+ GAK/6:,EQU,*GFCELL*+5
+ GAK/7:,EQU,*GFCELL*+6
+ GAL/0:,EQU,*GFCELL*+7
+
+--- ITPLBV (largest module, spans three zones) ---
+auto-check: NAME banner=True, MADLEN-like directive/mnemonic lines=9/20
+
+ ITPLBV  :,NAME, NEW DTRAN
+C Commands: 3553
+C Constants: 125
+C BSS: 164
+C Memory size: 4064
+C Header: 1
+C Symbols: 11
+C Long symbols: 6
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 3723
+C Symbol table offset is 3703
+ *DRITP* :,LC,1
+ FT*571  :,SUBP,
+ FT*003  :,SUBP,
+ FT*002  :,SUBP,
+ ABS     :,SUBP,
+ I*DI*I  :,SUBP,
+ I*MU*I  :,SUBP,
+ 14,VTM,*0001B
+

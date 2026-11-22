@@ -1,0 +1,77 @@
+ MOVA    :,NAME, NEW DTRAN
+C Commands: 33
+C Constants: 1
+C BSS: 11
+C Memory size: 45
+C Header: 1
+C Symbols: 5
+C Long symbols: 1
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 46
+C Symbol table offset is 37
+ *GFBFTR*:,LC,2
+ GAK/2:,EQU,*GFBFTR*+1
+ MOVE    :,SUBP,
+ SIN     :,SUBP,
+ COS     :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0023B
+ *0001B:,UTC,*GFBFTR*
+ ,XTA,
+ 7,ATX,2
+ ,UTC,GAK/2
+ ,XTA,
+ 7,ATX,3
+ ,WTC,*0043B
+ ,XTA,
+ 7,A*X,
+ 7,ATX,4
+ 14,VTM,*0037B
+ ,ITA,14
+ 13,VJM,COS     
+ ,WTC,*0042B
+ ,A*X,
+ 7,A+X,2
+ 7,ATX,5
+ 14,VTM,*0037B
+ ,ITA,14
+ 13,VJM,SIN     
+ ,WTC,*0042B
+ ,A*X,
+ 7,A+X,3
+ 7,ATX,6
+ 14,VTM,*0040B
+ ,ITS,14
+ 14,VTM,*0041B
+ ,ITS,14
+ ,WTC,*0044B
+ 14,VTM,
+ ,ITS,14
+ 13,VJM,MOVE    
+ ,UJ,*0031B
+ *0023B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0033B
+ 7,STX,11B
+ 7,STX,10B
+ 7,STX,7
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0031B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0033B:,LOG,3550737215211226
+ ,BSS,3
+ *0037B:,BSS,1
+ *0040B:,BSS,1
+ *0041B:,BSS,1
+ *0042B:,BSS,1
+ *0043B:,BSS,1
+ *0044B:,BSS,1
+ ,END,

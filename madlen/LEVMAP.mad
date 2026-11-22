@@ -1,0 +1,99 @@
+ LEVMAP  :,NAME, NEW DTRAN
+C Commands: 50
+C Constants: 1
+C BSS: 12
+C Memory size: 63
+C Header: 1
+C Symbols: 1
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 56
+C Symbol table offset is 54
+ 14,VTM,*0001B
+ ,UJ,*0035B
+ *0001B:7,XTA,
+ 7,ATX,2
+ ,NTR,3
+ ,NTR,22B
+ ,UJ,*0013B
+ *0004B:,WTC,*0060B
+ ,XTA,
+ 7,A*X,2
+ ,WTC,*0057B
+ ,A+X,
+ ,WTC,*0052B
+ 1,VTM,
+ ,WTC,*0055B
+ 1,ATX,-1
+ 7,XTA,2
+ ,NTR,3
+ 7,A+X,
+ 7,ATX,2
+ ,NTR,22B
+ *0013B:,WTC,*0062B
+ ,X-A,
+ ,UZA,*0004B
+ ,WTC,*0062B
+ ,XTA,
+ ,NTR,3
+ 7,A+X,
+ 7,ATX,3
+ 7,ATX,4
+ ,NTR,22B
+ ,UJ,*0033B
+ *0021B:7,XTA,4
+ ,NTR,3
+ 7,A-X,3
+ ,NTR,22B
+ ,A+X,
+ 7,ATX,1
+ ,WTC,*0061B
+ ,A*X,
+ ,X-A,
+ ,WTC,*0057B
+ ,A+X,
+ ,WTC,*0054B
+ 1,VTM,
+ ,WTC,*0055B
+ 1,ATX,-1
+ 7,XTA,4
+ ,NTR,3
+ 7,A+X,
+ 7,ATX,4
+ ,NTR,22B
+ *0033B:,WTC,*0056B
+ ,X-A,
+ ,UZA,*0021B
+ ,UJ,*0045B
+ *0035B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0050B
+ 9,VTM,6
+ *0037B:9,UTM,-1
+ 9,UTC,
+ 7,STX,5
+ 9,V1M,*0037B
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0045B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0050B:,INT,1
+ ,BSS,1
+ *0052B:,BSS,2
+ *0054B:,BSS,1
+ *0055B:,BSS,1
+ *0056B:,BSS,1
+ *0057B:,BSS,1
+ *0060B:,BSS,1
+ *0061B:,BSS,1
+ *0062B:,BSS,1
+ ,END,

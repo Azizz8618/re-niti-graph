@@ -1,0 +1,91 @@
+ HCIND   :,NAME, NEW DTRAN
+C Commands: 45
+C Constants: 1
+C BSS: 7
+C Memory size: 55
+C Header: 1
+C Symbols: 1
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 53
+C Symbol table offset is 51
+ 14,VTM,*0001B
+ ,UJ,*0032B
+ *0001B:,WTC,*0053B
+ ,XTA,
+ ,NTR,3
+ 7,A-X,
+ 7,ATX,1
+ ,WTC,*0052B
+ ,XTA,
+ 7,ATX,2
+ ,NTR,22B
+ ,UJ,*0027B
+ *0006B:,WTC,*0054B
+ ,XTA,
+ ,WTC,*0047B
+ 1,VTM,
+ ,WTC,*0051B
+ 1,A-X,-1
+ ,ASN,64-7
+ ,UZA,*0021B
+ ,ARX,
+ ,UZA,*0024B
+ ,WTC,*0054B
+ ,XTA,
+ ,WTC,*0047B
+ 1,VTM,
+ ,WTC,*0051B
+ 1,A-X,
+ ,ASN,64-7
+ ,UZA,*0024B
+ ,ARX,
+ ,UZA,*0021B
+ ,UJ,*0024B
+ *0021B:7,XTA,2
+ 7,ATX,1
+ ,NTR,3
+ ,NTR,22B
+ ,UJ,*0030B
+ *0024B:7,XTA,2
+ ,NTR,3
+ 7,A+X,
+ 7,ATX,2
+ ,NTR,22B
+ *0027B:7,X-A,1
+ ,UZA,*0006B
+ *0030B:7,XTA,1
+ ,A+X,
+ 7,ATX,3
+ ,UJ,*0041B
+ *0032B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0045B
+ 7,STX,7
+ 7,STX,6
+ 7,STX,5
+ 7,STX,4
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0041B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ ,UTC,*0050B
+ ,XTS,
+ 8,UJ,
+ *0045B:,INT,1
+ ,BSS,1
+ *0047B:,BSS,1
+ *0050B:,BSS,1
+ *0051B:,BSS,1
+ *0052B:,BSS,1
+ *0053B:,BSS,1
+ *0054B:,BSS,1
+ ,END,

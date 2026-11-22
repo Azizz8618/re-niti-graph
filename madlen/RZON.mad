@@ -1,0 +1,54 @@
+ RZON    :,NAME, NEW DTRAN
+C Commands: 26
+C Constants: 2
+C BSS: 0
+C Memory size: 30
+C Header: 1
+C Symbols: 3
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 37
+C Symbol table offset is 33
+ E70     :,SUBP,
+ *70     :,SUBP,
+ 14,VTM,1
+ 10,VTM,1
+ *0001B:8,VTM,*0001B
+ ,ATI,9
+ 9,XTA,4
+ 8,AAX,26B
+ ,U1A,*0012B
+ ,ITA,14
+ ,ASN,64-36
+ 8,AOX,25B
+ *0005B:9,ATX,2
+ 10,V1M,*0007B
+ ,STX,
+ 13,UJ,
+ *0007B:10,UTM,-1
+ ,ITA,9
+ 10,V1M,*0011B
+ ,UJ,E70     
+ *0011B:,UJ,*70     
+ *0012B:,ITA,14
+ ,ASN,64-39
+ ,UJ,*0005B
+  :14,VTM,
+ 10,VTM,1
+ ,UJ,*0001B
+  :14,VTM,1
+ 10,VTM,2
+ ,UJ,*0001B
+  :14,VTM,
+ 10,VTM,2
+ ,UJ,*0001B
+  :14,VTM,1
+ 10,VTM,
+ ,UJ,*0001B
+  :14,VTM,
+ 10,VTM,
+ ,UJ,*0001B
+  :,LOG,6200000000000000
+ ,LOG,770000
+ ,END,

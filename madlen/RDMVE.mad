@@ -1,0 +1,115 @@
+ RDMVE   :,NAME, NEW DTRAN
+C Commands: 56
+C Constants: 2
+C BSS: 7
+C Memory size: 67
+C Header: 1
+C Symbols: 12
+C Long symbols: 4
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 102
+C Symbol table offset is 63
+ *GFGEL* :,LC,28
+ GFFALS  :,SUBP,
+ ABS     :,SUBP,
+ STRMOD  :,SUBP,
+ GAK/5:,EQU,*GFGEL* +8
+ R*ST*I  :,SUBP,
+ GAK/7:,EQU,*GFGEL* -32767
+ GAL/0:,EQU,*GFGEL* +1
+ GAL/1:,EQU,*GFGEL* +5
+ GAL/2:,EQU,*GFGEL* +6
+ 14,VTM,*0001B
+ ,UJ,*0044B
+ *0001B:,UTC,GAK/5
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0043B
+ ,ARX,
+ ,UZA,*0006B
+ 14,VTM,*0056B
+ ,ITS,14
+ 13,VJM,STRMOD  
+ *0006B:14,VTM,GAK/5
+ ,ITA,14
+ 13,VJM,ABS     
+ 14,VTM,*0060B
+ 13,VJM,R*ST*I  
+ 7,XTA,2
+ 7,ATX,3
+ ,NTR,3
+ ,WTC,*0061B
+ 1,VTM,
+ 1,UTC,GAK/7
+ ,XTA,
+ 14,VTM,*0060B
+ 13,VJM,R*ST*I  
+ 7,XTA,2
+ 7,ATX,4
+ ,NTR,22B
+ ,ASN,64-7
+ ,UZA,*0022B
+ ,ARX,
+ ,UZA,*0034B
+ ,UJ,*0034B
+ *0022B:,WTC,*0061B
+ 1,VTM,
+ 1,UTC,*GFGEL* 
+ ,XTA,
+ ,WTC,*0063B
+ ,ATX,
+ 1,UTC,GAL/0
+ ,XTA,
+ ,WTC,*0064B
+ ,ATX,
+ 1,UTC,GAL/1
+ ,XTA,
+ ,WTC,*0065B
+ ,ATX,
+ 1,UTC,GAL/2
+ ,XTA,
+ ,WTC,*0066B
+ ,ATX,
+ ,UJ,*0036B
+ *0034B:14,VTM,*0057B
+ ,ITS,14
+ 13,VJM,GFFALS  
+ *0036B:,UTC,GAK/5
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0043B
+ ,ARX,
+ ,UZA,*0043B
+ 14,VTM,*0056B
+ ,ITS,14
+ 13,VJM,STRMOD  
+ *0043B:,UJ,*0053B
+ *0044B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0056B
+ 7,STX,10B
+ 7,STX,7
+ 7,STX,6
+ 7,STX,5
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0053B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0056B:,INT,0
+ *0057B:,INT,6
+ *0060B:,BSS,1
+ *0061B:,BSS,2
+ *0063B:,BSS,1
+ *0064B:,BSS,1
+ *0065B:,BSS,1
+ *0066B:,BSS,1
+ ,END,

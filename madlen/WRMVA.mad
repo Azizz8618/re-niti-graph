@@ -1,0 +1,74 @@
+ WRMVA   :,NAME, NEW DTRAN
+C Commands: 32
+C Constants: 0
+C BSS: 7
+C Memory size: 41
+C Header: 1
+C Symbols: 7
+C Long symbols: 3
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 50
+C Symbol table offset is 35
+ *GFGEL* :,LC,28
+ *GFBFTR*:,LC,2
+ GAK/3:,EQU,*GFBFTR*+1
+ WRMVE   :,SUBP,
+ SIN     :,SUBP,
+ COS     :,SUBP,
+ GAK/7:,EQU,*GFGEL* +27
+ 14,VTM,*0001B
+ ,UJ,*0022B
+ *0001B:,UTC,*GFBFTR*
+ ,XTA,
+ 7,ATX,
+ ,UTC,GAK/3
+ ,XTA,
+ 7,ATX,1
+ ,WTC,*0040B
+ ,XTA,
+ ,UTC,GAK/7
+ ,A*X,
+ 7,ATX,2
+ 14,VTM,*0034B
+ ,ITA,14
+ 13,VJM,COS     
+ ,WTC,*0037B
+ ,A*X,
+ 7,A+X,
+ 7,ATX,3
+ 14,VTM,*0034B
+ ,ITA,14
+ 13,VJM,SIN     
+ ,WTC,*0037B
+ ,A*X,
+ 7,A+X,1
+ 7,ATX,4
+ 14,VTM,*0035B
+ ,ITS,14
+ 14,VTM,*0036B
+ ,ITS,14
+ 13,VJM,WRMVE   
+ ,UJ,*0030B
+ *0022B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0032B
+ 7,STX,6
+ 7,STX,5
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0030B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0032B:,BSS,2
+ *0034B:,BSS,1
+ *0035B:,BSS,1
+ *0036B:,BSS,1
+ *0037B:,BSS,1
+ *0040B:,BSS,1
+ ,END,

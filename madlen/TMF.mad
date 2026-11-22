@@ -1,0 +1,109 @@
+ TMF     :,NAME, NEW DTRAN
+C Commands: 53
+C Constants: 10
+C BSS: 10
+C Memory size: 73
+C Header: 1
+C Symbols: 1
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 70
+C Symbol table offset is 66
+ RDB     :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0042B
+ *0001B:14,VTM,*0055B
+ ,ITA,14
+ 13,VJM,RDB     
+ 7,ATX,10B
+ 14,VTM,*0061B
+ ,ITA,14
+ 13,VJM,RDB     
+ 7,ATX,11B
+ 14,VTM,*0057B
+ ,ITA,14
+ 13,VJM,RDB     
+ ,X-A,
+ 7,A+X,11B
+ 7,ATX,11B
+ 7,XTA,10B
+ 7,A/X,11B
+ 7,ATX,12B
+ 14,VTM,*0056B
+ ,ITA,14
+ 13,VJM,RDB     
+ 7,ATX,10B
+ 14,VTM,*0062B
+ ,ITA,14
+ 13,VJM,RDB     
+ 7,ATX,11B
+ 14,VTM,*0060B
+ ,ITA,14
+ 13,VJM,RDB     
+ ,X-A,
+ 7,A+X,11B
+ 7,ATX,11B
+ 7,XTA,10B
+ 7,A/X,11B
+ 7,ATX,13B
+ 14,VTM,*0053B
+ ,ITA,14
+ 13,VJM,RDB     
+ 7,ATX,10B
+ 14,VTM,*0057B
+ ,ITA,14
+ 13,VJM,RDB     
+ ,X-A,
+ ,WTC,*0067B
+ ,A+X,
+ 7,A*X,12B
+ 7,A+X,10B
+ ,WTC,*0071B
+ ,ATX,
+ 14,VTM,*0054B
+ ,ITA,14
+ 13,VJM,RDB     
+ 7,ATX,10B
+ 14,VTM,*0060B
+ ,ITA,14
+ 13,VJM,RDB     
+ ,X-A,
+ ,WTC,*0070B
+ ,A+X,
+ 7,A*X,13B
+ 7,A+X,10B
+ ,WTC,*0072B
+ ,ATX,
+ ,UJ,*0051B
+ *0042B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0053B
+ 7,STX,17B
+ 7,STX,16B
+ 7,STX,15B
+ 7,STX,14B
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0051B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0053B:,INT,7
+ *0054B:,INT,8
+ *0055B:,INT,9
+ *0056B:,INT,10
+ *0057B:,INT,11
+ *0060B:,INT,12
+ *0061B:,INT,13
+ *0062B:,INT,14
+ ,BSS,4
+ *0067B:,BSS,1
+ *0070B:,BSS,1
+ *0071B:,BSS,1
+ *0072B:,BSS,1
+ ,END,

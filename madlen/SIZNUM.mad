@@ -1,0 +1,64 @@
+ SIZNUM  :,NAME, NEW DTRAN
+C Commands: 25
+C Constants: 1
+C BSS: 4
+C Memory size: 32
+C Header: 1
+C Symbols: 5
+C Long symbols: 2
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 41
+C Symbol table offset is 31
+ *GFLMN* :,LC,4
+ GAK/2:,EQU,*GFLMN* +1
+ GAK/3:,EQU,*GFLMN* +2
+ GAK/4:,EQU,*GFLMN* +3
+ *GFLSZ* :,LC,1
+ 14,VTM,*0001B
+ ,UJ,*0014B
+ *0001B:,WTC,*0026B
+ ,XTA,
+ ,UTC,*GFLMN* 
+ ,ATX,
+ ,WTC,*0027B
+ ,XTA,
+ ,UTC,*GFLSZ* 
+ ,ATX,
+ ,WTC,*0030B
+ ,XTA,
+ ,UTC,GAK/2
+ ,ATX,
+ ,NTR,3
+ ,WTC,*0031B
+ ,XTA,
+ ,UTC,GAK/3
+ ,ATX,
+ 7,XTA,
+ ,UTC,GAK/4
+ ,ATX,
+ ,NTR,22B
+ ,UJ,*0023B
+ *0014B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0025B
+ 7,STX,4
+ 7,STX,3
+ 7,STX,2
+ 7,STX,1
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0023B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0025B:,INT,333
+ *0026B:,BSS,1
+ *0027B:,BSS,1
+ *0030B:,BSS,1
+ *0031B:,BSS,1
+ ,END,

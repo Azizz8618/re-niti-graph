@@ -1,0 +1,63 @@
+ MOVB    :,NAME, NEW DTRAN
+C Commands: 25
+C Constants: 0
+C BSS: 10
+C Memory size: 35
+C Header: 1
+C Symbols: 3
+C Long symbols: 1
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 35
+C Symbol table offset is 30
+ *GFBFTR*:,LC,2
+ GAK/2:,EQU,*GFBFTR*+1
+ MOVE    :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0015B
+ *0001B:,UTC,*GFBFTR*
+ ,XTA,
+ 7,ATX,1
+ ,UTC,GAK/2
+ ,XTA,
+ 7,ATX,2
+ 7,XTA,1
+ ,WTC,*0032B
+ ,A+X,
+ 7,ATX,3
+ 7,XTA,2
+ ,WTC,*0033B
+ ,A+X,
+ 7,ATX,4
+ 14,VTM,*0030B
+ ,ITS,14
+ 14,VTM,*0031B
+ ,ITS,14
+ ,WTC,*0034B
+ 14,VTM,
+ ,ITS,14
+ 13,VJM,MOVE    
+ ,UJ,*0023B
+ *0015B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0025B
+ 7,STX,7
+ 7,STX,6
+ 7,STX,5
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0023B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0025B:,BSS,3
+ *0030B:,BSS,1
+ *0031B:,BSS,1
+ *0032B:,BSS,1
+ *0033B:,BSS,1
+ *0034B:,BSS,1
+ ,END,

@@ -1,0 +1,40 @@
+ PUTXY   :,NAME, NEW DTRAN
+C Commands: 14
+C Constants: 3
+C BSS: 0
+C Memory size: 17
+C Header: 1
+C Symbols: 0
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 23
+C Symbol table offset is 22
+ *0000B:8,VTM,*0000B
+ ,STI,9
+ ,STI,10
+ ,ATI,11
+ 11,XTA,
+ 8,AAX,15B
+ ,ASN,64-7
+ 10,XTS,
+ 8,AAX,14B
+ 15,AOX,
+ 9,STX,
+ 13,UJ,
+ *0006B:8,VTM,*0006B
+ ,STI,9
+ ,STI,10
+ ,ATI,11
+ 9,XTA,
+ 8,AAX,6
+ 10,ATX,
+ 9,XTA,
+ 8,AAX,10B
+ ,ASN,64+7
+ 11,STX,
+ 13,UJ,
+ ,LOG,177
+ ,LOG,377
+ ,LOG,77600
+ ,END,

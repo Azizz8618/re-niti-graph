@@ -1,0 +1,193 @@
+ MAP     :,NAME, NEW DTRAN
+C Commands: 124
+C Constants: 3
+C BSS: 17
+C Memory size: 146
+C Header: 1
+C Symbols: 7
+C Long symbols: 1
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 143
+C Symbol table offset is 132
+ *GFVP*  :,LC,6
+ GAK/2:,EQU,*GFVP*  +1
+ GAK/3:,EQU,*GFVP*  +2
+ GAK/4:,EQU,*GFVP*  +3
+ GAK/5:,EQU,*GFVP*  +4
+ GAK/6:,EQU,*GFVP*  +5
+ SQRT    :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0114B
+ *0001B:7,XTA,
+ ,UTC,GAK/6
+ ,ATX,
+ ,NTR,3
+ ,UTC,*GFVP*  
+ ,XTA,
+ ,NTR,22B
+ ,UTC,*GFVP*  
+ ,A*X,
+ 7,ATX,3
+ ,UTC,GAK/2
+ ,XTA,
+ ,UTC,GAK/2
+ ,A*X,
+ 7,A+X,3
+ 7,ATX,10B
+ ,UTC,GAK/3
+ ,XTA,
+ ,UTC,GAK/3
+ ,A*X,
+ 7,A+X,10B
+ 7,ATX,11B
+ ,WTC,*0143B
+ ,XTA,
+ ,UTC,*GFVP*  
+ ,A*X,
+ 7,ATX,3
+ ,WTC,*0144B
+ ,XTA,
+ ,UTC,GAK/2
+ ,A*X,
+ 7,A+X,3
+ 7,ATX,3
+ ,WTC,*0145B
+ ,XTA,
+ ,UTC,GAK/3
+ ,A*X,
+ 7,A+X,3
+ ,X-A,
+ 7,A+X,11B
+ 7,ATX,12B
+ ,UTC,*GFVP*  
+ ,XTA,
+ ,WTC,*0143B
+ ,A-X,
+ 7,ATX,5
+ ,UTC,GAK/2
+ ,XTA,
+ ,WTC,*0144B
+ ,A-X,
+ 7,ATX,6
+ ,UTC,GAK/3
+ ,XTA,
+ ,WTC,*0145B
+ ,A-X,
+ 7,ATX,7
+ 7,XTA,5
+ 7,A*X,5
+ 7,ATX,3
+ 7,XTA,6
+ 7,A*X,6
+ 7,A+X,3
+ 7,ATX,3
+ 7,XTA,7
+ 7,A*X,7
+ 7,A+X,3
+ 7,ATX,13B
+ 7,XTA,2
+ 7,ATX,14B
+ 7,XTA,11B
+ 7,A*X,13B
+ 7,ATX,3
+ 14,VTM,*0127B
+ ,ITA,14
+ 13,VJM,SQRT    
+ 7,A*X,14B
+ ,X-A,
+ 7,A+X,12B
+ 7,ATX,15B
+ ,ASN,64-7
+ ,UZA,*0053B
+ ,ARX,
+ ,UZA,*0111B
+ *0053B:7,XTA,11B
+ 7,A/X,12B
+ 7,ATX,16B
+ 7,XTA,10B
+ ,ASN,64-7
+ ,UZA,*0103B
+ ,ARX,
+ ,UZA,*0057B
+ *0057B:,WTC,*0144B
+ ,XTA,
+ ,UTC,*GFVP*  
+ ,A*X,
+ 7,ATX,3
+ ,WTC,*0143B
+ ,XTA,
+ ,X-A,
+ ,UTC,GAK/2
+ ,A*X,
+ 7,A+X,3
+ 7,A*X,16B
+ 7,ATX,3
+ 14,VTM,*0134B
+ ,ITA,14
+ 13,VJM,SQRT    
+ 7,ATX,4
+ 7,XTA,3
+ 7,A/X,4
+ ,UTC,GAK/4
+ ,ATX,
+ 7,XTA,11B
+ 7,A/X,10B
+ 7,ATX,3
+ ,WTC,*0145B
+ ,XTA,
+ ,UTC,GAK/3
+ ,A-X,
+ 7,A*X,16B
+ ,UTC,GAK/3
+ ,A+X,
+ 7,ATX,4
+ 14,VTM,*0127B
+ ,ITA,14
+ 13,VJM,SQRT    
+ 7,A*X,4
+ ,UTC,GAK/5
+ ,ATX,
+ ,UJ,*0122B
+ *0103B:7,XTA,16B
+ ,WTC,*0143B
+ ,A*X,
+ ,UTC,GAK/4
+ ,ATX,
+ 7,XTA,16B
+ ,WTC,*0144B
+ ,A*X,
+ ,UTC,GAK/5
+ ,ATX,
+ ,UJ,*0122B
+ *0111B:7,XTA,1
+ ,UTC,GAK/6
+ ,ATX,
+ ,NTR,3
+ ,NTR,22B
+ ,UJ,*0122B
+ *0114B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0124B
+ 7,STX,21B
+ 7,STX,20B
+ 7,STX,17B
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0122B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0124B:,INT,0
+ ,INT,1
+ ,LOG,3713070414545127
+ *0127B:,BSS,5
+ *0134B:,BSS,7
+ *0143B:,BSS,1
+ *0144B:,BSS,1
+ *0145B:,BSS,1
+ ,END,

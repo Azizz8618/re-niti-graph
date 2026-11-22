@@ -1,0 +1,20 @@
+ SETZON  :,NAME, NEW DTRAN
+C Commands: 4
+C Constants: 0
+C BSS: 0
+C Memory size: 4
+C Header: 1
+C Symbols: 0
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 10
+C Symbol table offset is 7
+ ,STI,9
+ ,ATI,10
+ 9,XTA,
+ ,ASN,64-9
+ ,ASN,64+9
+ 10,STX,5
+ 13,UJ,
+ ,END,

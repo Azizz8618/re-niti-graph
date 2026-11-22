@@ -1,0 +1,106 @@
+ COORD   :,NAME, NEW DTRAN
+C Commands: 52
+C Constants: 3
+C BSS: 10
+C Memory size: 65
+C Header: 1
+C Symbols: 3
+C Long symbols: 2
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 66
+C Symbol table offset is 60
+ ALOG10  :,SUBP,
+ AMIN1   :,SUBP,
+ RDB     :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0041B
+ *0001B:,WTC,*0063B
+ ,XTA,
+ 7,ATX,5
+ 7,XTA,1
+ ,NTR,3
+ ,WTC,*0064B
+ ,A+X,
+ 7,ATX,3
+ 14,VTM,*0055B
+ ,ITA,14
+ ,NTR,22B
+ 13,VJM,RDB     
+ 7,ATX,6
+ 7,XTA,2
+ ,NTR,3
+ ,WTC,*0064B
+ ,A+X,
+ 7,ATX,3
+ 14,VTM,*0055B
+ ,ITA,14
+ ,NTR,22B
+ 13,VJM,RDB     
+ 7,ATX,7
+  :14,VTM,*0057B
+ ,ITA,14
+ 7,AOX,
+ 14,VTM,*0060B
+ ,ITS,14
+ 14,VTM,*0061B
+ ,ITS,14
+ 13,VJM,AMIN1   
+ ,ASN,64-7
+ ,UZA,*0024B
+ ,ARX,
+ ,UZA,*0024B
+ ,UJ,*0026B
+ *0024B:7,XTA,6
+ 7,ATX,10B
+ ,UJ,*0047B
+ *0026B:7,XTA,7
+ 7,A/X,6
+ 7,ATX,3
+ 7,XTA,5
+ 7,A/X,6
+ 7,ATX,4
+ 14,VTM,*0056B
+ ,ITA,14
+ 13,VJM,ALOG10  
+ 7,ATX,4
+ 14,VTM,*0055B
+ ,ITA,14
+ 13,VJM,ALOG10  
+ 7,ATX,3
+ 7,XTA,7
+ 7,A-X,6
+ 7,A*X,4
+ 7,A/X,3
+ 7,A+X,6
+ 7,ATX,10B
+ ,UJ,*0047B
+ *0041B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0052B
+ 7,STX,12B
+ 7,STX,11B
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0047B:,STI,
+ ,STI,7
+ ,STI,8
+ ,UTC,*0062B
+ ,XTS,
+ 8,UJ,
+ *0052B:,LOG,4000000000000000
+ ,INT,11
+ ,INT,13
+ *0055B:,BSS,1
+ *0056B:,BSS,1
+ *0057B:,BSS,1
+ *0060B:,BSS,1
+ *0061B:,BSS,1
+ *0062B:,BSS,1
+ *0063B:,BSS,1
+ *0064B:,BSS,1
+ ,END,

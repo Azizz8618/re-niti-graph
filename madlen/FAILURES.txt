@@ -1,0 +1,17 @@
+dtran failures and header-validation warnings
+==============================================
+
+modules processed: 238 / 238
+dtran failures: 0
+
+## Failures
+
+- none
+
+## Header-validation warnings
+
+- none
+
+## Zone md5 warnings
+
+- none

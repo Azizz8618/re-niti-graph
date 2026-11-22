@@ -1,0 +1,109 @@
+ WRACC   :,NAME, NEW DTRAN
+C Commands: 51
+C Constants: 0
+C BSS: 15
+C Memory size: 66
+C Header: 1
+C Symbols: 5
+C Long symbols: 4
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 66
+C Symbol table offset is 54
+ *GFBFTR*:,LC,2
+ GAK/2:,EQU,*GFBFTR*+1
+ WRACA   :,SUBP,
+ ARCANG  :,SUBP,
+ ARCC1   :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0040B
+ *0001B:,UTC,*GFBFTR*
+ ,XTA,
+ 7,ATX,
+ ,UTC,GAK/2
+ ,XTA,
+ 7,ATX,1
+ ,WTC,*0063B
+ ,XTA,
+ 7,A-X,
+ 7,ATX,2
+ ,WTC,*0064B
+ ,XTA,
+ 7,A-X,1
+ 7,ATX,3
+ ,WTC,*0061B
+ 14,VTM,
+ ,ITS,14
+ ,WTC,*0062B
+ 14,VTM,
+ ,ITS,14
+ ,WTC,*0063B
+ 14,VTM,
+ ,ITS,14
+ ,WTC,*0064B
+ 14,VTM,
+ ,ITS,14
+ ,WTC,*0065B
+ 14,VTM,
+ ,ITS,14
+ 14,VTM,*0055B
+ ,ITS,14
+ 14,VTM,*0056B
+ ,ITS,14
+ 13,VJM,ARCC1   
+ ,NTR,3
+ ,NTR,22B
+ 14,VTM,*0055B
+ ,ITS,14
+ 14,VTM,*0053B
+ ,ITS,14
+ 14,VTM,*0054B
+ ,ITS,14
+ 14,VTM,*0056B
+ ,ITS,14
+ 14,VTM,*0057B
+ ,ITS,14
+ 14,VTM,*0060B
+ ,ITS,14
+ 13,VJM,ARCANG  
+ ,NTR,3
+ ,NTR,22B
+ 14,VTM,*0055B
+ ,ITS,14
+ 14,VTM,*0057B
+ ,ITS,14
+ 14,VTM,*0060B
+ ,ITS,14
+ 13,VJM,WRACA   
+ ,UJ,*0047B
+ *0040B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0051B
+ 7,STX,14B
+ 7,STX,13B
+ 7,STX,12B
+ 7,STX,11B
+ 7,STX,10B
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0047B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0051B:,BSS,2
+ *0053B:,BSS,1
+ *0054B:,BSS,1
+ *0055B:,BSS,1
+ *0056B:,BSS,1
+ *0057B:,BSS,1
+ *0060B:,BSS,1
+ *0061B:,BSS,1
+ *0062B:,BSS,1
+ *0063B:,BSS,1
+ *0064B:,BSS,1
+ *0065B:,BSS,1
+ ,END,

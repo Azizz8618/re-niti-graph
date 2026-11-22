@@ -1,0 +1,93 @@
+ MOVC    :,NAME, NEW DTRAN
+C Commands: 44
+C Constants: 0
+C BSS: 14
+C Memory size: 60
+C Header: 1
+C Symbols: 4
+C Long symbols: 1
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 55
+C Symbol table offset is 47
+ *GFBFTR*:,LC,2
+ GAK/2:,EQU,*GFBFTR*+1
+ MOVE    :,SUBP,
+ SQRT    :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0033B
+ *0001B:,UTC,*GFBFTR*
+ ,XTA,
+ 7,ATX,1
+ ,UTC,GAK/2
+ ,XTA,
+ 7,ATX,2
+ ,WTC,*0054B
+ ,XTA,
+ 7,A-X,1
+ 7,ATX,3
+ ,WTC,*0055B
+ ,XTA,
+ 7,A-X,2
+ 7,ATX,4
+ 7,XTA,3
+ 7,A*X,3
+ 7,ATX,
+ 7,XTA,4
+ 7,A*X,4
+ 7,A+X,
+ 7,ATX,
+ 14,VTM,*0044B
+ ,ITA,14
+ 13,VJM,SQRT    
+ 7,ATX,5
+ ,ASN,64-7
+ ,UZA,*0032B
+ ,ARX,
+ ,UZA,*0032B
+  :,WTC,*0056B
+ ,XTA,
+ 7,A*X,3
+ 7,A/X,5
+ 7,A+X,1
+ 7,ATX,6
+ ,WTC,*0056B
+ ,XTA,
+ 7,A*X,4
+ 7,A/X,5
+ 7,A+X,2
+ 7,ATX,7
+ 14,VTM,*0052B
+ ,ITS,14
+ 14,VTM,*0053B
+ ,ITS,14
+ ,WTC,*0057B
+ 14,VTM,
+ ,ITS,14
+ 13,VJM,MOVE    
+ *0032B:,UJ,*0042B
+ *0033B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0044B
+ 7,STX,13B
+ 7,STX,12B
+ 7,STX,11B
+ 7,STX,10B
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0042B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0044B:,BSS,6
+ *0052B:,BSS,1
+ *0053B:,BSS,1
+ *0054B:,BSS,1
+ *0055B:,BSS,1
+ *0056B:,BSS,1
+ *0057B:,BSS,1
+ ,END,

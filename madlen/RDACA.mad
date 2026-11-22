@@ -1,0 +1,150 @@
+ RDACA   :,NAME, NEW DTRAN
+C Commands: 75
+C Constants: 3
+C BSS: 11
+C Memory size: 111
+C Header: 1
+C Symbols: 16
+C Long symbols: 4
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 126
+C Symbol table offset is 103
+ *GFGEL* :,LC,28
+ GFFALS  :,SUBP,
+ SIN     :,SUBP,
+ COS     :,SUBP,
+ ABS     :,SUBP,
+ STRMOD  :,SUBP,
+ GAK/7:,EQU,*GFGEL* +8
+ R*ST*I  :,SUBP,
+ GAL/1:,EQU,*GFGEL* -32767
+ GAL/2:,EQU,*GFGEL* +5
+ GAL/3:,EQU,*GFGEL* +27
+ GAL/4:,EQU,*GFGEL* +2
+ GAL/5:,EQU,*GFGEL* +1
+ GAL/6:,EQU,*GFGEL* +6
+ 14,VTM,*0001B
+ ,UJ,*0062B
+ *0001B:,UTC,GAK/7
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0061B
+ ,ARX,
+ ,UZA,*0006B
+ 14,VTM,*0075B
+ ,ITS,14
+ 13,VJM,STRMOD  
+ *0006B:14,VTM,GAK/7
+ ,ITA,14
+ 13,VJM,ABS     
+ 14,VTM,*0100B
+ 13,VJM,R*ST*I  
+ 7,XTA,3
+ 7,ATX,4
+ ,NTR,3
+ ,WTC,*0101B
+ 1,VTM,
+ 1,UTC,GAL/1
+ ,XTA,
+ 14,VTM,*0100B
+ 13,VJM,R*ST*I  
+ 7,XTA,3
+ 7,ATX,5
+ 7,A-X,1
+ ,NTR,22B
+ ,ASN,64-7
+ ,UZA,*0022B
+ ,ARX,
+ ,UZA,*0052B
+ *0022B:,WTC,*0101B
+ 1,VTM,
+ 1,UTC,GAL/2
+ ,XTA,
+ ,UTC,GAL/3
+ ,A*X,
+ 7,ATX,6
+ 1,UTC,GAL/4
+ 14,VTM,
+ ,ITA,14
+ 13,VJM,ABS     
+ 7,ATX,3
+ 14,VTM,*0103B
+ ,ITA,14
+ 13,VJM,COS     
+ 7,A*X,3
+ 1,UTC,*GFGEL* 
+ ,A+X,
+ ,WTC,*0104B
+ ,ATX,
+ 1,UTC,GAL/4
+ 14,VTM,
+ ,ITA,14
+ 13,VJM,ABS     
+ 7,ATX,3
+ 14,VTM,*0103B
+ ,ITA,14
+ 13,VJM,SIN     
+ 7,A*X,3
+ 1,UTC,GAL/5
+ ,A+X,
+ ,WTC,*0105B
+ ,ATX,
+ 1,UTC,GAL/4
+ ,XTA,
+ ,WTC,*0106B
+ ,ATX,
+ 1,UTC,GAL/2
+ ,XTA,
+ ,WTC,*0107B
+ ,ATX,
+ 1,UTC,GAL/6
+ ,XTA,
+ ,WTC,*0110B
+ ,ATX,
+ ,UJ,*0054B
+ *0052B:14,VTM,*0077B
+ ,ITS,14
+ 13,VJM,GFFALS  
+ *0054B:,UTC,GAK/7
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0061B
+ ,ARX,
+ ,UZA,*0061B
+ 14,VTM,*0075B
+ ,ITS,14
+ 13,VJM,STRMOD  
+ *0061B:,UJ,*0072B
+ *0062B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0075B
+ 7,STX,13B
+ 7,STX,12B
+ 7,STX,11B
+ 7,STX,10B
+ 7,STX,7
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0072B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0075B:,INT,0
+ ,INT,2
+ *0077B:,INT,6
+ *0100B:,BSS,1
+ *0101B:,BSS,2
+ *0103B:,BSS,1
+ *0104B:,BSS,1
+ *0105B:,BSS,1
+ *0106B:,BSS,1
+ *0107B:,BSS,1
+ *0110B:,BSS,1
+ ,END,

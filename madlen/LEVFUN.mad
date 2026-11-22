@@ -1,0 +1,105 @@
+ LEVFUN  :,NAME, NEW DTRAN
+C Commands: 52
+C Constants: 1
+C BSS: 14
+C Memory size: 67
+C Header: 1
+C Symbols: 3
+C Long symbols: 2
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 64
+C Symbol table offset is 56
+ MINMAX  :,SUBP,
+ I*MU*I  :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0037B
+ *0001B:,WTC,*0063B
+ ,XTA,
+ ,WTC,*0064B
+ 14,VTM,
+ 13,VJM,I*MU*I  
+ 7,ATX,4
+ ,NTR,3
+ ,WTC,*0062B
+ 14,VTM,
+ ,ITS,14
+ 14,VTM,*0056B
+ ,ITS,14
+ 14,VTM,*0057B
+ ,ITS,14
+ 14,VTM,*0060B
+ ,ITS,14
+ ,NTR,22B
+ 13,VJM,MINMAX  
+ ,NTR,3
+ ,NTR,22B
+ 7,XTA,
+ 7,ATX,7
+ ,NTR,3
+ ,NTR,22B
+ ,UJ,*0035B
+ *0017B:7,XTA,6
+ 7,A-X,5
+ 7,ATX,1
+ ,WTC,*0066B
+ ,XTA,
+ ,NTR,3
+ 7,A-X,
+ ,NTR,22B
+ ,A+X,
+ 7,ATX,2
+ 7,XTA,7
+ ,NTR,3
+ 7,A-X,
+ ,NTR,22B
+ ,A+X,
+ 7,ATX,3
+ 7,A*X,1
+ 7,A/X,2
+ 7,A+X,5
+ ,WTC,*0061B
+ 1,VTM,
+ ,WTC,*0065B
+ 1,ATX,-1
+ 7,XTA,7
+ ,NTR,3
+ 7,A+X,
+ 7,ATX,7
+ ,NTR,22B
+ *0035B:,WTC,*0066B
+ ,X-A,
+ ,UZA,*0017B
+ ,UJ,*0047B
+ *0037B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0052B
+ 7,STX,14B
+ 7,STX,13B
+ 7,STX,12B
+ 7,STX,11B
+ 7,STX,10B
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0047B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0052B:,INT,1
+ ,BSS,3
+ *0056B:,BSS,1
+ *0057B:,BSS,1
+ *0060B:,BSS,1
+ *0061B:,BSS,1
+ *0062B:,BSS,1
+ *0063B:,BSS,1
+ *0064B:,BSS,1
+ *0065B:,BSS,1
+ *0066B:,BSS,1
+ ,END,

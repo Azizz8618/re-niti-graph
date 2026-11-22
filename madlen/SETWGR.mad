@@ -1,0 +1,27 @@
+ SETWGR  :,NAME, NEW DTRAN
+C Commands: 7
+C Constants: 2
+C BSS: 0
+C Memory size: 11
+C Header: 1
+C Symbols: 0
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 15
+C Symbol table offset is 14
+ *0000B:8,VTM,*0000B
+ ,ATI,9
+ 9,XTA,4
+ ,UZA,*0005B
+ 8,AAX,10B
+ ,U1A,*0005B
+ 8,XTA,7
+ 9,STX,2
+ 13,UJ,
+ *0005B:,XTA,
+ 9,STX,2
+ 13,UJ,
+  :,LOG,6200000000000000
+ ,LOG,770000
+ ,END,

@@ -1,0 +1,65 @@
+ SETIND  :,NAME, NEW DTRAN
+C Commands: 32
+C Constants: 2
+C BSS: 0
+C Memory size: 34
+C Header: 1
+C Symbols: 3
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 43
+C Symbol table offset is 37
+ 14,VTM,
+ *0001B:8,VTM,*0001B
+ ,ITS,12
+ ,ITS,13
+ ,XTS,
+ 15,XTA,-5
+ ,ATI,9
+ 15,XTA,-4
+ ,ATI,12
+ 12,XTA,
+ ,ASN,64+1
+ ,ATI,13
+ 9,WTC,6
+ 12,VTM,
+ 12,UTM,1000B
+ 13,J+M,12
+ 15,XTA,-3
+ ,ATI,13
+ ,YTA,
+ ,U1A,*0023B
+ 12,XTA,
+ ,ASN,64-15
+ 14,VZM,*0015B
+ ,YTA,
+ ,UJ,*0025B
+ *0015B:,ASN,64+15
+ 13,XTS,
+ ,ASN,64+15
+ ,YTA,
+ *0017B:15,AOX,
+ 12,STX,
+ *0020B:,STI,13
+ ,STI,12
+ ,STX,
+ ,STX,
+ ,STX,
+ 13,UJ,
+ *0023B:12,XTA,
+ 14,VZM,*0026B
+ 8,AAX,31B
+ ,ASN,64+9
+ *0025B:13,STX,
+ ,UJ,*0020B
+ *0026B:8,AAX,32B
+ 13,XTS,
+ ,ASN,64-9
+ 8,AAX,31B
+ ,UJ,*0017B
+  :14,VTM,1
+ ,UJ,*0001B
+ ,LOG,77777000
+ ,LOG,7777777700000777
+ ,END,

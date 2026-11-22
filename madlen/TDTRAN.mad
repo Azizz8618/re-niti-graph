@@ -1,0 +1,70 @@
+ TDTRAN  :,NAME, NEW DTRAN
+C Commands: 27
+C Constants: 1
+C BSS: 3
+C Memory size: 33
+C Header: 1
+C Symbols: 11
+C Long symbols: 3
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 50
+C Symbol table offset is 33
+ *GFMATR*:,LC,34
+ GAK/2:,EQU,*GFMATR*+16
+ GAK/3:,EQU,*GFMATR*+32
+ GAK/4:,EQU,*GFMATR*+33
+ HCMULT  :,SUBP,
+ HCUNIT  :,SUBP,
+ GAK/7:,EQU,GAK/2+3
+ GAL/0:,EQU,GAK/2+7
+ GAL/1:,EQU,GAK/2+11
+ 14,VTM,*0001B
+ ,UJ,*0017B
+ *0001B:7,XTA,
+ ,UTC,GAK/3
+ ,ATX,
+ ,NTR,3
+ 14,VTM,GAK/2
+ ,ITS,14
+ ,NTR,22B
+ 13,VJM,HCUNIT  
+ ,WTC,*0030B
+ ,XTA,
+ ,UTC,GAK/7
+ ,ATX,
+ ,WTC,*0031B
+ ,XTA,
+ ,UTC,GAL/0
+ ,ATX,
+ ,WTC,*0032B
+ ,XTA,
+ ,UTC,GAL/1
+ ,ATX,
+ 14,VTM,*GFMATR*
+ ,ITS,14
+ 14,VTM,GAK/2
+ ,ITS,14
+ 13,VJM,HCMULT  
+ ,UJ,*0025B
+ *0017B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0027B
+ 7,STX,3
+ 7,STX,2
+ 7,STX,1
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0025B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0027B:,INT,2
+ *0030B:,BSS,1
+ *0031B:,BSS,1
+ *0032B:,BSS,1
+ ,END,

@@ -1,0 +1,131 @@
+# GRAFOR-22 keyword grep
+
+Patterns (case-insensitive): э70, *70, Е/e70, УВВ, Э50..Э77,
+БИБЛИОТЕК, LIBR, READ, WRITE, GDISC, FDISC, RZON, WZON, RCATAL, WCATAL.
+Each line is prefixed with the zone file it came from; the line itself contains the BESM address.
+
+## A. From disassembly listings (disasm/zone_*.txt)
+
+[zone_1100.txt:22] 3 05 151 2200 		Э51	'72200'(М5)
+[zone_1100.txt:23] 00 150 0000 		Э50	'70000'
+[zone_1100.txt:26] 5 05 051 2200 		Э51	'2200'(М5)
+[zone_1102.txt:92] 00 050 0501 		Э50	'501'
+[zone_1102.txt:95] 00 060 0473 		Э60	D00473
+[zone_1102.txt:104] 00 050 0462 		Э50	'462'
+[zone_1102.txt:226] 00 060 0356 		Э60	D00356
+[zone_1102.txt:290] 00 050 0300 		Э50	'300'
+[zone_1102.txt:306] 00 060 0242 		Э60	D00242
+[zone_1102.txt:313] 00 050 0232 		Э50	'232'
+[zone_1102.txt:641] 00 060 0101 		Э60	D00101
+[zone_1102.txt:656] 00 070 0051 		Э70	D00051
+[zone_1102.txt:662] 00 050 0042 		Э50	'42'
+[zone_1102.txt:667] 00 060 0030 		Э60	D00030
+[zone_1102.txt:669] 00 050 0023 		Э50	'23'
+[zone_1102.txt:686] 00 060 0005 		Э60	D00005
+[zone_1117.txt:27] 4 10 050 0000 		Э50	(М10)
+[zone_1117.txt:28] 5 12 051 6364 		Э51	'6364'(М12)
+[zone_1130.txt:17] 00 033 0001 		увв	'1'
+[zone_1131.txt:34] 7 10 050 0000 		Э50	(М10)
+[zone_1131.txt:35] 10 10 152 0000 		Э52	'70000'(М10)
+[zone_1131.txt:37] 15 176 2130 		Э76	'72130'(М15)
+[zone_1131.txt:38] 12 15 050 6245 		Э50	'6245'(М15)
+[zone_1150.txt:22] 00 160 0114 		Э60	'70114'
+[zone_1151.txt:16] 13 063 0000 		Э63	(М13)
+[zone_1166.txt:21] 11 160 3312 		Э60	'73312'(М11)
+[zone_1170.txt:24] 00 060 0001 		Э60	D00001
+[zone_1170.txt:25] 4 04 063 2070 		Э63	'2070'(М4)
+[zone_1170.txt:27] 5 02 062 0400 		Э62	'400'(М2)
+[zone_1170.txt:28] 05 060 0002 		Э60	2(М5)
+[zone_1170.txt:29] 6 04 063 2070 		Э63	'2070'(М4)
+[zone_1172.txt:18] 14 060 5012 		Э60	'5012'(М14)
+[zone_1173.txt:21] 14 060 5012 		Э60	'5012'(М14)
+[zone_1175.txt:17] 1 10 060 5040 		Э60	'5040'(М10)
+[zone_1175.txt:24] 05 063 0465 		Э63	'465'(М5)
+[zone_1176.txt:24] 04 064 7504 		Э64	'7504'(М4)
+[zone_1177.txt:16] 03 070 1412 		Э70	'1412'(М3)
+[zone_1177.txt:59] 26 10 060 5040 		Э60	'5040'(М10)
+[zone_1177.txt:65] 31 03 163 0203 		Э63	'70203'(М3)
+
+Total listing hits: 39.
+
+## B. Decoded low-level GRAFOR / disk-exchange module names (TEXT name words)
+
+Decoded from six-byte words as eight 6-bit Dubna TEXT characters.
+Format: [zone word] NAME.
+
+[zone_1100 w0012] AFTZN
+[zone_1100 w0014] WCATWO
+[zone_1100 w0020] SWCAT
+[zone_1100 w0022] GIVENZ
+[zone_1100 w0032] GDISC
+[zone_1100 w0034] FDISC
+[zone_1100 w0036] ABUFF
+[zone_1100 w0040] RCATAL
+[zone_1100 w0042] WCATAL
+[zone_1100 w0044] RZON
+[zone_1100 w0046] WZON
+[zone_1100 w0050] RZONE
+[zone_1100 w0052] WZONE
+[zone_1100 w0054] SETR
+[zone_1100 w0056] SETW
+[zone_1100 w0060] CLEAZN
+[zone_1100 w0062] COMPDT
+[zone_1100 w0066] E70
+[zone_1161 w0461] FDISC
+[zone_1161 w0462] WCATAL
+[zone_1161 w0463] GDISC
+[zone_1161 w0464] GIVENZ
+[zone_1161 w0466] RCATAL
+[zone_1161 w0543] FDISC
+[zone_1161 w0544] WCATAL
+[zone_1161 w0545] GDISC
+[zone_1161 w0547] RCATAL
+[zone_1161 w0716] MDBUFF
+[zone_1161 w1063] FDISC
+[zone_1161 w1064] GDISC
+[zone_1161 w1114] E70
+[zone_1161 w1261] COMPDT
+[zone_1161 w1311] CLEAZN
+[zone_1161 w1373] RZON
+[zone_1161 w1416] RCATAL
+[zone_1161 w1422] RZONE
+[zone_1161 w1423] WZONE
+[zone_1161 w1446] ABUFF
+[zone_1161 w1522] GDISC
+[zone_1161 w1701] RZONE
+[zone_1162 w0047] GIVENZ
+[zone_1162 w0276] WCATWO
+[zone_1162 w0307] CLEAZN
+[zone_1162 w0311] RZONE
+[zone_1162 w0716] MDBUFF
+[zone_1162 w1063] FDISC
+[zone_1162 w1064] GDISC
+[zone_1162 w1114] E70
+[zone_1162 w1261] COMPDT
+[zone_1162 w1311] CLEAZN
+[zone_1162 w1373] RZON
+[zone_1162 w1416] RCATAL
+[zone_1162 w1422] RZONE
+[zone_1162 w1423] WZONE
+[zone_1162 w1446] ABUFF
+[zone_1162 w1522] GDISC
+[zone_1162 w1701] RZONE
+[zone_1163 w0002] MDBUFF
+[zone_1163 w0004] PLOT
+[zone_1163 w0006] ONOFF
+[zone_1163 w0010] PEN
+[zone_1163 w0012] FRAME
+[zone_1163 w0014] FRAGM
+[zone_1163 w0016] EFRAGM
+[zone_1163 w0020] GROPEN
+[zone_1163 w0022] GRWRIT
+[zone_1163 w0024] GRCLOS
+[zone_1163 w0026] GRNOTZ
+[zone_1163 w0030] GRNAME
+[zone_1163 w0054] RDB
+[zone_1163 w0056] IRDB
+[zone_1163 w0060] WDB
+[zone_1163 w0062] IWDB
+
+Total decoded keyword name-words: 73.
+

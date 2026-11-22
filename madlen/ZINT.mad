@@ -1,0 +1,73 @@
+ ZINT    :,NAME, NEW DTRAN
+C Commands: 33
+C Constants: 0
+C BSS: 11
+C Memory size: 44
+C Header: 1
+C Symbols: 0
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 37
+C Symbol table offset is 36
+ 14,VTM,*0001B
+ ,UJ,*0021B
+ *0001B:,WTC,*0040B
+ ,XTA,
+ ,WTC,*0042B
+ ,A-X,
+ 7,ATX,1
+ ,WTC,*0043B
+ ,XTA,
+ 7,A*X,1
+ 7,ATX,
+ ,WTC,*0037B
+ ,XTA,
+ ,WTC,*0042B
+ ,A*X,
+ 7,A+X,
+ 7,ATX,
+ ,WTC,*0041B
+ ,XTA,
+ ,X-A,
+ ,WTC,*0040B
+ ,A*X,
+ 7,A+X,
+ 7,ATX,2
+ ,WTC,*0037B
+ ,XTA,
+ ,WTC,*0041B
+ ,A-X,
+ 7,ATX,1
+  :7,XTA,2
+ 7,A/X,1
+ 7,ATX,3
+ ,UJ,*0030B
+ *0021B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0033B
+ 7,STX,10B
+ 7,STX,7
+ 7,STX,6
+ 7,STX,5
+ 7,STX,4
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0030B:,STI,
+ ,STI,7
+ ,STI,8
+ ,UTC,*0036B
+ ,XTS,
+ 8,UJ,
+ *0033B:,BSS,3
+ *0036B:,BSS,1
+ *0037B:,BSS,1
+ *0040B:,BSS,1
+ *0041B:,BSS,1
+ *0042B:,BSS,1
+ *0043B:,BSS,1
+ ,END,

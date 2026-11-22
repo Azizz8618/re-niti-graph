@@ -1,0 +1,18 @@
+ ABUFF   :,NAME, NEW DTRAN
+C Commands: 3
+C Constants: 0
+C BSS: 0
+C Memory size: 3
+C Header: 1
+C Symbols: 0
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 7
+C Symbol table offset is 6
+ ,STI,10
+ ,ATI,11
+ ,ITA,10
+ 11,STX,6
+ 13,UJ,
+ ,END,

@@ -1,0 +1,64 @@
+ DIMET   :,NAME, NEW DTRAN
+C Commands: 26
+C Constants: 4
+C BSS: 2
+C Memory size: 34
+C Header: 1
+C Symbols: 4
+C Long symbols: 2
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 44
+C Symbol table offset is 35
+ *GFMATR*:,LC,34
+ GAK/2:,EQU,*GFMATR*+32
+ GAK/3:,EQU,*GFMATR*+33
+ TDROT   :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0017B
+ *0001B:,UTC,GAK/2
+ ,XTA,
+ 7,ATX,5
+ ,NTR,3
+ 7,XTA,1
+ ,UTC,GAK/3
+ ,ATX,
+ 7,XTA,3
+ ,NTR,22B
+ ,X-A,
+ 7,ATX,4
+ 14,VTM,*0030B
+ ,ITS,14
+ 14,VTM,*0032B
+ ,ITS,14
+ 13,VJM,TDROT   
+ 14,VTM,*0026B
+ ,ITS,14
+ 14,VTM,*0031B
+ ,ITS,14
+ 13,VJM,TDROT   
+ 7,XTA,5
+ ,UTC,GAK/2
+ ,ATX,
+ ,NTR,3
+ ,NTR,22B
+ ,UJ,*0024B
+ *0017B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0026B
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0024B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0026B:,INT,1
+ ,INT,2
+ *0030B:,INT,3
+ *0031B:,TEXT, 8HBJ      
+ *0032B:,BSS,2
+ ,END,

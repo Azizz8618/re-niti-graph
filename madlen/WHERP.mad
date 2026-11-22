@@ -1,0 +1,61 @@
+ WHERP   :,NAME, NEW DTRAN
+C Commands: 24
+C Constants: 2
+C BSS: 5
+C Memory size: 33
+C Header: 1
+C Symbols: 3
+C Long symbols: 1
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 36
+C Symbol table offset is 31
+ *GFBFTR*:,LC,2
+ GAK/2:,EQU,*GFBFTR*+1
+ RDB     :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0014B
+ *0001B:,UTC,*GFBFTR*
+ ,XTA,
+ ,WTC,*0030B
+ ,ATX,
+ ,UTC,GAK/2
+ ,XTA,
+ ,WTC,*0031B
+ ,ATX,
+ 14,VTM,*0025B
+ ,ITA,14
+ 13,VJM,RDB     
+ 7,ATX,2
+ 14,VTM,*0024B
+ ,ITA,14
+ 13,VJM,RDB     
+ 7,ATX,3
+ 7,XTA,2
+ 7,A/X,3
+ ,WTC,*0032B
+ ,ATX,
+ ,UJ,*0022B
+ *0014B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0024B
+ 7,STX,6
+ 7,STX,5
+ 7,STX,4
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0022B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0024B:,INT,1
+ *0025B:,INT,17
+ ,BSS,2
+ *0030B:,BSS,1
+ *0031B:,BSS,1
+ *0032B:,BSS,1
+ ,END,

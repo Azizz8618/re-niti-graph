@@ -1,0 +1,129 @@
+ MTMPL   :,NAME, NEW DTRAN
+C Commands: 61
+C Constants: 0
+C BSS: 23
+C Memory size: 104
+C Header: 1
+C Symbols: 1
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 66
+C Symbol table offset is 64
+ 14,VTM,*0001B
+ ,UJ,*0050B
+ *0001B:,WTC,*0062B
+ ,XTA,
+ ,WTC,*0070B
+ ,A*X,
+ 7,ATX,
+ ,WTC,*0063B
+ ,XTA,
+ ,WTC,*0073B
+ ,A*X,
+ 7,A+X,
+ ,WTC,*0076B
+ ,ATX,
+ ,WTC,*0062B
+ ,XTA,
+ ,WTC,*0071B
+ ,A*X,
+ 7,ATX,
+ ,WTC,*0063B
+ ,XTA,
+ ,WTC,*0074B
+ ,A*X,
+ 7,A+X,
+ ,WTC,*0077B
+ ,ATX,
+ ,WTC,*0062B
+ ,XTA,
+ ,WTC,*0072B
+ ,A*X,
+ 7,ATX,
+ ,WTC,*0063B
+ ,XTA,
+ ,WTC,*0075B
+ ,A*X,
+ 7,A+X,
+ ,WTC,*0064B
+ ,A+X,
+ ,WTC,*0100B
+ ,ATX,
+ ,WTC,*0065B
+ ,XTA,
+ ,WTC,*0070B
+ ,A*X,
+ 7,ATX,
+ ,WTC,*0066B
+ ,XTA,
+ ,WTC,*0073B
+ ,A*X,
+ 7,A+X,
+ ,WTC,*0101B
+ ,ATX,
+ ,WTC,*0065B
+ ,XTA,
+ ,WTC,*0071B
+ ,A*X,
+ 7,ATX,
+ ,WTC,*0066B
+ ,XTA,
+ ,WTC,*0074B
+ ,A*X,
+ 7,A+X,
+ ,WTC,*0102B
+ ,ATX,
+ ,WTC,*0065B
+ ,XTA,
+ ,WTC,*0072B
+ ,A*X,
+ 7,ATX,
+ ,WTC,*0066B
+ ,XTA,
+ ,WTC,*0075B
+ ,A*X,
+ 7,A+X,
+ ,WTC,*0067B
+ ,A+X,
+ ,WTC,*0103B
+ ,ATX,
+ ,UJ,*0057B
+ *0050B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0061B
+ 9,VTM,22B
+ *0052B:9,UTM,-1
+ 9,UTC,
+ 7,STX,1
+ 9,V1M,*0052B
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0057B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0061B:,BSS,1
+ *0062B:,BSS,1
+ *0063B:,BSS,1
+ *0064B:,BSS,1
+ *0065B:,BSS,1
+ *0066B:,BSS,1
+ *0067B:,BSS,1
+ *0070B:,BSS,1
+ *0071B:,BSS,1
+ *0072B:,BSS,1
+ *0073B:,BSS,1
+ *0074B:,BSS,1
+ *0075B:,BSS,1
+ *0076B:,BSS,1
+ *0077B:,BSS,1
+ *0100B:,BSS,1
+ *0101B:,BSS,1
+ *0102B:,BSS,1
+ *0103B:,BSS,1
+ ,END,

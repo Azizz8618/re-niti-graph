@@ -1,0 +1,200 @@
+ STRMOD  :,NAME, NEW DTRAN
+C Commands: 117
+C Constants: 6
+C BSS: 4
+C Memory size: 131
+C Header: 1
+C Symbols: 7
+C Long symbols: 1
+C Debug: 0
+C Data: 34 + set: 1
+C Actual length of the object file is 176
+C Symbol table offset is 165
+ *GFGEL* :,LC,28
+ SIGN    :,SUBP,
+ ABS     :,SUBP,
+ GAK/4:,EQU,*GFGEL* +8
+ GAK/5:,EQU,*GFGEL* -32767
+ GAK/6:,EQU,*GFGEL* +9
+ 14,VTM,*0001B
+ ,UJ,*0106B
+ *0001B:,WTC,*0130B
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0005B
+ ,ARX,
+ ,UZA,*0046B
+ ,UJ,*0024B
+ *0005B:14,VTM,GAK/4
+ ,ITA,14
+ 13,VJM,ABS     
+ 7,A-X,4
+ ,ASN,64-7
+ ,UZA,*0016B
+ ,ARX,
+ ,UZA,*0012B
+ ,UJ,*0017B
+ *0012B:14,VTM,*0124B
+ ,ITA,14
+ 14,VTM,GAK/4
+ ,ITS,14
+ 13,VJM,SIGN    
+ ,UTC,GAK/4
+ ,ATX,
+ *0016B:,UJ,*0114B
+ *0017B:14,VTM,*0117B
+ ,ITA,14
+ 14,VTM,GAK/4
+ ,ITS,14
+ 13,VJM,SIGN    
+ ,UTC,GAK/4
+ ,ATX,
+ ,UJ,*0114B
+ *0024B:,WTC,*0130B
+ ,XTA,
+ ,NTR,3
+ 7,A-X,1
+ ,NTR,22B
+ ,ASN,64-7
+ ,UZA,*0034B
+ ,ARX,
+ ,UZA,*0031B
+ ,UJ,*0064B
+ *0031B:7,XTA,
+ ,A+X,
+ ,UTC,GAK/4
+ ,ATX,
+ ,UJ,*0114B
+ *0034B:7,XTA,5
+ ,A+X,
+ ,UTC,GAK/4
+ ,ATX,
+ ,UJ,*0114B
+ *0037B:,UTC,GAK/4
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0016B
+ ,ARX,
+ ,UZA,*0043B
+ ,UJ,*0016B
+ *0043B:,UTC,GAK/4
+ ,XTA,
+ ,X-A,
+ ,UTC,GAK/4
+ ,ATX,
+ ,UJ,*0114B
+ *0046B:,WTC,*0130B
+ ,XTA,
+ ,NTR,3
+ 7,A+X,1
+ ,NTR,22B
+ ,ASN,64-7
+ ,UZA,*0056B
+ ,ARX,
+ ,UZA,*0060B
+  :7,XTA,
+ ,X-A,
+ ,UTC,GAK/4
+ ,ATX,
+ ,UJ,*0114B
+ *0056B:7,XTA,5
+ ,X-A,
+ ,UTC,GAK/4
+ ,ATX,
+ *0060B:,UTC,GAK/4
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0016B
+ ,ARX,
+ ,UZA,*0016B
+ ,UJ,*0043B
+ *0064B:,WTC,*0130B
+ ,XTA,
+ ,NTR,3
+ 7,A-X,2
+ ,NTR,22B
+ ,ASN,64-7
+ ,UZA,*0037B
+ ,ARX,
+ ,UZA,*0016B
+  :7,XTA,
+ 7,ATX,7
+ ,NTR,3
+ ,NTR,22B
+ *0073B:,WTC,*0126B
+ 1,VTM,
+ 1,UTC,GAK/5
+ ,XTA,
+ 7,ATX,10B
+ ,WTC,*0126B
+ 1,VTM,
+ 1,UTC,GAK/6
+ ,XTA,
+ 1,UTC,GAK/5
+ ,ATX,
+ 7,XTA,10B
+ 1,UTC,GAK/6
+ ,ATX,
+ 7,XTA,7
+ ,NTR,3
+ 7,A+X,
+ 7,ATX,7
+ 7,X-A,3
+ ,NTR,22B
+ ,UZA,*0073B
+ ,UJ,*0114B
+ *0106B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0117B
+ 7,STX,11B
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0114B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0117B:,INT,1
+ ,INT,2
+ ,INT,3
+ ,INT,8
+ ,INT,10
+ *0124B:,INT,11
+ ,BSS,4
+ ,DATA,
+ *0125B:,LOG,0
+ *0126B:,LOG,0
+ ,LOG,0
+ *0130B:,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,4050000000000000
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,0
+ ,LOG,3550737215211226
+ 28,SET,*0125B
+ 1,   ,*GFGEL* 
+ ,END,

@@ -1,0 +1,99 @@
+ SHEAR   :,NAME, NEW DTRAN
+C Commands: 50
+C Constants: 3
+C BSS: 5
+C Memory size: 60
+C Header: 1
+C Symbols: 11
+C Long symbols: 4
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 74
+C Symbol table offset is 56
+ *GFMATR*:,LC,34
+ GAK/2:,EQU,*GFMATR*+16
+ GAK/3:,EQU,*GFMATR*+32
+ GAK/4:,EQU,*GFMATR*+33
+ HCMULT  :,SUBP,
+ HCUNIT  :,SUBP,
+ I*MUI*  :,SUBP,
+ GAL/0:,EQU,GAK/2-32763
+ 14,VTM,*0001B
+ ,UJ,*0035B
+ *0001B:7,XTA,
+ ,UTC,GAK/3
+ ,ATX,
+ ,NTR,3
+ 14,VTM,GAK/2
+ ,ITS,14
+ ,NTR,22B
+ 13,VJM,HCUNIT  
+ 13,VJM,*0016B
+ ,WTC,*0057B
+ ,XTA,
+ ,WTC,*0050B
+ 1,VTM,
+ 1,UTC,GAL/0
+ ,ATX,
+ 14,VTM,*GFMATR*
+ ,ITS,14
+ 14,VTM,GAK/2
+ ,ITS,14
+ 13,VJM,HCMULT  
+ 13,VJM,*0016B
+ ,UJ,*0045B
+ *0016B:13,MTJ,12
+ ,WTC,*0056B
+ ,XTA,
+ ,NTR,3
+ 13,VJM,*0024B
+ ,WTC,*0055B
+ ,XTA,
+ 13,VJM,*0031B
+ ,NTR,22B
+ 12,UJ,
+ *0024B:7,A-X,2
+ 7,ATX,2
+ 7,XTS,1
+ 14,VJM,I*MUI*  
+ 7,A+X,-1
+ 7,ATX,-1
+ ,WTC,*0056B
+ ,XTA,
+ 7,ATX,2
+ 13,UJ,
+ *0031B:7,A-X,3
+ 7,ATX,3
+ 7,A+X,-1
+ 7,ATX,-1
+ ,WTC,*0055B
+ ,XTA,
+ 7,ATX,3
+ 13,UJ,
+ *0035B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0051B
+ 7,STX,6
+ 7,STX,5
+ 7,STX,4
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ 13,VJM,*0016B
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0045B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0050B:,INT,0
+ *0051B:,INT,2
+ ,INT,4
+ ,BSS,2
+ *0055B:,BSS,1
+ *0056B:,BSS,1
+ *0057B:,BSS,1
+ ,END,

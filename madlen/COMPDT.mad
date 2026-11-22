@@ -1,0 +1,40 @@
+ COMPDT  :,NAME, NEW DTRAN
+C Commands: 14
+C Constants: 2
+C BSS: 0
+C Memory size: 16
+C Header: 1
+C Symbols: 2
+C Long symbols: 1
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 25
+C Symbol table offset is 21
+ DATA*   :,LC,2
+ GAK/2:,EQU,DATA*   +1
+ *0000B:8,VTM,*0000B
+ ,STI,9
+ ,ATI,10
+ 10,XTA,
+ ,ASN,64-8
+ ,UZA,*0010B
+ *0003B:10,XTA,
+ 8,APX,15B
+ 10,XTS,1
+ 8,APX,14B
+ ,ASN,64+11
+ 15,AOX,
+ ,ASN,64-15
+ ,YTA,
+ 9,STX,
+ 13,UJ,
+ *0010B:,UTC,DATA*   
+ ,XTA,
+ 10,ATX,
+ ,UTC,GAK/2
+ ,XTA,
+ 10,ATX,1
+ ,UJ,*0003B
+  :,LOG,740000000000
+ ,LOG,60740000207400
+ ,END,

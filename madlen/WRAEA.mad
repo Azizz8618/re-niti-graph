@@ -1,0 +1,198 @@
+ WRAEA   :,NAME, NEW DTRAN
+C Commands: 122
+C Constants: 4
+C BSS: 17
+C Memory size: 145
+C Header: 1
+C Symbols: 24
+C Long symbols: 5
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 163
+C Symbol table offset is 131
+ *GFGEL* :,LC,28
+ *GFBFTR*:,LC,2
+ GAK/3:,EQU,*GFBFTR*+1
+ GFFALS  :,SUBP,
+ STRMOD  :,SUBP,
+ COS     :,SUBP,
+ SIN     :,SUBP,
+ SQRT    :,SUBP,
+ ABS     :,SUBP,
+ GAL/2:,EQU,*GFGEL* +9
+ GAL/3:,EQU,*GFGEL* +27
+ GAL/4:,EQU,*GFGEL* +8
+ R*ST*I  :,SUBP,
+ GAL/6:,EQU,*GFGEL* -32767
+ GAL/7:,EQU,*GFGEL* +1
+ GAM/0:,EQU,*GFGEL* +2
+ GAM/1:,EQU,*GFGEL* +3
+ GAM/2:,EQU,*GFGEL* +4
+ GAM/3:,EQU,*GFGEL* +5
+ GAM/4:,EQU,*GFGEL* +6
+ 14,VTM,*0001B
+ ,UJ,*0107B
+ *0001B:,WTC,*0140B
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0104B
+ ,ARX,
+ ,UZA,*0004B
+ *0004B:,UTC,*GFBFTR*
+ ,XTA,
+ 7,ATX,6
+ ,UTC,GAK/3
+ ,XTA,
+ 7,ATX,7
+ 7,XTA,3
+ ,UTC,GAL/2
+ ,ATX,
+ ,WTC,*0142B
+ ,XTA,
+ ,UTC,GAL/3
+ ,A*X,
+ 7,ATX,10B
+ ,WTC,*0143B
+ ,XTA,
+ ,UTC,GAL/3
+ ,A*X,
+ 7,ATX,11B
+ ,WTC,*0144B
+ ,XTA,
+ ,UTC,GAL/3
+ ,A*X,
+ 7,ATX,12B
+ ,WTC,*0140B
+ 14,VTM,
+ ,ITA,14
+ 13,VJM,ABS     
+ 7,ATX,13B
+ 14,VTM,*0133B
+ ,ITA,14
+ 13,VJM,SIN     
+ 7,A*X,13B
+ 7,ATX,4
+ 7,A*X,4
+ 7,ATX,4
+ 14,VTM,*0133B
+ ,ITA,14
+ 13,VJM,COS     
+ ,WTC,*0141B
+ ,A*X,
+ 7,ATX,5
+ 7,A*X,5
+ 7,A+X,4
+ 7,ATX,4
+ 14,VTM,*0126B
+ ,ITA,14
+ 13,VJM,SQRT    
+ 7,ATX,4
+ 7,XTA,13B
+ ,WTC,*0141B
+ ,A*X,
+ 7,A/X,4
+ 7,ATX,14B
+ 14,VTM,GAL/4
+ ,ITA,14
+ 13,VJM,ABS     
+ 14,VTM,*0126B
+ 13,VJM,R*ST*I  
+ 7,XTA,4
+ 7,ATX,15B
+ ,NTR,3
+ 7,XTA,2
+ ,NTR,22B
+ ,X-A,
+ ,WTC,*0137B
+ 1,VTM,
+ 1,UTC,GAL/6
+ ,ATX,
+ 7,XTA,11B
+ 7,A+X,10B
+ 7,ATX,4
+ 14,VTM,*0126B
+ ,ITA,14
+ 13,VJM,COS     
+ 7,A*X,14B
+ ,X-A,
+ 7,A+X,6
+ 1,UTC,*GFGEL* 
+ ,ATX,
+ 7,XTA,11B
+ 7,A+X,10B
+ 7,ATX,4
+ 14,VTM,*0126B
+ ,ITA,14
+ 13,VJM,SIN     
+ 7,A*X,14B
+ ,X-A,
+ 7,A+X,7
+ 1,UTC,GAL/7
+ ,ATX,
+ ,WTC,*0140B
+ ,XTA,
+ 1,UTC,GAM/0
+ ,ATX,
+ ,WTC,*0141B
+ ,XTA,
+ 1,UTC,GAM/1
+ ,ATX,
+ ,WTC,*0142B
+ ,XTA,
+ 1,UTC,GAM/2
+ ,ATX,
+ ,WTC,*0143B
+ ,XTA,
+ 1,UTC,GAM/3
+ ,ATX,
+ ,WTC,*0144B
+ ,XTA,
+ 1,UTC,GAM/4
+ ,ATX,
+ ,UTC,GAL/4
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0103B
+ ,ARX,
+ ,UZA,*0103B
+  :14,VTM,*0122B
+ ,ITS,14
+ 13,VJM,STRMOD  
+ *0103B:,UJ,*0117B
+ *0104B:14,VTM,*0123B
+ ,ITS,14
+ 13,VJM,GFFALS  
+ ,UJ,*0117B
+ *0107B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0122B
+ 7,STX,22B
+ 7,STX,21B
+ 7,STX,20B
+ 7,STX,17B
+ 7,STX,16B
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0117B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0122B:,INT,0
+ *0123B:,INT,5
+ ,INT,20
+ ,LOG,4354400000000000
+ *0126B:,BSS,5
+ *0133B:,BSS,4
+ *0137B:,BSS,1
+ *0140B:,BSS,1
+ *0141B:,BSS,1
+ *0142B:,BSS,1
+ *0143B:,BSS,1
+ *0144B:,BSS,1
+ ,END,

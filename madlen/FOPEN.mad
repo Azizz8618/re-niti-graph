@@ -1,0 +1,83 @@
+ FOPEN   :,NAME, NEW DTRAN
+C Commands: 37
+C Constants: 10
+C BSS: 0
+C Memory size: 47
+C Header: 1
+C Symbols: 3
+C Long symbols: 1
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 57
+C Symbol table offset is 52
+ MDBUFF  :,SUBP,
+ ,ITS,6
+ ,ATI,14
+ *0001B:6,VTM,*0001B
+ 15,XTA,-4
+ ,STI,10
+ 10,STX,
+ ,STI,12
+ ,STI,11
+ ,STX,
+ ,ATI,9
+ ,ITA,13
+ ,ITS,14
+ ,ITS,3
+ 11,XTS,
+ 10,ATX,3
+ ,ASN,64+40
+ ,ATI,13
+ 13,UTM,-32
+ 13,V1M,*0036B
+ 11,XTA,
+ ,ASN,64-8
+ ,ASN,64+40
+ ,ATI,13
+ 13,UTM,-32
+ 13,V1M,*0033B
+ 11,XTA,
+ 6,APX,41B
+ ,ASN,64+32
+ 10,ATX,16B
+ ,ASN,64-18
+ 12,XTS,
+ 6,AAX,36B
+ *0020B:15,ARX,
+ 12,XTS,1
+ 6,AEX,45B
+ 6,ARX,37B
+ 6,AAX,45B
+ ,ASN,64+12
+ ,YTA,
+ 15,AOX,
+ 10,ATX,4
+ 13,V1M,*0026B
+ 13,VJM,MDBUFF  
+ *0026B:,XTA,
+ 10,ATX,5
+ 10,ATX,1
+ 10,ATX,12B
+ 10,WTC,
+ ,STX,
+ ,STI,3
+ ,STI,6
+ ,STI,13
+ 13,UJ,
+ *0033B:11,XTA,
+ 6,APX,40B
+ 6,AUX,42B
+ 12,XTS,
+ 6,AAX,44B
+ ,UJ,*0020B
+ *0036B:6,XTA,43B
+ ,*74,
+ ,LOG,7777
+ ,LOG,1
+ ,LOG,340701603407
+ ,LOG,1703607417
+ ,LOG,770777
+ ,INT,1
+ ,LOG,777
+ ,LOG,1777
+ ,END,

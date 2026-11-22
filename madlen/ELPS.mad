@@ -1,0 +1,106 @@
+ ELPS    :,NAME, NEW DTRAN
+C Commands: 50
+C Constants: 3
+C BSS: 11
+C Memory size: 64
+C Header: 1
+C Symbols: 6
+C Long symbols: 2
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 67
+C Symbol table offset is 56
+ *GFBFTR*:,LC,2
+ GAK/2:,EQU,*GFBFTR*+1
+ ELIPS   :,SUBP,
+ MOVE    :,SUBP,
+ SIN     :,SUBP,
+ COS     :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0040B
+ *0001B:,UTC,*GFBFTR*
+ ,XTA,
+ 7,ATX,4
+ ,UTC,GAK/2
+ ,XTA,
+ 7,ATX,5
+ ,WTC,*0063B
+ ,XTA,
+ 7,A*X,1
+ 7,ATX,6
+ 14,VTM,*0056B
+ ,ITA,14
+ 13,VJM,COS     
+ ,WTC,*0061B
+ ,A*X,
+ 7,A+X,4
+ 7,ATX,7
+ 14,VTM,*0056B
+ ,ITA,14
+ 13,VJM,SIN     
+ ,WTC,*0061B
+ ,A*X,
+ 7,A+X,5
+ 7,ATX,10B
+ 14,VTM,*0057B
+ ,ITS,14
+ 14,VTM,*0060B
+ ,ITS,14
+ 14,VTM,*0050B
+ ,ITS,14
+ 13,VJM,MOVE    
+ 14,VTM,*0057B
+ ,ITS,14
+ 14,VTM,*0060B
+ ,ITS,14
+ ,WTC,*0061B
+ 14,VTM,
+ ,ITS,14
+ ,WTC,*0062B
+ 14,VTM,
+ ,ITS,14
+ ,WTC,*0063B
+ 14,VTM,
+ ,ITS,14
+ 14,VTM,*0050B
+ ,ITS,14
+ 14,VTM,*0052B
+ ,ITS,14
+ 13,VJM,ELIPS   
+ 14,VTM,*0054B
+ ,ITS,14
+ 14,VTM,*0055B
+ ,ITS,14
+ 14,VTM,*0050B
+ ,ITS,14
+ 13,VJM,MOVE    
+ ,UJ,*0046B
+ *0040B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0050B
+ 7,STX,13B
+ 7,STX,12B
+ 7,STX,11B
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0046B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0050B:,INT,0
+ ,LOG,3550737215211226
+ *0052B:,TEXT, 8HDK0     
+ ,BSS,1
+ *0054B:,BSS,1
+ *0055B:,BSS,1
+ *0056B:,BSS,1
+ *0057B:,BSS,1
+ *0060B:,BSS,1
+ *0061B:,BSS,1
+ *0062B:,BSS,1
+ *0063B:,BSS,1
+ ,END,

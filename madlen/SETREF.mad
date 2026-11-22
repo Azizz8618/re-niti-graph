@@ -1,0 +1,89 @@
+ SETREF  :,NAME, NEW DTRAN
+C Commands: 45
+C Constants: 6
+C BSS: 0
+C Memory size: 53
+C Header: 1
+C Symbols: 0
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 57
+C Symbol table offset is 56
+ 14,VTM,
+ *0001B:8,VTM,*0001B
+ ,STI,11
+ ,STI,10
+ ,ATI,9
+ ,ITA,13
+ 9,XTS,12B
+ ,UZA,*0007B
+ 9,WTC,12B
+ 13,VTM,
+ 13,WTC,6
+ 13,VTM,
+ ,UJ,*0010B
+ *0007B:9,WTC,6
+ 13,VTM,
+ *0010B:14,V1M,*0014B
+ 11,XTA,
+ 8,AAX,51B
+ 15,ATX,
+ 10,XTS,
+ 8,AAX,51B
+ 15,AEX,
+ ,UZA,*0043B
+ *0014B:13,XTA,1
+ ,ASN,64-20
+ ,ASN,64+39
+ 8,AEX,50B
+ 8,AAX,50B
+ 8,ARX,45B
+ 10,XTS,
+ 8,AAX,51B
+ 15,ARX,
+ 8,AAX,44B
+ ,U1A,*0043B
+ 10,XTA,
+ ,ASN,64+1
+ ,ATI,10
+ 13,UTM,1000B
+ 10,J+M,13
+ ,YTA,
+ 14,V1M,*0034B
+ ,U1A,*0032B
+ 15,XTA,
+ ,ASN,64-24
+ 13,XTS,
+ 8,AAX,46B
+ *0030B:15,AOX,
+ 13,STX,
+ ,STI,13
+ 13,UJ,
+ *0032B:13,XTA,
+ ,ASN,64+9
+ ,ASN,64-9
+ ,UJ,*0030B
+ *0034B:,U1A,*0041B
+ 13,XTA,
+ ,ASN,64+24
+ *0036B:8,AAX,51B
+ 8,AOX,47B
+ *0037B:11,STX,
+ ,STI,13
+ 13,UJ,
+ *0041B:13,XTA,
+ ,UJ,*0036B
+ 14,VTM,1
+ ,UJ,*0001B
+ *0043B:14,V1M,*0044B
+ ,STX,
+ *0044B:,XTA,
+ ,UJ,*0037B
+ ,LOG,100000
+ ,LOG,1
+ ,LOG,7777700077777777
+ ,INT,0
+ ,LOG,77777
+ ,LOG,777
+ ,END,

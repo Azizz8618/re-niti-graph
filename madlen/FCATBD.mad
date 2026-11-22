@@ -1,0 +1,15 @@
+ FCATBD  :,NAME, NEW DTRAN
+C Commands: 1
+C Constants: 0
+C BSS: 0
+C Memory size: 1
+C Header: 1
+C Symbols: 0
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 5
+C Symbol table offset is 4
+ ,STI,
+ 13,UJ,
+ ,END,

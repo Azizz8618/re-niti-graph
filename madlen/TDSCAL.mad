@@ -1,0 +1,101 @@
+ TDSCAL  :,NAME, NEW DTRAN
+C Commands: 50
+C Constants: 5
+C BSS: 5
+C Memory size: 62
+C Header: 1
+C Symbols: 11
+C Long symbols: 4
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 76
+C Symbol table offset is 60
+ *GFMATR*:,LC,34
+ GAK/2:,EQU,*GFMATR*+16
+ GAK/3:,EQU,*GFMATR*+32
+ GAK/4:,EQU,*GFMATR*+33
+ HCMULT  :,SUBP,
+ HCUNIT  :,SUBP,
+ I*MUI*  :,SUBP,
+ GAL/0:,EQU,GAK/2-32763
+ 14,VTM,*0001B
+ ,UJ,*0036B
+ *0001B:7,XTA,
+ ,UTC,GAK/3
+ ,ATX,
+ ,NTR,3
+ ,WTC,*0061B
+ ,XTA,
+ 7,ATX,5
+ ,WTC,*0060B
+ ,XTA,
+ 7,A-X,1
+ ,NTR,22B
+ ,ASN,64-7
+ ,UZA,*0011B
+ ,ARX,
+ ,UZA,*0013B
+ *0011B:7,XTA,3
+ ,WTC,*0061B
+ ,A/X,
+ 7,ATX,5
+ *0013B:14,VTM,GAK/2
+ ,ITS,14
+ 13,VJM,HCUNIT  
+ 13,VJM,*0025B
+ 7,XTA,5
+ ,WTC,*0050B
+ 1,VTM,
+ 1,UTC,GAL/0
+ ,ATX,
+ 14,VTM,*GFMATR*
+ ,ITS,14
+ 14,VTM,GAK/2
+ ,ITS,14
+ 13,VJM,HCMULT  
+ 13,VJM,*0025B
+ ,UJ,*0045B
+ *0025B:13,MTJ,12
+ ,WTC,*0060B
+ ,XTA,
+ ,NTR,3
+ 13,VJM,*0031B
+ ,NTR,22B
+ 12,UJ,
+ *0031B:7,A-X,6
+ 7,ATX,6
+ 7,XTS,2
+ 14,VJM,I*MUI*  
+ 7,A+X,-1
+ 7,ATX,-1
+ ,WTC,*0060B
+ ,XTA,
+ 7,ATX,6
+ 13,UJ,
+ *0036B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0051B
+ 7,STX,10B
+ 7,STX,7
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ 13,VJM,*0025B
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0045B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0050B:,INT,0
+ *0051B:,INT,2
+ ,INT,4
+ ,INT,5
+ ,LOG,4050000000000000
+ ,BSS,3
+ *0060B:,BSS,1
+ *0061B:,BSS,1
+ ,END,

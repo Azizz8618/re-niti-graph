@@ -1,0 +1,51 @@
+ SHIFT   :,NAME, NEW DTRAN
+C Commands: 22
+C Constants: 2
+C BSS: 2
+C Memory size: 26
+C Header: 1
+C Symbols: 1
+C Long symbols: 1
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 32
+C Symbol table offset is 27
+ ATRAN2  :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0012B
+ *0001B:14,VTM,*0023B
+ ,ITS,14
+ 14,VTM,*0022B
+ ,ITS,14
+ ,WTC,*0024B
+ 14,VTM,
+ ,ITS,14
+ 14,VTM,*0022B
+ ,ITS,14
+ 14,VTM,*0023B
+ ,ITS,14
+ ,WTC,*0025B
+ 14,VTM,
+ ,ITS,14
+ 13,VJM,ATRAN2  
+ ,UJ,*0020B
+ *0012B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0022B
+ 7,STX,3
+ 7,STX,2
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0020B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0022B:,LOG,0
+ *0023B:,LOG,4050000000000000
+ *0024B:,BSS,1
+ *0025B:,BSS,1
+ ,END,

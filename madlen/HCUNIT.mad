@@ -1,0 +1,109 @@
+ HCUNIT  :,NAME, NEW DTRAN
+C Commands: 61
+C Constants: 5
+C BSS: 6
+C Memory size: 74
+C Header: 1
+C Symbols: 3
+C Long symbols: 1
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 76
+C Symbol table offset is 71
+ I*MUI*  :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0050B
+ *0001B:7,XTA,1
+ 7,ATX,5
+ ,NTR,3
+ 13,VJM,*0037B
+ ,NTR,22B
+ *0004B:7,XTA,1
+ 7,ATX,6
+ ,NTR,3
+ 13,VJM,*0043B
+ ,NTR,22B
+ *0007B:7,XTA,
+ ,WTC,*0061B
+ 1,VTM,
+ ,WTC,*0073B
+ 1,ATX,-5
+ 7,XTA,5
+ ,NTR,3
+ 7,A-X,6
+ ,NTR,22B
+ ,ASN,64-7
+ ,UZA,*0016B
+ ,ARX,
+ ,UZA,*0021B
+ ,UJ,*0021B
+ *0016B:7,XTA,3
+ ,WTC,*0061B
+ 1,VTM,
+ ,WTC,*0073B
+ 1,ATX,-5
+ *0021B:7,XTA,6
+ ,NTR,3
+ 7,A+X,1
+ 7,ATX,6
+ 13,VJM,*0043B
+ 7,X-A,2
+ ,NTR,22B
+ ,UZA,*0007B
+ 7,XTA,5
+ ,NTR,3
+ 7,A+X,1
+ 7,ATX,5
+ 13,VJM,*0037B
+ 7,X-A,2
+ ,NTR,22B
+ ,UZA,*0004B
+ ,UJ,*0056B
+ *0032B:7,XTA,1
+ 7,A+X,-1
+ 7,ATX,-1
+ 7,XTA,1
+ 7,A+X,7
+ 7,ATX,7
+ 13,UJ,
+  :,UJ,*0032B
+ *0037B:7,A-X,7
+ 7,ATX,7
+ 7,A+X,-1
+ 7,ATX,-1
+ 7,XTA,5
+ 7,ATX,7
+ 13,UJ,
+ *0043B:7,A-X,10B
+ 7,ATX,10B
+ 7,XTS,2
+ 14,VJM,I*MUI*  
+ 7,A+X,-1
+ 7,ATX,-1
+ 7,XTA,6
+ 7,ATX,10B
+ 13,UJ,
+ *0050B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0062B
+ 7,STX,11B
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0056B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0061B:,INT,0
+ *0062B:,LOG,0
+ ,INT,1
+ ,INT,4
+ ,LOG,4050000000000000
+ ,BSS,5
+ *0073B:,BSS,1
+ ,END,

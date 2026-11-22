@@ -1,0 +1,147 @@
+ WRACD   :,NAME, NEW DTRAN
+C Commands: 73
+C Constants: 3
+C BSS: 14
+C Memory size: 112
+C Header: 1
+C Symbols: 17
+C Long symbols: 5
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 126
+C Symbol table offset is 101
+ *GFGEL* :,LC,28
+ *GFBFTR*:,LC,2
+ GAK/3:,EQU,*GFBFTR*+1
+ STRMOD  :,SUBP,
+ ABS     :,SUBP,
+ ANGLER  :,SUBP,
+ SQRT    :,SUBP,
+ GAL/0:,EQU,*GFGEL* +9
+ GAL/1:,EQU,*GFGEL* +8
+ R*ST*I  :,SUBP,
+ GAL/3:,EQU,*GFGEL* -32767
+ GAL/4:,EQU,*GFGEL* +1
+ GAL/5:,EQU,*GFGEL* +2
+ GAL/6:,EQU,*GFGEL* +5
+ GAL/7:,EQU,*GFGEL* +6
+ 14,VTM,*0001B
+ ,UJ,*0061B
+ *0001B:,UTC,*GFBFTR*
+ ,XTA,
+ 7,ATX,4
+ ,UTC,GAK/3
+ ,XTA,
+ 7,ATX,5
+ 7,XTA,2
+ ,UTC,GAL/0
+ ,ATX,
+ 7,XTA,4
+ ,WTC,*0107B
+ ,A-X,
+ 7,ATX,6
+ 7,XTA,5
+ ,WTC,*0110B
+ ,A-X,
+ 7,ATX,7
+ 7,XTA,6
+ 7,A*X,6
+ 7,ATX,3
+ 7,XTA,7
+ 7,A*X,7
+ 7,A+X,3
+ 7,ATX,3
+ 14,VTM,*0076B
+ ,ITA,14
+ 13,VJM,SQRT    
+ 7,ATX,10B
+ 14,VTM,*0101B
+ ,ITA,14
+ 14,VTM,*0102B
+ ,ITS,14
+ 13,VJM,ANGLER  
+ 7,ATX,11B
+ ,WTC,*0111B
+ ,A+X,
+ 7,ATX,12B
+ ,WTC,*0111B
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0060B
+ ,ARX,
+ ,UZA,*0030B
+ ,UJ,*0032B
+ *0030B:7,XTA,10B
+ ,X-A,
+ 7,ATX,10B
+ *0032B:14,VTM,GAL/1
+ ,ITA,14
+ 13,VJM,ABS     
+ 14,VTM,*0076B
+ 13,VJM,R*ST*I  
+ 7,XTA,3
+ 7,ATX,13B
+ ,NTR,3
+ 7,XTA,1
+ ,NTR,22B
+ ,A+X,
+ ,WTC,*0106B
+ 1,VTM,
+ 1,UTC,GAL/3
+ ,ATX,
+ ,WTC,*0107B
+ ,XTA,
+ 1,UTC,*GFGEL* 
+ ,ATX,
+ ,WTC,*0110B
+ ,XTA,
+ 1,UTC,GAL/4
+ ,ATX,
+ 7,XTA,10B
+ 1,UTC,GAL/5
+ ,ATX,
+ 7,XTA,11B
+ 1,UTC,GAL/6
+ ,ATX,
+ 7,XTA,12B
+ 1,UTC,GAL/7
+ ,ATX,
+ ,UTC,GAL/1
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0060B
+ ,ARX,
+ ,UZA,*0060B
+  :14,VTM,*0073B
+ ,ITS,14
+ 13,VJM,STRMOD  
+ *0060B:,UJ,*0070B
+ *0061B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0073B
+ 7,STX,16B
+ 7,STX,15B
+ 7,STX,14B
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0070B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0073B:,INT,0
+ ,INT,20
+ ,LOG,4354400000000000
+ *0076B:,BSS,3
+ *0101B:,BSS,1
+ *0102B:,BSS,4
+ *0106B:,BSS,1
+ *0107B:,BSS,1
+ *0110B:,BSS,1
+ *0111B:,BSS,1
+ ,END,

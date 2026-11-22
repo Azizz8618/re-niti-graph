@@ -1,0 +1,117 @@
+ TCALC   :,NAME, NEW DTRAN
+C Commands: 62
+C Constants: 4
+C BSS: 11
+C Memory size: 77
+C Header: 1
+C Symbols: 3
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 75
+C Symbol table offset is 71
+ SQRT    :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0050B
+ *0001B:7,XTA,2
+ ,WTC,*0075B
+ ,ATX,
+ 7,XTA,3
+ ,WTC,*0075B
+ ,ATX,1
+ ,WTC,*0073B
+ ,XTA,1
+ ,WTC,*0073B
+ ,A-X,
+ 7,ATX,5
+ ,WTC,*0074B
+ ,XTA,1
+ ,WTC,*0074B
+ ,A-X,
+ 7,ATX,6
+ 7,XTA,5
+ 7,A*X,5
+ 7,ATX,4
+ 7,XTA,6
+ 7,A*X,6
+ 7,A+X,4
+ 7,ATX,7
+ ,ASN,64-7
+ ,UZA,*0047B
+ ,ARX,
+ ,UZA,*0017B
+ *0017B:7,XTA,1
+ 7,ATX,10B
+ ,NTR,3
+ ,NTR,22B
+ ,UJ,*0045B
+ *0022B:,WTC,*0072B
+ 1,VTM,
+ ,WTC,*0073B
+ 1,XTA,-1
+ ,WTC,*0073B
+ 1,A-X,-2
+ 7,ATX,5
+ ,WTC,*0072B
+ 1,VTM,
+ ,WTC,*0074B
+ 1,XTA,-1
+ ,WTC,*0074B
+ 1,A-X,-2
+ 7,ATX,6
+ 7,XTA,5
+ 7,A*X,5
+ 7,ATX,4
+ 7,XTA,6
+ 7,A*X,6
+ 7,A+X,4
+ 7,A/X,7
+ 7,ATX,4
+ 14,VTM,*0066B
+ ,ITA,14
+ 13,VJM,SQRT    
+ ,WTC,*0072B
+ 1,VTM,
+ ,WTC,*0075B
+ 1,A+X,-2
+ ,WTC,*0075B
+ 1,ATX,-1
+ 7,XTA,10B
+ ,NTR,3
+ 7,A+X,
+ 7,ATX,10B
+ ,NTR,22B
+ *0045B:,WTC,*0076B
+ ,X-A,
+ ,UZA,*0022B
+ *0047B:,UJ,*0057B
+ *0050B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0062B
+ 7,STX,14B
+ 7,STX,13B
+ 7,STX,12B
+ 7,STX,11B
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0057B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0062B:,INT,1
+ ,INT,3
+ ,LOG,4050000000000000
+ ,LOG,4110000000000000
+ *0066B:,BSS,4
+ *0072B:,BSS,1
+ *0073B:,BSS,1
+ *0074B:,BSS,1
+ *0075B:,BSS,1
+ *0076B:,BSS,1
+ ,END,

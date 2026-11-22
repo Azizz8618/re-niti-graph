@@ -1,0 +1,108 @@
+ REBLAN  :,NAME, NEW DTRAN
+C Commands: 47
+C Constants: 2
+C BSS: 2
+C Memory size: 53
+C Header: 1
+C Symbols: 23
+C Long symbols: 2
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 102
+C Symbol table offset is 54
+ *GFATRN*:,LC,7
+ GAK/2:,EQU,*GFATRN*+1
+ GAK/3:,EQU,*GFATRN*+2
+ GAK/4:,EQU,*GFATRN*+3
+ GAK/5:,EQU,*GFATRN*+4
+ GAK/6:,EQU,*GFATRN*+5
+ GAK/7:,EQU,*GFATRN*+6
+ *GFBLAN*:,LC,11
+ GAL/1:,EQU,*GFBLAN*+1
+ GAL/2:,EQU,*GFBLAN*+2
+ GAL/3:,EQU,*GFBLAN*+3
+ GAL/4:,EQU,*GFBLAN*+4
+ GAL/5:,EQU,*GFBLAN*+5
+ GAL/6:,EQU,*GFBLAN*+6
+ GAL/7:,EQU,*GFBLAN*+7
+ GAM/0:,EQU,*GFBLAN*+8
+ GAM/1:,EQU,*GFBLAN*+9
+ GAM/2:,EQU,*GFBLAN*+10
+ MOVE    :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0040B
+ *0001B:7,XTA,1
+ ,UTC,GAL/6
+ ,ATX,
+ ,NTR,3
+ ,UTC,GAL/7
+ ,XTA,
+ ,NTR,22B
+ ,ASN,64-7
+ ,UZA,*0037B
+ ,ARX,
+ ,UZA,*0037B
+  :,UTC,GAL/7
+ ,XTA,
+ ,NTR,3
+ 7,A-X,1
+ ,UTC,GAL/7
+ ,ATX,
+ ,NTR,22B
+ ,ASN,64-7
+ ,UZA,*0015B
+ ,ARX,
+ ,UZA,*0037B
+ ,UJ,*0037B
+ *0015B:7,XTA,
+ ,UTC,*GFBLAN*
+ ,ATX,
+ ,NTR,3
+ ,UTC,GAL/5
+ ,XTA,
+ ,NTR,22B
+ ,ASN,64-7
+ ,UZA,*0037B
+ ,ARX,
+ ,UZA,*0037B
+  :,UTC,GAK/7
+ ,XTA,
+ 7,ATX,3
+ ,NTR,3
+ 7,XTA,
+ ,UTC,GAK/7
+ ,ATX,
+ 14,VTM,GAL/1
+ ,ITS,14
+ 14,VTM,GAL/3
+ ,ITS,14
+ 14,VTM,*0047B
+ ,ITS,14
+ ,NTR,22B
+ 13,VJM,MOVE    
+ 7,XTA,3
+ ,UTC,GAK/7
+ ,ATX,
+ ,NTR,3
+ 7,XTA,
+ ,UTC,GAL/5
+ ,ATX,
+ ,NTR,22B
+ *0037B:,UJ,*0045B
+ *0040B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0047B
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0045B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0047B:,INT,0
+ ,INT,1
+ ,BSS,2
+ ,END,

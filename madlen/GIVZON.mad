@@ -1,0 +1,94 @@
+ GIVZON  :,NAME, NEW DTRAN
+C Commands: 46
+C Constants: 1
+C BSS: 3
+C Memory size: 52
+C Header: 1
+C Symbols: 6
+C Long symbols: 6
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 67
+C Symbol table offset is 52
+ FDISC   :,SUBP,
+ WCATAL  :,SUBP,
+ SETREF  :,SUBP,
+ GIVENZ  :,SUBP,
+ RCATAL  :,SUBP,
+ GDISC   :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0036B
+ *0001B:,WTC,*0050B
+ 14,VTM,
+ ,ITS,14
+ 13,VJM,GDISC   
+ ,WTC,*0050B
+ 14,VTM,
+ ,ITS,14
+ 13,VJM,RCATAL  
+ ,WTC,*0050B
+ 14,VTM,
+ ,ITS,14
+ 14,VTM,*0047B
+ ,ITS,14
+ 13,VJM,GIVENZ  
+ ,NTR,3
+ ,NTR,22B
+ 7,XTA,
+ ,ITS,
+ 7,XTA,1
+ 15,AEX,
+ ,UZA,*0014B
+ ,UJ,*0015B
+ *0014B:,UJ,*0033B
+ *0015B:,WTC,*0050B
+ 14,VTM,
+ ,ITS,14
+ ,WTC,*0051B
+ 14,VTM,
+ ,ITS,14
+ 14,VTM,*0047B
+ ,ITS,14
+ 13,VJM,SETREF  
+ ,NTR,3
+ ,NTR,22B
+ 7,XTA,1
+ ,WTC,*0051B
+ ,ATX,
+ ,NTR,3
+ ,WTC,*0050B
+ 14,VTM,
+ ,ITS,14
+ ,NTR,22B
+ 13,VJM,WCATAL  
+ *0030B:,WTC,*0050B
+ 14,VTM,
+ ,ITS,14
+ 13,VJM,FDISC   
+ ,UJ,*0044B
+ *0033B:7,XTA,1
+ ,WTC,*0051B
+ ,ATX,
+ ,NTR,3
+ ,NTR,22B
+ ,UJ,*0030B
+ *0036B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0046B
+ 7,STX,3
+ 7,STX,2
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0044B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0046B:,LOG,0
+ *0047B:,BSS,1
+ *0050B:,BSS,1
+ *0051B:,BSS,1
+ ,END,

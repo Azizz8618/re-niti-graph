@@ -1,0 +1,140 @@
+ HCNCRD  :,NAME, NEW DTRAN
+C Commands: 63
+C Constants: 0
+C BSS: 5
+C Memory size: 70
+C Header: 1
+C Symbols: 26
+C Long symbols: 2
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 117
+C Symbol table offset is 66
+ *GFMATR*:,LC,34
+ GAK/2:,EQU,*GFMATR*+16
+ GAK/3:,EQU,*GFMATR*+32
+ GAK/4:,EQU,*GFMATR*+33
+ *GFCRD* :,LC,3
+ GAK/6:,EQU,*GFCRD* +1
+ GAK/7:,EQU,*GFCRD* +2
+ GAL/0:,EQU,*GFMATR*+12
+ GAL/1:,EQU,*GFMATR*+13
+ GAL/2:,EQU,*GFMATR*+14
+ GAL/3:,EQU,*GFMATR*+15
+ GAL/4:,EQU,*GFMATR*+1
+ GAL/5:,EQU,*GFMATR*+2
+ GAL/6:,EQU,*GFMATR*+3
+ GAL/7:,EQU,*GFMATR*+4
+ GAM/0:,EQU,*GFMATR*+5
+ GAM/1:,EQU,*GFMATR*+6
+ GAM/2:,EQU,*GFMATR*+7
+ GAM/3:,EQU,*GFMATR*+8
+ GAM/4:,EQU,*GFMATR*+9
+ GAM/5:,EQU,*GFMATR*+10
+ GAM/6:,EQU,*GFMATR*+11
+ 14,VTM,*0001B
+ ,UJ,*0053B
+ *0001B:,WTC,*0065B
+ ,XTA,
+ ,UTC,GAL/0
+ ,A*X,
+ 7,ATX,
+ ,WTC,*0066B
+ ,XTA,
+ ,UTC,GAL/1
+ ,A*X,
+ 7,A+X,
+ 7,ATX,
+ ,WTC,*0067B
+ ,XTA,
+ ,UTC,GAL/2
+ ,A*X,
+ 7,A+X,
+ ,UTC,GAL/3
+ ,A+X,
+ 7,ATX,1
+ ,WTC,*0065B
+ ,XTA,
+ ,UTC,*GFMATR*
+ ,A*X,
+ 7,ATX,
+ ,WTC,*0066B
+ ,XTA,
+ ,UTC,GAL/4
+ ,A*X,
+ 7,A+X,
+ 7,ATX,
+ ,WTC,*0067B
+ ,XTA,
+ ,UTC,GAL/5
+ ,A*X,
+ 7,A+X,
+ ,UTC,GAL/6
+ ,A+X,
+ 7,A/X,1
+ ,UTC,*GFCRD* 
+ ,ATX,
+ ,WTC,*0065B
+ ,XTA,
+ ,UTC,GAL/7
+ ,A*X,
+ 7,ATX,
+ ,WTC,*0066B
+ ,XTA,
+ ,UTC,GAM/0
+ ,A*X,
+ 7,A+X,
+ 7,ATX,
+ ,WTC,*0067B
+ ,XTA,
+ ,UTC,GAM/1
+ ,A*X,
+ 7,A+X,
+ ,UTC,GAM/2
+ ,A+X,
+ 7,A/X,1
+ ,UTC,GAK/6
+ ,ATX,
+ ,WTC,*0065B
+ ,XTA,
+ ,UTC,GAM/3
+ ,A*X,
+ 7,ATX,
+ ,WTC,*0066B
+ ,XTA,
+ ,UTC,GAM/4
+ ,A*X,
+ 7,A+X,
+ 7,ATX,
+ ,WTC,*0067B
+ ,XTA,
+ ,UTC,GAM/5
+ ,A*X,
+ 7,A+X,
+ ,UTC,GAM/6
+ ,A+X,
+ 7,A/X,1
+ ,UTC,GAK/7
+ ,ATX,
+ ,UJ,*0061B
+ *0053B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0063B
+ 7,STX,4
+ 7,STX,3
+ 7,STX,2
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0061B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0063B:,BSS,2
+ *0065B:,BSS,1
+ *0066B:,BSS,1
+ *0067B:,BSS,1
+ ,END,

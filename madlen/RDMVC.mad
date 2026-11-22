@@ -1,0 +1,148 @@
+ RDMVC   :,NAME, NEW DTRAN
+C Commands: 76
+C Constants: 3
+C BSS: 12
+C Memory size: 113
+C Header: 1
+C Symbols: 14
+C Long symbols: 5
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 126
+C Symbol table offset is 104
+ *GFGEL* :,LC,28
+ GFFALS  :,SUBP,
+ SQRT    :,SUBP,
+ ABS     :,SUBP,
+ STRMOD  :,SUBP,
+ GAK/6:,EQU,*GFGEL* +8
+ R*ST*I  :,SUBP,
+ GAL/0:,EQU,*GFGEL* -32767
+ GAL/1:,EQU,*GFGEL* +1
+ GAL/2:,EQU,*GFGEL* +5
+ GAL/3:,EQU,*GFGEL* +6
+ R*DI*I  :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0063B
+ *0001B:,UTC,GAK/6
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0062B
+ ,ARX,
+ ,UZA,*0006B
+ 14,VTM,*0076B
+ ,ITS,14
+ 13,VJM,STRMOD  
+ *0006B:14,VTM,GAK/6
+ ,ITA,14
+ 13,VJM,ABS     
+ 14,VTM,*0101B
+ 13,VJM,R*ST*I  
+ 7,XTA,3
+ 7,ATX,4
+ ,NTR,3
+ ,WTC,*0102B
+ 1,VTM,
+ 1,UTC,GAL/0
+ ,XTA,
+ 14,VTM,*0101B
+ 13,VJM,R*ST*I  
+ 7,XTA,3
+ 7,ATX,5
+ ,NTR,22B
+ ,ASN,64-7
+ ,UZA,*0022B
+ ,ARX,
+ ,UZA,*0053B
+ ,UJ,*0053B
+ *0022B:,WTC,*0102B
+ 1,VTM,
+ 1,UTC,*GFGEL* 
+ ,XTA,
+ ,WTC,*0106B
+ ,ATX,
+ 1,UTC,GAL/1
+ ,XTA,
+ ,WTC,*0107B
+ ,ATX,
+ 1,UTC,GAL/2
+ ,XTA,
+ 1,UTC,*GFGEL* 
+ ,A-X,
+ 7,ATX,6
+ 1,UTC,GAL/3
+ ,XTA,
+ 1,UTC,GAL/1
+ ,A-X,
+ 7,ATX,7
+ 7,XTA,6
+ 14,VTM,*0077B
+ 13,VJM,R*DI*I  
+ 1,UTC,*GFGEL* 
+ ,A+X,
+ ,WTC,*0110B
+ ,ATX,
+ 7,XTA,7
+ 14,VTM,*0077B
+ 13,VJM,R*DI*I  
+ 1,UTC,GAL/1
+ ,A+X,
+ ,WTC,*0111B
+ ,ATX,
+ 7,XTA,6
+ 7,A*X,6
+ 7,ATX,3
+ 7,XTA,7
+ 7,A*X,7
+ 7,A+X,3
+ 7,ATX,3
+ 14,VTM,*0101B
+ ,ITA,14
+ 13,VJM,SQRT    
+ ,WTC,*0112B
+ ,ATX,
+ ,UJ,*0055B
+ *0053B:14,VTM,*0100B
+ ,ITS,14
+ 13,VJM,GFFALS  
+ *0055B:,UTC,GAK/6
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0062B
+ ,ARX,
+ ,UZA,*0062B
+ 14,VTM,*0076B
+ ,ITS,14
+ 13,VJM,STRMOD  
+ *0062B:,UJ,*0073B
+ *0063B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0076B
+ 7,STX,14B
+ 7,STX,13B
+ 7,STX,12B
+ 7,STX,11B
+ 7,STX,10B
+ ,ITS,13
+ ,ITS,1
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0073B:,STI,
+ ,STI,7
+ ,STI,1
+ ,STI,8
+ 8,UJ,
+ *0076B:,INT,0
+ *0077B:,INT,2
+ *0100B:,INT,6
+ *0101B:,BSS,1
+ *0102B:,BSS,4
+ *0106B:,BSS,1
+ *0107B:,BSS,1
+ *0110B:,BSS,1
+ *0111B:,BSS,1
+ *0112B:,BSS,1
+ ,END,

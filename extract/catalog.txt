@@ -1,0 +1,265 @@
+Library 22 (ГРАФОР-СУД) catalog, volume 2048, zone 0o1100
+*LIBRARY:22 /ГРАФОР-СУД/ 1201 10.12.91
+Info word = [A=12][B=6][C=18][D=12]; A=0o2000+carry+word+8, B=(relzone+0o40)&0o77, C=load*8
+
+  # name      info(oct)        zone      word   load hdr_load verify bin/zone_<dec>.bin
+----------------------------------------------------------------------------------------------------
+  0 COPDCB    2551220001500000 0o1162    352     13       13 OK     bin/zone_626.bin
+  1 SETIND    2451220003400000 0o1162    288     28       28 OK     bin/zone_626.bin
+  2 GETIND    0000000000000031 -            -      -        - REF    -> 31
+  3 SETREF    2351220005300000 0o1162    224     43       43 OK     bin/zone_626.bin
+  4 AFTZN     0000000000000042 -            -      -        - REF    -> 42
+  5 WCATWO    2111220017300000 0o1162     64    123      123 OK     bin/zone_626.bin
+  6 CRDUM     0000000000000144 -            -      -        - REF    -> 144
+  7 SWCAT     0000000000000145 -            -      -        - REF    -> 145
+  8 GIVENZ    2011220004400000 0o1162      0     36       36 OK     bin/zone_626.bin
+  9 SETWGR    3751210001100000 0o1161    992      9        9 OK     bin/zone_625.bin
+ 10 SETEND    3611210006700000 0o1161    896     55       55 OK     bin/zone_625.bin
+ 11 SETZON    3551210000400000 0o1161    864      4        4 OK     bin/zone_625.bin
+ 12 GDISC     3511210001700000 0o1161    832     15       15 OK     bin/zone_625.bin
+ 13 FDISC     0000000000000015 -            -      -        - REF    -> 15
+ 14 ABUFF     3451210000300000 0o1161    800      3        3 OK     bin/zone_625.bin
+ 15 RCATAL    3411210001300000 0o1161    768     11       11 OK     bin/zone_625.bin
+ 16 WCATAL    0000000000000012 -            -      -        - REF    -> 12
+ 17 RZON      3351210003000000 0o1161    736     24       24 OK     bin/zone_625.bin
+ 18 WZON      0000000000000014 -            -      -        - REF    -> 14
+ 19 RZONE     0000000000000016 -            -      -        - REF    -> 16
+ 20 WZONE     0000000000000020 -            -      -        - REF    -> 20
+ 21 SETR      0000000000000022 -            -      -        - REF    -> 22
+ 22 SETW      0000000000000024 -            -      -        - REF    -> 24
+ 23 CLEAZN    3311210000600000 0o1161    704      6        6 OK     bin/zone_625.bin
+ 24 COMPDT    3251210001600000 0o1161    672     14       14 OK     bin/zone_625.bin
+ 25 *70       3151210005600000 0o1161    608     46       46 OK     bin/zone_625.bin
+ 26 E70       3111210001100000 0o1161    576      9        9 OK     bin/zone_625.bin
+ 27 NEXTZN    2751210011200000 0o1161    480     74       74 OK     bin/zone_625.bin
+ 28 FOPEN     2651210004700000 0o1161    416     39       39 OK     bin/zone_625.bin
+ 29 PUTXY     2611210001700000 0o1161    384     15       15 OK     bin/zone_625.bin
+ 30 GETXY     0000000000000006 -            -      -        - REF    -> 6
+ 31 SETK      2511210003600000 0o1161    320     30       26 OK     bin/zone_625.bin
+ 32 GIVZON    2411210005200000 0o1161    256     42       39 OK     bin/zone_625.bin
+ 33 FCATBD    2351210000100000 0o1161    224      1        1 OK     bin/zone_625.bin
+ 34 LOOK      3651200044500000 0o1160    928    293      274 OK     bin/zone_624.bin
+ 35 LEVMAP    3551200006300000 0o1160    864     51       41 OK     bin/zone_624.bin
+ 36 LOCEXT    3211200034000000 0o1160    640    224      194 OK     bin/zone_624.bin
+ 37 BITA      2611200042000000 0o1160    384    272      240 OK     bin/zone_624.bin
+ 38 KEYPO     2411200016700000 0o1160    256    119       98 OK     bin/zone_624.bin
+ 39 SUPLIN    2211200017100000 0o1160    128    121       99 OK     bin/zone_624.bin
+ 40 LEVFUN    2111200006700000 0o1160     64     55       43 OK     bin/zone_624.bin
+ 41 ADDLEV    2011200007100000 0o1160      0     57       46 OK     bin/zone_624.bin
+ 42 QUADRA    3551170021500000 0o1157    864    141      122 OK     bin/zone_623.bin
+ 43 RENUM     3511170001400000 0o1157    832     12       12 OK     bin/zone_623.bin
+ 44 SIZNUM    3411170003200000 0o1157    768     26       22 OK     bin/zone_623.bin
+ 45 CMGRID    2451170074400000 0o1157    288    484      445 OK     bin/zone_623.bin
+ 46 LINNUM    3751160050700000 0o1156    992    327      287 OK     bin/zone_622.bin
+ 47 SIZLIN    3711160002600000 0o1156    960     22       19 OK     bin/zone_622.bin
+ 48 NUMLIN    3651160002600000 0o1156    928     22       20 OK     bin/zone_622.bin
+ 49 ZAPIT     3451160013200000 0o1156    800     90       81 OK     bin/zone_622.bin
+ 50 CELL      3151160025300000 0o1156    608    171      154 OK     bin/zone_622.bin
+ 51 EXTREM    2751160016000000 0o1156    480    112       98 OK     bin/zone_622.bin
+ 52 LINT      2611160011700000 0o1156    384     79       67 OK     bin/zone_622.bin
+ 53 YPOL      2551160002100000 0o1156    352     17       14 OK     bin/zone_622.bin
+ 54 XPOL      2511160002100000 0o1156    320     17       14 OK     bin/zone_622.bin
+ 55 ISOLIN    3611150102700000 0o1155    896    535      397 OK     bin/zone_621.bin
+ 56 PRJT      3051150055000000 0o1155    544    360      327 OK     bin/zone_621.bin
+ 57 MAP       2651150014600000 0o1155    416    102       87 OK     bin/zone_621.bin
+ 58 INTRSC    2551150010600000 0o1155    352     70       52 OK     bin/zone_621.bin
+ 59 MNMX      2011150052700000 0o1155      0    343      309 OK     bin/zone_621.bin
+ 60 LININT    3511140030300000 0o1154    832    195      181 OK     bin/zone_620.bin
+ 61 BUFL      3351140010100000 0o1154    736     65       54 OK     bin/zone_620.bin
+ 62 SEARCH    2611140051200000 0o1154    384    330      299 OK     bin/zone_620.bin
+ 63 PATCH     3751130060300000 0o1153    992    387      374 OK     bin/zone_619.bin
+ 64 CORNL     2351130134400000 0o1153    224    740      693 OK     bin/zone_619.bin
+ 65 PRSP      3151120116400000 0o1152    608    628      595 OK     bin/zone_618.bin
+ 66 WRSTR     3111120002700000 0o1152    576     23       21 OK     bin/zone_618.bin
+ 67 WRMVE     2711120013200000 0o1152    448     90       83 OK     bin/zone_618.bin
+ 68 WRMVC     2611120005500000 0o1152    384     45       34 OK     bin/zone_618.bin
+ 69 WRMVB     2551120003200000 0o1152    352     26       20 OK     bin/zone_618.bin
+ 70 WRMVA     2451120004100000 0o1152    288     33       26 OK     bin/zone_618.bin
+ 71 WRELP     2311120006500000 0o1152    192     53       46 OK     bin/zone_618.bin
+ 72 WRCRC     2211120005600000 0o1152    128     46       41 OK     bin/zone_618.bin
+ 73 WRAEB     2051120013500000 0o1152     32     93       72 OK     bin/zone_618.bin
+ 74 WRAEA     3651110014500000 0o1151    928    101       86 OK     bin/zone_617.bin
+ 75 WRACD     3511110011200000 0o1151    832     74       62 OK     bin/zone_617.bin
+ 76 WRACC     3411110006600000 0o1151    768     54       41 OK     bin/zone_617.bin
+ 77 WRACB     3311110005000000 0o1151    704     40       30 OK     bin/zone_617.bin
+ 78 WRACA     3151110010500000 0o1151    608     69       60 OK     bin/zone_617.bin
+ 79 WHERP     3111110003300000 0o1151    576     27       22 OK     bin/zone_617.bin
+ 80 STRMOD    2711110013100000 0o1151    448     89       85 OK     bin/zone_617.bin
+ 81 STAR      2411110027200000 0o1151    256    186      168 OK     bin/zone_617.bin
+ 82 SPIRAL    2311110003700000 0o1151    192     31       25 OK     bin/zone_617.bin
+ 83 SECANT    2111110017000000 0o1151     64    120       78 OK     bin/zone_617.bin
+ 84 RDSTR     2051110002700000 0o1151     32     23       21 OK     bin/zone_617.bin
+ 85 RDMVE     3711100006700000 0o1150    960     55       48 OK     bin/zone_616.bin
+ 86 RDMVC     3551100011300000 0o1150    864     75       65 OK     bin/zone_616.bin
+ 87 RDMVB     3411100007100000 0o1150    768     57       50 OK     bin/zone_616.bin
+ 88 RDMVA     3251100010400000 0o1150    672     68       59 OK     bin/zone_616.bin
+ 89 RDELP     3111100007500000 0o1150    576     61       53 OK     bin/zone_616.bin
+ 90 RDCRC     3011100006500000 0o1150    512     53       47 OK     bin/zone_616.bin
+ 91 RDAEB     2551100020500000 0o1150    352    133      115 OK     bin/zone_616.bin
+ 92 RDAEA     2351100015500000 0o1150    224    109       93 OK     bin/zone_616.bin
+ 93 RDACD     2211100011200000 0o1150    128     74       65 OK     bin/zone_616.bin
+ 94 RDACC     2011100013500000 0o1150      0     93       79 OK     bin/zone_616.bin
+ 95 RDACB     3551070016700000 0o1147    864    119      108 OK     bin/zone_615.bin
+ 96 RDACA     3411070011100000 0o1147    768     73       64 OK     bin/zone_615.bin
+ 97 POLG      3251070011700000 0o1147    672     79       70 OK     bin/zone_615.bin
+ 98 MOVC      3151070006000000 0o1147    608     48       36 OK     bin/zone_615.bin
+ 99 MOVB      3111070003500000 0o1147    576     29       21 OK     bin/zone_615.bin
+100 MOVA      3011070004500000 0o1147    512     37       28 OK     bin/zone_615.bin
+101 MODGF     2611070014000000 0o1147    384     96       91 OK     bin/zone_615.bin
+102 LITAN     2451070013100000 0o1147    288     89       71 OK     bin/zone_615.bin
+103 LICON     2011070042700000 0o1147      0    279      254 OK     bin/zone_615.bin
+104 IVEST     3711060004600000 0o1146    960     38       33 OK     bin/zone_614.bin
+105 FATLIN    3551060013200000 0o1146    864     90       80 OK     bin/zone_614.bin
+106 FATARC    3351060014600000 0o1146    736    102       89 OK     bin/zone_614.bin
+107 ELPS      3251060006400000 0o1146    672     52       43 OK     bin/zone_614.bin
+108 DIST      2311060071700000 0o1146    192    463      421 OK     bin/zone_614.bin
+109 DIMDRO    3351050072500000 0o1145    736    469      411 OK     bin/zone_613.bin
+110 DDIST     3311050002000000 0o1145    704     16       14 OK     bin/zone_613.bin
+111 CROSS     3651040141300000 0o1144    928    779      740 OK     bin/zone_612.bin
+112 CIRTAL    3351040023400000 0o1144    736    156      137 OK     bin/zone_612.bin
+113 CIRTAC    3011040031600000 0o1144    512    206      187 OK     bin/zone_612.bin
+114 CIRC      2711040004100000 0o1144    448     33       29 OK     bin/zone_612.bin
+115 ARROW     2311040032600000 0o1144    192    214      194 OK     bin/zone_612.bin
+116 AREB1     2111040017000000 0o1144     64    120      105 OK     bin/zone_612.bin
+117 ARCOLL    3611030026000000 0o1143    896    176      158 OK     bin/zone_611.bin
+118 ARCOLC    2611030073600000 0o1143    384    478      450 OK     bin/zone_611.bin
+119 ARCOCC    3611020100000000 0o1142    896    512      482 OK     bin/zone_610.bin
+120 ARCID     3511020006100000 0o1142    832     49       38 OK     bin/zone_610.bin
+121 ARCIC     3411020006600000 0o1142    768     54       41 OK     bin/zone_610.bin
+122 ARCIB     3311020005000000 0o1142    704     40       30 OK     bin/zone_610.bin
+123 ARCIA     3051020022100000 0o1142    544    145      125 OK     bin/zone_610.bin
+124 ARCELB    2711020013500000 0o1142    448     93       72 OK     bin/zone_610.bin
+125 ARCELA    2551020011600000 0o1142    352     78       66 OK     bin/zone_610.bin
+126 ARCC1     2311020024300000 0o1142    192    163      143 OK     bin/zone_610.bin
+127 ARCANG    3751010033000000 0o1141    992    216      198 OK     bin/zone_609.bin
+128 ANGLER    3611010010600000 0o1141    896     70       63 OK     bin/zone_609.bin
+129 INSIDE    3111010063100000 0o1141    576    409      276 OK     bin/zone_609.bin
+130 DRACON    2111010101400000 0o1141     64    524      437 OK     bin/zone_609.bin
+131 OPER      3651000021600000 0o1140    928    142      126 OK     bin/zone_608.bin
+132 DRFRAM    3451000020300000 0o1140    800    131      100 OK     bin/zone_608.bin
+133 SMTONE    3110770247300000 0o1137    576   1339     1180 OK     bin/zone_607.bin
+134 SMTBVF    2550760250700000 0o1136    352   1351     1211 OK     bin/zone_606.bin
+135 SMTSIM    2410750226500000 0o1135    256   1205     1074 OK     bin/zone_605.bin
+136 DRALIM    2210750017500000 0o1135    128    125      109 OK     bin/zone_605.bin
+137 INSDEK    3510740060400000 0o1134    832    388      255 OK     bin/zone_604.bin
+138 CONDEK    2650740062200000 0o1134    416    402      342 OK     bin/zone_604.bin
+139 SFCFIT    2550730223600000 0o1133    352   1182     1040 OK     bin/zone_603.bin
+140 ITPLBV    2610710406400000 0o1131    384   2100     1984 OK     bin/zone_601.bin
+141 FNROOT    2110710047700000 0o1131     64    319      279 OK     bin/zone_601.bin
+142 THREED    3010700105500000 0o1130    512    557      519 OK     bin/zone_600.bin
+143 TDLINE    2650700007500000 0o1130    416     61       53 OK     bin/zone_600.bin
+144 TDLIML    2410700017000000 0o1130    256    120      107 OK     bin/zone_600.bin
+145 HCINV     2010700037200000 0o1130      0    250      219 OK     bin/zone_600.bin
+146 HCPRSP    3750670002300000 0o1127    992     19       18 OK     bin/zone_599.bin
+147 HCMULT    3550670015200000 0o1127    864    106       93 OK     bin/zone_599.bin
+148 HCUNIT    3450670007400000 0o1127    800     60       54 OK     bin/zone_599.bin
+149 SETTR     3350670003400000 0o1127    736     28       26 OK     bin/zone_599.bin
+150 SAVETR    3250670003400000 0o1127    672     28       26 OK     bin/zone_599.bin
+151 TDROT     3050670015600000 0o1127    544    110       99 OK     bin/zone_599.bin
+152 TDTRAN    2750670003300000 0o1127    480     27       24 OK     bin/zone_599.bin
+153 SHEAR     2650670006000000 0o1127    416     48       43 OK     bin/zone_599.bin
+154 TDSCAL    2550670006200000 0o1127    352     50       45 OK     bin/zone_599.bin
+155 DIMET     2450670003400000 0o1127    288     28       26 OK     bin/zone_599.bin
+156 ISOMET    2350670003500000 0o1127    224     29       27 OK     bin/zone_599.bin
+157 CABIN     2250670004000000 0o1127    160     32       29 OK     bin/zone_599.bin
+158 HCROT1    2050670016600000 0o1127     32    118      104 OK     bin/zone_599.bin
+159 AXONOM    2010670003000000 0o1127      0     24       20 OK     bin/zone_599.bin
+160 VIEW      3650660007000000 0o1126    928     56       50 OK     bin/zone_598.bin
+161 INIT      3610660002000000 0o1126    896     16       16 OK     bin/zone_598.bin
+162 ZINT      3550660004400000 0o1126    864     36       27 OK     bin/zone_598.bin
+163 HCIND     3450660005500000 0o1126    800     45       38 OK     bin/zone_598.bin
+164 HCNCRD    3310660007000000 0o1126    704     56       51 OK     bin/zone_598.bin
+165 HCLINE    3250660002600000 0o1126    672     22       18 OK     bin/zone_598.bin
+166 TDSECT    3250650206400000 0o1125    672   1076      984 OK     bin/zone_597.bin
+167 HCSURF    2750650027000000 0o1125    480    184      154 OK     bin/zone_597.bin
+168 TDLIM     2410650031400000 0o1125    256    204      179 OK     bin/zone_597.bin
+169 LSFIT     2010650041100000 0o1125      0    265      229 OK     bin/zone_597.bin
+170 SINCL     3510640026500000 0o1124    832    181      153 OK     bin/zone_596.bin
+171 DERIV5    3210640025400000 0o1124    640    172      165 OK     bin/zone_596.bin
+172 LINFIL    3050640013500000 0o1124    544     93       80 OK     bin/zone_596.bin
+173 FORIF     2650640020100000 0o1124    416    129      107 OK     bin/zone_596.bin
+174 FORIT     2450640017300000 0o1124    288    123      102 OK     bin/zone_596.bin
+175 FORFIT    2210640022300000 0o1124    128    147      123 OK     bin/zone_596.bin
+176 CHENSP    3750630024100000 0o1123    992    161      138 OK     bin/zone_595.bin
+177 APPOLY    3410630033200000 0o1123    768    218      192 OK     bin/zone_595.bin
+178 SMINV     3210630021200000 0o1123    640    138      120 OK     bin/zone_595.bin
+179 LESQ      2650630037000000 0o1123    416    248      183 OK     bin/zone_595.bin
+180 TCALC     2550630007700000 0o1123    352     63       54 OK     bin/zone_595.bin
+181 CUBPOL    2410630014300000 0o1123    256     99       85 OK     bin/zone_595.bin
+182 SPLINT    2250630012400000 0o1123    160     84       70 OK     bin/zone_595.bin
+183 TRIDIG    2010630024700000 0o1123      0    167      148 OK     bin/zone_595.bin
+184 TDMP      3550620021400000 0o1122    864    140      125 OK     bin/zone_594.bin
+185 SPLINE    3310620024200000 0o1122    704    162      141 OK     bin/zone_594.bin
+186 NOTCH     3110620023000000 0o1122    576    152       63 OK     bin/zone_594.bin
+187 NOTCH1    0000000000000053 -            -      -        - REF    -> 53
+188 BLANC     2650620041200000 0o1122    416    266      106 OK     bin/zone_594.bin
+189 BLANCA    0000000000000107 -            -      -        - REF    -> 107
+190 MOVE3     3710610057600000 0o1121    960    382      361 OK     bin/zone_593.bin
+191 MOVBL3    0000000000000001 -            -      -        - REF    -> 1
+192 MOVE1     3250610031700000 0o1121    672    207      197 OK     bin/zone_593.bin
+193 MOVBL1    0000000000000001 -            -      -        - REF    -> 1
+194 GOBSEK    2710610027600000 0o1121    448    190      177 OK     bin/zone_593.bin
+195 MOVE2     2210610035400000 0o1121    128    236      221 OK     bin/zone_593.bin
+196 BLANCH    3250600070100000 0o1120    672    449      425 OK     bin/zone_592.bin
+197 ROTATE    3150600006100000 0o1120    608     49       39 OK     bin/zone_592.bin
+198 RESET     3050600003300000 0o1120    544     27       27 OK     bin/zone_592.bin
+199 PSCALE    3010600003700000 0o1120    512     31       25 OK     bin/zone_592.bin
+200 MTMPL     2710600010400000 0o1120    448     68       49 OK     bin/zone_592.bin
+201 LSCALE    2550600012400000 0o1120    352     84       76 OK     bin/zone_592.bin
+202 ENDLEV    2350600011700000 0o1120    224     79       77 OK     bin/zone_592.bin
+203 BEGLEV    2150600012300000 0o1120     96     83       79 OK     bin/zone_592.bin
+204 SHIFT     2110600002600000 0o1120     64     22       20 OK     bin/zone_592.bin
+205 ATRAN2    3450570017400000 0o1117    800    124      114 OK     bin/zone_591.bin
+206 DASHP     3210570022600000 0o1117    640    150      136 OK     bin/zone_591.bin
+207 AXISC     2610570041000000 0o1117    384    264      220 OK     bin/zone_591.bin
+208 BAR       2150570047500000 0o1117     96    317      264 OK     bin/zone_591.bin
+209 BARS      2050570006100000 0o1117     32     49       39 OK     bin/zone_591.bin
+210 HISTGM    3350560050000000 0o1116    736    320      290 OK     bin/zone_590.bin
+211 SHADE     3410550175700000 0o1115    768   1007      941 OK     bin/zone_589.bin
+212 SDPG      2750550042600000 0o1115    480    278      252 OK     bin/zone_589.bin
+213 COORD     2650550006500000 0o1115    416     53       45 OK     bin/zone_589.bin
+214 TMLGF     2450550016100000 0o1115    288    113      100 OK     bin/zone_589.bin
+215 LGLINE    2150550027100000 0o1115     96    185      160 OK     bin/zone_589.bin
+216 YLGAX     3310540063300000 0o1114    704    411      383 OK     bin/zone_588.bin
+217 XLGAX     2450540062300000 0o1114    288    403      376 OK     bin/zone_588.bin
+218 RAXES     3710530055000000 0o1113    960    360      311 OK     bin/zone_587.bin
+219 POLREG    3310530040300000 0o1113    704    259      235 OK     bin/zone_587.bin
+220 SIGNA     2750530031700000 0o1113    480    207      174 OK     bin/zone_587.bin
+221 POLINE    2410530032400000 0o1113    256    212      183 OK     bin/zone_587.bin
+222 THAXES    3650520055300000 0o1112    928    363      316 OK     bin/zone_586.bin
+223 TPF       3410520023700000 0o1112    768    159      137 OK     bin/zone_586.bin
+224 GFFALS    3210520015200000 0o1112    640    106      104 OK     bin/zone_586.bin
+225 MARKER    2750520021500000 0o1112    480    141      102 OK     bin/zone_586.bin
+226 RENTCH    2550520010300000 0o1112    352     67       64 OK     bin/zone_586.bin
+227 TFM       2450520007700000 0o1112    288     63       55 OK     bin/zone_586.bin
+228 WHERE     2410520003300000 0o1112    256     27       22 OK     bin/zone_586.bin
+229 RAND      2310520004300000 0o1112    192     35       30 OK     bin/zone_586.bin
+230 INCLIN    3710510037500000 0o1111    960    253      219 OK     bin/zone_585.bin
+231 PVAL      3610510004300000 0o1111    896     35       29 OK     bin/zone_585.bin
+232 REBLAN    3450510005300000 0o1111    800     43       41 OK     bin/zone_585.bin
+233 MINMAX    3350510005600000 0o1111    736     46       38 OK     bin/zone_585.bin
+234 XAXIS     2250510111000000 0o1111    160    584      520 OK     bin/zone_585.bin
+235 YAXIS     3150500110700000 0o1110    608    583      519 OK     bin/zone_584.bin
+236 AXES      3450470150400000 0o1107    800    836      772 OK     bin/zone_583.bin
+237 ASTEP     3050470037400000 0o1107    544    252      236 OK     bin/zone_583.bin
+238 TMF       2750470007300000 0o1107    480     59       51 OK     bin/zone_583.bin
+239 LINEMC    2510470021300000 0o1107    320    139      119 OK     bin/zone_583.bin
+240 LINEC     2310470015700000 0o1107    192    111       96 OK     bin/zone_583.bin
+241 LINEMO    2010470027500000 0o1107      0    189      163 OK     bin/zone_583.bin
+242 LINEO     3550460024100000 0o1106    864    161      140 OK     bin/zone_582.bin
+243 ELIPS     3250460026300000 0o1106    672    179      153 OK     bin/zone_582.bin
+244 POLYG     3050460015200000 0o1106    544    106       93 OK     bin/zone_582.bin
+245 CIRCLE    2610460022600000 0o1106    384    150      125 OK     bin/zone_582.bin
+246 GRID      2450460013300000 0o1106    288     91       78 OK     bin/zone_582.bin
+247 RECT      2310460010600000 0o1106    192     70       59 OK     bin/zone_582.bin
+248 BOX       2210460005700000 0o1106    128     47       40 OK     bin/zone_582.bin
+249 REGION    3750450021300000 0o1105    992    139      124 OK     bin/zone_581.bin
+250 LIMITS    3650450007300000 0o1105    928     59       50 OK     bin/zone_581.bin
+251 NUMBER    3250450036600000 0o1105    672    246      230 OK     bin/zone_581.bin
+252 SYMTAB    2250450075200000 0o1105    160    490      490 OK     bin/zone_581.bin
+253 BCD       2010450021200000 0o1105      0    138      138 OK     bin/zone_581.bin
+254 IBCD      0000000000000001 -            -      -        - REF    -> 1
+
+Total: 255 entries = 238 modules + 17 reference records
+Head-name verification: 238/238 OK
+Body zones: 0o1105..0o1162 (all zones dumped; 0o1132 is spanned by ITPLBV, not a catalog start)

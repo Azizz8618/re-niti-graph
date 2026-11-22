@@ -1,0 +1,66 @@
+ PSCALE  :,NAME, NEW DTRAN
+C Commands: 27
+C Constants: 2
+C BSS: 6
+C Memory size: 37
+C Header: 1
+C Symbols: 1
+C Long symbols: 1
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 37
+C Symbol table offset is 34
+ ATRAN2  :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0017B
+ *0001B:7,XTA,1
+ ,WTC,*0036B
+ ,A-X,
+ 7,ATX,4
+ ,WTC,*0034B
+ ,A*X,
+ 7,ATX,2
+ 7,XTA,4
+ ,WTC,*0035B
+ ,A*X,
+ 7,ATX,3
+ ,WTC,*0036B
+ 14,VTM,
+ ,ITS,14
+ 14,VTM,*0027B
+ ,ITS,14
+ 14,VTM,*0031B
+ ,ITS,14
+ 14,VTM,*0027B
+ ,ITS,14
+ ,WTC,*0036B
+ 14,VTM,
+ ,ITS,14
+ 14,VTM,*0032B
+ ,ITS,14
+ 13,VJM,ATRAN2  
+ ,UJ,*0025B
+ *0017B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0027B
+ 7,STX,7
+ 7,STX,6
+ 7,STX,5
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0025B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0027B:,LOG,0
+ ,LOG,4050000000000000
+ *0031B:,BSS,1
+ *0032B:,BSS,2
+ *0034B:,BSS,1
+ *0035B:,BSS,1
+ *0036B:,BSS,1
+ ,END,

@@ -1,0 +1,952 @@
+=== COPDCB [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/COPDCB.bin
+Format: DMS
+
+=== SETIND [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SETIND.bin
+Format: DMS
+
+=== SETREF [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SETREF.bin
+Format: DMS
+
+=== WCATWO [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WCATWO.bin
+Format: DMS
+
+=== GIVENZ [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/GIVENZ.bin
+Format: DMS
+
+=== SETWGR [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SETWGR.bin
+Format: DMS
+
+=== SETEND [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SETEND.bin
+Format: DMS
+
+=== SETZON [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SETZON.bin
+Format: DMS
+
+=== GDISC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/GDISC.bin
+Format: DMS
+
+=== ABUFF [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ABUFF.bin
+Format: DMS
+
+=== RCATAL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RCATAL.bin
+Format: DMS
+
+=== RZON [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RZON.bin
+Format: DMS
+
+=== CLEAZN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CLEAZN.bin
+Format: DMS
+
+=== COMPDT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/COMPDT.bin
+Format: DMS
+
+=== *70 [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/_s70.bin
+Format: DMS
+
+=== E70 [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/E70.bin
+Format: DMS
+
+=== NEXTZN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/NEXTZN.bin
+Format: DMS
+
+=== FOPEN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/FOPEN.bin
+Format: DMS
+
+=== PUTXY [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/PUTXY.bin
+Format: DMS
+
+=== SETK [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SETK.bin
+Format: DMS
+
+=== GIVZON [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/GIVZON.bin
+Format: DMS
+
+=== FCATBD [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/FCATBD.bin
+Format: DMS
+
+=== LOOK [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LOOK.bin
+Format: DMS
+
+=== LEVMAP [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LEVMAP.bin
+Format: DMS
+
+=== LOCEXT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LOCEXT.bin
+Format: DMS
+
+=== BITA [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/BITA.bin
+Format: DMS
+
+=== KEYPO [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/KEYPO.bin
+Format: DMS
+
+=== SUPLIN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SUPLIN.bin
+Format: DMS
+
+=== LEVFUN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LEVFUN.bin
+Format: DMS
+
+=== ADDLEV [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ADDLEV.bin
+Format: DMS
+
+=== QUADRA [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/QUADRA.bin
+Format: DMS
+
+=== RENUM [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RENUM.bin
+Format: DMS
+
+=== SIZNUM [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SIZNUM.bin
+Format: DMS
+
+=== CMGRID [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CMGRID.bin
+Format: DMS
+
+=== LINNUM [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LINNUM.bin
+Format: DMS
+
+=== SIZLIN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SIZLIN.bin
+Format: DMS
+
+=== NUMLIN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/NUMLIN.bin
+Format: DMS
+
+=== ZAPIT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ZAPIT.bin
+Format: DMS
+
+=== CELL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CELL.bin
+Format: DMS
+
+=== EXTREM [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/EXTREM.bin
+Format: DMS
+
+=== LINT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LINT.bin
+Format: DMS
+
+=== YPOL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/YPOL.bin
+Format: DMS
+
+=== XPOL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/XPOL.bin
+Format: DMS
+
+=== ISOLIN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ISOLIN.bin
+Format: DMS
+
+=== PRJT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/PRJT.bin
+Format: DMS
+
+=== MAP [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/MAP.bin
+Format: DMS
+
+=== INTRSC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/INTRSC.bin
+Format: DMS
+
+=== MNMX [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/MNMX.bin
+Format: DMS
+
+=== LININT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LININT.bin
+Format: DMS
+
+=== BUFL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/BUFL.bin
+Format: DMS
+
+=== SEARCH [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SEARCH.bin
+Format: DMS
+
+=== PATCH [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/PATCH.bin
+Format: DMS
+
+=== CORNL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CORNL.bin
+Format: DMS
+
+=== PRSP [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/PRSP.bin
+Format: DMS
+
+=== WRSTR [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRSTR.bin
+Format: DMS
+
+=== WRMVE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRMVE.bin
+Format: DMS
+
+=== WRMVC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRMVC.bin
+Format: DMS
+
+=== WRMVB [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRMVB.bin
+Format: DMS
+
+=== WRMVA [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRMVA.bin
+Format: DMS
+
+=== WRELP [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRELP.bin
+Format: DMS
+
+=== WRCRC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRCRC.bin
+Format: DMS
+
+=== WRAEB [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRAEB.bin
+Format: DMS
+
+=== WRAEA [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRAEA.bin
+Format: DMS
+
+=== WRACD [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRACD.bin
+Format: DMS
+
+=== WRACC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRACC.bin
+Format: DMS
+
+=== WRACB [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRACB.bin
+Format: DMS
+
+=== WRACA [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WRACA.bin
+Format: DMS
+
+=== WHERP [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WHERP.bin
+Format: DMS
+
+=== STRMOD [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/STRMOD.bin
+Format: DMS
+
+=== STAR [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/STAR.bin
+Format: DMS
+
+=== SPIRAL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SPIRAL.bin
+Format: DMS
+
+=== SECANT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SECANT.bin
+Format: DMS
+
+=== RDSTR [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDSTR.bin
+Format: DMS
+
+=== RDMVE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDMVE.bin
+Format: DMS
+
+=== RDMVC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDMVC.bin
+Format: DMS
+
+=== RDMVB [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDMVB.bin
+Format: DMS
+
+=== RDMVA [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDMVA.bin
+Format: DMS
+
+=== RDELP [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDELP.bin
+Format: DMS
+
+=== RDCRC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDCRC.bin
+Format: DMS
+
+=== RDAEB [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDAEB.bin
+Format: DMS
+
+=== RDAEA [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDAEA.bin
+Format: DMS
+
+=== RDACD [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDACD.bin
+Format: DMS
+
+=== RDACC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDACC.bin
+Format: DMS
+
+=== RDACB [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDACB.bin
+Format: DMS
+
+=== RDACA [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RDACA.bin
+Format: DMS
+
+=== POLG [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/POLG.bin
+Format: DMS
+
+=== MOVC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/MOVC.bin
+Format: DMS
+
+=== MOVB [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/MOVB.bin
+Format: DMS
+
+=== MOVA [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/MOVA.bin
+Format: DMS
+
+=== MODGF [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/MODGF.bin
+Format: DMS
+
+=== LITAN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LITAN.bin
+Format: DMS
+
+=== LICON [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LICON.bin
+Format: DMS
+
+=== IVEST [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/IVEST.bin
+Format: DMS
+
+=== FATLIN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/FATLIN.bin
+Format: DMS
+
+=== FATARC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/FATARC.bin
+Format: DMS
+
+=== ELPS [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ELPS.bin
+Format: DMS
+
+=== DIST [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/DIST.bin
+Format: DMS
+
+=== DIMDRO [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/DIMDRO.bin
+Format: DMS
+
+=== DDIST [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/DDIST.bin
+Format: DMS
+
+=== CROSS [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CROSS.bin
+Format: DMS
+
+=== CIRTAL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CIRTAL.bin
+Format: DMS
+
+=== CIRTAC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CIRTAC.bin
+Format: DMS
+
+=== CIRC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CIRC.bin
+Format: DMS
+
+=== ARROW [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ARROW.bin
+Format: DMS
+
+=== AREB1 [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/AREB1.bin
+Format: DMS
+
+=== ARCOLL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ARCOLL.bin
+Format: DMS
+
+=== ARCOLC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ARCOLC.bin
+Format: DMS
+
+=== ARCOCC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ARCOCC.bin
+Format: DMS
+
+=== ARCID [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ARCID.bin
+Format: DMS
+
+=== ARCIC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ARCIC.bin
+Format: DMS
+
+=== ARCIB [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ARCIB.bin
+Format: DMS
+
+=== ARCIA [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ARCIA.bin
+Format: DMS
+
+=== ARCELB [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ARCELB.bin
+Format: DMS
+
+=== ARCELA [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ARCELA.bin
+Format: DMS
+
+=== ARCC1 [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ARCC1.bin
+Format: DMS
+
+=== ARCANG [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ARCANG.bin
+Format: DMS
+
+=== ANGLER [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ANGLER.bin
+Format: DMS
+
+=== INSIDE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/INSIDE.bin
+Format: DMS
+
+=== DRACON [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/DRACON.bin
+Format: DMS
+
+=== OPER [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/OPER.bin
+Format: DMS
+
+=== DRFRAM [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/DRFRAM.bin
+Format: DMS
+
+=== SMTONE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SMTONE.bin
+Format: DMS
+
+=== SMTBVF [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SMTBVF.bin
+Format: DMS
+
+=== SMTSIM [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SMTSIM.bin
+Format: DMS
+
+=== DRALIM [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/DRALIM.bin
+Format: DMS
+
+=== INSDEK [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/INSDEK.bin
+Format: DMS
+
+=== CONDEK [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CONDEK.bin
+Format: DMS
+
+=== SFCFIT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SFCFIT.bin
+Format: DMS
+
+=== ITPLBV [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ITPLBV.bin
+Format: DMS
+
+=== FNROOT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/FNROOT.bin
+Format: DMS
+
+=== THREED [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/THREED.bin
+Format: DMS
+
+=== TDLINE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TDLINE.bin
+Format: DMS
+
+=== TDLIML [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TDLIML.bin
+Format: DMS
+
+=== HCINV [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/HCINV.bin
+Format: DMS
+
+=== HCPRSP [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/HCPRSP.bin
+Format: DMS
+
+=== HCMULT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/HCMULT.bin
+Format: DMS
+
+=== HCUNIT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/HCUNIT.bin
+Format: DMS
+
+=== SETTR [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SETTR.bin
+Format: DMS
+
+=== SAVETR [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SAVETR.bin
+Format: DMS
+
+=== TDROT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TDROT.bin
+Format: DMS
+
+=== TDTRAN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TDTRAN.bin
+Format: DMS
+
+=== SHEAR [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SHEAR.bin
+Format: DMS
+
+=== TDSCAL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TDSCAL.bin
+Format: DMS
+
+=== DIMET [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/DIMET.bin
+Format: DMS
+
+=== ISOMET [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ISOMET.bin
+Format: DMS
+
+=== CABIN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CABIN.bin
+Format: DMS
+
+=== HCROT1 [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/HCROT1.bin
+Format: DMS
+
+=== AXONOM [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/AXONOM.bin
+Format: DMS
+
+=== VIEW [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/VIEW.bin
+Format: DMS
+
+=== INIT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/INIT.bin
+Format: DMS
+
+=== ZINT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ZINT.bin
+Format: DMS
+
+=== HCIND [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/HCIND.bin
+Format: DMS
+
+=== HCNCRD [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/HCNCRD.bin
+Format: DMS
+
+=== HCLINE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/HCLINE.bin
+Format: DMS
+
+=== TDSECT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TDSECT.bin
+Format: DMS
+
+=== HCSURF [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/HCSURF.bin
+Format: DMS
+
+=== TDLIM [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TDLIM.bin
+Format: DMS
+
+=== LSFIT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LSFIT.bin
+Format: DMS
+
+=== SINCL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SINCL.bin
+Format: DMS
+
+=== DERIV5 [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/DERIV5.bin
+Format: DMS
+
+=== LINFIL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LINFIL.bin
+Format: DMS
+
+=== FORIF [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/FORIF.bin
+Format: DMS
+
+=== FORIT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/FORIT.bin
+Format: DMS
+
+=== FORFIT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/FORFIT.bin
+Format: DMS
+
+=== CHENSP [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CHENSP.bin
+Format: DMS
+
+=== APPOLY [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/APPOLY.bin
+Format: DMS
+
+=== SMINV [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SMINV.bin
+Format: DMS
+
+=== LESQ [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LESQ.bin
+Format: DMS
+
+=== TCALC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TCALC.bin
+Format: DMS
+
+=== CUBPOL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CUBPOL.bin
+Format: DMS
+
+=== SPLINT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SPLINT.bin
+Format: DMS
+
+=== TRIDIG [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TRIDIG.bin
+Format: DMS
+
+=== TDMP [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TDMP.bin
+Format: DMS
+
+=== SPLINE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SPLINE.bin
+Format: DMS
+
+=== NOTCH [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/NOTCH.bin
+Format: DMS
+
+=== BLANC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/BLANC.bin
+Format: DMS
+
+=== MOVE3 [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/MOVE3.bin
+Format: DMS
+
+=== MOVE1 [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/MOVE1.bin
+Format: DMS
+
+=== GOBSEK [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/GOBSEK.bin
+Format: DMS
+
+=== MOVE2 [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/MOVE2.bin
+Format: DMS
+
+=== BLANCH [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/BLANCH.bin
+Format: DMS
+
+=== ROTATE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ROTATE.bin
+Format: DMS
+
+=== RESET [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RESET.bin
+Format: DMS
+
+=== PSCALE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/PSCALE.bin
+Format: DMS
+
+=== MTMPL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/MTMPL.bin
+Format: DMS
+
+=== LSCALE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LSCALE.bin
+Format: DMS
+
+=== ENDLEV [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ENDLEV.bin
+Format: DMS
+
+=== BEGLEV [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/BEGLEV.bin
+Format: DMS
+
+=== SHIFT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SHIFT.bin
+Format: DMS
+
+=== ATRAN2 [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ATRAN2.bin
+Format: DMS
+
+=== DASHP [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/DASHP.bin
+Format: DMS
+
+=== AXISC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/AXISC.bin
+Format: DMS
+
+=== BAR [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/BAR.bin
+Format: DMS
+
+=== BARS [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/BARS.bin
+Format: DMS
+
+=== HISTGM [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/HISTGM.bin
+Format: DMS
+
+=== SHADE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SHADE.bin
+Format: DMS
+
+=== SDPG [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SDPG.bin
+Format: DMS
+
+=== COORD [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/COORD.bin
+Format: DMS
+
+=== TMLGF [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TMLGF.bin
+Format: DMS
+
+=== LGLINE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LGLINE.bin
+Format: DMS
+
+=== YLGAX [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/YLGAX.bin
+Format: DMS
+
+=== XLGAX [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/XLGAX.bin
+Format: DMS
+
+=== RAXES [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RAXES.bin
+Format: DMS
+
+=== POLREG [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/POLREG.bin
+Format: DMS
+
+=== SIGNA [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SIGNA.bin
+Format: DMS
+
+=== POLINE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/POLINE.bin
+Format: DMS
+
+=== THAXES [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/THAXES.bin
+Format: DMS
+
+=== TPF [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TPF.bin
+Format: DMS
+
+=== GFFALS [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/GFFALS.bin
+Format: DMS
+
+=== MARKER [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/MARKER.bin
+Format: DMS
+
+=== RENTCH [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RENTCH.bin
+Format: DMS
+
+=== TFM [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TFM.bin
+Format: DMS
+
+=== WHERE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/WHERE.bin
+Format: DMS
+
+=== RAND [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RAND.bin
+Format: DMS
+
+=== INCLIN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/INCLIN.bin
+Format: DMS
+
+=== PVAL [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/PVAL.bin
+Format: DMS
+
+=== REBLAN [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/REBLAN.bin
+Format: DMS
+
+=== MINMAX [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/MINMAX.bin
+Format: DMS
+
+=== XAXIS [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/XAXIS.bin
+Format: DMS
+
+=== YAXIS [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/YAXIS.bin
+Format: DMS
+
+=== AXES [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/AXES.bin
+Format: DMS
+
+=== ASTEP [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ASTEP.bin
+Format: DMS
+
+=== TMF [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/TMF.bin
+Format: DMS
+
+=== LINEMC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LINEMC.bin
+Format: DMS
+
+=== LINEC [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LINEC.bin
+Format: DMS
+
+=== LINEMO [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LINEMO.bin
+Format: DMS
+
+=== LINEO [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LINEO.bin
+Format: DMS
+
+=== ELIPS [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/ELIPS.bin
+Format: DMS
+
+=== POLYG [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/POLYG.bin
+Format: DMS
+
+=== CIRCLE [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/CIRCLE.bin
+Format: DMS
+
+=== GRID [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/GRID.bin
+Format: DMS
+
+=== RECT [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/RECT.bin
+Format: DMS
+
+=== BOX [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/BOX.bin
+Format: DMS
+
+=== REGION [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/REGION.bin
+Format: DMS
+
+=== LIMITS [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/LIMITS.bin
+Format: DMS
+
+=== NUMBER [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/NUMBER.bin
+Format: DMS
+
+=== SYMTAB [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/SYMTAB.bin
+Format: DMS
+
+=== BCD [-F dms] rc=0 ===
+Decompiling file /home/azizz/Yandex.Disk/re-siprod/notes/grafor22-disasm/madlen/bin/BCD.bin
+Format: DMS
+

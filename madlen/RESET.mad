@@ -1,0 +1,72 @@
+ RESET   :,NAME, NEW DTRAN
+C Commands: 31
+C Constants: 2
+C BSS: 0
+C Memory size: 33
+C Header: 1
+C Symbols: 12
+C Long symbols: 2
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 53
+C Symbol table offset is 36
+ *GFATRM*:,LC,115
+ GAK/2:,EQU,*GFATRM*+102
+ GAK/3:,EQU,*GFATRM*+103
+ GAK/4:,EQU,*GFATRM*+109
+ ATRAN2  :,SUBP,
+ GAK/6:,EQU,*GFATRM*+1
+ GAK/7:,EQU,*GFATRM*+2
+ GAL/0:,EQU,*GFATRM*+3
+ GAL/1:,EQU,*GFATRM*+4
+ GAL/2:,EQU,*GFATRM*+5
+ 14,VTM,*0001B
+ ,UJ,*0022B
+ *0001B:7,XTA,1
+ ,UTC,*GFATRM*
+ ,ATX,
+ 7,XTA,
+ ,UTC,GAK/6
+ ,ATX,
+ 7,XTA,
+ ,UTC,GAK/7
+ ,ATX,
+ 7,XTA,
+ ,UTC,GAL/0
+ ,ATX,
+ 7,XTA,1
+ ,UTC,GAL/1
+ ,ATX,
+ 7,XTA,
+ ,UTC,GAL/2
+ ,ATX,
+ 14,VTM,*0032B
+ ,ITS,14
+ 14,VTM,*0031B
+ ,ITS,14
+ 14,VTM,*0031B
+ ,ITS,14
+ 14,VTM,*0031B
+ ,ITS,14
+ 14,VTM,*0032B
+ ,ITS,14
+ 14,VTM,*0031B
+ ,ITS,14
+ 13,VJM,ATRAN2  
+ ,UJ,*0027B
+ *0022B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0031B
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0027B:,STI,
+ ,STI,7
+ ,STI,8
+ 8,UJ,
+ *0031B:,LOG,0
+ *0032B:,LOG,4050000000000000
+ ,END,

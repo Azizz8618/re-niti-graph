@@ -1,0 +1,44 @@
+ XPOL    :,NAME, NEW DTRAN
+C Commands: 16
+C Constants: 0
+C BSS: 3
+C Memory size: 21
+C Header: 1
+C Symbols: 1
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 23
+C Symbol table offset is 21
+ COS     :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0005B
+ *0001B:,WTC,*0020B
+ 14,VTM,
+ ,ITA,14
+ 13,VJM,COS     
+ ,WTC,*0017B
+ ,A*X,
+ 7,ATX,
+ ,UJ,*0013B
+ *0005B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0016B
+ 7,STX,2
+ 7,STX,1
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0013B:,STI,
+ ,STI,7
+ ,STI,8
+ ,UTC,*0016B
+ ,XTS,
+ 8,UJ,
+ *0016B:,BSS,1
+ *0017B:,BSS,1
+ *0020B:,BSS,1
+ ,END,

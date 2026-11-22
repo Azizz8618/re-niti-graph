@@ -1,0 +1,24 @@
+ CLEAZN  :,NAME, NEW DTRAN
+C Commands: 6
+C Constants: 0
+C BSS: 0
+C Memory size: 6
+C Header: 1
+C Symbols: 1
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 13
+C Symbol table offset is 11
+ *0000B:8,VTM,*0000B
+ ,ATI,9
+ 9,WTC,6
+ 14,VTM,
+ 12,VTM,76001B
+ ,XTA,
+ *0003B:14,ATX,
+ 14,UTM,1
+ 12,VLM,*0003B
+ ,STX,
+ 13,UJ,
+ ,END,

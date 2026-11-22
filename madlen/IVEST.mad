@@ -1,0 +1,80 @@
+ IVEST   :,NAME, NEW DTRAN
+C Commands: 37
+C Constants: 2
+C BSS: 5
+C Memory size: 46
+C Header: 1
+C Symbols: 1
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 46
+C Symbol table offset is 44
+ ABS     :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0026B
+ *0001B:,WTC,*0043B
+ ,XTA,
+ ,WTC,*0044B
+ ,A-X,
+ 7,ATX,2
+ 14,VTM,*0041B
+ ,ITA,14
+ 13,VJM,ABS     
+ ,WTC,*0045B
+ ,A-X,
+ ,ASN,64-7
+ ,UZA,*0020B
+ ,ARX,
+ ,UZA,*0020B
+ ,WTC,*0043B
+ ,XTA,
+ ,WTC,*0044B
+ ,A-X,
+ ,ASN,64-7
+ ,UZA,*0020B
+ ,ARX,
+ ,UZA,*0015B
+ ,UJ,*0023B
+ *0015B:7,XTA,1
+ ,NTR,3
+ ,X-A,
+ 7,ATX,3
+ ,NTR,22B
+ ,UJ,*0034B
+ *0020B:7,XTA,
+ 7,ATX,3
+ ,NTR,3
+ ,NTR,22B
+ ,UJ,*0034B
+ *0023B:7,XTA,1
+ 7,ATX,3
+ ,NTR,3
+ ,NTR,22B
+ ,UJ,*0034B
+ *0026B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0037B
+ 7,STX,6
+ 7,STX,5
+ 7,STX,4
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0034B:,STI,
+ ,STI,7
+ ,STI,8
+ ,UTC,*0042B
+ ,XTS,
+ 8,UJ,
+ *0037B:,INT,0
+ ,INT,1
+ *0041B:,BSS,1
+ *0042B:,BSS,1
+ *0043B:,BSS,1
+ *0044B:,BSS,1
+ *0045B:,BSS,1
+ ,END,

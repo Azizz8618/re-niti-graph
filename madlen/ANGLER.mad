@@ -1,0 +1,129 @@
+ ANGLER  :,NAME, NEW DTRAN
+C Commands: 72
+C Constants: 5
+C BSS: 7
+C Memory size: 106
+C Header: 1
+C Symbols: 2
+C Long symbols: 0
+C Debug: 0
+C Data: 0 + set: 0
+C Actual length of the object file is 105
+C Symbol table offset is 102
+ ATAN    :,SUBP,
+ ABS     :,SUBP,
+ 14,VTM,*0001B
+ ,UJ,*0061B
+ *0001B:7,XTA,
+ 7,A/X,2
+ 7,ATX,6
+ ,WTC,*0104B
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0027B
+ ,ARX,
+ ,UZA,*0037B
+  :,WTC,*0105B
+ ,XTA,
+ ,WTC,*0104B
+ ,A/X,
+ 7,ATX,5
+ 14,VTM,*0077B
+ ,ITA,14
+ 13,VJM,ABS     
+ 7,ATX,7
+ ,WTC,*0105B
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0023B
+ ,ARX,
+ ,UZA,*0016B
+ ,UJ,*0023B
+ *0016B:14,VTM,*0101B
+ ,ITA,14
+ 13,VJM,ATAN    
+ 7,A*X,6
+ ,X-A,
+ 7,A+X,1
+ 7,ATX,10B
+ ,UJ,*0057B
+ *0023B:14,VTM,*0101B
+ ,ITA,14
+ 13,VJM,ATAN    
+ 7,A*X,6
+ 7,ATX,10B
+ ,UJ,*0057B
+ *0027B:,WTC,*0105B
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0057B
+ ,ARX,
+ ,UZA,*0033B
+ ,UJ,*0035B
+ *0033B:7,XTA,3
+ 7,ATX,10B
+ ,UJ,*0057B
+ *0035B:7,XTA,4
+ 7,ATX,10B
+ ,UJ,*0057B
+ *0037B:,WTC,*0105B
+ ,XTA,
+ ,WTC,*0104B
+ ,A/X,
+ 7,ATX,5
+ 14,VTM,*0077B
+ ,ITA,14
+ 13,VJM,ABS     
+ 7,ATX,7
+ ,WTC,*0105B
+ ,XTA,
+ ,ASN,64-7
+ ,UZA,*0047B
+ ,ARX,
+ ,UZA,*0047B
+ ,UJ,*0053B
+ *0047B:14,VTM,*0101B
+ ,ITA,14
+ 13,VJM,ATAN    
+ 7,A*X,6
+ 7,A+X,
+ 7,ATX,10B
+ ,UJ,*0057B
+ *0053B:14,VTM,*0101B
+ ,ITA,14
+ 13,VJM,ATAN    
+ 7,A*X,6
+ ,X-A,
+ 7,A+X,
+ 7,ATX,10B
+ *0057B:7,XTA,10B
+ 7,ATX,11B
+ ,UJ,*0067B
+ *0061B:7,MTJ,8
+ 14,MTJ,10
+ 7,VTM,*0072B
+ 7,STX,13B
+ 7,STX,12B
+ ,ITS,13
+ ,ITS,8
+ ,ITS,
+ ,NTR,3
+ ,NTR,2
+ 10,UJ,
+ *0067B:,STI,
+ ,STI,7
+ ,STI,8
+ ,UTC,*0103B
+ ,XTS,
+ 8,UJ,
+ *0072B:,LOG,4413200000000000
+ ,TEXT, 8HDK0     
+ ,LOG,4114441766521041
+ ,LOG,4450340000000000
+ ,TEXT, 8HCK0     
+ *0077B:,BSS,2
+ *0101B:,BSS,2
+ *0103B:,BSS,1
+ *0104B:,BSS,1
+ *0105B:,BSS,1
+ ,END,
