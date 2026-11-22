@@ -1,0 +1,20 @@
+шифр 419999 зс5^
+лен 41(2048)^
+eeв1а3
+*name DUDKD2
+*no list
+*assem
+ program: ,NAME,DUDKD2
+	,*50,1210B
+	,MOD,240B
+	,ATX,*S1
+	,MOD,240B
+	,ATX,*S2
+	,*62,0B
+ *S1:	,BSS,1
+ *S2:	,BSS,1
+	,END,
+*execute
+*end file
+``````
+еконец
