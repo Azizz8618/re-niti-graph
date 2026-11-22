@@ -1,7 +1,7 @@
-C     WRSTR - store a string/multiword component into the *GFGEL* record.
+C     WRSTR - store a string component into the *GFGEL* record.
       SUBROUTINE WRSTR(A, N)
       INTEGER N
-      REAL A(*)
+      REAL A(1000)
       COMMON /GFGEL/ GFGEL(28)
       INTEGER I, M
       M = N

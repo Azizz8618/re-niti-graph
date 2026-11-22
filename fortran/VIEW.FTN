@@ -1,0 +1,17 @@
+C     VIEW - perspective viewing matrix (MADLEN VIEW).
+C     Inverts and rotates a vector from GFVIEW, normalizes it and
+C     applies HCPRSP; the result is written back to GFMATR word 32 [I].
+      SUBROUTINE VIEW()
+      REAL V(3), S
+      COMMON /GFMATR/ GFMATR(34)
+      COMMON /GFVIEW/ GFVIEW(23)
+      V(1) = GFVIEW(21)
+      V(2) = GFVIEW(22)
+      V(3) = GFVIEW(23)
+      CALL HCINV(V)
+      CALL HCROT1(V)
+      S = SQRT(V(1)*V(1) + V(2)*V(2) + V(3)*V(3))
+      CALL HCPRSP(V, S)
+      GFMATR(33) = V(1)
+      RETURN
+      END

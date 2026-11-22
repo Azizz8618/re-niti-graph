@@ -1,0 +1,8 @@
+C     XPOL - polar to cartesian X helper: X = R*COS(A) (MADLEN XPOL).
+C     The MADLEN secondary entry path that calls the machine COS is
+C     replaced here by the intrinsic COS [I].
+      SUBROUTINE XPOL(R, A, X)
+      REAL R, A, X
+      X = R*COS(A)
+      RETURN
+      END

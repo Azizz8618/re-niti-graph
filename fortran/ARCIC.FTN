@@ -1,15 +1,24 @@
       SUBROUTINE ARCIC(X1,Y1,X2,Y2)
 C     Arc wrapper C: ARCC1 geometry, ARCANG angles, then ARCIA draw.
-C [I] Argument-to-register mapping follows the prologue of ARCIC.mad.
+C [I] MADLEN builds nine scratch cells and passes seven register
+C     arguments; the explicit interfaces of the other ports are used.
       COMMON /GFBFTR/ GFBFTR(2)
       EXTERNAL ARCC1, ARCANG, ARCIA
-      REAL X1, Y1, X2, Y2, DX, DY
+      REAL X1, Y1, X2, Y2, DX, DY, XC, YC, R, ANG, A1, A2
+      INTEGER N
       DX = X2 - X1
       DY = Y2 - Y1
+      XC = (X1 + X2) / 2.0
+      YC = (Y1 + Y2) / 2.0
+      R = SQRT(DX*DX + DY*DY) / 2.0
+      ANG = 0.0
       GFBFTR(1) = X1
       GFBFTR(2) = Y1
-      CALL ARCC1(X1,Y1,DX,DY)
-      CALL ARCANG(X1,Y1,X2,Y2)
-      CALL ARCIA(X1,Y1,X2,Y2)
+      CALL ARCC1(X1,Y1,X2,Y2,X1,Y1,XC,YC,R,ANG)
+      A1 = 0.0
+      A2 = 6.2831853
+      N = 24
+      CALL ARCANG(XC,YC,X1,Y1,X2,Y2,A1,A2)
+      CALL ARCIA(XC,YC,A1,A2-A1,N)
       RETURN
       END

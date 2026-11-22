@@ -1,7 +1,7 @@
       SUBROUTINE ZAPIT(K)
 C     Update the 9-word cell record *GFCELL*: four helpers decrement
 C     counters GAK/2..GAK/7 and multiply through IMUIP.
-C [I] Exact output medium of the cell record is not stated (LOOK calls it).
+C [I] Output medium of the cell record is not stated (LOOK calls it).
       COMMON /GFCELL/ GFCELL(9)
       EXTERNAL IMUIP
       INTEGER K, I

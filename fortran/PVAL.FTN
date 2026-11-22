@@ -1,7 +1,7 @@
       SUBROUTINE PVAL(A,B,N)
 C     Scale/fill an array cell by cell in a decrementing counter loop.
 C [I] The multiplier cell (*0041B) is a BSS word; 1.0 is used.
-      REAL A(*), B(*), F
+      REAL A(1000), B(1000), F
       INTEGER N, I
       F = 1.0
       DO 10 I = 1, N

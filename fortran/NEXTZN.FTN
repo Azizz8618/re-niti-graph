@@ -2,7 +2,9 @@
 C     Advance/allocate the next free catalog zone (NEXTZN.mad).
 C     The original brackets the operation with VJM GDISC / VJM FDISC;
 C     GDISC contains the *50 extops (Э50) which in the port are
-C     CALL EXC50 from SUPPORT.FTN. FDISC has no body in library 22,
+C     CALL EXC50 from SUPPORT.FTN; the *70/*72 exchange (Э70) of the
+C     E70/S70 chain maps to CALL EXC70 / CALL EXC72 there. FDISC has
+C     no body in library 22,
 C     so no call is emitted here [I]. Flags 100000B, 40, 110B, 101B,
 C     102B, 106B, 107B select the descriptor/mask operations [I].
       INTEGER K, IC, N, I

@@ -1,0 +1,73 @@
+C     CORNL - clip and draw corners / line contours inside the
+C     viewport. Uses *GFVP*, *GFKJ*, *GFXY*, *GFL* and *GFB*.
+      SUBROUTINE CORNL(N, X, Y)
+      INTEGER N
+      REAL X(1000), Y(1000)
+      REAL X0, X1, Y0, Y1, XA, XB, YA, YB, T
+      INTEGER I, IV
+      COMMON /GFVP/ GFVP(6)
+      COMMON /GFKJ/ GFKJ(2)
+      COMMON /GFXY/ GFXY(5)
+      COMMON /GFL/ GFL(8)
+      COMMON /GFB/ GFB(7)
+      IF (N .LT. 2) RETURN
+      X0 = GFVP(1)
+      X1 = GFVP(2)
+      Y0 = GFVP(3)
+      Y1 = GFVP(4)
+      IV = 0
+      DO 30 I = 1, N-1
+         XA = X(I)
+         YA = Y(I)
+         XB = X(I+1)
+         YB = Y(I+1)
+         IF (XA .LT. X0 .OR. XA .GT. X1) GO TO 10
+         IF (YA .LT. Y0 .OR. YA .GT. Y1) GO TO 10
+         IF (XB .LT. X0 .OR. XB .GT. X1) GO TO 10
+         IF (YB .LT. Y0 .OR. YB .GT. Y1) GO TO 10
+         CALL PLOT()
+         CALL PLOT()
+         GO TO 30
+   10    T = CLCFR(X0, XA, XB)
+         IF (T .GE. 0.0 .AND. T .LE. 1.0) THEN
+            XA = XA + T*(XB-XA)
+            YA = YA + T*(YB-YA)
+         END IF
+         T = CLCFR(X1, XA, XB)
+         IF (T .GE. 0.0 .AND. T .LE. 1.0) THEN
+            XA = XA + T*(XB-XA)
+            YA = YA + T*(YB-YA)
+         END IF
+         T = CLCFR(Y0, YA, YB)
+         IF (T .GE. 0.0 .AND. T .LE. 1.0) THEN
+            XA = XA + T*(XB-XA)
+            YA = YA + T*(YB-YA)
+         END IF
+         T = CLCFR(Y1, YA, YB)
+         IF (T .GE. 0.0 .AND. T .LE. 1.0) THEN
+            XA = XA + T*(XB-XA)
+            YA = YA + T*(YB-YA)
+         END IF
+         IF (XA .GE. X0 .AND. XA .LE. X1 .AND.
+     *       YA .GE. Y0 .AND. YA .LE. Y1) THEN
+            CALL PLOT()
+            CALL PLOT()
+            IV = IV + 1
+         END IF
+   30 CONTINUE
+      GFKJ(1) = FLOAT(IV)
+      GFXY(1) = X0
+      GFXY(2) = Y0
+      GFL(1) = FLOAT(N)
+      GFB(1) = FLOAT(IV)
+      RETURN
+      END
+      REAL FUNCTION CLCFR(L, A, B)
+      REAL L, A, B
+      IF (B .EQ. A) THEN
+         CLCFR = -1.0
+      ELSE
+         CLCFR = (L - A)/(B - A)
+      END IF
+      RETURN
+      END

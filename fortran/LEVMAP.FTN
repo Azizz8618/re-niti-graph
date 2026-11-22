@@ -3,7 +3,7 @@ C [I] Exact index table layout of the MADLEN work cells is not stated
 C     in FUNCTIONS.md; the two passes are kept as two explicit loops.
       SUBROUTINE LEVMAP(N, A, B, C)
       INTEGER N
-      REAL A(*), B(*), C(*)
+      REAL A(1000), B(1000), C(1000)
       INTEGER I, J, K, M
       DO 10 I = 1, N
          C(I) = A(I)

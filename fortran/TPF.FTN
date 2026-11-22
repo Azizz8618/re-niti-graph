@@ -5,7 +5,7 @@ C     sine/cosine correction.
 C [I] The exact parameter layout of *0211B..*0236B is not recoverable.
       REAL X, Y, X0, Y0, SX, SY, T, A
       INTEGER I, N
-      EXTERNAL IRDB, RDB, IABS, AMOD, AMIN1, AMAX1
+      EXTERNAL IRDB, RDB
       CALL IRDB(2,N)
       IF (N .LE. 1) RETURN
       CALL RDB(3,X0)

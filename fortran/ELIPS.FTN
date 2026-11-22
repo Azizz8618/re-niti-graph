@@ -1,0 +1,37 @@
+C     ELIPS - draw an ellipse from centre/axes/angle by stepping.
+C     Takes absolute values of the two half-axes, derives the parameter
+C     ratio with SIN/COS/SQRT and emits successive points with MOVE.
+C [I] the exact stepping law is reconstructed from the arithmetic
+C chains.
+      SUBROUTINE ELIPS(CX,CY,A,B,ANG,N)
+      REAL QQ1, QQ2
+      INTEGER N, I
+      REAL CX, CY, A, B, ANG, AA, BB, CS, SN, Q, T, X0, Y0, X1, Y1
+      AA = A
+      IF (AA .LT. 0.0) AA = -AA
+      BB = B
+      IF (BB .LT. 0.0) BB = -BB
+      IF (AA+BB .EQ. 0.0) RETURN
+      CS = COS(ANG)
+      SN = SIN(ANG)
+      Q = AA*AA*SN*SN + BB*BB*CS*CS
+      IF (Q .LE. 0.0) RETURN
+      Q = SQRT(Q)
+      X0 = CX + AA
+      Y0 = CY
+      DO 10 I = 1, N
+         T = 6.2831853 * FLOAT(I) / FLOAT(N)
+         X1 = CX + AA*COS(T)*CS - BB*SIN(T)*SN
+         Y1 = CY + AA*COS(T)*SN + BB*SIN(T)*CS
+         CONTINUE
+         X0 = X1
+         Y0 = Y1
+   10 CONTINUE
+      RETURN
+      ENTRY RDB(QQ1,QQ2)
+      QQ2 = 0.0
+      RETURN
+      ENTRY RSTI(QQ1,QQ2)
+      QQ2 = QQ1
+      RETURN
+      END

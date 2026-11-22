@@ -1,0 +1,53 @@
+C     ARCIA - principal arc interpolator; emits points with MOVE.
+      SUBROUTINE ARCIA(X0, Y0, A0, DA, N)
+      REAL X0, Y0, A0, DA
+      INTEGER N
+      REAL A, S, C, R, X, Y
+      INTEGER I
+      COMMON /GFBFTR/ GFBFTR(2)
+      R = GFBFTR(1)
+      IF (R .LT. 0.0) R = -R
+      A = A0
+      DO 20 I = 1, N
+         CALL ARCTG(A, S, C)
+         X = X0 + R*C
+         Y = Y0 + R*S
+         CALL PLOT()
+         A = A + DA
+   20 CONTINUE
+      RETURN
+      ENTRY MOVE(A, B)
+      REAL A, B
+      CALL PLOT()
+      RETURN
+      ENTRY RDB(K, V)
+      INTEGER K
+      REAL V
+      V = GFBFTR(K)
+      RETURN
+      ENTRY ABS(X)
+      REAL X
+      IF (X .LT. 0.0) X = -X
+      RETURN
+      ENTRY RSTI(A, K, R)
+      REAL A, R
+      INTEGER K
+      R = A*FLOAT(K)
+      RETURN
+      ENTRY SIN(X, R)
+      REAL X, R
+      REAL C
+      CALL ARCTG(X, R, C)
+      RETURN
+      ENTRY COS(X, R)
+      REAL X, R
+      REAL S
+      CALL ARCTG(X, S, R)
+      RETURN
+      END
+      SUBROUTINE ARCTG(A, S, C)
+      REAL A, S, C
+      S = SIN(A)
+      C = COS(A)
+      RETURN
+      END

@@ -1,0 +1,37 @@
+C     LINNUM - label isolines with their numeric values.
+C [I] Original follows a broken contour from BRLINE, computes the
+C     segment direction with ATAN2/SQRT and places NUMBER texts at
+C     spacing intervals held in GFLMN. Only the main path is kept.
+      SUBROUTINE LINNUM(K)
+      INTEGER K
+      COMMON /GFLSZ/ GFLSZ(1)
+      COMMON /GFLOOK/ GFLOOK(1)
+      COMMON /GFLMN/ GFLMN(4)
+      COMMON /GFISOL/ GFISOL(2)
+      EXTERNAL BRLINE,TMF,NUMBER
+      REAL X1,Y1,X2,Y2,ANG,R,XX,YY,DX,DY
+      REAL VALUE,T
+      INTEGER I,N
+      VALUE = GFISOL(1)
+      IF (GFISOL(2) .NE. 0.0) VALUE = GFLSZ(1)
+      N = INT(ABS(GFLMN(4)))
+      IF (N .LT. 1) N = 1
+      CALL BRLINE(X1,Y1,X2,Y2)
+      DX = X2 - X1
+      DY = Y2 - Y1
+      R = SQRT(DX*DX+DY*DY)
+      IF (R .EQ. 0.0) RETURN
+      ANG = ATAN2(DY,DX)
+      XX = (X1+X2)/2.0
+      YY = (Y1+Y2)/2.0
+      DO 10 I = 1, N
+         CALL TMF(XX,YY)
+         X1 = XX + GFLMN(2)*COS(ANG)
+         Y1 = YY + GFLMN(2)*SIN(ANG)
+         CALL NUMBER(X1,Y1,VALUE)
+         XX = XX + DX/FLOAT(N)
+         YY = YY + DY/FLOAT(N)
+   10 CONTINUE
+      GFLOOK(1) = K
+      RETURN
+      END

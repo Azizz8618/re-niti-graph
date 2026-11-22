@@ -2,22 +2,19 @@
 C     Write catalog entry version TWO: convert the ISO/TEXT name,
 C     read the target zone, rewrite it and clear the scratch zone.
 C [I] Heavy bit packing with AAX/AOX/ARX/ASN is replaced by field copy;
-C     RZONE and WZON have no body in the DMS library, so they are entries.
-      INTEGER NAME(*), K, I
+C     WZON has no body in DMS, so it is an entry here; RZONE is
+C     defined in RCATAL.
+      INTEGER NAME(1000), K, I
       INTEGER BUF(8)
-      EXTERNAL ISOTEX, CLEAZN
+      EXTERNAL ISOTEX, CLEAZN, RZONE
       DO 10 I = 1, 8
          BUF(I) = 0
 10    CONTINUE
       CALL ISOTEX(NAME,BUF)
       CALL RZONE(BUF(1))
-      CALL WZONE(BUF(1))
       BUF(2) = K
       CALL WZON(BUF)
-      CALL CLEAZN(BUF(2))
-      RETURN
-      ENTRY RZONE(M)
-      CALL EXC70(M)
+      CALL CLEAZN(BUF,8)
       RETURN
       ENTRY WZON(M)
       CALL EXC70(M)

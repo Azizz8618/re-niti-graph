@@ -1,0 +1,21 @@
+      SUBROUTINE MTMPL(A1, A2, A3, A4, A5, A6,
+     1                 B1, B2, B3, B4, B5, B6,
+     2                 C1, C2, C3, C4)
+C     Affine transformation matrix multiply (MTMPL.mad, 61 commands).
+C     The MADLEN version reads six input words and eight matrix words
+C     through WTC cells and writes four result words [I]. The scalar
+C     dummy arguments match the 16-word GFATRM block passed by ENDLEV;
+C     they form two 2x2 factors and a translation vector.
+      REAL A1, A2, A3, A4, A5, A6
+      REAL B1, B2, B3, B4, B5, B6
+      REAL C1, C2, C3, C4, T1, T2
+      T1 = A1*B1 + A2*B3
+      T2 = A1*B2 + A2*B4
+      C1 = T1
+      C2 = T2
+      C3 = A3*B1 + A4*B3 + A5
+      C4 = A3*B2 + A4*B4 + A6
+      C1 = C1 + B5
+      C2 = C2 + B6
+      RETURN
+      END

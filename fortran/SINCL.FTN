@@ -1,0 +1,26 @@
+C     SINCL - draw a smooth cubic curve through tabulated points.
+C [I] IRDB/RDB read the point count and coordinates, DERIV5 gives
+C     five-point derivatives, CUBPOL fits the cubic and PVAL
+C     evaluates it in a step loop. TMF scales and MOVE emits points.
+C     The exact step control of the original is not reconstructible.
+      SUBROUTINE SINCL(N,X,Y,STEP)
+      INTEGER N
+      REAL X(N),Y(N),STEP
+      REAL C(4),T,V,XX,YY,DD
+      INTEGER I
+      EXTERNAL DERIV5,CUBPOL,PVAL,TMF,MOVE
+      IF (N .LT. 5) RETURN
+      CALL DERIV5(Y(1),Y(2),Y(3),Y(4),Y(5),X(2)-X(1),1,DD)
+      CALL CUBPOL(X,Y,N,DD,C)
+      T = X(1)
+   10 IF (T .GT. X(N)) GOTO 30
+      CALL PVAL(C,4,T,V)
+      XX = T
+      YY = V
+      CALL TMF(XX,YY)
+      CALL MOVE(XX,YY)
+      T = T + STEP
+      GOTO 10
+   30 CONTINUE
+      RETURN
+      END

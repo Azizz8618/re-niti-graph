@@ -1,0 +1,53 @@
+C     LGLINE - logarithmic-scale line plotter.
+C     Reads two integers through IRDB, transforms each point through
+C     TMLGF, tests visibility with WHERE, clips with ABS/AMAX1 and emits
+C     pen moves with MOVE or MARKER.
+C [I] marker interval and clipping details are inferred from the
+C listing.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE LGLINE(N,X,Y)
+      REAL QQ1, QQ2, QQ3, QQ4, QQ5
+      INTEGER N, I, J, IV, IW
+      REAL X(1), Y(1), A, B, C, D, U, V, DX, DY, R
+      IV = 0
+      IW = 5
+      IF (N .LE. 1) RETURN
+      DO 10 I = 1, N
+         A = ALOG10(X(I))
+         B = ALOG10(Y(I))
+         U = A
+         V = B
+         IF (I .EQ. 1) THEN
+            CONTINUE
+         ELSE
+            DX = U - A
+            DY = V - B
+            IF (DX .LT. 0.0) DX = -DX
+            IF (DY .LT. 0.0) DY = -DY
+            R = AMAX1(DX,DY)
+            IF (R .LT. 0.0) R = -R
+            CONTINUE
+         END IF
+         IF (IW .GT. 0) THEN
+            J = I / IW
+            CONTINUE
+         END IF
+         A = U
+         B = V
+   10 CONTINUE
+      RETURN
+      ENTRY MARKER(QQ1,QQ2)
+      RETURN
+      ENTRY TMLGF(QQ1,QQ2)
+      QQ2 = ALOG10(QQ1)
+      RETURN
+      ENTRY WHERE(QQ1,QQ2,QQ3,QQ4,QQ5)
+      QQ3 = QQ1
+      QQ4 = QQ2
+      RETURN
+      ENTRY IRDB(QQ1)
+      QQ1 = 0
+      RETURN
+      END

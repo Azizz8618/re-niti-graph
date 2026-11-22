@@ -1,0 +1,28 @@
+C     WRMVE - general vector-element writer into *GFGEL*.
+      SUBROUTINE WRMVE(X0, Y0, X1, Y1, MODE)
+      REAL X0, Y0, X1, Y1, MODE
+      COMMON /GFGEL/ GFGEL(28)
+      REAL SC, T
+      SC = MODE
+      IF (SC .LT. 0.0) SC = -SC
+      GFGEL(1) = X0
+      GFGEL(2) = Y0
+      GFGEL(3) = X1
+      GFGEL(4) = Y1
+      T = X1 - X0
+      GFGEL(6) = T
+      T = Y1 - Y0
+      GFGEL(7) = T
+      GFGEL(8) = SC
+      GFGEL(9) = MODE
+      RETURN
+      ENTRY ABS(U)
+      REAL U
+      IF (U .LT. 0.0) U = -U
+      RETURN
+      ENTRY RSTI(U, K, R)
+      REAL U, R
+      INTEGER K
+      R = U*FLOAT(K)
+      RETURN
+      END

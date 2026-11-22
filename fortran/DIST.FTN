@@ -34,7 +34,7 @@ C     the line, circle and ellipse cases below.
       MODE = 0
       IF (GFGEL(28) .NE. 0.0) MODE = 1
       IF (MODE .NE. 0) THEN
-         A = ANGLER(DX,DY)
+         CALL ANGLER(DX,DY,A)
          R = ABS(GFGEL(6))
          T = SQRT(DX*DX+DY*DY) - R
          D = ABS(T)

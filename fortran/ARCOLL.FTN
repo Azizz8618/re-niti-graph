@@ -4,7 +4,7 @@ C     find endpoint angles with ANGLER, test visibility with IVEST,
 C     then evaluate four endpoint coordinates with SIN/COS.
 C [I] Field offsets follow the GAL/GAM equivalences of ARCOLL.mad.
       COMMON /GFGEL/ GFGEL(28)
-      EXTERNAL ANGLER, IVEST, GFFALS, RSTI, ABS, RDII
+      EXTERNAL ANGLER, IVEST, GFFALS, RSTI, RDII
       REAL A, B, C, D, DET, T1, T2, ANG1, ANG2, R
       IF (GFGEL(1) .EQ. 0.0) GO TO 90
       IF (GFGEL(11) .EQ. 0.0) GO TO 90
@@ -16,8 +16,8 @@ C [I] Field offsets follow the GAL/GAM equivalences of ARCOLL.mad.
       IF (DET .EQ. 0.0) GO TO 90
       T1 = B / DET
       T2 = D / DET
-      ANG1 = ANGLER(GFGEL(2)-GFGEL(8),GFGEL(3)-GFGEL(9))
-      ANG2 = ANGLER(GFGEL(17)-GFGEL(12),GFGEL(18)-GFGEL(13))
+      CALL ANGLER(GFGEL(2)-GFGEL(8),GFGEL(3)-GFGEL(9),ANG1)
+      CALL ANGLER(GFGEL(17)-GFGEL(12),GFGEL(18)-GFGEL(13),ANG2)
       R = GFGEL(28)
       T1 = T1 * R
       T2 = T2 * R

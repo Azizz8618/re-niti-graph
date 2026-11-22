@@ -1,0 +1,20 @@
+      SUBROUTINE COPDCB(ISRC, IDST)
+C     Low-level control-block copy (COPDCB.mad, 14 commands).
+C     Copies the words at offsets +0, +1, +3 and +4 between two areas
+C     addressed by M9/M10, optionally masked with 7777177777777777B.
+C     COPDCB itself contains no extop; it belongs to the disk-exchange
+C     chain whose actual extops (*50/*72, Э50/Э70) live in GDISC and S70
+C     and are mapped to EXC50/EXC72 in SUPPORT.FTN.
+      INTEGER ISRC(16), IDST(16)
+      INTEGER I
+      IDST(1) = ISRC(1)
+      IDST(2) = ISRC(2)
+      IDST(4) = ISRC(4)
+      IDST(5) = ISRC(5)
+C     Remaining offsets are passed through unchanged [I].
+      DO 10 I = 1, 16
+         IF (I .NE. 1 .AND. I .NE. 2 .AND. I .NE. 4 .AND. I .NE. 5)
+     1      IDST(I) = ISRC(I)
+   10 CONTINUE
+      RETURN
+      END

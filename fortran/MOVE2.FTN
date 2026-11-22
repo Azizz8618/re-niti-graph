@@ -1,0 +1,31 @@
+C     MOVE2 - polyline plotter with notch/gap handling.
+C [I] The original transforms data coordinates with GFATRN, keeps
+C     notch state in GFNTCH/GFGOBS and emits a point via PLOT.
+C     Integer divide/multiply helpers I*DI*I/I*MU*I are replaced by
+C     ordinary integer arithmetic. Load-time defaults for the common
+C     buffers are installed by the BLOCK DATA of MOVE3.FTN.
+      SUBROUTINE MOVE2(X,Y,MODE)
+      REAL X,Y
+      INTEGER MODE
+      COMMON /GFATRN/ GFATRN(7)
+      COMMON /GFBFTR/ GFBFTR(2)
+      COMMON /GFAFTR/ GFAFTR(2)
+      COMMON /GFNTCH/ GFNTCH(51)
+      COMMON /GFGOBS/ GFGOBS(20)
+      EXTERNAL PLOT,NOTCH1
+      REAL XP,YP
+      IF (MODE .EQ. 0) THEN
+         XP = GFATRN(1)*X + GFATRN(2)
+         YP = GFATRN(4)*Y + GFATRN(5)
+      ELSE
+         XP = X
+         YP = Y
+      END IF
+      GFBFTR(1) = X
+      GFBFTR(2) = Y
+      GFAFTR(1) = XP
+      GFAFTR(2) = YP
+      IF (GFGOBS(2) .NE. 0) CALL NOTCH1
+      CALL PLOT()
+      RETURN
+      END

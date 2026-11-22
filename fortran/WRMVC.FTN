@@ -1,0 +1,19 @@
+      SUBROUTINE WRMVC(DX, DY, X, Y)
+C     Vector element from a normalised delta (WRMVC.mad, 42 commands):
+C     computes SQRT(dx**2+dy**2), divides dx/dy by it, adds the
+C     current point and calls WRMVE [I].
+      COMMON /GFBFTR/ GFBFTR(2)
+      REAL DX, DY, X, Y, R, UX, UY
+      EXTERNAL WRMVE
+      R = SQRT(DX*DX + DY*DY)
+      IF (R .EQ. 0.0) GOTO 20
+      UX = DX / R
+      UY = DY / R
+      X = GFBFTR(1) + UX
+      Y = GFBFTR(2) + UY
+      CALL WRMVE(X, Y)
+      RETURN
+   20 X = GFBFTR(1)
+      Y = GFBFTR(2)
+      RETURN
+      END

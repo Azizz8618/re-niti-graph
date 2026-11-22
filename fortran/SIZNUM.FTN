@@ -1,0 +1,16 @@
+      SUBROUTINE SIZNUM(A, B, C, D)
+C     Copies numeric-label sizes to four output cells (SIZNUM.mad,
+C     25 commands): *GFLMN* (4 words) and *GFLSZ* (1 word), with the
+C     default constant 333 stored in the local BSS at *0025B [I].
+      COMMON /GFLMN/ GFLMN(4)
+      COMMON /GFLSZ/ GFLSZ(1)
+      REAL A, B, C, D
+      INTEGER IDEF
+      DATA IDEF /333/
+      A = GFLMN(1)
+      B = GFLSZ(1)
+      C = GFLMN(2)
+      D = GFLMN(3)
+      IF (GFLSZ(1) .EQ. 0.0) B = FLOAT(IDEF)
+      RETURN
+      END

@@ -5,13 +5,13 @@ C     with integer index arithmetic and R*DI*I scaling.
 C [I] The 2067-command coefficient engine is replaced by the standard
 C     tensor-product bicubic construction with the same arguments.
       INTEGER LX, LY, MX, MY, NU, NV, I, J, K, L
-      REAL X(*), Y(*), Z(*), C(*)
+      REAL X(1000), Y(1000), Z(1000), C(1000)
       REAL DX, DY, T, W
       EXTERNAL FT571, FT003, IMUI, IMUIP, RDII
       IF (LX .LT. 3 .OR. LY .LT. 3) GO TO 90
       IF (MX .LT. 2 .OR. MY .LT. 2) GO TO 91
-      IF (NU .NE. (LX-1)*NX1(MX)+1) GO TO 92
-      IF (NV .NE. (LY-1)*NX1(MY)+1) GO TO 93
+      IF (NU .NE. (LX-1)*MX+1) GO TO 92
+      IF (NV .NE. (LY-1)*MY+1) GO TO 93
       DO 10 I = 2, LX
          IF (X(I) .LE. X(I-1)) GO TO 94
 10    CONTINUE

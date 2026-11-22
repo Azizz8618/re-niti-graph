@@ -1,5 +1,8 @@
 C     INIT - initialise the GRAFOR matrix area.
-C     HCUNIT is a MADLEN SUBP, converted to an ENTRY.
+C [I] INIT.mad declares HCUNIT as a SUBP entry, but a separate
+C     HCUNIT module exists in the library (HCUNIT.FTN of another
+C     batch), so the entry name is not redefined here. The short
+C     matrix-row update is inlined instead.
       SUBROUTINE INIT
       COMMON /GFMATR/ GFMATR(34)
       INTEGER I
@@ -7,9 +10,6 @@ C     HCUNIT is a MADLEN SUBP, converted to an ENTRY.
          GFMATR(I) = 0
    10 CONTINUE
       GFMATR(17) = 1
-      RETURN
-C     HCUNIT - install a unit row in the matrix area [I].
-      ENTRY HCUNIT
       GFMATR(33) = 1
       GFMATR(34) = 1
       RETURN

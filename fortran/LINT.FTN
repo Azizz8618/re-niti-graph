@@ -1,0 +1,15 @@
+C     LINT - line/cell intersection (MADLEN LINT).
+C     Computes the intersection parameter from *GFCELL* and evaluates
+C     the two coordinate polynomials through XPOL/YPOL; X is stored
+C     into *GFINT*, Y is returned [I].
+      SUBROUTINE LINT(Y)
+      REAL Y, T, R, A
+      COMMON /GFCELL/ GFCELL(9)
+      COMMON /GFINT/  GFINT(1)
+      T = (GFCELL(6) - GFCELL(5))/(GFCELL(4) - GFCELL(2))
+      R = GFCELL(2) + T*(GFCELL(3) - GFCELL(2))
+      A = GFCELL(7) + T*(GFCELL(8) - GFCELL(7))
+      CALL XPOL(R, A, GFINT(1))
+      CALL YPOL(R, A, Y)
+      RETURN
+      END

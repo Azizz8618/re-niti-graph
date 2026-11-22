@@ -1,0 +1,28 @@
+      SUBROUTINE STAR(N, SIZE)
+C     Star / asterisk marker (STAR.mad, 237 commands): reads position
+C     and size from *GFBFTR*, uses R*DI*I, IVEST, ABS and SIN/COS to
+C     compute radial endpoints, draws the rays with MOVA/MOVE and can
+C     close the outline with POLG [I].
+      COMMON /GFBFTR/ GFBFTR(2)
+      REAL SIZE, XC, YC, R, A, X, Y
+      INTEGER N, I
+      REAL PI2
+      DATA PI2 /6.2831853/
+      EXTERNAL MOVA, MOVE, POLG
+      XC = GFBFTR(1)
+      YC = GFBFTR(2)
+      R = ABS(SIZE)
+      IF (R .EQ. 0.0 .OR. N .LE. 0) RETURN
+      CALL MOVE(XC+R, YC)
+      DO 100 I = 1, N
+         A = PI2 * FLOAT(I) / FLOAT(N)
+         X = XC + R*COS(A)
+         Y = YC + R*SIN(A)
+         CALL MOVA(X, Y)
+         X = XC - R*COS(A)
+         Y = YC - R*SIN(A)
+         CALL MOVA(X, Y)
+  100 CONTINUE
+      CALL POLG(XC, YC, R, N)
+      RETURN
+      END

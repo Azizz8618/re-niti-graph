@@ -4,7 +4,7 @@ C     interpolated by ITPLBV, accepted points are drawn by TMF/MOVE and
 C     optionally labelled by NUMBER.
       SUBROUTINE INSIDE(N, X, Y, K)
       INTEGER N, K, I, J
-      REAL X(*), Y(*), XB(50), YB(50), T, V, SX, SY
+      REAL X(1000), Y(1000), XB(50), YB(50), T, V, SX, SY
       LOGICAL LOK
       COMMON /DRINFN/ DRINFN(3)
       COMMON /DRIN/   DRIN(27)

@@ -1,0 +1,20 @@
+      SUBROUTINE INTRSC(X1, Y1, X2, Y2, X3, Y3, X4, Y4, XR, YR)
+C     Intersection of two straight lines by cross-product determinants
+C     (INTRSC.mad). The original reads endpoint coordinates through
+C     indirect cells *0074B-*0077B and *0100B-*0103B and stores the
+C     result into *0104B / *0105B; here they are dummy arguments [I].
+      REAL X1, Y1, X2, Y2, X3, Y3, X4, Y4, XR, YR
+      REAL D, C1, C2, U1, U2
+      D = (X2-X1)*(Y4-Y3) - (Y2-Y1)*(X4-X3)
+      IF (D .EQ. 0.0) GOTO 20
+      C1 = X1*Y2 - Y1*X2
+      C2 = X3*Y4 - Y3*X4
+      U1 = (C1*(X4-X3) - (X2-X1)*C2) / D
+      U2 = (C1*(Y4-Y3) - (Y2-Y1)*C2) / D
+      XR = U1
+      YR = U2
+      RETURN
+   20 XR = 0.0
+      YR = 0.0
+      RETURN
+      END

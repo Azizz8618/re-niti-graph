@@ -1,0 +1,13 @@
+C     TDTRAN - 3D translation of the homogeneous matrix (MADLEN TDTRAN).
+C     Forms identity with HCUNIT, inserts three translation components
+C     into the matrix columns and composes with HCMULT.
+      SUBROUTINE TDTRAN(TX, TY, TZ)
+      REAL TX, TY, TZ
+      COMMON /GFMATR/ GFMATR(34)
+      CALL HCUNIT(GFMATR(17))
+      GFMATR(20) = TX
+      GFMATR(24) = TY
+      GFMATR(28) = TZ
+      CALL HCMULT(GFMATR(1), GFMATR(17))
+      RETURN
+      END

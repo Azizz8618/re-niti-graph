@@ -1,0 +1,26 @@
+C     FORIF - implicit-function curve plotting with caller callbacks.
+C The original calls two user supplied subroutines indirectly through
+C register 13 (13,VJM,), and uses SIN/COS and I*MU*I index arithmetic.
+C [I] the exact iteration variable layout is not documented; the
+C callbacks
+C     are exposed as EXTERNAL dummy procedures F and G.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE FORIF(X,Y,N,F,G)
+      INTEGER N, I
+      REAL X, Y, T, A, B, S, C, P, Q
+      EXTERNAL F, G
+      DATA S /0.0/
+      T = X
+      DO 20 I = 1, N
+         CALL F(T,A,B)
+         CALL G(T,P,Q)
+         C = SIN(A) * B + COS(A) * P
+         IF (C .EQ. 0.0) GOTO 20
+         T = T + Q / C
+         X = T
+         Y = SIN(T)
+   20 CONTINUE
+      RETURN
+      END

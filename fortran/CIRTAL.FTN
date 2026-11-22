@@ -1,0 +1,62 @@
+C     CIRTAL - arc generator variant with an extra *GFGEL* field.
+C     Uses the third element field (GAM/3) in the coordinate formula.
+      SUBROUTINE CIRTAL(XC, YC, A, B, G, A0, A1, N, X, Y)
+      REAL XC, YC, A, B, G, A0, A1, X(1000), Y(1000)
+      INTEGER N
+      REAL T, S, C, D, DA
+      INTEGER I
+      COMMON /GFVP/ GFVP(6)
+      IF (N .LE. 0) RETURN
+      DA = (A1 - A0)/FLOAT(N)
+      T = A0
+      DO 20 I = 1, N
+         CALL CITL(T, S, C)
+         D = A*A*S*S + B*B*C*C
+         IF (D .LE. 0.0) D = 1.0
+         D = G/D
+         X(I) = XC + D*A*C
+         Y(I) = YC + D*B*S
+         IF (X(I) .LT. GFVP(1) .OR. X(I) .GT. GFVP(2)) GO TO 10
+         IF (Y(I) .LT. GFVP(3) .OR. Y(I) .GT. GFVP(4)) GO TO 10
+         CALL PLOT()
+   10    T = T + DA
+   20 CONTINUE
+      RETURN
+      ENTRY RSTI(U, K, R)
+      REAL U, R
+      INTEGER K
+      R = U*FLOAT(K)
+      RETURN
+      ENTRY ABS(U)
+      IF (U .LT. 0.0) U = -U
+      RETURN
+      ENTRY SQRT(U)
+      REAL U
+      IF (U .GT. 0.0) U = U**0.5
+      RETURN
+      ENTRY ATAN(U, R)
+      REAL U, R
+      R = ATAN2(U, 1.0)
+      RETURN
+      ENTRY SIGN(U, V, R)
+      REAL U, V, R
+      R = U
+      IF (V .LT. 0.0) R = -R
+      RETURN
+      ENTRY SIN(U, R)
+      REAL U, R
+      REAL C
+      CALL CITL(U, R, C)
+      RETURN
+      ENTRY COS(U, R)
+      REAL U, R
+      REAL S
+      CALL CITL(U, S, R)
+      RETURN
+      END
+      SUBROUTINE CITL(A, S, C)
+      REAL A, S, C
+      S = SIN(A)
+      C = COS(A)
+      RETURN
+      END

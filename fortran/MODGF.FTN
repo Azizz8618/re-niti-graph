@@ -1,0 +1,28 @@
+      SUBROUTINE MODGF(IFLG, VAL)
+C     Modify a graphic element record (MODGF.mad, 124 commands).
+C     Tests flag words in the caller parameter block, applies ABS
+C     and SIGN to *GFGEL*+8, calls STRMOD and R*ST*I / R*DI*I and
+C     optionally validates the GAL/2, GAL/3 fields with IVEST [I].
+      COMMON /GFGEL/ GFGEL(28)
+      INTEGER IFLG, I, J, K
+      REAL VAL, T
+      EXTERNAL IVEST, STRMOD
+      I = IFLG
+      J = 0
+      K = 0
+      IF (I .EQ. 0) GOTO 40
+      IF (I .EQ. 1) GOTO 20
+      IF (I .EQ. 2) GOTO 30
+      GFGEL(9) = ABS(GFGEL(9))
+      GOTO 50
+   20 T = SIGN(VAL, GFGEL(9))
+      CALL STRMOD(T, GFGEL(9))
+      GOTO 50
+   30 T = SIGN(VAL, GFGEL(9))
+      CALL IVEST(T, GFGEL(3), J)
+      IF (J .NE. 0) GOTO 50
+      GFGEL(4) = T
+   40 CALL IVEST(GFGEL(10), GFGEL(4), K)
+   50 CONTINUE
+      RETURN
+      END

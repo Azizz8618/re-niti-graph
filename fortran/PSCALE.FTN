@@ -1,5 +1,6 @@
       SUBROUTINE PSCALE(S)
 C     Build a scaling affine transform and apply it through ATRAN2.
+C [I] Matrix word layout follows PSCALE.mad:16-41 (offsets +0,+1,+2).
       COMMON /GFATRN/ GFATRN(7)
       EXTERNAL ATRAN2
       REAL S, T

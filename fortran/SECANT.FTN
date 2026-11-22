@@ -1,0 +1,29 @@
+      SUBROUTINE SECANT(ANG, SCL)
+C     Draws a secant/tangent construction on a curve (SECANT.mad,
+C     112 commands). Reads a vector with RDMVA, uses IVEST and
+C     COS/SIN to get a direction, writes a marker with WRMVA, computes
+C     two intersection points from four *GFGEL* fields, writes a label
+C     with WRSTR and falls back to GFFALS/RDSTR [I].
+      COMMON /GFGEL/ GFGEL(28)
+      COMMON /GFBFTR/ GFBFTR(2)
+      REAL ANG, SCL, X, Y, DX, DY, D, X1, Y1, X2, Y2
+      INTEGER K
+      EXTERNAL RDMVA, IVEST, WRMVA, WRSTR, RDSTR, GFFALS
+      DX = COS(ANG) * SCL
+      DY = SIN(ANG) * SCL
+      CALL RDMVA(DX, DY, X, Y, K)
+      IF (K .NE. 0) GOTO 20
+      CALL GFFALS(5)
+      CALL RDSTR(X1, Y1)
+      RETURN
+   20 CALL WRMVA(ANG, SCL)
+      CALL WRSTR(GFGEL(28), GFGEL(9))
+      D = GFGEL(15) * GFGEL(4)
+      IF (D .EQ. 0.0) GOTO 40
+      X1 = GFGEL(14)*GFGEL(5) / D
+      Y1 = GFGEL(16)*GFGEL(3) / D
+      X2 = GFGEL(16)*GFGEL(3) / D
+      Y2 = GFGEL(14)*GFGEL(5) / D
+      CALL RDSTR(X1, Y1)
+   40 RETURN
+      END

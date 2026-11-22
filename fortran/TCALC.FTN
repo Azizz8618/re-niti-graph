@@ -1,0 +1,29 @@
+C     TCALC - compute tangent/angle parameters from two points.
+C     Forms dx, dy, squares and sums them, calls SQRT, divides by the
+C     point count and iterates until the correction is negligible.
+C [I] the iteration limit and the meaning of the second output are
+C inferred.
+C [I] MADLEN SQRT is the Fortran intrinsic, no ENTRY is generated for
+C it.
+      SUBROUTINE TCALC(X1,Y1,X2,Y2,N,D)
+      INTEGER I
+      REAL X1, Y1, X2, Y2, N, D, DX, DY, R, Q, T, EPS
+      DATA EPS /0.0001/
+      DX = X2 - X1
+      DY = Y2 - Y1
+      R = DX*DX + DY*DY
+      IF (R .EQ. 0.0) THEN
+         D = 0.0
+         RETURN
+      END IF
+      D = N
+      DO 10 I = 1, 20
+         Q = SQRT(R/D)
+         T = DX - DY
+         IF (T .EQ. 0.0) GOTO 20
+         IF (ABS(Q-D) .LT. EPS) GOTO 20
+         D = Q
+   10 CONTINUE
+   20 CONTINUE
+      RETURN
+      END

@@ -3,7 +3,7 @@ C     (power-law) fit, evaluation, plotting and diagnostics.
       SUBROUTINE LSFIT(N, IDEG)
       INTEGER N, IDEG, I, K, NT
       REAL X, Y, A, B, SX, SY, T, F, C(20)
-      EXTERNAL IRDB, IABS, ALOG10, MINMAX, LESQ, PVAL, TMF, MOVE
+      EXTERNAL IRDB, MINMAX, LESQ, PVAL, TMF, MOVE
       CALL IRDB(2, NT)
       CALL IRDB(3, K)
       N = IABS(NT)

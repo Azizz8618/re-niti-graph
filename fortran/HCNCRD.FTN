@@ -1,0 +1,19 @@
+C     HCNCRD - transform 3D coordinates by *GFMATR* and apply w-divide.
+C     The first matrix row (GFMATR 13..16) supplies the denominator W,
+C     rows 2..4 supply the transformed X, Y, Z written to *GFCRD*.
+C     Equates: GAL/0..3 = GFMATR+12..15, GAL/4..7 = +1..4,
+C     GAM/0..6 = +5..11, GFCRD 1..3 = GAK/4..GAK/7.
+      SUBROUTINE HCNCRD(X,Y,Z)
+      REAL X, Y, Z, W
+      COMMON /GFMATR/ GFMATR(34)
+      COMMON /GFCRD/  GFCRD(3)
+      W = GFMATR(13)*X + GFMATR(14)*Y + GFMATR(15)*Z + GFMATR(16)
+      IF (W .EQ. 0.0) RETURN
+      GFCRD(1) = (GFMATR(1)*X + GFMATR(2)*Y + GFMATR(3)*Z
+     1            + GFMATR(4)) / W
+      GFCRD(2) = (GFMATR(5)*X + GFMATR(6)*Y + GFMATR(7)*Z
+     1            + GFMATR(8)) / W
+      GFCRD(3) = (GFMATR(9)*X + GFMATR(10)*Y + GFMATR(11)*Z
+     1            + GFMATR(12)) / W
+      RETURN
+      END

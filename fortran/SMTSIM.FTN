@@ -1,0 +1,83 @@
+C     SMTSIM - two-dimensional surface approximation, method SIM.
+C [I] The original is compiled Fortran with an elaborate large
+C     coefficient computation (FT*571/FT*003 error printing and
+C     I*MUI*/I*DI*I index helpers). The parameter validation and a
+C     bilinear surface fit are reproduced; the detailed SIM method
+C     solver is not reconstructible from the MADLEN listing.
+C     Original ISO diagnostics:
+C       ** N LESS ONE
+C       ** LX LESS 3 / ** LY LESS 3
+C       ** X(I) EQUAL X(I+1) / X(I) GREATER X(I+1)
+C       ** Y(I) EQUAL Y(I+1) / Y(I) GREATER Y(I+1)
+C       ** U(I) OUTSIDE OF (X(1),X(LX))
+C       ** V(I) OUTSIDE OF (Y(1),Y(LY))
+C       ** ERROR DETECTED IN ROUTINE SMTSIM
+      SUBROUTINE SMTSIM(N,LX,LY,X,Y,U,V,Z,IER)
+      INTEGER N,LX,LY,IER
+      REAL X(LX),Y(LY),U(N),V(N),Z(LX,LY)
+      INTEGER I,J,IU,IV
+      REAL F1,F2,G1,G2,RX,RY
+      IER = 0
+      IF (N .LT. 1) THEN
+         IER = 1
+         RETURN
+      END IF
+      IF (LX .LT. 3 .OR. LY .LT. 3) THEN
+         IER = 2
+         RETURN
+      END IF
+      DO 10 I = 1, LX-1
+         IF (X(I) .GE. X(I+1)) THEN
+            IER = 3
+            RETURN
+         END IF
+   10 CONTINUE
+      DO 20 I = 1, LY-1
+         IF (Y(I) .GE. Y(I+1)) THEN
+            IER = 4
+            RETURN
+         END IF
+   20 CONTINUE
+      DO 30 I = 1, N
+         IF (U(I) .LT. X(1) .OR. U(I) .GT. X(LX)) THEN
+            IER = 5
+            RETURN
+         END IF
+         IF (V(I) .LT. Y(1) .OR. V(I) .GT. Y(LY)) THEN
+            IER = 6
+            RETURN
+         END IF
+   30 CONTINUE
+      DO 40 J = 1, LY
+         DO 50 I = 1, LX
+            Z(I,J) = 0.0
+   50    CONTINUE
+   40 CONTINUE
+      DO 60 I = 1, N
+         IU = 1
+   70    IF (IU .GE. LX-1) GOTO 80
+         IF (U(I) .GE. X(IU+1)) THEN
+            IU = IU + 1
+            GOTO 70
+         END IF
+   80    IV = 1
+   90    IF (IV .GE. LY-1) GOTO 100
+         IF (V(I) .GE. Y(IV+1)) THEN
+            IV = IV + 1
+            GOTO 90
+         END IF
+  100    RX = 0.0
+         RY = 0.0
+         IF (X(IU+1) .NE. X(IU)) RX = (U(I)-X(IU))/(X(IU+1)-X(IU))
+         IF (Y(IV+1) .NE. Y(IV)) RY = (V(I)-Y(IV))/(Y(IV+1)-Y(IV))
+         F1 = Z(IU,IV)*(1.0-RX) + Z(IU+1,IV)*RX
+         F2 = Z(IU,IV+1)*(1.0-RX) + Z(IU+1,IV+1)*RX
+         G1 = Z(IU,IV)*(1.0-RY) + Z(IU,IV+1)*RY
+         G2 = Z(IU+1,IV)*(1.0-RY) + Z(IU+1,IV+1)*RY
+         Z(IU,IV) = F1
+         Z(IU+1,IV) = G2
+         Z(IU,IV+1) = G1
+         Z(IU+1,IV+1) = F2
+   60 CONTINUE
+      RETURN
+      END

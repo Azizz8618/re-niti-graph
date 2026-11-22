@@ -1,0 +1,12 @@
+C     WRACB - write a circular arc, variant B (MADLEN WRACB).
+C     Derives the angle range with ARCANG from the frame centre and
+C     two endpoints, then delegates to WRACA [I].
+      SUBROUTINE WRACB(X1, Y1, X2, Y2)
+      REAL X1, Y1, X2, Y2, DX, DY, A1, A2
+      COMMON /GFBFTR/ GFBFTR(2)
+      DX = GFBFTR(1) - X1
+      DY = GFBFTR(2) - Y1
+      CALL ARCANG(X1, Y1, DX, DY, A1, A2)
+      CALL WRACA(X1, Y1, A1, A2)
+      RETURN
+      END

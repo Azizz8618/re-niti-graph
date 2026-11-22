@@ -1,0 +1,20 @@
+C     HCMULT - multiply two homogeneous 4x4 matrices (MADLEN HCMULT).
+C     I*MUI* is inlined as real multiplication; the product replaces
+C     the first matrix [I].
+      SUBROUTINE HCMULT(A, B)
+      REAL A(16), B(16), C(16)
+      INTEGER I, J, K, L
+      DO 30 I = 1, 4
+         DO 20 J = 1, 4
+            L = (I-1)*4 + J
+            C(L) = 0.0
+            DO 10 K = 1, 4
+               C(L) = C(L) + A((I-1)*4+K)*B((K-1)*4+J)
+10          CONTINUE
+20       CONTINUE
+30    CONTINUE
+      DO 40 I = 1, 16
+         A(I) = C(I)
+40    CONTINUE
+      RETURN
+      END

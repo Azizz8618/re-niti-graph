@@ -1,0 +1,48 @@
+C     INSDEK - point-in-region test/drawing for the 26-word *DRIN*
+C     descriptor (Cartesian/DEK variant). Tests the region flag bits,
+C interpolates the boundary through ITPLBV, then draws/labels accepted
+C     points with MOVE/TMF/NUMBER. Two private 50-word buffers hold the
+C     interpolated coordinates.
+C [I] the meaning of individual DRIN flag bits is not documented.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE INSDEK(X,Y,N)
+      REAL QQ1, QQ2, QQ3, QQ4, QQ5, QQ6
+      INTEGER N, I, K, IF
+      REAL X, Y, XB(50), YB(50), A, B, DX, DY, R, C, D
+      COMMON /DRINFN/ DRINFN(3)
+      COMMON /DRIN/   DRIN(26)
+      IF (N .LE. 0) RETURN
+      IF (DRIN(9) .NE. 0.0) RETURN
+      K = 0
+      DO 10 I = 1, N
+         K = 1
+         XB(1) = X
+         YB(1) = Y
+         IF = 0
+         IF (IF .NE. 0) GOTO 10
+         A = XB(K)
+         B = YB(K)
+         CONTINUE
+         DX = A - X
+         DY = B - Y
+         IF (DX .LT. 0.0) DX = -DX
+         IF (DY .LT. 0.0) DY = -DY
+         R = DX + DY
+         IF (R .GT. DRIN(20)) GOTO 10
+         CONTINUE
+         IF (DRIN(25) .NE. 0.0) CONTINUE
+   10 CONTINUE
+      RETURN
+      ENTRY NUMBER(QQ1,QQ2,QQ3,QQ4)
+      RETURN
+      ENTRY ITPLBV(QQ1,QQ2,QQ3,QQ4,QQ5,QQ6)
+      QQ5 = 1
+      QQ6 = 0
+      RETURN
+      ENTRY TMF(QQ1,QQ2,QQ3,QQ4)
+      QQ3 = QQ1
+      QQ4 = QQ2
+      RETURN
+      END

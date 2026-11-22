@@ -4,7 +4,7 @@ C     five result words).  Degenerate input goes to GFFALS.
       REAL AX, AY, T, V
       INTEGER IOK
       COMMON /GFGEL/ GFGEL(28)
-      EXTERNAL ABS, STRMOD, GFFALS
+      EXTERNAL STRMOD, GFFALS
       IOK = 1
       IF (GFGEL(9) .EQ. 0.0) THEN
          CALL STRMOD(AX, AY)

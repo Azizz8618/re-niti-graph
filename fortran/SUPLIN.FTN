@@ -1,0 +1,25 @@
+      SUBROUTINE SUPLIN(R0, R1, DR, A0, N)
+C     Supplementary / parallel lines in polar coordinates (SUPLIN.mad,
+C     140 commands). Computes a radius/angle range with MOD, converts
+C     each step with XPOL/YPOL and chooses one of the line primitives
+C     LINEMC, LINEMO or BRLINE from sign tests on two parameters [I].
+      REAL R0, R1, DR, A0, X, Y, XS, YS
+      INTEGER N, I, K
+      EXTERNAL XPOL, YPOL, LINEMC, LINEMO, BRLINE
+      K = N
+      IF (K .LE. 0) K = 1
+      DO 100 I = 1, K
+         X = R0 + (I-1)*DR
+         Y = A0 + (I-1)*DR
+         CALL XPOL(X, Y, XS, YS)
+         CALL YPOL(X, Y, X, Y)
+         IF (DR .GE. 0.0) GOTO 20
+         CALL BRLINE(XS, YS, X, Y)
+         GOTO 100
+   20    IF (X .GE. 0.0) GOTO 30
+         CALL LINEMC(XS, YS, X, Y)
+         GOTO 100
+   30    CALL LINEMO(XS, YS, X, Y)
+  100 CONTINUE
+      RETURN
+      END

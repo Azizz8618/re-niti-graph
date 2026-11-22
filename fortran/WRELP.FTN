@@ -1,5 +1,6 @@
       SUBROUTINE WRELP(X,Y,A,B)
-C     Write an ellipse element (TEXT 8HDK0) into *GFGEL* and call STRMOD.
+C     Write an ellipse element (TEXT 8HDK0) into *GFGEL*, call STRMOD.
+C [I] GFGEL field mapping uses the GAK/GAL equivalences of WRELP.mad.
       COMMON /GFGEL/ GFGEL(28)
       COMMON /GFBFTR/ GFBFTR(2)
       EXTERNAL STRMOD, RSTI

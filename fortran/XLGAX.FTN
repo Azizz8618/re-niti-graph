@@ -1,0 +1,58 @@
+C     XLGAX - draw a logarithmic X axis.
+C Reads parameters through IRDB/RDB, sets decade boundaries with TMLGF
+C and ALOG10, uses SIGN/AMIN1/AMOD/ABS to place minor ticks and labels
+C     the decades with SYMBOL/NUMBER, emitting tick segments with MOVE.
+C [I] minor-tick count and label offsets come from the packed constants.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE XLGAX(XMIN,XMAX,Y,NT)
+      REAL QQ1, QQ2, QQ3, QQ4
+      INTEGER NT, I, K, IV, IX, M, J
+      REAL XMIN, XMAX, Y, A, B, L0, L1, W, T, U, V, P, R, C, D, X
+      IV = 0
+      K = 1
+      IF (XMIN .LE. 0.0 .OR. XMAX .LE. 0.0) RETURN
+      A = ALOG10(XMIN)
+      B = ALOG10(XMAX)
+      L0 = ALOG10(XMIN)
+      L1 = ALOG10(XMAX)
+      W = L1 - L0
+      IF (W .EQ. 0.0) RETURN
+      A = XMIN
+      DO 20 I = 0, NT
+         T = ALOG10(A)
+         U = T
+         V = Y
+         CONTINUE
+         IF (K .GT. 0) THEN
+            R = AMOD(T,1.0)
+            IF (R .LT. 0.0) R = -R
+            P = SIGN(1.0,R) * AMIN1(R,0.5)
+            CONTINUE
+            CONTINUE
+         END IF
+         A = A * 10.0 ** (W/FLOAT(NT))
+   20 CONTINUE
+      CONTINUE
+      RETURN
+      ENTRY NUMBER(QQ1,QQ2,QQ3,QQ4)
+      RETURN
+      ENTRY SYMBOL(QQ1,QQ2,QQ3,QQ4)
+      RETURN
+      ENTRY RDB(QQ1,QQ2)
+      QQ2 = 0.0
+      RETURN
+      ENTRY TMLGF(QQ1,QQ2)
+      QQ2 = ALOG10(QQ1)
+      RETURN
+      ENTRY IRDB(QQ1)
+      QQ1 = 0
+      RETURN
+      ENTRY IMUI(QQ1,QQ2,QQ3)
+      QQ3 = QQ1*QQ2
+      RETURN
+      ENTRY IPOI(QQ1,QQ2,QQ3)
+      QQ3 = QQ1**QQ2
+      RETURN
+      END

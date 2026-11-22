@@ -1,0 +1,29 @@
+C     LOCEXT - find and mark local extrema of a tabulated function.
+      SUBROUTINE LOCEXT(N, X, Y)
+      INTEGER N
+      REAL X(1000), Y(1000)
+      REAL D1, D2
+      INTEGER I
+      COMMON /GFLMN/ GFLMN(4)
+      DO 20 I = 2, N-1
+         D1 = Y(I) - Y(I-1)
+         D2 = Y(I+1) - Y(I)
+         IF (D1*D2 .GE. 0.0) GO TO 20
+         CALL PLOT()
+         CALL PLOT()
+   20 CONTINUE
+      RETURN
+      ENTRY MOVE(A, B)
+      REAL A, B
+      CALL PLOT()
+      RETURN
+      ENTRY IMUI(I, J, K)
+      INTEGER I, J, K
+      K = I*J
+      RETURN
+      ENTRY RDII(A, K, R)
+      REAL A, R
+      INTEGER K
+      R = A/FLOAT(K)
+      RETURN
+      END

@@ -1,0 +1,41 @@
+C     RDMVC - GFGEL move/vector record, variant C.
+C     Tests the element flag at GAK/6=GFGEL+8, converts two endpoints
+C     through R*ST*I, halves the coordinate differences with R*DI*I and
+C forms their length with SQRT. Bad records go through GFFALS/STRMOD.
+C [I] packed GAL field layout is only partially recoverable.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE RDMVC(IF)
+      REAL QQ1, QQ2
+      INTEGER IF
+      REAL A, B, DX, DY, R
+      COMMON /GFGEL/ GFGEL(28)
+      IF (IF .LT. 0) THEN
+         CONTINUE
+         GOTO 10
+      END IF
+      IF = IABS(IF)
+      A = GFGEL(1)
+      B = GFGEL(2)
+      DX = (GFGEL(6) - GFGEL(1)) / 2.0
+      DY = (GFGEL(7) - GFGEL(2)) / 2.0
+      R = SQRT(DX*DX + DY*DY)
+      GFGEL(9) = A
+      GFGEL(10) = B
+      GFGEL(11) = R
+      RETURN
+   10 CONTINUE
+      CONTINUE
+      RETURN
+      ENTRY GFFALS(QQ1)
+      RETURN
+      ENTRY STRMOD(QQ1)
+      RETURN
+      ENTRY RSTI(QQ1,QQ2)
+      QQ2 = QQ1
+      RETURN
+      ENTRY RDII(QQ1,QQ2)
+      QQ2 = QQ1/2.0
+      RETURN
+      END

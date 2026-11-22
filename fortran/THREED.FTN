@@ -1,0 +1,47 @@
+      SUBROUTINE THREED(NU, NV, IER)
+C     Three-dimensional surface plotting with hidden-line removal
+C     (THREED.mad, 774 commands). Reads *GFMATR*, *GFCRD*, *GFSUR*,
+C     *GFLIM* and *GFVIEW*; computes grid indices with IABS/MAX0/ISIGN,
+C     transforms with HCNCRD/HCSURF and tests visibility with HCIND,
+C     emitting only the visible strokes [I]. The original writes the
+C     strokes through R*ST*I / I*MU*I (record-start and index helpers);
+C     here the *GFSUR* / *GFCRD* arrays are updated directly.
+      COMMON /GFMATR/ GFMATR(34)
+      COMMON /GFCRD/ GFCRD(3)
+      COMMON /GFSUR/ GFSUR(4)
+      COMMON /GFLIM/ GFLIM(4)
+      COMMON /GFVIEW/ GFVIEW(23)
+      INTEGER NU, NV, IER, I, J, IU, IV, K, VIS
+      REAL X, Y, Z, R, T
+      REAL XS(4), YS(4), ZS(4)
+      EXTERNAL HCNCRD, HCSURF, HCIND
+      IER = 0
+      IF (NU .LT. 2 .OR. NV .LT. 2) GOTO 90
+      DO 80 I = 1, NU-1
+         IU = IABS(I)
+         DO 70 J = 1, NV-1
+            IV = MAX0(IABS(J), 1)
+            X = FLOAT(IU)
+            Y = FLOAT(IV)
+            Z = GFSUR(4)
+            CALL HCNCRD(X, Y, Z, XS(1), YS(1), ZS(1))
+            R = SQRT(XS(1)**2 + YS(1)**2 + ZS(1)**2)
+            IF (R .EQ. 0.0) GOTO 70
+            T = ISIGN(1.0, ZS(1))
+            XS(2) = XS(1) + T
+            YS(2) = YS(1) + T
+            ZS(2) = ZS(1) + T
+            CALL HCSURF(XS, YS, ZS, 4)
+            CALL HCIND(XS(1), YS(1), ZS(1), VIS)
+            IF (VIS .EQ. 0) GOTO 70
+            GFCRD(1) = XS(1)
+            GFCRD(2) = YS(1)
+            GFCRD(3) = ZS(1)
+   70    CONTINUE
+   80 CONTINUE
+      GFSUR(1) = FLOAT(NU)
+      GFSUR(2) = FLOAT(NV)
+      RETURN
+   90 IER = 1
+      RETURN
+      END

@@ -1,0 +1,23 @@
+C     CIRC - small circle/arc segment emitter.
+C     Reads the current point from *GFBFTR*, forms an address from the
+C argument and issues MOVE, ARCIA, MOVE with three parameter triples.
+C     MOVE and ARCIA are MADLEN SUBP points of this module.
+C [I] exact meaning of the three parameter triples is not documented.
+      SUBROUTINE CIRC(A)
+      REAL QQ1, QQ2, QQ3
+      REAL A, X, Y, R, Z0, Z1, Z2
+      COMMON /GFBFTR/ GFBFTR(2)
+      DATA Z0 /0.0/
+      DATA Z1 /0.0/
+      X = GFBFTR(1)
+      Y = GFBFTR(2)
+      R = X + A
+      GFBFTR(1) = X
+      GFBFTR(2) = Y
+      CONTINUE
+      GFBFTR(1) = Z0
+      GFBFTR(2) = Z1
+      RETURN
+      ENTRY ARCIA(QQ1,QQ2,QQ3)
+      RETURN
+      END

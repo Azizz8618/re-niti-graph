@@ -1,0 +1,41 @@
+C     SETEND - finalise/update the catalog "end" record.
+C     Reads a zone with RZONE, merges the end word using octal masks and
+C writes it back. On failure prints "НЕТ ТАКОЙ ЗАПИСИ" and executes *74.
+C     DATA* is the common block DATAC from COMMON.FTN.
+C [I] the packed-word mask operations are reproduced literally as bit
+C ops.
+      SUBROUTINE SETEND(IW,IZ)
+      REAL QQ1, QQ2, QQ3
+      INTEGER IW, IZ, MASK1, MASK2, MASK3, MASK4, IT, IZONE, IR, IC, IF
+      INTEGER M1H, M1L, M2H, M2L, M3H, M3L
+      COMMON /DATAC/ DATAC(2)
+C Large octal masks are split: FOREX literals are limited to 12 digits.
+      DATA M1H /140737219/, M1L /919871/
+      DATA M2H /3362959/,  M2L /392768/
+      DATA M3H /138538465/, M3L /99776/
+      DATA MASK4 /1023/
+      MASK1 = M1H*1000000 + M1L
+      MASK2 = M2H*1000000 + M2L
+      MASK3 = M3H*1000000 + M3L
+      IR = IW
+      IZONE = IZ
+      IF = 0
+      IF (IF .NE. 0) GOTO 20
+      IT = IAND(DATAC(1),MASK1)
+      DATAC(1) = IOR(IT,IAND(IR,MASK2))
+      IT = IAND(DATAC(1),MASK3)
+      DATAC(1) = IOR(IT,IAND(IR,MASK4))
+      IF = 0
+      RETURN
+   20 CONTINUE
+C     Diagnostic message (transliterated, FOREX text constants).
+      PRINT 100
+  100 FORMAT(' NET TAKOI ZAPISI')
+      CALL EXC74(4)
+      RETURN
+      ENTRY RZONE(QQ1,QQ2,QQ3)
+      QQ3 = 0
+      RETURN
+      ENTRY PRINT8(QQ1)
+      RETURN
+      END

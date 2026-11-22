@@ -1,0 +1,28 @@
+C     ATRAN2 - compose the padded affine transformation matrix
+C     (MADLEN ATRAN2).  The matrix in *GFATRM* is multiplied by the
+C     one in *GFATRN* and the product is written back to *GFATRN*.
+C     I*MUI* is inlined as real multiplication [I].
+      SUBROUTINE ATRAN2()
+      REAL T(4,4)
+      INTEGER I, J, K
+      COMMON /GFATRM/ GFATRM(115)
+      COMMON /GFATRN/ GFATRN(7)
+      DO 30 I = 1, 3
+         DO 20 J = 1, 3
+            T(I,J) = 0.0
+            DO 10 K = 1, 3
+               T(I,J) = T(I,J) + GFATRM((I-1)*4+K)*GFATRN((K-1)*2+1)
+10          CONTINUE
+20       CONTINUE
+30    CONTINUE
+      DO 40 I = 1, 3
+         GFATRN(I*2-1) = T(I,1) + T(I,2) + T(I,3)
+40    CONTINUE
+      RETURN
+      END
+
+      BLOCK DATA BDATRM
+      COMMON /GFATRM/ GFATRM(115)
+      REAL GFATRM
+      DATA GFATRM /1.0, 114*0.0/
+      END

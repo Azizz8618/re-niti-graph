@@ -2,10 +2,10 @@
 C     Regular polar grid: read the spec with IRDB/RDB, write it back
 C     with IWDB/WDB, draw ring arcs with CIRCLE, connectors with MOVE
 C     and radial tick labels with SYMBOL.
-C [I] Constant meanings (DK0/CK0) and exact parameter order are inferred.
+C [I] Constant meanings (DK0/CK0) and parameter order are inferred.
       REAL X0, Y0, R1, R2, DR, A, X, Y, CS, SN
       INTEGER I, NR, NT
-      EXTERNAL IRDB, RDB, IWDB, WDB, CIRCLE, MOVE, SYMBOL, IABS
+      EXTERNAL IRDB, RDB, IWDB, WDB, CIRCLE, MOVE, SYMBOL
       CALL IRDB(2,NR)
       CALL IRDB(3,NT)
       CALL RDB(7,X0)
@@ -19,7 +19,7 @@ C [I] Constant meanings (DK0/CK0) and exact parameter order are inferred.
       CALL WDB(10,Y0)
       DO 10 I = 1, NR
          R1 = R1 + DR
-         CALL CIRCLE(X0,Y0,R1)
+         CALL CIRCLE(X0,Y0,R1,R1,0)
 10    CONTINUE
       DO 20 I = 1, NT
          A = 6.2831853 * FLOAT(I-1) / FLOAT(NT)

@@ -1,0 +1,14 @@
+C     BARS - repeated-bar driver (MADLEN BARS).
+C     Calls BAR with a stepping X and a unit Y step until the counter
+C     expires.  The exact pointer-cell layout is replaced by explicit
+C     arguments [I].
+      SUBROUTINE BARS(X, Y, N, STEP)
+      REAL X, Y, STEP
+      INTEGER N, I
+      DO 10 I = 1, N
+         CALL BAR(X, Y)
+         X = X + STEP
+         Y = Y + 1.0
+10    CONTINUE
+      RETURN
+      END

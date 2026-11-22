@@ -1,0 +1,17 @@
+C     ANGLER - polar angle of a vector with quadrant correction
+C     (MADLEN ANGLER).  ATAN of the ratio plus +/- pi is equivalent
+C     here to the intrinsic ATAN2 [I].
+      SUBROUTINE ANGLER(DX, DY, ANG)
+      REAL DX, DY, ANG, PI
+      DATA PI /3.1415926535883045/
+      IF (DX .EQ. 0.0) THEN
+         IF (DY .GE. 0.0) THEN
+            ANG = PI/2.0
+         ELSE
+            ANG = -PI/2.0
+         END IF
+      ELSE
+         ANG = ATAN2(DY, DX)
+      END IF
+      RETURN
+      END

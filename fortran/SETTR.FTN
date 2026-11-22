@@ -3,7 +3,7 @@ C     MADLEN copies 16 words through indirect offsets +16/+32/+33
 C     and sets a flag in *GFTR*.
       SUBROUTINE SETTR(A, N)
       INTEGER N
-      REAL A(*)
+      REAL A(1000)
       COMMON /GFMATR/ GFMATR(34)
       COMMON /GFTR/ GFTR(2)
       INTEGER I, M

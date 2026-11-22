@@ -1,0 +1,15 @@
+      SUBROUTINE WRMVA(S, ANG, X, Y)
+C     Vector/marker element from an angle (WRMVA.mad, 32 commands):
+C     multiplies a scale by COS/SIN of the angle, adds the current
+C     point from *GFBFTR* / *GFGEL* and passes dx/dy to WRMVE [I].
+      COMMON /GFGEL/ GFGEL(28)
+      COMMON /GFBFTR/ GFBFTR(2)
+      REAL S, ANG, X, Y, DX, DY
+      EXTERNAL WRMVE
+      DX = S * COS(ANG)
+      DY = S * SIN(ANG)
+      X = GFBFTR(1) + DX * GFGEL(28)
+      Y = GFBFTR(2) + DY * GFGEL(28)
+      CALL WRMVE(X, Y)
+      RETURN
+      END

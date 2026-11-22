@@ -1,0 +1,83 @@
+C     THAXES - draw a 3D axis system with ticks and numeric labels.
+C     Ticks are transformed with TPF/TPF-like projection, drawn with
+C     CIRCLE/MOVE and labelled with NUMBER.
+      SUBROUTINE THAXES(N, X, Y, Z, TICK)
+      INTEGER N
+      REAL X(1000), Y(1000), Z(1000), TICK
+      REAL A, B, R, S, C, V, X0, Y0
+      INTEGER I, J, NT
+      COMMON /GFVP/ GFVP(6)
+      COMMON /GFBFTR/ GFBFTR(2)
+      IF (N .LE. 0 .OR. TICK .LE. 0.0) RETURN
+      X0 = GFVP(1)
+      Y0 = GFVP(3)
+      NT = INT((GFVP(2)-GFVP(1))/TICK)
+      IF (NT .LT. 1) NT = 1
+      IF (NT .GT. 100) NT = 100
+      DO 30 J = 1, 3
+         DO 20 I = 1, NT
+            A = FLOAT(I)*TICK
+            IF (J .EQ. 1) THEN
+               V = X0 + A
+               B = Y0
+            ELSE IF (J .EQ. 2) THEN
+               V = X0
+               B = Y0 + A
+            ELSE
+               CALL THTPF(A, R)
+               V = X0 + A*R
+               B = Y0 + A*(1.0-R)
+            END IF
+            CALL PLOT()
+            CALL PLOT()
+   20    CONTINUE
+   30 CONTINUE
+      RETURN
+      ENTRY AMAX1(A, B, R)
+      REAL A, B, R
+      R = A
+      IF (B .GT. R) R = B
+      RETURN
+      ENTRY AMIN1(A, B, R)
+      REAL A, B, R
+      R = A
+      IF (B .LT. R) R = B
+      RETURN
+      ENTRY AMOD(A, B, R)
+      REAL A, B, R
+      R = A - INT(A/B)*B
+      RETURN
+      ENTRY ABS(U)
+      REAL U
+      IF (U .LT. 0.0) U = -U
+      RETURN
+      ENTRY RDB(K, V)
+      INTEGER K
+      REAL V
+      V = GFBFTR(K)
+      RETURN
+      ENTRY IRDB(K, V)
+      INTEGER K
+      REAL V
+      V = FLOAT(K)
+      RETURN
+      ENTRY RPOI(U, K, R)
+      REAL U, R
+      INTEGER K
+      R = U**K
+      RETURN
+      ENTRY RDII(U, K, R)
+      REAL U, R
+      INTEGER K
+      R = U/FLOAT(K)
+      RETURN
+      ENTRY MOVE(U, V)
+      REAL U, V
+      CALL PLOT()
+      RETURN
+      END
+      SUBROUTINE THTPF(A, R)
+      REAL A, R
+      R = (1.0 + COS(A))/2.0
+      RETURN
+      END

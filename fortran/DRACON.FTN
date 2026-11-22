@@ -1,0 +1,35 @@
+      SUBROUTINE DRACON(LEVEL, NSTEP, IER)
+C     Draws contour lines by root finding and inside/outside tests
+C     (DRACON.mad, 650 commands). Reads the current position with WHERE,
+C     computes step/index values with MOD, finds three roots with
+C     FNROOT, tests INSIDE, emits with TMF/R*ST*I and updates the
+C     geometry tables *DRFN*, *DRINFN* and *DRIN* [I]. The three
+C     FNROOT call sites correspond to the three contour branches.
+      COMMON /DRITP/ DRITP(1)
+      COMMON /DRINFN/ DRINFN(3)
+      COMMON /DRFN/ DRFN(3)
+      COMMON /DRIN/ DRIN(27)
+      INTEGER NSTEP, IER, I, K, INS
+      REAL LEVEL, X, Y, T, R, DX, DY, X1, Y1
+      EXTERNAL INSIDE, FNROOT, WHERE, TMF
+      IER = 0
+      K = 0
+      CALL WHERE(X, Y)
+      T = AMOD(FLOAT(NSTEP), DRFN(3))
+      DO 100 I = 1, NSTEP
+         DX = X + T
+         DY = Y + T
+         CALL FNROOT(DX, DY, LEVEL, X1, Y1)
+         R = SQRT((X1-X)*(X1-X) + (Y1-Y)*(Y1-Y))
+         IF (R .EQ. 0.0) GOTO 100
+         CALL INSIDE(X1, Y1, K, INS)
+         IF (INS .EQ. 0) GOTO 100
+         CALL TMF(X1, Y1, X, Y)
+         DRIN(1) = X
+         DRIN(2) = Y
+         DRIN(3) = LEVEL
+         DRFN(1) = LEVEL
+         DRINFN(1) = FLOAT(NSTEP)
+   100 CONTINUE
+      RETURN
+      END

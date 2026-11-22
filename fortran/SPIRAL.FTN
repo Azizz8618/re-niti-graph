@@ -1,0 +1,12 @@
+      SUBROUTINE SPIRAL(R, A, N)
+C     Thin spiral wrapper (SPIRAL.mad, 30 commands): reads the start
+C     radius/angle and six parameters through WTC cells, then calls
+C     CIRCLE with them (a circle with monotonically changing radius)
+C     [I].
+      COMMON /GFBFTR/ GFBFTR(2)
+      REAL R, A
+      INTEGER N
+      EXTERNAL CIRCLE
+      CALL CIRCLE(R, A, N, GFBFTR(1), GFBFTR(2))
+      RETURN
+      END

@@ -1,0 +1,12 @@
+C     WHERP - current record pointer in file B (MADLEN WHERP).
+C     Two RDB readings with unit numbers 1 and 17 are divided [I].
+      SUBROUTINE WHERP(R)
+      REAL R, V1, V2
+      INTEGER IU1, IU2
+      EXTERNAL RDB
+      DATA IU1 /1/, IU2 /17/
+      CALL RDB(IU1, V1)
+      CALL RDB(IU2, V2)
+      R = V1/V2
+      RETURN
+      END

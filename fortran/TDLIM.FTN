@@ -1,0 +1,45 @@
+C     TDLIM - 3D limit clipping with integer counters.
+C     Transforms points with HCNCRD, clamps X/Y/Z against *GFLIM* using
+C AMIN1/AMAX1, calls LIMITS and maintains three counters with I*MUI*.
+C     GFCRD holds the transformed point; GAK/6, GAK/7 and GAL/0 are the
+C     four words of *GFLIM*.
+C [I] internal helper branches *0211B,*0215B,*0221B are inlined as
+C counters.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE TDLIM(X,Y,Z,N)
+      REAL QQ1, QQ2, QQ3, QQ4
+      INTEGER N, I, IX, IY, IZ, J, K
+      REAL X, Y, Z, A, B, C, W, WW
+      COMMON /GFMATR/ GFMATR(34)
+      COMMON /GFCRD/ GFCRD(3)
+      COMMON /GFLIM/ GFLIM(4)
+      DATA IX /0/, IY /0/, IZ /0/
+      WW = GFMATR(13)*X + GFMATR(14)*Y + GFMATR(15)*Z + GFMATR(16)
+      IF (WW .EQ. 0.0) RETURN
+      GFCRD(1) = (GFMATR(1)*X+GFMATR(2)*Y+GFMATR(3)*Z+GFMATR(4))/WW
+      GFCRD(2) = (GFMATR(5)*X+GFMATR(6)*Y+GFMATR(7)*Z+GFMATR(8))/WW
+      GFCRD(3) = (GFMATR(9)*X+GFMATR(10)*Y+GFMATR(11)*Z+GFMATR(12))/WW
+      A = GFCRD(1)
+      B = GFCRD(2)
+      C = GFCRD(3)
+      A = AMAX1(A,GFLIM(1))
+      A = AMIN1(A,GFLIM(2))
+      B = AMAX1(B,GFLIM(3))
+      B = AMIN1(B,GFLIM(4))
+      CONTINUE
+      W = (GFLIM(2)-GFLIM(1)) / (GFLIM(4)-GFLIM(3))
+      DO 10 I = 1, N
+         IX = IX + 1
+         IY = IY + 1
+         IZ = IZ + 1
+   10 CONTINUE
+      GFLIM(4) = W
+      RETURN
+      ENTRY LIMITS(QQ1,QQ2,QQ3,QQ4)
+      RETURN
+      ENTRY IMUI(QQ1,QQ2,QQ3)
+      QQ3 = QQ1*QQ2
+      RETURN
+      END

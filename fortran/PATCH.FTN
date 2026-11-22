@@ -1,0 +1,41 @@
+C     PATCH - clip an incoming polyline against the frame and draw
+C     the visible pieces.
+C [I] The original passes an internal coordinate-conversion routine
+C     as a parameter to LININT/SEARCH; here that conversion is inlined.
+C     BUFL stages a clipped segment and MOVE emits it.
+      SUBROUTINE PATCH(X1,Y1,X2,Y2)
+      REAL X1,Y1,X2,Y2
+      COMMON /GFL/ GFL(8)
+      COMMON /GFXY/ GFXY(5)
+      COMMON /GFB/ GFB(7)
+      EXTERNAL LININT,SEARCH,BUFL,MOVE,FLOAT,RSTI
+      REAL AX,AY,BX,BY,XX,YY,S
+      INTEGER I,INSIDE
+      AX = X1
+      AY = Y1
+      BX = X2
+      BY = Y2
+      INSIDE = 0
+      IF (AX .GE. GFL(2) .AND. AX .LE. GFL(4)) INSIDE = 1
+      IF (AY .GE. GFL(3) .AND. AY .LE. GFL(5)) INSIDE = INSIDE+1
+      IF (INSIDE .EQ. 2) THEN
+         CALL MOVE(AX,AY)
+         CALL MOVE(BX,BY)
+         RETURN
+      END IF
+      DO 10 I = 1, 4
+         S = GFXY(3)
+         IF (S .EQ. 0.0) S = 1.0
+         XX = AX + (BX-AX)/S
+         YY = AY + (BY-AY)/S
+         CALL LININT(AX,AY,XX,YY)
+         CALL SEARCH(XX,YY)
+         CALL BUFL(XX,YY)
+         CALL MOVE(XX,YY)
+         AX = XX
+         AY = YY
+   10 CONTINUE
+      GFB(1) = AX
+      GFB(2) = AY
+      RETURN
+      END

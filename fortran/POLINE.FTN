@@ -3,7 +3,7 @@ C     Uses IRDB counts, WHERE visibility, TPF transform, MOVE, MARKER.
       SUBROUTINE POLINE(N1, N2, IFMARK)
       INTEGER N1, N2, IFMARK, K1, K2, I, IV
       REAL T, S, X, Y
-      EXTERNAL IRDB, WHERE, TPF, MOVE, MARKER, IABS
+      EXTERNAL IRDB, WHERE, TPF, MOVE, MARKER
       CALL IRDB(2, K1)
       CALL IRDB(3, K2)
       IF (K1 .EQ. 0 .OR. K2 .EQ. 0) THEN

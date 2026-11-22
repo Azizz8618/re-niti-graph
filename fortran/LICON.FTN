@@ -1,0 +1,55 @@
+C     LICON - intersection of a straight line with a conic from *GFGEL*.
+      SUBROUTINE LICON(X0, Y0, X1, Y1, XC, YC, A, B,
+     *                 XA, YA, XB, YB, NPT)
+      REAL X0, Y0, X1, Y1, XC, YC, A, B, XA, YA, XB, YB
+      INTEGER NPT
+      REAL DX, DY, QA, QB, QC, DIS, T1, T2, D
+      COMMON /GFGEL/ GFGEL(28)
+      NPT = 0
+      DX = X1 - X0
+      DY = Y1 - Y0
+      IF (A .EQ. 0.0 .OR. B .EQ. 0.0) RETURN
+      QA = DX*DX/(A*A) + DY*DY/(B*B)
+      QB = 2.0*((X0-XC)*DX/(A*A) + (Y0-YC)*DY/(B*B))
+      QC = (X0-XC)**2/(A*A) + (Y0-YC)**2/(B*B) - 1.0
+      DIS = QB*QB - 4.0*QA*QC
+      IF (DIS .LT. 0.0) RETURN
+      D = DIS**0.5
+      T1 = (-QB + D)/(2.0*QA)
+      T2 = (-QB - D)/(2.0*QA)
+      XA = X0 + T1*DX
+      YA = Y0 + T1*DY
+      XB = X0 + T2*DX
+      YB = Y0 + T2*DY
+      NPT = 2
+      IF (D .EQ. 0.0) NPT = 1
+      RETURN
+      ENTRY ATAN(U, R)
+      REAL U, R
+      R = ATAN2(U, 1.0)
+      RETURN
+      ENTRY SQRT(U)
+      REAL U
+      IF (U .GT. 0.0) U = U**0.5
+      RETURN
+      ENTRY ABS(U)
+      REAL U
+      IF (U .LT. 0.0) U = -U
+      RETURN
+      ENTRY SIN(U, R)
+      REAL U, R
+      REAL C
+      CALL LICTG(U, R, C)
+      RETURN
+      ENTRY COS(U, R)
+      REAL U, R
+      REAL S
+      CALL LICTG(U, S, R)
+      RETURN
+      END
+      SUBROUTINE LICTG(A, S, C)
+      REAL A, S, C
+      S = SIN(A)
+      C = COS(A)
+      RETURN
+      END

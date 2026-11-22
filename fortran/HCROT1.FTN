@@ -1,0 +1,24 @@
+      SUBROUTINE HCROT1(V)
+C     Builds a rotation from a direction vector (HCROT1.mad, 143
+C     commands): ABS of the three components, ATAN2 of the projected
+C     pairs, SQRT normalisation and two calls to TDROT updating the
+C     34-word graphics matrix *GFMATR* [I]. V is the caller's 3-word
+C     direction/parameter block (the MADLEN R14 block).
+      COMMON /GFMATR/ GFMATR(34)
+      REAL V(3), AX, AY, AZ, R1, R2, A1, A2
+      EXTERNAL TDROT
+      AX = ABS(V(1))
+      AY = ABS(V(2))
+      AZ = ABS(V(3))
+      R1 = SQRT(AX*AX + AY*AY)
+      R2 = SQRT(AY*AY + AZ*AZ)
+      A1 = ATAN2(AY, AX)
+      A2 = ATAN2(AZ, AY)
+      IF (R1 .EQ. 0.0) R1 = 1.0
+      IF (R2 .EQ. 0.0) R2 = 1.0
+      CALL TDROT(GFMATR(1), A1, R1)
+      CALL TDROT(GFMATR(11), A2, R2)
+      GFMATR(33) = A1
+      GFMATR(34) = A2
+      RETURN
+      END

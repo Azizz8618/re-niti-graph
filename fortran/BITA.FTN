@@ -1,0 +1,29 @@
+      SUBROUTINE BITA(N, IA, IB, IC, ID, IE, IFF)
+C     Integer bitmap / array index engine (BITA.mad, 346 commands).
+C     Operates on five or six integer arrays through WTC-indirect
+C     pointers; nested loops compute linear indices with multipliers
+C     0, 1, 2, 10, -1 and write neighbours at offsets -1..-5.
+C     The host data structure is not visible in the listing [I], so
+C     only the index arithmetic is reproduced.
+      INTEGER N, IA(N), IB(N), IC(N), ID(N), IE(N), IFF(N)
+      INTEGER I, J, K, M
+      INTEGER MZ, M1, M2, M10, MM1
+      DATA MZ /0/, M1 /1/, M2 /2/, M10 /10/, MM1 /-1/
+      DO 90 I = 1, N
+         IA(I) = IABS(IA(I))
+         IB(I) = IABS(IB(I))
+   90 CONTINUE
+      DO 100 J = 1, N
+         K = MZ
+         DO 80 I = 1, N
+            K = K + IABS(IC(I))
+   80    CONTINUE
+         M = K + M10
+         IF (J .GT. 1) IB(J) = IA(J) + M2
+         IF (J .GT. 2) IC(J) = IB(J) + M1
+         IF (J .GT. 3) ID(J) = IC(J) + MM1
+         IF (J .GT. 4) IE(J) = ID(J) + M10
+         IF (J .GT. 5) IFF(J) = IE(J) + MM1
+  100 CONTINUE
+      RETURN
+      END

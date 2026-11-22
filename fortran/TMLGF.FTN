@@ -1,0 +1,21 @@
+C     TMLGF - logarithmic tick label formatting (MADLEN TMLGF).
+C     Reads two parameters with RDB, finds a decade exponent with
+C     ALOG10 and integer powers, then normalizes the mantissa [I].
+      SUBROUTINE TMLGF(V, L)
+      REAL V, L, A, B, M
+      INTEGER IU, N
+      EXTERNAL RDB
+      DATA IU /1/
+      CALL RDB(IU, A)
+      CALL RDB(IU, B)
+      IF (A .GT. 0.0 .AND. B .GT. 0.0) THEN
+         N = INT(ALOG10(A))
+         M = A/10.0**N
+         L = FLOAT(N)
+         V = M
+      ELSE
+         V = 0.0
+         L = 0.0
+      END IF
+      RETURN
+      END

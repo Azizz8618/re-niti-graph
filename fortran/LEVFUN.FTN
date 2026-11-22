@@ -1,0 +1,22 @@
+      SUBROUTINE LEVFUN(X, N, XV, YV, Y, K)
+C     Piecewise-linear level function (LEVFUN.mad, 52 commands):
+C     finds the bracketing interval with MINMAX and computes
+C     y = slope*(x-x0)+y0 with integer-index multiplication I*MU*I
+C     and a final increment of the interval index [I].
+      INTEGER N, K, I
+      REAL X, Y, T
+      REAL XV(N), YV(N)
+      EXTERNAL MINMAX
+      IF (N .LT. 2) GOTO 20
+      CALL MINMAX(X, N, XV, K)
+      IF (K .LT. 1) K = 1
+      IF (K .GT. N-1) K = N-1
+      T = XV(K+1) - XV(K)
+      IF (T .EQ. 0.0) GOTO 20
+      T = (X - XV(K)) / T
+      Y = YV(K) + T*(YV(K+1) - YV(K))
+      K = K + 1
+      RETURN
+   20 Y = 0.0
+      RETURN
+      END

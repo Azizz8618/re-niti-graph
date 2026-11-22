@@ -1,7 +1,7 @@
 C     LINEC - draw a clipped straight line.  Reads two integers and
 C     four reals from the buffer, transforms, clips and emits via MOVE.
       SUBROUTINE LINEC(N1, N2)
-      INTEGER N1, N2, K1, K2, I
+      INTEGER N1, N2, K1, K2, I, NT
       REAL X0, Y0, X1, Y1, SX, SY, XA, YA, XB, YB
       EXTERNAL IRDB, RDB, TMF, MOVE
       CALL IRDB(2, K1)
@@ -19,8 +19,8 @@ C     four reals from the buffer, transforms, clips and emits via MOVE.
       Y1 = Y1 * SY
       N1 = K1
       N2 = K2
-      I = IABS(K1)
-      DO 10 I = 1, I
+      NT = IABS(K1)
+      DO 10 I = 1, NT
          XA = AMAX1(AMIN1(X0, X1), AMIN1(X0, X1))
          YA = AMAX1(AMIN1(Y0, Y1), AMIN1(Y0, Y1))
          XB = AMAX1(X0, X1)

@@ -1,0 +1,42 @@
+      SUBROUTINE SEARCH(X1, Y1, X2, Y2, XW1, YW1, XW2, YW2)
+C     Line/window clipping search (SEARCH.mad, 446 commands). Uses
+C     the 8-word line common *GFL* and 5-word point common *GFXY*,
+C     interpolates endpoints with FLOAT/RDB, finds window intersections
+C     with INTRSC (three call sites), flushes the visible part with
+C     BUFL and positions the pen with MOVE [I].
+      COMMON /GFL/ GFL(8)
+      COMMON /GFXY/ GFXY(5)
+      REAL X1, Y1, X2, Y2, XW1, YW1, XW2, YW2
+      REAL AX, AY, BX, BY, CX, CY
+      INTEGER I, J
+      EXTERNAL INTRSC, BUFL, MOVE
+      AX = X1
+      AY = Y1
+      BX = X2
+      BY = Y2
+      DO 100 I = 1, 4
+         IF (I .EQ. 1) GOTO 20
+         IF (I .EQ. 2) GOTO 30
+         IF (I .EQ. 3) GOTO 40
+         CX = XW2
+         CY = YW2
+         GOTO 50
+   20    CX = XW1
+         CY = YW1
+         GOTO 50
+   30    CX = XW2
+         CY = YW1
+         GOTO 50
+   40    CX = XW1
+         CY = YW2
+   50    CALL INTRSC(AX, AY, BX, BY, XW1, YW1, CX, CY, GFL(1), GFL(2))
+         GFL(3) = BX - AX
+         GFL(4) = BY - AY
+         CALL BUFL(GFL(1), GFL(2), GFL(3), GFL(4))
+         CALL MOVE(GFL(1), GFL(2))
+  100 CONTINUE
+      GFXY(1) = GFL(1)
+      GFXY(2) = GFL(2)
+      J = 2
+      RETURN
+      END

@@ -41,3 +41,4 @@ C     disk address of the library catalog (RCATAL.mad:13).
       COMMON /LICAT/  LICAT(1)
 C     DATA* -> DATAC: DATA is a Fortran keyword.
       COMMON /DATAC/  DATAC(2)
+      END

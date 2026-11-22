@@ -1,0 +1,19 @@
+C     RDAEB - GFGEL elliptical-arc record, variant B (MADLEN RDAEB).
+C     Two radii are obtained with SQRT and four endpoint coordinates
+C     are written back into the GFGEL element [I].
+      SUBROUTINE RDAEB()
+      REAL RX, RY, T, X, Y
+      COMMON /GFGEL/ GFGEL(28)
+      RX = SQRT(GFGEL(4)*GFGEL(4) + GFGEL(5)*GFGEL(5))
+      RY = SQRT(GFGEL(6)*GFGEL(6) + GFGEL(7)*GFGEL(7))
+      T = GFGEL(8)
+      X = GFGEL(1) + GFGEL(3) + RX*COS(T)
+      Y = GFGEL(2) + GFGEL(3) + RX*SIN(T)
+      GFGEL(17) = X
+      GFGEL(18) = Y
+      X = GFGEL(1) + GFGEL(4) + RY*COS(T)
+      Y = GFGEL(2) + GFGEL(4) + RY*SIN(T)
+      GFGEL(20) = X
+      GFGEL(21) = Y
+      RETURN
+      END

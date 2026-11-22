@@ -1,0 +1,11 @@
+C     MOVA - move the pen along a circular arc (MADLEN MOVA).
+C     Centre comes from *GFBFTR*, the radius and the angle from the
+C     caller; the resulting point is sent to MOVE [I].
+      SUBROUTINE MOVA(R, A)
+      REAL R, A, X, Y
+      COMMON /GFBFTR/ GFBFTR(2)
+      X = GFBFTR(1) + R*COS(A)
+      Y = GFBFTR(2) + R*SIN(A)
+      CALL MOVE(X, Y)
+      RETURN
+      END

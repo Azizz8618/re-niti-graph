@@ -1,0 +1,24 @@
+C     SIGNA - axis tick-label signatures (MADLEN SIGNA).
+C     ASTEP gives a nice step, ALOG10 the decimal exponent and
+C     NUMBER/SYMBOL emit the label text.  The original pointer-cell
+C     argument block is replaced by explicit arguments [I].
+      SUBROUTINE SIGNA(A, B, STEP)
+      REAL A, B, STEP, D, E, W, V
+      INTEGER N
+      EXTERNAL ASTEP, RDB, ALOG10, NUMBER, SYMBOL
+      DATA ZERO /0.0/, ONE /1.0/, TOL /0.001/
+      CALL ASTEP(A, B, STEP)
+      D = STEP - A
+      IF (D .LT. 0.0) D = -D
+      E = ALOG10(D)
+      N = INT(E)
+      W = 10.0**FLOAT(N)
+      V = D/W
+      IF (V .GE. 10.0) V = V/10.0
+      CALL RDB(1, E)
+      CALL RDB(17, W)
+      IF (W .NE. 0.0) V = E/W
+      CALL SYMBOL(V, N)
+      CALL NUMBER(V, N)
+      RETURN
+      END

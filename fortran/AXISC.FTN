@@ -1,0 +1,40 @@
+C     AXISC - draw a calendar/time axis with Russian month labels.
+C [I] The 12 ISO month constants are stored as six byte codes each;
+C     SYMBOL receives the packed word assembled at run time.
+      SUBROUTINE AXISC
+      INTEGER MONTH(12,6)
+      INTEGER I,J,K,N,W
+      REAL X,Y,T,STEP
+      DATA (MONTH(1,J),J=1,6)/77,65,80,32,32,32/
+      DATA (MONTH(2,J),J=1,6)/77,65,106,32,32,32/
+      DATA (MONTH(3,J),J=1,6)/79,75,84,32,32,32/
+      DATA (MONTH(4,J),J=1,6)/105,96,72,32,32,32/
+      DATA (MONTH(5,J),J=1,6)/105,96,108,32,32,32/
+      DATA (MONTH(6,J),J=1,6)/67,69,72,32,32,32/
+      DATA (MONTH(7,J),J=1,6)/100,69,75,32,32,32/
+      DATA (MONTH(8,J),J=1,6)/102,69,66,32,32,32/
+      DATA (MONTH(9,J),J=1,6)/113,72,66,32,32,32/
+      DATA (MONTH(10,J),J=1,6)/72,79,113,32,32,32/
+      DATA (MONTH(11,J),J=1,6)/65,112,80,32,32,32/
+      DATA (MONTH(12,J),J=1,6)/65,66,103,32,32,32/
+      EXTERNAL MOVE,SYMBOL,RDB,IRDB
+      N = 0
+      CALL IRDB(N)
+      IF (N .LE. 0) RETURN
+      CALL RDB(X)
+      CALL RDB(Y)
+      CALL RDB(STEP)
+      K = 0
+      DO 10 I = 1, N
+         K = K + 1
+         IF (K .GT. 12) K = 1
+         W = 0
+         DO 20 J = 1, 6
+            W = W*256 + MONTH(K,J)
+   20    CONTINUE
+         CALL MOVE(X,Y)
+         CALL SYMBOL(W)
+         X = X + STEP
+   10 CONTINUE
+      RETURN
+      END

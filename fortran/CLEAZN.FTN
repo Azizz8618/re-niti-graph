@@ -1,0 +1,13 @@
+C     CLEAZN - clear/initialize a zone command buffer (MADLEN CLEAZN).
+C     The MADLEN body fills a buffer with the octal word 76001B and
+C     writes it out with STX.  Here the disk write is represented by
+C     the EXC70 support wrapper [I].
+      SUBROUTINE CLEAZN(A, N)
+      INTEGER A(1000), N, I, K
+      DATA K /31745/
+      DO 10 I = 1, N
+         A(I) = K
+10    CONTINUE
+      CALL EXC70(N)
+      RETURN
+      END

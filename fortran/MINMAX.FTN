@@ -1,0 +1,21 @@
+C     MINMAX - two-entry dispatcher for element-wise max/min selection.
+C The main body walks an array and keeps the running minimum and
+C maximum;
+C     AMAX1 and AMIN1 are the MADLEN SUBP entry points.
+C [I] the array length and base come from the caller's argument list.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE MINMAX(A,N,AMN,AMX)
+      INTEGER N, I
+      REAL A(1), AMN, AMX, V, B
+      IF (N .LE. 0) RETURN
+      AMN = A(1)
+      AMX = A(1)
+      DO 10 I = 2, N
+         V = A(I)
+         IF (V .LT. AMN) AMN = V
+         IF (V .GT. AMX) AMX = V
+   10 CONTINUE
+      RETURN
+      END

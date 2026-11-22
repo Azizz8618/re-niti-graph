@@ -1,7 +1,7 @@
       SUBROUTINE LININT(XA,YA,NA,XB,YB,NB,T,R)
 C     Linear interpolation over two tables, duplicated in MADLEN for
 C     increasing and decreasing abscissa order. No external calls.
-      REAL XA(*), YA(*), XB(*), YB(*), T, R
+      REAL XA(1000), YA(1000), XB(1000), YB(1000), T, R
       INTEGER NA, NB, I
       R = 0.0
       IF (NA .LT. 2) RETURN

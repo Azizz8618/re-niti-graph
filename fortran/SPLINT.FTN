@@ -1,0 +1,17 @@
+C     SPLINT - spline/cubic evaluation loop (MADLEN SPLINT).
+C     Four coefficients are evaluated by Horner at each abscissa;
+C     two running sums are accumulated [I: interpolation/integration].
+      SUBROUTINE SPLINT(N, X, Y, C, S1, S2)
+      INTEGER N, I
+      REAL X(1000), Y(1000), C(4), S1, S2, V
+      DO 10 I = 1, N
+         V = C(4)
+         V = C(3) + X(I)*V
+         V = C(2) + X(I)*V
+         V = C(1) + X(I)*V
+         Y(I) = V
+         S1 = S1 + V
+         S2 = S2 + X(I)*V
+10    CONTINUE
+      RETURN
+      END

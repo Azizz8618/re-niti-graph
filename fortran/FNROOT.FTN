@@ -6,9 +6,9 @@ C [I] Exact expansion/contraction schedule of lines 54-260 is replaced
 C     by a standard bracket refinement with the same common interface.
       COMMON /DRINFN/ DRINFN(3)
       COMMON /DRFN/   DRFN(3)
-      REAL A, B, EPS, ROOT, F, FA, FB, FC, C, H, T
-      REAL ITPLBV
-      INTEGER I
+      REAL A, B, EPS, ROOT, F, FA, FB, FC, C, H, T, YV
+      REAL XT(2), YT(2)
+      INTEGER I, IER, LX, LY
       EXTERNAL F, ITPLBV
       FA = F(A)
       FB = F(B)
@@ -17,6 +17,8 @@ C     by a standard bracket refinement with the same common interface.
       H = DRINFN(1)
       IF (H .EQ. 0.0) H = 0.5
       DRINFN(1) = H
+      LX = 2
+      LY = 2
       DO 10 I = 1, 100
          IF (FA*FB .GT. 0.0) THEN
             H = H + H
@@ -25,7 +27,13 @@ C     by a standard bracket refinement with the same common interface.
             B = B + H
             FB = F(B)
          END IF
-         C = ITPLBV(A,B,FA,FB)
+         T = (A + B) / 2.0
+         XT(1) = A
+         XT(2) = B
+         YT(1) = FA
+         YT(2) = FB
+         CALL ITPLBV(T,YV,XT,YT,LX,LY,2,IER)
+         C = YV
          FC = F(C)
          IF (ABS(FC) .LE. EPS) THEN
             ROOT = C
@@ -39,8 +47,7 @@ C     by a standard bracket refinement with the same common interface.
             A = C
             FA = FC
          END IF
-         T = ABS(B-A)
-         IF (T .LE. EPS) THEN
+         IF (ABS(B-A) .LE. EPS) THEN
             ROOT = C
             DRFN(3) = FC
             RETURN

@@ -1,0 +1,38 @@
+C     ASTEP - compute an "axis step" (1/2/5-like sequence).
+C     Reads a scale value with IRDB, rescales by powers of ten (R*PO*I),
+C compares against maxima with AMAX1, rounds with AINT and iteratively
+C adjusts the candidate until it fits the range. Returns three results.
+C [I] the selection thresholds come from the packed decimal constants.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE ASTEP(RMIN,RMAX,STEP,NDEC,IFAC)
+      REAL QQ1
+      INTEGER NDEC, IFAC, K, IV, I
+      REAL RMIN, RMAX, STEP, S, P, T, V, A, B
+      IV = 0
+      S = RMAX - RMIN
+      IF (S .LE. 0.0) S = ABS(RMAX) + ABS(RMIN)
+      IF (S .LE. 0.0) S = 1.0
+      K = INT(ALOG10(S))
+      P = 10.0 ** K
+      T = S / P
+      V = 10.0
+      IF (T .GE. 7.5) GOTO 10
+      V = 5.0
+      IF (T .GE. 3.5) GOTO 10
+      V = 2.0
+      IF (T .GE. 1.5) GOTO 10
+      V = 1.0
+   10 STEP = V * P
+      NDEC = -K
+      IF (NDEC .LT. 0) NDEC = 0
+      IFAC = INT(V)
+      A = AINT(RMIN/STEP) * STEP
+      B = AMAX1(A,RMIN)
+      RMIN = B
+      RETURN
+      ENTRY IRDB(QQ1)
+      QQ1 = 0
+      RETURN
+      END

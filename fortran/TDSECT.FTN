@@ -1,0 +1,88 @@
+C     TDSECT - draw a 3D surface section.
+C     Points are transformed with HCNCRD, clipped against *GFLIM*
+C     using ZINT interpolation and emitted with HCLINE.
+      SUBROUTINE TDSECT(N, X, Y, Z, XO, YO)
+      INTEGER N
+      REAL X(1000), Y(1000), Z(1000), XO(1000), YO(1000)
+      REAL U, V, W, R, A, B
+      INTEGER I
+      COMMON /GFMATR/ GFMATR(34)
+      COMMON /GFCRD/ GFCRD(3)
+      COMMON /GFSUR/ GFSUR(4)
+      COMMON /GFLIM/ GFLIM(4)
+      DO 20 I = 1, N
+         CALL TDCRD(X(I), Y(I), Z(I), U, V, W)
+         IF (U .LT. GFLIM(1)) THEN
+            CALL TDZIN(GFLIM(1), U, X(I), R)
+            U = GFLIM(1)
+            V = V + R*(Y(I)-V)
+         END IF
+         IF (U .GT. GFLIM(2)) THEN
+            CALL TDZIN(GFLIM(2), U, X(I), R)
+            U = GFLIM(2)
+            V = V + R*(Y(I)-V)
+         END IF
+         IF (V .LT. GFLIM(3)) V = GFLIM(3)
+         IF (V .GT. GFLIM(4)) V = GFLIM(4)
+         XO(I) = U
+         YO(I) = V
+   20 CONTINUE
+      CALL TDSL1(N, XO, YO)
+      RETURN
+      ENTRY HCNCRD(XA, YA, ZA, U, V, W)
+      REAL XA, YA, ZA, U, V, W
+      CALL TDCRD(XA, YA, ZA, U, V, W)
+      RETURN
+      ENTRY ZINT(A, B, C, R)
+      REAL A, B, C, R
+      CALL TDZIN(A, B, C, R)
+      RETURN
+      ENTRY HCLINE(N, XO, YO)
+      INTEGER N
+      REAL XO(1000), YO(1000)
+      CALL TDSL1(N, XO, YO)
+      RETURN
+      ENTRY ABS(U)
+      REAL U
+      IF (U .LT. 0.0) U = -U
+      RETURN
+      ENTRY IABS(I, J)
+      INTEGER I, J
+      J = I
+      IF (J .LT. 0) J = -J
+      RETURN
+      ENTRY IMUI(I, J, K)
+      INTEGER I, J, K
+      K = I*J
+      RETURN
+      END
+      SUBROUTINE TDCRD(X, Y, Z, U, V, W)
+      REAL X, Y, Z, U, V, W
+      COMMON /GFMATR/ GFMATR(34)
+      U = GFMATR(1)*X + GFMATR(2)*Y + GFMATR(3)*Z + GFMATR(4)
+      V = GFMATR(5)*X + GFMATR(6)*Y + GFMATR(7)*Z + GFMATR(8)
+      W = GFMATR(9)*X + GFMATR(10)*Y + GFMATR(11)*Z + GFMATR(12)
+      IF (W .NE. 0.0) THEN
+         U = U/W
+         V = V/W
+      END IF
+      RETURN
+      END
+      SUBROUTINE TDZIN(A, B, C, R)
+      REAL A, B, C, R
+      IF (C .EQ. B) THEN
+         R = 0.0
+      ELSE
+         R = (A - B)/(C - B)
+      END IF
+      RETURN
+      END
+      SUBROUTINE TDSL1(N, X, Y)
+      INTEGER N
+      REAL X(1000), Y(1000)
+      INTEGER I
+      DO 10 I = 1, N
+         CALL PLOT()
+   10 CONTINUE
+      RETURN
+      END

@@ -1,13 +1,12 @@
 C     RENTCH - renumber the *GFGOBS* object table, re-indexing
 C     *GFATRN* entries by division and multiplication with 8 and 4.
       SUBROUTINE RENTCH(NOBJ)
-      INTEGER NOBJ, I, J, K, N8, N4
+      INTEGER NOBJ, I, IT
+      REAL J, K, N8, N4
       COMMON /GFATRN/ GFATRN(7)
       COMMON /GFGOBS/ GFGOBS(20)
-      INTEGER IT(16)
-      DATA IT /16*8/
-      N8 = 8
-      N4 = 4
+      N8 = 8.0
+      N4 = 4.0
       DO 10 I = 1, NOBJ
          IF (GFGOBS(2) .NE. 0.0) THEN
             J = GFGOBS(2) / N8
@@ -20,7 +19,8 @@ C     *GFATRN* entries by division and multiplication with 8 and 4.
             IF (GFGOBS(3) .LT. GFGOBS(2)) THEN
                GFGOBS(4) = GFGOBS(3)
             END IF
-            IF (I .LE. 16) GFATRN(1) = IT(I)
+            IT = 8
+            IF (I .LE. 16) GFATRN(1) = IT
          END IF
          GFGOBS(2) = GFGOBS(2) - 1.0
    10 CONTINUE

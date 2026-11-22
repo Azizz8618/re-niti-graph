@@ -3,7 +3,7 @@ C     Accumulates powers and products, evaluates with PVAL, computes a
 C     residual/RMS error and prints the result table (I6,6E15.2).
       SUBROUTINE APPOLY(X, Y, N, M, A, RMS)
       INTEGER N, M, I, J, K, L
-      REAL X(*), Y(*), A(*), RMS, S(20), T(20)
+      REAL X(1000), Y(1000), A(1000), RMS, S(20), T(20)
       REAL XW, YW, ERR, PVAL
       IF (N .LT. 1 .OR. M .LT. 0) RETURN
       DO 5 K = 0, M

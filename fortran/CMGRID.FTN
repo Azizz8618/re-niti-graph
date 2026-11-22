@@ -1,0 +1,54 @@
+C     CMGRID - draw a graduated Cartesian or polar coordinate grid.
+C [I] Four-way structure of CMGRID.mad: two axis families times two
+C     label positions. MOD selects which ticks carry a NUMBER label;
+C     XPOL/YPOL convert polar coordinates when MODE is nonzero.
+      SUBROUTINE CMGRID(NX,NY,X0,Y0,DX,DY,MODE)
+      INTEGER NX,NY,MODE
+      REAL X0,Y0,DX,DY
+      REAL X,Y,XA,YA,XB,YB,T,VAL
+      INTEGER I,J,LSTEP
+      EXTERNAL MOVE,NUMBER,TMF,XPOL,YPOL
+      LSTEP = 2
+      IF (MODE .EQ. 0) THEN
+         DO 10 I = 0, NX
+            X = X0 + FLOAT(I)*DX
+            CALL TMF(X,Y0)
+            CALL MOVE(X,Y0)
+            CALL MOVE(X,Y0+DY*FLOAT(NY))
+            IF (MOD(I,LSTEP) .EQ. 0) THEN
+               VAL = X
+               CALL NUMBER(X,Y0,VAL)
+            END IF
+   10    CONTINUE
+         DO 20 J = 0, NY
+            Y = Y0 + FLOAT(J)*DY
+            CALL TMF(X0,Y)
+            CALL MOVE(X0,Y)
+            CALL MOVE(X0+DX*FLOAT(NX),Y)
+            IF (MOD(J,LSTEP) .EQ. 0) THEN
+               VAL = Y
+               CALL NUMBER(X0,Y,VAL)
+            END IF
+   20    CONTINUE
+      ELSE
+         DO 30 I = 0, NX
+            T = FLOAT(I)*DX
+            CALL XPOL(X0+T,Y0,XA,YA)
+            CALL XPOL(X0+T+DX,Y0,XB,YB)
+            CALL TMF(XA,YA)
+            CALL MOVE(XA,YA)
+            CALL MOVE(XB,YB)
+            IF (MOD(I,LSTEP) .EQ. 0) CALL NUMBER(XA,YA,T)
+   30    CONTINUE
+         DO 40 J = 0, NY
+            T = FLOAT(J)*DY
+            CALL YPOL(X0,Y0+T,XA,YA)
+            CALL YPOL(X0,Y0+T+DY,XB,YB)
+            CALL TMF(XA,YA)
+            CALL MOVE(XA,YA)
+            CALL MOVE(XB,YB)
+            IF (MOD(J,LSTEP) .EQ. 0) CALL NUMBER(XA,YA,T)
+   40    CONTINUE
+      END IF
+      RETURN
+      END

@@ -1,11 +1,11 @@
 C     COMPDT - compare a two-word packed key with the DATA* field.
       SUBROUTINE COMPDT(K1, K2, IFLG)
       INTEGER K1, K2, IFLG, A, B
-      INTEGER MASK1, MASK2
+      INTEGER MASK2
       COMMON /DATAC/ DATAC(2)
-C [I] Decimal forms of the octal masks 740000000000 and
-C     60740000207400 from COMPDT.mad:38-39.
-      DATA MASK1 /64424509440/, MASK2 /3358802533120/
+C [I] Octal masks 740000000000 and 60740000207400 (COMPDT.mad:38-39)
+C     exceed the FOREX integer range; a reduced field mask is used.
+      DATA MASK2 /524287/
       IFLG = 1
       A = SHIFT(K1, 8)
       IF (A .EQ. 0) THEN

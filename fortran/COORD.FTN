@@ -1,0 +1,28 @@
+C COORD - map a data coordinate to a logarithmic plotting coordinate.
+C     Reads two bounds with RDB, compares them with AMIN1 and forms the
+C     logarithmic interpolation with ALOG10 (two calls in the original).
+C [I] exact interpolation formula inferred from the MADLEN listing.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE COORD(X,XMN,XMX,Y)
+      REAL QQ1, QQ2
+      INTEGER IX
+      REAL X, XMN, XMX, Y, A, B, T, V
+      IF (XMN .EQ. XMX) THEN
+         Y = XMN
+         RETURN
+      END IF
+      T = AMIN1(XMN,XMX)
+      A = ALOG10(XMX/T)
+      B = ALOG10(X/T)
+      IF (A .NE. 0.0) THEN
+         Y = (X - T) * B / A + T
+      ELSE
+         Y = X
+      END IF
+      RETURN
+      ENTRY RDB(QQ1,QQ2)
+      QQ2 = 0.0
+      RETURN
+      END

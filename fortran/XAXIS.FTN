@@ -1,0 +1,42 @@
+C     XAXIS - draw the linear X axis with ticks and labels.
+C [I] Parameter reads (IRDB/RDB), ASTEP tick selection, TMF scaling,
+C     MOVE ticks and BCD/IBCD/SYMBOL labels follow XAXIS.mad. Exact
+C     field layout of the label text is not reconstructible.
+      SUBROUTINE XAXIS
+      REAL XMIN,XMAX,YAX,STEP,T,X,Y,VAL,EXP10
+      INTEGER I,N,MODE,K
+      EXTERNAL IRDB,RDB,ASTEP,TMF,MOVE,BCD,IBCD,SYMBOL
+      CALL IRDB(MODE)
+      IF (MODE .LT. 0) RETURN
+      CALL IRDB(N)
+      IF (N .LT. 2) RETURN
+      CALL RDB(XMIN)
+      CALL RDB(XMAX)
+      CALL RDB(YAX)
+      CALL RDB(EXP10)
+      STEP = 0.0
+      CALL ASTEP(XMIN,XMAX,N,STEP)
+      IF (STEP .EQ. 0.0) RETURN
+      K = 0
+      T = XMIN
+   10 IF (T .GT. XMAX) GOTO 30
+      X = T
+      Y = YAX
+      CALL TMF(X,Y)
+      CALL MOVE(X,Y)
+      CALL MOVE(X,Y+0.1)
+      VAL = T
+      IF (EXP10 .NE. 0.0) VAL = VAL/EXP10
+      IF (MOD(K,2) .EQ. 0) THEN
+         CALL IBCD(VAL)
+         CALL SYMBOL(VAL)
+      ELSE
+         CALL BCD(VAL)
+         CALL SYMBOL(VAL)
+      END IF
+      K = K + 1
+      T = T + STEP
+      GOTO 10
+   30 CALL MOVE(XMIN,YAX)
+      RETURN
+      END

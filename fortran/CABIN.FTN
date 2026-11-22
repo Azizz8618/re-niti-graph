@@ -1,5 +1,5 @@
 C     CABIN - set up a cabinet (oblique) 3-D projection in *GFMATR*.
-C     Two SHEAR calls with the half-scale constant 0.5 (CABIN.mad:38,45).
+C     Two SHEAR calls with half-scale 0.5 (CABIN.mad:38,45).
       SUBROUTINE CABIN(A, B)
       REAL A, B
       COMMON /GFMATR/ GFMATR(34)

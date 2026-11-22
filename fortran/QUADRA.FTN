@@ -2,7 +2,7 @@ C     QUADRA - integer double-loop accumulation of products of two
 C     indexed arrays into two running sums [I].
       SUBROUTINE QUADRA(A, B, N, M, S1, S2)
       INTEGER N, M, I, J, S1, S2
-      INTEGER A(*), B(*)
+      INTEGER A(1000), B(1000)
       S1 = 0
       S2 = 0
       DO 20 I = 1, N

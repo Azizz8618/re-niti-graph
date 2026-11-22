@@ -1,0 +1,22 @@
+C     MOVE1 - general polyline plotter (MADLEN MOVE1).
+C     Reads points with RDB, applies the affine transform from
+C     *GFATRN*, clamps against *GFBLAN* and emits points with PLOT.
+C     Load-time COMMON defaults from the ,DATA, section are assumed
+C     to be supplied by MOVE3 [I].
+      SUBROUTINE MOVE1(N, X, Y)
+      INTEGER N, I
+      REAL X(1000), Y(1000), U, V, A, B
+      COMMON /GFATRN/ GFATRN(7)
+      COMMON /GFBLAN/ GFBLAN(11)
+      COMMON /GFAFTR/ GFAFTR(2)
+      DO 10 I = 1, N
+         U = GFATRN(1)*X(I) + GFATRN(3)*Y(I) + GFATRN(5)
+         V = GFATRN(2)*X(I) + GFATRN(4)*Y(I) + GFATRN(6)
+         A = AMAX1(GFBLAN(1), U)
+         B = AMAX1(GFBLAN(1), V)
+         CALL PLOT()
+         GFAFTR(1) = A
+         GFAFTR(2) = B
+10    CONTINUE
+      RETURN
+      END

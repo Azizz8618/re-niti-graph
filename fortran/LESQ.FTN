@@ -1,0 +1,58 @@
+C     LESQ - least-squares polynomial fit: normal equations solved
+C     by symmetric matrix inversion (SMINV equivalent).
+      SUBROUTINE LESQ(X, Y, N, M, C)
+      INTEGER N, M
+      REAL X(1000), Y(1000), C(1000)
+      REAL A(11,11), B(11), P, Q
+      INTEGER I, J, K, MX
+      MX = M
+      IF (MX .GT. 11) MX = 11
+      DO 30 I = 1, MX
+         B(I) = 0.0
+         DO 20 J = 1, MX
+            A(I,J) = 0.0
+            DO 10 K = 1, N
+               A(I,J) = A(I,J) + X(K)**(I+J-2)
+   10       CONTINUE
+   20    CONTINUE
+         DO 25 K = 1, N
+            B(I) = B(I) + X(K)**(I-1)*Y(K)
+   25    CONTINUE
+   30 CONTINUE
+      CALL LSSOLV(A, B, C, MX)
+      RETURN
+      ENTRY IABS(I, J)
+      INTEGER I, J
+      J = I
+      IF (J .LT. 0) J = -J
+      RETURN
+      ENTRY IMUI(I, J, K)
+      INTEGER I, J, K
+      K = I*J
+      RETURN
+      END
+      SUBROUTINE LSSOLV(A, B, C, N)
+      REAL A(11,11), B(11), C(11)
+      INTEGER N, I, J, K
+      REAL P, Q
+      DO 30 K = 1, N
+         P = A(K,K)
+         IF (P .EQ. 0.0) P = 1.0
+         DO 10 J = K, N
+            A(K,J) = A(K,J)/P
+   10    CONTINUE
+         B(K) = B(K)/P
+         DO 20 I = 1, N
+            IF (I .EQ. K) GO TO 20
+            Q = A(I,K)
+            DO 15 J = K, N
+               A(I,J) = A(I,J) - Q*A(K,J)
+   15       CONTINUE
+            B(I) = B(I) - Q*B(K)
+   20    CONTINUE
+   30 CONTINUE
+      DO 40 I = 1, N
+         C(I) = B(I)
+   40 CONTINUE
+      RETURN
+      END

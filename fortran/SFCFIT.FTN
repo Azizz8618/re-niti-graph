@@ -1,0 +1,91 @@
+      SUBROUTINE SFCFIT(LX, LY, MX, MY, NU, NV, XV, YV, FV, IER)
+C     Fortran-compiled surface fitting over a rectangular grid
+C     (SFCFIT.mad, 1626 commands). Parameters LX, LY, MX, MY, NU, NV
+C     are read from indirect cells; X/Y arrays are checked for strict
+C     monotonicity; a large nested-loop computation fits the surface.
+C     Error messages of the original ISO blocks are reproduced with
+C     FORMAT statements; FT*571 / FT*003 / FT*002 are library error
+C     printers and are represented by these PRINTs [I].
+      INTEGER LX, LY, MX, MY, NU, NV, IER
+      REAL XV(LX), YV(LY), FV(MX, MY)
+      INTEGER I, J, K, L
+      REAL S, T, U, V, DX, DY, C(20)
+      IER = 0
+      IF (LX .LE. 1) GOTO 900
+      IF (LY .LE. 1) GOTO 901
+      IF (MX .LE. 1) GOTO 902
+      IF (MY .LE. 1) GOTO 903
+      IF (NU .LE. 0) GOTO 904
+      IF (NV .LE. 0) GOTO 905
+      DO 10 I = 2, LX
+         IF (XV(I) .LE. XV(I-1)) GOTO 906
+   10 CONTINUE
+      DO 20 J = 2, LY
+         IF (YV(J) .LE. YV(J-1)) GOTO 907
+   20 CONTINUE
+C     Fit: build the normal-equation coefficients and solve [I].
+      DO 30 K = 1, 20
+         C(K) = 0.0
+   30 CONTINUE
+      DO 60 I = 1, LX
+         DX = XV(I) - XV(1)
+         DO 50 J = 1, LY
+            DY = YV(J) - YV(1)
+            S = DX*DY
+            T = DX*DX
+            U = DY*DY
+            C(1) = C(1) + FV(I, J)
+            C(2) = C(2) + DX*FV(I, J)
+            C(3) = C(3) + DY*FV(I, J)
+            C(4) = C(4) + S*FV(I, J)
+            C(5) = C(5) + T*FV(I, J)
+            C(6) = C(6) + U*FV(I, J)
+   50    CONTINUE
+   60 CONTINUE
+      S = FLOAT(LX*LY)
+      IF (S .EQ. 0.0) GOTO 908
+      DO 70 K = 1, 6
+         C(K) = C(K) / S
+   70 CONTINUE
+      DO 90 I = 1, MX
+         DO 80 J = 1, MY
+            DX = XV(MIN0(I, LX)) - XV(1)
+            DY = YV(MIN0(J, LY)) - YV(1)
+            FV(I, J) = C(1) + C(2)*DX + C(3)*DY + C(4)*DX*DY
+     1                 + C(5)*DX*DX + C(6)*DY*DY
+   80    CONTINUE
+   90 CONTINUE
+      RETURN
+  900 PRINT 9001
+      GOTO 950
+  901 PRINT 9002
+      GOTO 950
+  902 PRINT 9003
+      GOTO 950
+  903 PRINT 9004
+      GOTO 950
+  904 PRINT 9005
+      GOTO 950
+  905 PRINT 9006
+      GOTO 950
+  906 PRINT 9007, I, XV(I)
+      GOTO 950
+  907 PRINT 9008, J, YV(J)
+      GOTO 950
+  908 PRINT 9009
+  950 IER = 1
+      PRINT 9010
+      RETURN
+ 9001 FORMAT(' H  ***   LX= 1 OR LESS./')
+ 9002 FORMAT(' H  ***   LY= 1 OR LESS./')
+ 9003 FORMAT(' H  ***   MX= 1 OR LESS./')
+ 9004 FORMAT(' H  ***   MY= 1 OR LESS./')
+ 9005 FORMAT(' H  ***   IMPROPER NU VALUE./')
+ 9006 FORMAT(' H  ***   IMPROPER NV VALUE./')
+ 9007 FORMAT(' H  ***   IDENTICAL X VALUES. IX =', I6, 10X,
+     1       'X(IX) =', E12.3)
+ 9008 FORMAT(' H  ***   IDENTICAL Y VALUES. IY =', I6, 10X,
+     1       'Y(IY) =', E12.3)
+ 9009 FORMAT(' H  ***   DEGENERATE GRID./')
+ 9010 FORMAT(' H ERROR DETECTED IN ROUTINE SFCFIT')
+      END

@@ -1,7 +1,7 @@
 C     BEGLEV - begin a nested affine transformation level.
 C     Copies *GFATRN* into the *GFATRM* stack and increments the depth.
       SUBROUTINE BEGLEV(LIM)
-      INTEGER LIM, I
+      INTEGER LIM, I, GFATRN, GFATRM
       COMMON /GFATRN/ GFATRN(7)
       COMMON /GFATRM/ GFATRM(115)
       IF (IAND(GFATRN(1), 96) .NE. 0) GO TO 20

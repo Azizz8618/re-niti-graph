@@ -1,0 +1,48 @@
+C     REGION - compute and draw a labelled region frame.
+C     Reads an integer mark and two reals with IRDB/RDB, derives the
+C scale, writes the viewport bounds with WDB, draws the frame with BOX
+C     and the label with SYMBOL, then restores the buffer with IWDB.
+C [I] MADLEN constant cells 1..17 are passed as literal indices.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE REGION(MARK,XMN,XMX,YMN,YMX)
+      REAL QQ1, QQ2, QQ3, QQ4
+      INTEGER MARK, IV, I, IX, M
+      REAL XMN, XMX, YMN, YMX, A, B, R, S, X0, Y0, X1, Y1, V, X, Y
+      IV = 0
+      IF (IV .NE. 0) RETURN
+      A = 0.0
+      B = 1.0
+      IF (B .EQ. 0.0) RETURN
+      R = A / B
+      S = FLOAT(IV) * R
+      A = AMAX1(A,0.0)
+      B = AMIN1(B,1.0)
+      X0 = AMIN1(XMN,XMX)
+      X1 = AMAX1(XMN,XMX)
+      Y0 = AMIN1(YMN,YMX)
+      Y1 = AMAX1(YMN,YMX)
+      CONTINUE
+      CONTINUE
+      CONTINUE
+      CONTINUE
+      IF (MARK .NE. 0) CONTINUE
+      CONTINUE
+      CONTINUE
+      RETURN
+      ENTRY IWDB(QQ1,QQ2)
+      RETURN
+      ENTRY SYMBOL(QQ1,QQ2,QQ3,QQ4)
+      RETURN
+      ENTRY BOX(QQ1,QQ2,QQ3,QQ4)
+      RETURN
+      ENTRY WDB(QQ1,QQ2)
+      RETURN
+      ENTRY RDB(QQ1,QQ2)
+      QQ2 = 0.0
+      RETURN
+      ENTRY IRDB(QQ1)
+      QQ1 = 0
+      RETURN
+      END

@@ -18,7 +18,7 @@ C     with ATAN2/SIN/COS, updates *GFBLAW* and calls MOVBL1.
          D2 = GFBLAN(1) - GFBLAN(2)
          S = D1*D1 + D2*D2
          IF (S .EQ. 0.0) THEN
-            CALL STOPB(6)
+            CALL EXC50(6)
             RETURN
          END IF
       END IF

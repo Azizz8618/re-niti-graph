@@ -1,0 +1,14 @@
+C     CUBPOL - cubic (Hermite) polynomial coefficients (MADLEN CUBPOL).
+C     Given two endpoints and their slopes, four coefficients are
+C     produced by Horner-type arithmetic [I].
+      SUBROUTINE CUBPOL(X0, X1, Y0, Y1, D0, D1, C0, C1, C2, C3)
+      REAL X0, X1, Y0, Y1, D0, D1, C0, C1, C2, C3, H, T
+      DATA TWO /2.0/, THREE /3.0/
+      H = X1 - X0
+      T = (Y1 - Y0)/H
+      C0 = Y0
+      C1 = D0
+      C2 = (THREE*T - TWO*D0 - D1)/H
+      C3 = (TWO*(Y0 - Y1)/H + D0 + D1)/(H*H)
+      RETURN
+      END

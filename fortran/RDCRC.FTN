@@ -1,0 +1,22 @@
+      SUBROUTINE RDCRC(K, XC, YC, RR, IER)
+C     Read a circle/arc record from *GFGEL* (RDCRC.mad, 54 commands):
+C     converts the centre/radius fields with ABS and R*ST*I, stores
+C     three result words and calls STRMOD / GFFALS on bad input [I].
+      COMMON /GFGEL/ GFGEL(28)
+      INTEGER K, IER
+      REAL XC, YC, RR, T
+      EXTERNAL STRMOD, GFFALS
+      IER = 0
+      IF (K .EQ. 0) GOTO 20
+      XC = ABS(GFGEL(9))
+      YC = GFGEL(10)
+      RR = ABS(GFGEL(2))
+      T = GFGEL(3) - GFGEL(1)
+      IF (T .EQ. 0.0) GOTO 20
+      GFGEL(2) = RR
+      GFGEL(3) = T
+      RETURN
+   20 IER = 6
+      CALL GFFALS(6)
+      RETURN
+      END

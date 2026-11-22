@@ -1,0 +1,18 @@
+C     DRFRAM - draw a rectangular frame/title block (MADLEN DRFRAM).
+C     The four edge steps from the ,DATA, section drive MOVE and TMF
+C     around the rectangle [I].
+      SUBROUTINE DRFRAM(X0, Y0, DX, DY)
+      REAL X0, Y0, DX, DY, SX(4), SY(4), X, Y
+      INTEGER I
+      DATA SX /1.0, 0.0, -1.0, 0.0/
+      DATA SY /0.0, 1.0, 0.0, -1.0/
+      X = X0
+      Y = Y0
+      DO 10 I = 1, 4
+         CALL MOVE(X, Y)
+         CALL TMF(SX(I), SY(I))
+         X = X + SX(I)*DX
+         Y = Y + SY(I)*DY
+10    CONTINUE
+      RETURN
+      END

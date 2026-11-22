@@ -16,6 +16,6 @@ C [I] Exact field packing of the MADLEN helper *0031B is not recovered.
       GFMATR(6) = S
       GFMATR(11) = S
       GFMATR(16) = 1.0
-      CALL HCMULT
+      CALL HCMULT(GFMATR(1),GFMATR(17))
       RETURN
       END

@@ -1,0 +1,27 @@
+      SUBROUTINE YLGAX(Y1, Y2, X, N)
+C     Draw a logarithmic Y axis (YLGAX.mad, 536 commands): the same
+C     structure as XLGAX. Reads integer/axis parameters with IRDB/RDB,
+C     formats tick labels with TMLGF (ALOG10 plus I*PO*I / I*MU*I),
+C     uses SIGN/SYMBOL/NUMBER for the sign and digits and MOVE to
+C     position the pen [I].
+      REAL Y1, Y2, X, Y, T, LO, HI, MANT, E, STEP
+      INTEGER N, I, K
+      EXTERNAL IRDB, RDB, TMLGF, MOVE, SYMBOL, NUMBER
+      K = IABS(N)
+      IF (K .LT. 1) K = 1
+      LO = ALOG10(ABS(Y1))
+      HI = ALOG10(ABS(Y2))
+      E = HI - LO
+      IF (E .LE. 0.0) E = 1.0
+      STEP = E / FLOAT(K)
+      DO 100 I = 0, K
+         T = LO + STEP*FLOAT(I)
+         MANT = 10.0**T
+         Y = MANT
+         CALL MOVE(X, Y)
+         CALL TMLGF(T, MANT, E)
+         CALL SYMBOL(X, Y, 1.0)
+         CALL NUMBER(X, Y, MANT)
+  100 CONTINUE
+      RETURN
+      END

@@ -6,7 +6,7 @@ C [I] Exact mapping of the sixteen SIGNA/TPF/NUMBER argument cells
 C     (lines 80-427) is not recoverable from the disassembly.
       REAL X0, Y0, X1, Y1, STEP, T, X, Y
       INTEGER I, N, MODE
-      EXTERNAL IRDB, RDB, SIGNA, TPF, NUMBER, CIRCLE, MOVE, AMOD, ABS
+      EXTERNAL IRDB, RDB, SIGNA, TPF, NUMBER, CIRCLE, MOVE
       CALL IRDB(2,N)
       CALL IRDB(3,MODE)
       IF (N .LT. 2) RETURN
@@ -15,7 +15,7 @@ C     (lines 80-427) is not recoverable from the disassembly.
       CALL RDB(17,X1)
       CALL RDB(12,STEP)
       IF (STEP .EQ. 0.0) RETURN
-      CALL SIGNA(STEP)
+      CALL SIGNA(X0,X1,STEP)
       CALL MOVE(X0,Y0)
       CALL MOVE(X1,Y0)
       T = 0.0
@@ -23,13 +23,13 @@ C     (lines 80-427) is not recoverable from the disassembly.
          X = X0 + T
          CALL TPF(X,Y)
          CALL MOVE(X,Y)
-         CALL NUMBER(X,Y,T,3)
+         CALL NUMBER(X,Y,T)
          T = T + STEP
 10    CONTINUE
       IF (MODE .NE. 0) THEN
          X = X1 - X0
          Y = X
-         CALL CIRCLE(X0,Y0,Y)
+         CALL CIRCLE(X0,Y0,Y,Y,0)
          CALL MOVE(X0,Y)
          CALL MOVE(X,Y0)
       END IF

@@ -1,0 +1,50 @@
+C     LITAN - tangent lines from a point to a circle from *GFGEL*.
+      SUBROUTINE LITAN(XP, YP, XC, YC, R, X1, Y1, X2, Y2, IOK)
+      REAL XP, YP, XC, YC, R, X1, Y1, X2, Y2
+      INTEGER IOK
+      REAL DX, DY, D2, L, T, U, V
+      COMMON /GFBFTR/ GFBFTR(2)
+      COMMON /GFGEL/ GFGEL(28)
+      DX = XP - XC
+      DY = YP - YC
+      D2 = DX*DX + DY*DY
+      IOK = 0
+      IF (D2 .LE. R*R) RETURN
+      L = (D2 - R*R)/D2
+      T = R*R/D2
+      U = R*(L**0.5)/D2
+      X1 = XC + T*DX - U*DY
+      Y1 = YC + T*DY + U*DX
+      X2 = XC + T*DX + U*DY
+      Y2 = YC + T*DY - U*DX
+      IOK = 1
+      RETURN
+      ENTRY SQRT(X)
+      REAL X
+      IF (X .GT. 0.0) X = X**0.5
+      RETURN
+      ENTRY ATAN(X, R)
+      REAL X, R
+      R = ATAN2(X, 1.0)
+      RETURN
+      ENTRY ABS(X)
+      REAL X
+      IF (X .LT. 0.0) X = -X
+      RETURN
+      ENTRY SIN(X, R)
+      REAL X, R
+      REAL C
+      CALL LTCTG(X, R, C)
+      RETURN
+      ENTRY COS(X, R)
+      REAL X, R
+      REAL S
+      CALL LTCTG(X, S, R)
+      RETURN
+      END
+      SUBROUTINE LTCTG(A, S, C)
+      REAL A, S, C
+      S = SIN(A)
+      C = COS(A)
+      RETURN
+      END

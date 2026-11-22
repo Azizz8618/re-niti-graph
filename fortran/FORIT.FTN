@@ -1,0 +1,38 @@
+C     FORIT - iterative refinement (FORIF companion).
+      SUBROUTINE FORIT(A, N, X, Y)
+      REAL A, X(1000), Y(1000)
+      INTEGER N
+      REAL T, S, C, P, Q, D
+      INTEGER I
+      T = A
+      D = 1.0
+      DO 20 I = 1, N
+         CALL FRITG(T, S, C)
+         P = C*X(I) - S*Y(I)
+         Q = S*X(I) + C*Y(I)
+         X(I) = P
+         Y(I) = Q
+         T = T + D*A/FLOAT(N)
+   20 CONTINUE
+      RETURN
+      ENTRY COS(U, R)
+      REAL U, R
+      REAL S
+      CALL FRITG(U, S, R)
+      RETURN
+      ENTRY SIN(U, R)
+      REAL U, R
+      REAL C
+      CALL FRITG(U, R, C)
+      RETURN
+      ENTRY IMUI(I, J, K)
+      INTEGER I, J, K
+      K = I*J
+      RETURN
+      END
+      SUBROUTINE FRITG(A, S, C)
+      REAL A, S, C
+      S = SIN(A)
+      C = COS(A)
+      RETURN
+      END

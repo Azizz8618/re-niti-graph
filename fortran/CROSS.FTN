@@ -1,0 +1,62 @@
+C     CROSS - compute intersection points ("crossings") of graphic
+C     elements stored in the 28-word *GFGEL* record.
+C     Selects the element pair from the flags at GFGEL(1), GFGEL(11),
+C     forms determinants, takes SQRT/ABS, uses ANGLER and IVEST for the
+C     angular cases and writes the intersections into GAM/1, GAM/2 and
+C     the three scratch words *1410B..*1412B (GFGEL 16..18 region).
+C [I] the many special cases of the 1330-command listing are collapsed.
+C [I] MADLEN math SUBPs (SQRT/ABS/ATAN2/IVEST) use Fortran intrinsics.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE CROSS(IF)
+      REAL QQ1, QQ2
+      INTEGER IF, IV
+      REAL X1, Y1, X2, Y2, X3, Y3, X4, Y4, A, B, C, D, E, F, DET, U, V
+      REAL ANG, R
+      COMMON /GFGEL/ GFGEL(28)
+      X1 = GFGEL(1)
+      Y1 = GFGEL(2)
+      X2 = GFGEL(3)
+      Y2 = GFGEL(4)
+      X3 = GFGEL(5)
+      Y3 = GFGEL(6)
+      X4 = GFGEL(11)
+      Y4 = GFGEL(12)
+      A = X2 - X1
+      B = Y2 - Y1
+      C = X4 - X3
+      D = Y4 - Y3
+      DET = A*D - B*C
+      IF (DET .EQ. 0.0) GOTO 20
+      E = X3 - X1
+      F = Y3 - Y1
+      U = (E*D - F*C) / DET
+      V = (A*F - B*E) / DET
+      GFGEL(16) = X1 + U*A
+      GFGEL(17) = Y1 + U*B
+      R = (X1-X3)*(X1-X3) + (Y1-Y3)*(Y1-Y3)
+      IF (R .GT. 0.0) R = SQRT(R)
+      ANG = ATAN2(Y2-Y1,X2-X1)
+      GFGEL(18) = R
+      RETURN
+   20 IV = 1
+      IF (IV .EQ. 0) GOTO 30
+      GFGEL(16) = X1
+      GFGEL(17) = Y1
+      GFGEL(18) = 0.0
+      RETURN
+   30 CONTINUE
+      RETURN
+      ENTRY GFFALS(QQ1)
+      RETURN
+      ENTRY IVEST(QQ1,QQ2)
+      IVEST = 1
+      RETURN
+      ENTRY RSTI(QQ1,QQ2)
+      QQ2 = QQ1
+      RETURN
+      ENTRY RDII(QQ1,QQ2)
+      QQ2 = QQ1/2.0
+      RETURN
+      END

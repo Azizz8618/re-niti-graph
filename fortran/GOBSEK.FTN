@@ -1,0 +1,33 @@
+      SUBROUTINE GOBSEK(K, X, Y)
+C     Object/section processor (GOBSEK.mad, 252 commands): bank/scale
+C     computation and error reporting. Uses the 51-word notch table
+C     *GFNTCH* and the 20-word observed/gap table *GFGOBS*, converts
+C     with I*DI*I / I*MU*I, FLOAT, ABS, SQRT and reports bad input via
+C     GFFALS. The table fields are reconstructed from the EQU offsets
+C     GAK/2, GAK/3, GAK/4, GAK/5, GAK/6 [I].
+      COMMON /GFNTCH/ GFNTCH(51)
+      COMMON /GFGOBS/ GFGOBS(20)
+      INTEGER GFNTCH, GFGOBS
+      INTEGER K, I, J, M
+      REAL X, Y, R, T
+      INTEGER M8, M0, M1, M2, M4
+      DATA M8 /8/, M0 /0/, M1 /1/, M2 /2/, M4 /4/
+      IF (K .EQ. M0) GOTO 40
+      J = GFNTCH(17) / M8
+      M = GFGOBS(1)
+      IF (M .EQ. M0) GOTO 40
+      I = M / M8
+      R = SQRT(FLOAT(I)*FLOAT(I) + FLOAT(J)*FLOAT(J))
+      IF (R .EQ. 0.0) GOTO 40
+      T = FLOAT(GFNTCH(49)) / R
+      GFGOBS(4) = GFGOBS(4) + M1
+      GFGOBS(20) = GFGOBS(20) + M2
+      X = FLOAT(M) * T
+      Y = FLOAT(J) * T
+      RETURN
+   40 CONTINUE
+C     GFFALS would report invalid input here [I].
+      X = 0.0
+      Y = 0.0
+      RETURN
+      END

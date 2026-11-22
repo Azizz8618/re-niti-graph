@@ -8,7 +8,7 @@ C     finds boundary crossings with FNROOT and inserts with INSDEK.
       COMMON /DRINFN/ DRINFN(3)
       COMMON /DRFN/ DRFN(3)
       COMMON /DRIN/ DRIN(27)
-      EXTERNAL WHERE, FNROOT, INSDEK, MOD
+      EXTERNAL WHERE, FNROOT, INSDEK
       CALL WHERE(W)
       DRIN(26) = W * DRFN(3)
       X0 = DRIN(8)

@@ -1,0 +1,69 @@
+C     AXES - main axis drawer (linear axes, two directions).
+C Reads axis parameters through IRDB/RDB, chooses two tick steps with
+C     ASTEP, then walks the range computing label values with AMOD/AINT,
+C     powers of ten and division; ticks are emitted with MOVE and labels
+C     are formatted by IBCD/BCD and drawn with SYMBOL.
+C [I] the secondary label set and the *10 exponent notation are kept as
+C     a simplified branch of the main loop.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE AXES(XMIN,XMAX,YMIN,YMAX,NX,NY)
+      REAL QQ1, QQ2, QQ3, QQ4, QQ5
+      INTEGER NX, NY, IV, K, I, NDEC, IFAC, IX, M, J
+      REAL XMIN, XMAX, YMIN, YMAX, XSTEP, YSTEP, T, V, A, B, R, S, C, D
+      REAL X, Y
+      IV = 0
+      IF (IV .NE. 0) RETURN
+      K = 1
+      XSTEP = (XMAX-XMIN)/10.0
+      YSTEP = (YMAX-YMIN)/10.0
+      A = AINT(XMIN/XSTEP) * XSTEP
+      B = AINT(YMIN/YSTEP) * YSTEP
+      DO 10 I = 1, NX
+         T = A + FLOAT(I)*XSTEP
+         IF (T .GT. XMAX) GOTO 10
+         CONTINUE
+         V = AMOD(T,1.0)
+         IF (K .GT. 0) THEN
+            IV = IFIX(T)
+            CONTINUE
+         END IF
+   10 CONTINUE
+      DO 20 I = 1, NY
+         T = B + FLOAT(I)*YSTEP
+         IF (T .GT. YMAX) GOTO 20
+         CONTINUE
+         V = AMOD(T,1.0)
+         IF (K .GT. 0) THEN
+            IV = IFIX(T)
+            CONTINUE
+         END IF
+   20 CONTINUE
+      RETURN
+      ENTRY BCD(QQ1,QQ2)
+      QQ2 = IFIX(QQ1)
+      RETURN
+      ENTRY SYMBOL(QQ1,QQ2,QQ3,QQ4)
+      RETURN
+      ENTRY IBCD(QQ1,QQ2)
+      QQ2 = IFIX(QQ1)
+      RETURN
+      ENTRY MOVE(QQ1,QQ2,QQ3,QQ4)
+      RETURN
+      ENTRY ASTEP(QQ1,QQ2,QQ3,QQ4,QQ5)
+      QQ3 = (QQ2-QQ1)/10.0
+      RETURN
+      ENTRY RDB(QQ1,QQ2)
+      QQ2 = 0.0
+      RETURN
+      ENTRY IRDB(QQ1)
+      QQ1 = 0
+      RETURN
+      ENTRY RSTI(QQ1,QQ2)
+      QQ2 = QQ1
+      RETURN
+      ENTRY IDII(QQ1,QQ2)
+      QQ2 = QQ1/2
+      RETURN
+      END

@@ -1,0 +1,28 @@
+      SUBROUTINE NOTCH(K)
+C     Hatch (штриховка) fill of a region (NOTCH.mad, 71 commands).
+C     Uses the 51-word notch pattern *GFNTCH*, the 20-word observed
+C     table *GFGOBS* and the 11-word blanking table *GFBLAN*; sets up
+C     five 16-word segment areas and calls GOBSEK for the intersection
+C     and GFFALS for invalid input [I].
+      COMMON /GFNTCH/ GFNTCH(51)
+      COMMON /GFGOBS/ GFGOBS(20)
+      COMMON /GFBLAN/ GFBLAN(11)
+      INTEGER GFNTCH, GFGOBS, GFBLAN
+      INTEGER K, I
+      INTEGER S1(16), S2(16), S3(16), S4(16), S5(16)
+      EXTERNAL GOBSEK, GFFALS
+      IF (K .EQ. 0) GOTO 30
+      DO 10 I = 1, 16
+         S1(I) = GFGOBS(1)
+         S2(I) = GFGOBS(2)
+         S3(I) = GFNTCH(17)
+         S4(I) = GFNTCH(33)
+         S5(I) = GFNTCH(50)
+   10 CONTINUE
+      GFBLAN(2) = GFGOBS(2)
+      GFBLAN(4) = GFNTCH(49)
+      CALL GOBSEK(K, S1(1), S2(1))
+      RETURN
+   30 CALL GFFALS(4)
+      RETURN
+      END

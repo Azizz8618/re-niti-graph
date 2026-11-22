@@ -1,0 +1,15 @@
+C     TDMP - tridiagonal matrix preparation for TRIDIG (MADLEN TDMP).
+C     Forward recurrence over the three diagonals with three sign
+C     cases; the original local cell layout is replaced by arrays [I].
+      SUBROUTINE TDMP(N, A, B, C, D)
+      INTEGER N, I
+      REAL A(1000), B(1000), C(1000), D(1000), W
+      DO 10 I = 2, N
+         IF (B(I-1) .NE. 0.0) THEN
+            W = A(I)/B(I-1)
+            B(I) = B(I) - W*C(I-1)
+            D(I) = D(I) - W*D(I-1)
+         END IF
+10    CONTINUE
+      RETURN
+      END

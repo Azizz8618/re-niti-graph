@@ -1,7 +1,7 @@
 C     GFFALS - GRAFOR error reporter, eight messages selected by code.
 C     Message text is kept as short FORMAT records instead of ISO words.
       SUBROUTINE GFFALS(IER)
-      INTEGER IER
+      INTEGER IER, GFGOBS
       COMMON /GFGOBS/ GFGOBS(20)
       GO TO (10, 20, 30, 40, 50, 60, 70, 80), IER
    10 PRINT 100

@@ -1,19 +1,19 @@
 C     MOVB - move pen by a relative displacement.
 C     Reads the current point from *GFBFTR* (2 words), adds the two
-C     arguments and delegates to MOVE. MOVE is a MADLEN SUBP of this module.
+C arguments and delegates to MOVE. MOVE is a MADLEN SUBP of this module.
       SUBROUTINE MOVB(DX,DY)
+      REAL DX, DY, X1, Y1, X2, Y2
+      REAL MV1, MV2, MV3, MV4
       COMMON /GFBFTR/ GFBFTR(2)
-      REAL DX, DY
-      REAL X1, Y1, X2, Y2
       X1 = GFBFTR(1)
       Y1 = GFBFTR(2)
       X2 = X1 + DX
       Y2 = Y1 + DY
-      CALL MOVE(X1,Y1,X2,Y2)
-      RETURN
-C     MOVE - physical pen move (MADLEN SUBP, stub).
-      ENTRY MOVE(X1,Y1,X2,Y2)
       GFBFTR(1) = X2
       GFBFTR(2) = Y2
+      RETURN
+      ENTRY MOVE(MV1,MV2,MV3,MV4)
+      GFBFTR(1) = MV3
+      GFBFTR(2) = MV4
       RETURN
       END

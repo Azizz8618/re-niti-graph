@@ -1,12 +1,11 @@
 C     ABUFF - disk buffer address helper (library 22).
 C     MADLEN saves IR10, loads IR11 from the accumulator, stores a word
-C     at (IR11)+6, then returns through IR13. No COMMON area is declared,
+C at (IR11)+6, then returns through IR13. No COMMON area is declared,
 C     so the target array is supplied by the caller.
 C [I] exact role inside the buffer manager is unclear (3 commands only).
       SUBROUTINE ABUFF(A,K,BUF)
-      REAL A
       INTEGER K
-      REAL BUF(1)
+      REAL A, BUF(1)
       BUF(K+6) = A
       RETURN
       END

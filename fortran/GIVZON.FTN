@@ -1,0 +1,30 @@
+C     GIVZON - zone allocation chain:
+C     GDISC -> RCATAL -> GIVENZ -> SETREF -> WCATAL -> FDISC.
+C     A failed GIVENZ result skips the reference update.
+C [I] the bit tested at *0014B is a "zone not found" flag.
+      SUBROUTINE GIVZON(NZ)
+      REAL QQ1, QQ2, QQ3
+      INTEGER NZ, IF, I, N, F
+      COMMON /DATAC/ DATAC(2)
+      CONTINUE
+      CONTINUE
+      IF = 0
+      IF (IF .NE. 0) GOTO 10
+      CONTINUE
+      CONTINUE
+   10 CONTINUE
+      RETURN
+      ENTRY FDISC(QQ1)
+      RETURN
+      ENTRY WCATAL(QQ1)
+      RETURN
+      ENTRY SETREF(QQ1,QQ2)
+      RETURN
+      ENTRY GIVENZ(QQ1,QQ2,QQ3)
+      QQ3 = 0
+      RETURN
+      ENTRY RCATAL(QQ1)
+      RETURN
+      ENTRY GDISC(QQ1)
+      RETURN
+      END

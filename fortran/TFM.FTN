@@ -1,0 +1,30 @@
+C     TFM - transform/scale routine with FLOAT, ABS and RDB entries.
+C     Computes the plotting scale from two reference readings.
+      SUBROUTINE TFM(X0, Y0, X1, Y1, SX, SY, U, V)
+      REAL X0, Y0, X1, Y1, SX, SY, U, V
+      REAL DX, DY
+      COMMON /GFBFTR/ GFBFTR(2)
+      DX = X1 - X0
+      DY = Y1 - Y0
+      IF (DX .LT. 0.0) DX = -DX
+      IF (DY .LT. 0.0) DY = -DY
+      IF (SX .EQ. 0.0) SX = 1.0
+      IF (SY .EQ. 0.0) SY = 1.0
+      U = DX/SX
+      V = DY/SY
+      RETURN
+      ENTRY FLOAT(I, R)
+      INTEGER I
+      REAL R
+      R = REAL(I)
+      RETURN
+      ENTRY ABS(X)
+      REAL X
+      IF (X .LT. 0.0) X = -X
+      RETURN
+      ENTRY RDB(K, V)
+      INTEGER K
+      REAL V
+      V = GFBFTR(K)
+      RETURN
+      END

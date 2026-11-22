@@ -2,7 +2,7 @@ C     PRJT - project a 3-D vertex list through MAP / TMF and draw the
 C     visible edges with MOVE. Projection parameters live in *GFVP*.
       SUBROUTINE PRJT(X, Y, Z, N, K)
       INTEGER N, K, I
-      REAL X(*), Y(*), Z(*), U, V, SX, SY
+      REAL X(1000), Y(1000), Z(1000), U, V, SX, SY
       COMMON /GFVP/ GFVP(6)
       IF (N .LT. 1) RETURN
       DO 10 I = 1, N

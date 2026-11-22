@@ -17,6 +17,6 @@ C     IMUIP; the reconstruction uses SIN/COS of a 90-degree step.
       GFMATR(I + (J-1)*4) = S
       GFMATR(J + (I-1)*4) = -S
       GFMATR(J + (J-1)*4) = C
-      CALL HCMULT
+      CALL HCMULT(GFMATR(1),GFMATR(17))
       RETURN
       END

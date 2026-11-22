@@ -7,13 +7,6 @@ C     RDMVE - read the shortest (four-word) vector record from *GFGEL*.
       OUT(3) = GFGEL(6)
       OUT(4) = GFGEL(7)
       RETURN
-      ENTRY GFFALS(N)
-      INTEGER N
-      RETURN
-      ENTRY STRMOD(A, B)
-      REAL A, B
-      B = A
-      RETURN
       ENTRY RSTI(A, K, R)
       REAL A, R
       INTEGER K

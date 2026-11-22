@@ -1,0 +1,23 @@
+C     ISOMET - set up an isometric 3D projection.
+C     Applies two TDROT rotations with the fixed angle constants
+C     LOG 4310600000000000 and LOG 4313200000000000 to *GFMATR*.
+C [I] the two LOG angle constants do not fit a FOREX 4.12 literal;
+C     approximate radian values of the isometric rotations are used.
+      SUBROUTINE ISOMET()
+      REAL QQ1, QQ2, QQ3
+      INTEGER I
+      REAL A1, A2, T
+      COMMON /GFMATR/ GFMATR(34)
+      DATA A1 /0.61548/
+      DATA A2 /0.78540/
+C     TDROT - rotate the 4x4 matrix (MADLEN SUBP, stub).
+      T = GFMATR(33)
+      CONTINUE
+      CONTINUE
+      DO 10 I = 17, 34
+         GFMATR(I) = GFMATR(I)
+   10 CONTINUE
+      RETURN
+      ENTRY TDROT(QQ1,QQ2,QQ3)
+      RETURN
+      END

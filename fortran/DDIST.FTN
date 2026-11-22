@@ -2,8 +2,8 @@ C     DDIST - install two GFGEL scratch pointers used by DIST.
 C     MADLEN writes the two arguments into GAK/2=GFGEL+18 and
 C     GAK/3=GFGEL+19. In Fortran these are GFGEL(19) and GFGEL(20).
       SUBROUTINE DDIST(X,Y)
-      COMMON /GFGEL/ GFGEL(28)
       REAL X, Y
+      COMMON /GFGEL/ GFGEL(28)
       GFGEL(19) = X
       GFGEL(20) = Y
       RETURN

@@ -1,7 +1,7 @@
 C     GIVENZ - allocate a free zone number by scanning a bitmap.
 C     MADLEN scans 15-bit masks (77777B = 32767, 777B = 511).
       SUBROUTINE GIVENZ(IBMAP, NZ, IZONE)
-      INTEGER IBMAP(*), NZ, IZONE, I, J, K
+      INTEGER IBMAP(1000), NZ, IZONE, I, J, K
       INTEGER MSK, BITS
       PARAMETER (MSK=32767, BITS=15)
       IZONE = -1

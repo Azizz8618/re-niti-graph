@@ -1,0 +1,27 @@
+      SUBROUTINE INCLIN(N, STEP, MARK, X0, Y0)
+C     Draw an inclined (tilted) line / hatching (INCLIN.mad, 321
+C     commands). The original reads integer parameters with IRDB,
+C     the current point with WHERE, coordinate limits with RDB,
+C     transforms with R*ST*I and TMF, clips with ABS/AMAX1/AMIN1,
+C     emits strokes with MOVE and optionally marks with MARKER [I].
+      INTEGER N, MARK, I, IX, IY
+      REAL STEP, X0, Y0, X, Y, XL, YL, XH, YH, T
+      EXTERNAL IRDB, WHERE, RDB, TMF, MOVE, MARKER
+      IX = IABS(N)
+      IY = IX
+      XL = AMIN1(X0, X0 + STEP*FLOAT(IX))
+      XH = AMAX1(X0, X0 + STEP*FLOAT(IX))
+      YL = AMIN1(Y0, Y0 + STEP*FLOAT(IX))
+      YH = AMAX1(Y0, Y0 + STEP*FLOAT(IX))
+      CALL WHERE(X, Y)
+      DO 100 I = 1, IX
+         T = STEP * FLOAT(I)
+         X = AMIN1(AMAX1(X0 + T, XL), XH)
+         Y = AMIN1(AMAX1(Y0 + T, YL), YH)
+         CALL TMF(X, Y, X, Y)
+         CALL MOVE(X, Y)
+         IF (MARK .EQ. 0) GOTO 100
+         CALL MARKER(X, Y)
+  100 CONTINUE
+      RETURN
+      END

@@ -1,0 +1,56 @@
+C     RDACC - circular-arc record reader (variant C): three angle
+C     points derived from *GFGEL* centre, radii and angles.
+      SUBROUTINE RDACC(MODE, OUT)
+      REAL MODE, OUT(9)
+      COMMON /GFGEL/ GFGEL(28)
+      REAL R, SA, CA, X0, Y0, A1, A2, A3
+      X0 = GFGEL(1)
+      Y0 = GFGEL(2)
+      R = GFGEL(9)
+      IF (R .LT. 0.0) R = -R
+      A1 = GFGEL(7)
+      A2 = GFGEL(3)
+      A3 = GFGEL(8)
+      CALL RDACG(A1, SA, CA)
+      OUT(1) = X0 + R*CA
+      OUT(2) = Y0 + R*SA
+      CALL RDACG(A2, SA, CA)
+      OUT(3) = X0 + R*CA
+      OUT(4) = Y0 + R*SA
+      CALL RDACG(A3, SA, CA)
+      OUT(5) = X0 + R*CA
+      OUT(6) = Y0 + R*SA
+      OUT(7) = R
+      OUT(8) = A1
+      OUT(9) = A3 - A1
+      RETURN
+      ENTRY RSTI(A, K, R)
+      REAL A, R
+      INTEGER K
+      R = A*FLOAT(K)
+      RETURN
+      ENTRY RDII(A, K, R)
+      REAL A, R
+      INTEGER K
+      R = A/FLOAT(K)
+      RETURN
+      ENTRY ABS(X)
+      IF (X .LT. 0.0) X = -X
+      RETURN
+      ENTRY SIN(X, R)
+      REAL X, R
+      REAL C
+      CALL RDACG(X, R, C)
+      RETURN
+      ENTRY COS(X, R)
+      REAL X, R
+      REAL S
+      CALL RDACG(X, S, R)
+      RETURN
+      END
+      SUBROUTINE RDACG(A, S, C)
+      REAL A, S, C
+      S = SIN(A)
+      C = COS(A)
+      RETURN
+      END

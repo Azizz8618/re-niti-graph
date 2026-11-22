@@ -1,7 +1,7 @@
 C     BLANC - begin blanking: toggle the blanking flag, save eight
 C     groups of 16-word tables and call BLANCH.
       SUBROUTINE BLANC(K)
-      INTEGER K, I, J
+      INTEGER K, I, J, GFBLAN
       INTEGER IT(16)
       COMMON /GFBLAN/ GFBLAN(11)
       COMMON /GFATBL/ GFATBL(6)

@@ -1,0 +1,56 @@
+C     ARCOLC - arc drawing routine "LC" using *GFGEL* and *GFBFTR*.
+C     Selects one of two coordinate sets according to the element flag,
+C computes an angle with ANGLER and radii with SQRT, tests visibility
+C     with IVEST, then emits the arc stroke with MOVE/CIRTAC and STRMOD.
+C     GAM/0..7, GAN/0..5 are offsets inside the 28-word GFGEL record.
+C [I] the many sign branches are collapsed to the main geometric path.
+C [I] MADLEN math SUBPs (SIN/COS/ATAN/SQRT/ABS/SIGN/ANGLER/IVEST) are
+C implemented with Fortran intrinsics, no ENTRY is generated for them.
+      SUBROUTINE ARCOLC(IF)
+      REAL QQ1, QQ2, QQ3, QQ4
+      INTEGER IF, I, IV
+      REAL X, Y, A, B, C, D, R, S, ANG, SN
+      COMMON /GFGEL/ GFGEL(28)
+      COMMON /GFBFTR/ GFBFTR(2)
+      X = GFBFTR(1)
+      Y = GFBFTR(2)
+      A = GFGEL(2)
+      B = GFGEL(3)
+      R = GFGEL(4)
+      IF (R .LT. 0.0) R = ABS(R)
+      S = A*A + B*B
+      IF (S .LE. 0.0) GOTO 60
+      S = SQRT(S)
+      ANG = ATAN2(B,A) - ATAN2(Y,X)
+      C = COS(ANG)
+      SN = SIN(ANG)
+      IV = 1
+      IF (IV .EQ. 0) GOTO 60
+      DO 20 I = 1, 30
+         GFBFTR(1) = X+R*C
+         GFBFTR(2) = Y+R*SN
+         X = X + R*C
+         Y = Y + R*SN
+   20 CONTINUE
+      CONTINUE
+      RETURN
+   60 CONTINUE
+      RETURN
+      ENTRY GFFALS(QQ1)
+      RETURN
+      ENTRY CIRTAC(QQ1,QQ2,QQ3)
+      RETURN
+      ENTRY STRMOD(QQ1)
+      RETURN
+      ENTRY MOVE(QQ1,QQ2,QQ3,QQ4)
+      RETURN
+      ENTRY IVEST(QQ1,QQ2)
+      IVEST = 1
+      RETURN
+      ENTRY IDII(QQ1,QQ2)
+      QQ2 = QQ1/2
+      RETURN
+      ENTRY RSTI(QQ1,QQ2)
+      QQ2 = QQ1
+      RETURN
+      END

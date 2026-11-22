@@ -1,0 +1,73 @@
+C     ISOLIN - isoline (contour) generator over a rectangular grid.
+C     Marches cells, obtains edge crossings through XPOL/YPOL and
+C     emits segments with LINEO; LOOK maintains the cell record.
+      SUBROUTINE ISOLIN(NX, NY, Z, LEV)
+      INTEGER NX, NY
+      REAL Z(1000), LEV
+      REAL V1, V2, V3, V4, X1, Y1, X2, Y2, T
+      INTEGER I, J, NSEG
+      COMMON /GFCELL/ GFCELL(9)
+      COMMON /GFISOL/ GFISOL(2)
+      IF (NX .LT. 2 .OR. NY .LT. 2) RETURN
+      GFISOL(1) = GFISOL(1) + 1
+      NSEG = 0
+      DO 30 J = 1, NY-1
+         DO 20 I = 1, NX-1
+            V1 = Z((J-1)*NX + I)
+            V2 = Z((J-1)*NX + I + 1)
+            V3 = Z(J*NX + I + 1)
+            V4 = Z(J*NX + I)
+            T = ISOFR(V1, V2, LEV)
+            IF (T .LT. 0.0 .OR. T .GT. 1.0) GO TO 20
+            X1 = FLOAT(I-1) + T
+            Y1 = FLOAT(J-1)
+            T = ISOFR(V4, V3, LEV)
+            IF (T .LT. 0.0 .OR. T .GT. 1.0) GO TO 20
+            X2 = FLOAT(I-1) + T
+            Y2 = FLOAT(J)
+            CALL ISLOOK(I, J, V1, V2, V3, V4)
+            CALL ISLINE(X1, Y1, X2, Y2)
+            NSEG = NSEG + 1
+   20    CONTINUE
+   30 CONTINUE
+      GFISOL(2) = FLOAT(NSEG)
+      RETURN
+      ENTRY IABS(I, J)
+      INTEGER I, J
+      J = I
+      IF (J .LT. 0) J = -J
+      RETURN
+      ENTRY IMUI(I, J, K)
+      INTEGER I, J, K
+      K = I*J
+      RETURN
+      END
+      REAL FUNCTION ISOFR(A, B, L)
+      REAL A, B, L
+      IF (B .EQ. A) THEN
+         ISOFR = -1.0
+      ELSE
+         ISOFR = (L - A)/(B - A)
+      END IF
+      RETURN
+      END
+      SUBROUTINE ISLOOK(I, J, V1, V2, V3, V4)
+      INTEGER I, J
+      REAL V1, V2, V3, V4
+      COMMON /GFCELL/ GFCELL(9)
+      GFCELL(1) = FLOAT(I-1)
+      GFCELL(2) = FLOAT(J-1)
+      GFCELL(3) = 1.0
+      GFCELL(4) = 1.0
+      GFCELL(5) = V1
+      GFCELL(6) = V2
+      GFCELL(7) = V3
+      GFCELL(8) = V4
+      RETURN
+      END
+      SUBROUTINE ISLINE(X1, Y1, X2, Y2)
+      REAL X1, Y1, X2, Y2
+      CALL PLOT()
+      CALL PLOT()
+      RETURN
+      END

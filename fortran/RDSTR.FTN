@@ -1,0 +1,14 @@
+C     RDSTR - read a length-delimited string record into *GFGEL*
+C     (MADLEN RDSTR).  The 6-bit/byte packing is not reproduced; words
+C     are copied one by one up to the 28-word element limit [I].
+      SUBROUTINE RDSTR(N, SRC)
+      INTEGER N, I, M
+      REAL SRC(1000)
+      COMMON /GFGEL/ GFGEL(28)
+      M = N
+      IF (M .GT. 28) M = 28
+      DO 10 I = 1, M
+         GFGEL(I) = SRC(I)
+10    CONTINUE
+      RETURN
+      END

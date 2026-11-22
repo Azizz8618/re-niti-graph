@@ -1,0 +1,30 @@
+C     MAP - map a 3D point through the viewport *GFVP* (6 words).
+C     Computes the squared viewport extent, the offset of the point from
+C     the viewport centre and the projected X/Y using SQRT scaling.
+C [I] sign branches from ASN/ARX are simplified; GFVP layout follows the
+C     GAK/2..GAK/6 equates of the listing.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE MAP(X,Y,Z,XO,YO)
+      REAL X, Y, Z, XO, YO, A, B, C, W, R, S
+      COMMON /GFVP/ GFVP(6)
+      A = GFVP(1)
+      B = GFVP(2)
+      C = GFVP(3)
+      W = A*A + B*B + C*C
+      IF (W .EQ. 0.0) RETURN
+      R = X - GFVP(1)
+      S = Y - GFVP(2)
+      R = R*R + S*S + (Z-GFVP(3))*(Z-GFVP(3))
+      R = SQRT(R)
+      IF (R .NE. 0.0) THEN
+         S = W / R
+         XO = (X-GFVP(1))*GFVP(2)*GFVP(1)*S + GFVP(4)
+         YO = (Z-GFVP(3))*S + GFVP(5)
+      ELSE
+         XO = GFVP(4) + X*GFVP(5)
+         YO = GFVP(5) + Y*GFVP(5)
+      END IF
+      RETURN
+      END

@@ -1,0 +1,37 @@
+C     AREB1 - ellipse/arc bounding-angle helper.
+C     Scales two coordinates by the third argument, then iterates over
+C     four limit branches computing SIN/COS ratios and ATAN corrections.
+C [I] the four limit registers are the packed constants of the listing.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE AREB1(X,Y,S,A1,A2)
+      INTEGER I
+      REAL X, Y, S, A1, A2, U, V, T, L1, L2, L3, L4
+      DATA L1 /0.0/, L2 /1.0/, L3 /6.0/, L4 /7.0/
+      U = X * S
+      V = Y * S
+      A1 = U + V
+      A2 = U
+      DO 20 I = 1, 40
+         T = 0.0
+         IF (A2 .GE. L1) GOTO 10
+         T = SIN(A2) * Y / COS(A2)
+         A1 = ATAN(T) / S
+         GOTO 15
+   10    IF (A2 .GE. L2) GOTO 11
+         T = (U-A2) * SIN(A2) / COS(A2)
+         A1 = -ATAN(T) / S + L2
+         GOTO 15
+   11    IF (A2 .GE. L3) GOTO 12
+         T = (V-A2) * SIN(A2) / COS(A2)
+         A1 = -ATAN(T) / S + L2
+         GOTO 15
+   12    T = (A2-V) * SIN(A2) / COS(A2)
+         A1 = -ATAN(T) / S + L4
+   15    IF (A1 .EQ. A2) GOTO 100
+         A2 = A1
+   20 CONTINUE
+  100 CONTINUE
+      RETURN
+      END

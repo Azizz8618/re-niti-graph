@@ -1,0 +1,17 @@
+C     LINFIL - arithmetic fill between two lines.
+C     No external calls in the original: successive interpolation
+C     coordinates are accumulated into private BSS arrays and stored at
+C the end. The caller supplies the two endpoint arrays and the count.
+C [I] exact layout of the private cells *0122B..*0134B is unclear;
+C     a standard linear interpolation is used.
+      SUBROUTINE LINFIL(X1,Y1,X2,Y2,N,X,Y)
+      INTEGER N, I
+      REAL X1, Y1, X2, Y2, X(1), Y(1), T
+      IF (N .LE. 0) RETURN
+      DO 10 I = 1, N
+         T = FLOAT(I-1) / FLOAT(N-1)
+         X(I) = X1 + T*(X2-X1)
+         Y(I) = Y1 + T*(Y2-Y1)
+   10 CONTINUE
+      RETURN
+      END

@@ -1,0 +1,13 @@
+C     ELPS - ellipse/arc frame wrapper (MADLEN ELPS).
+C     Prepares *GFBFTR* frame values, moves to the arc start, calls
+C     ELIPS and moves to the arc end [I].
+      SUBROUTINE ELPS(R, A)
+      REAL R, A, X, Y
+      COMMON /GFBFTR/ GFBFTR(2)
+      X = GFBFTR(1) + R*COS(A)
+      Y = GFBFTR(2) + R*SIN(A)
+      CALL MOVE(GFBFTR(1), GFBFTR(2))
+      CALL ELIPS(X, Y)
+      CALL MOVE(X, Y)
+      RETURN
+      END

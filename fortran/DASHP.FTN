@@ -1,0 +1,35 @@
+      SUBROUTINE DASHP(X1, Y1, X2, Y2, DASH, GAP)
+C     Draws dashed (broken) lines between two points (DASHP.mad).
+C     The original reads the start from *GFBFTR* and the dash/gap
+C     parameters with RDB, obtains the direction with ANGLER/SQRT
+C     and emits strokes with MOVE / MOVA [I].
+      COMMON /GFBFTR/ GFBFTR(2)
+      REAL X1, Y1, X2, Y2, DASH, GAP
+      REAL DX, DY, R, U, T, ST, X, Y
+      EXTERNAL MOVE, MOVA
+      DX = X2 - X1
+      DY = Y2 - Y1
+      R = SQRT(DX*DX + DY*DY)
+      IF (R .EQ. 0.0) GOTO 30
+      U = DASH + GAP
+      IF (U .LE. 0.0) GOTO 30
+      ST = DASH / R
+      T = 0.0
+      X = X1
+      Y = Y1
+      CALL MOVE(X, Y)
+   10 CONTINUE
+      IF (T .GE. 1.0) GOTO 30
+      T = T + ST
+      IF (T .GT. 1.0) T = 1.0
+      X = X1 + T*DX
+      Y = Y1 + T*DY
+      CALL MOVA(X, Y)
+      T = T + GAP / R
+      IF (T .GT. 1.0) GOTO 30
+      X = X1 + T*DX
+      Y = Y1 + T*DY
+      CALL MOVE(X, Y)
+      GOTO 10
+   30 RETURN
+      END

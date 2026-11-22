@@ -4,8 +4,9 @@ C     In the machine version it interprets the function code in R4 and
 C     issues MADLEN extops: *50,1206B and *50,115B/*50,116B form DISPAK
 C     tasks (Э50) and *72 performs the external-memory exchange (Э70).
 C     In this port these extops are CALL EXC50 / CALL EXC72 from
-C     SUPPORT.FTN. Register save/restore and bit-level address arithmetic
-C     are only approximated [I].
+C     SUPPORT.FTN; EXC70 (also in SUPPORT.FTN) models the Э70 exchange
+C     used by the E70 wrapper. Register save/restore and the bit-level
+C     address arithmetic are only approximated [I].
       INTEGER K, IC, IA, IB
       INTEGER M32, M1024, M258048, M32767, M65535
 C     40B, 2000B, 770000B, 77777B, 177777B.

@@ -1,0 +1,46 @@
+C     ENDLEV - close a nesting level of an affine-transform description.
+C     Calls MTMPL with the 16 GFATRM words, then checks bracket-balance
+C     counters. On error prints "НЕВЕРНОЕ ЧИСЛО СКОБОК" and stops.
+C     MTMPL, FT*571, FT*003, STOP* are MADLEN SUBP points.
+C [I] the counter offsets follow GAL/GAM/GAN equates in the listing.
+      SUBROUTINE ENDLEV()
+      REAL QQ1, QQ2, QQ3, QQ4, QQ5, QQ6, QQ7, QQ8, QQ9, QQ10, QQ11, QQ12
+      INTEGER I, J, K
+      COMMON /GFATRM/ GFATRM(115)
+      CONTINUE
+      J = GFATRM(104)
+      DO 10 I = 1, 1000
+         K = GFATRM(1)
+         GFATRM(1) = K + J - 1
+         IF (GFATRM(1) .EQ. 0) GOTO 20
+   10 CONTINUE
+   20 CONTINUE
+      J = GFATRM(6)
+      DO 30 I = 1, 1000
+         K = GFATRM(1)
+         GFATRM(1) = K + J - 3
+         IF (GFATRM(1) .EQ. 0) GOTO 40
+   30 CONTINUE
+   40 CONTINUE
+      GFATRM(97) = GFATRM(6)
+      GFATRM(98) = GFATRM(1)
+      GFATRM(99) = GFATRM(1)
+      GFATRM(100) = GFATRM(6)
+      GFATRM(101) = GFATRM(1)
+      GFATRM(103) = GFATRM(103) - 1
+      IF (GFATRM(103) .NE. 0) RETURN
+      PRINT 100
+  100 FORMAT(' NEVERNOE CHISLO SKOBOK')
+      CONTINUE
+      CONTINUE
+      CALL EXC74(4)
+      RETURN
+      ENTRY FT571()
+      RETURN
+      ENTRY FT003()
+      RETURN
+      ENTRY STOPX()
+      RETURN
+      ENTRY MTMPL(QQ1,QQ2,QQ3,QQ4,QQ5,QQ6,QQ7,QQ8,QQ9,QQ10,QQ11,QQ12)
+      RETURN
+      END

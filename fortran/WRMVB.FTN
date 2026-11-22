@@ -2,16 +2,12 @@ C     WRMVB - form a vector element from the current point and
 C     coordinate deltas, then hand it to WRMVE.
       SUBROUTINE WRMVB(DX, DY, U, V)
       REAL DX, DY, U, V, X1, X2, Y1, Y2
+      REAL E1, E2, E3, E4, EU, EV
       COMMON /GFBFTR/ GFBFTR(2)
-      EXTERNAL WRMVE
       X1 = GFBFTR(1)
       Y1 = GFBFTR(2)
       X2 = X1 + DX
       Y2 = Y1 + DY
-      CALL WRMVE(X1, X2, Y1, Y2, U, V)
-      RETURN
-      ENTRY WRMVE(X1, X2, Y1, Y2, U, V)
-C [I] WRMVE body (field assembly) belongs to the WR* element family.
       U = X2 - X1
       V = Y2 - Y1
       RETURN

@@ -1,41 +1,17 @@
 C     SETK - catalog chain dispatcher (GDISC -> RCATAL -> SETEND
-C     -> WCATAL -> FDISC). All five steps are MADLEN SUBP entries.
-C [I] The original passes argument words through BSS cells *0032B..
-C     and calls the steps as subroutines; here each step is an
-C     in-line branch selected by MODE, avoiding recursion on ENTRY.
+C     -> WCATAL -> FDISC). In SETK.mad the five steps are declared
+C     as SUBP entries of this module, but each also exists as a
+C     separate module/entry in other batches, so calling them as
+C     external subroutines avoids duplicate global symbols.
+C [I] The original passes one argument word through BSS *0032B..;
+C     here a single integer word IC is passed to every step.
       SUBROUTINE SETK
-      INTEGER MODE
-      MODE = 1
-      GOTO 100
-      ENTRY FDISC
-      MODE = 6
-      GOTO 100
-      ENTRY WCATAL
-      MODE = 5
-      GOTO 100
-      ENTRY SETEND
-      MODE = 4
-      GOTO 100
-      ENTRY RCATAL
-      MODE = 3
-      GOTO 100
-      ENTRY GDISC
-      MODE = 2
-  100 CONTINUE
-      IF (MODE .EQ. 2 .OR. MODE .EQ. 1) THEN
-         CALL EXC50(1)
-      END IF
-      IF (MODE .EQ. 3 .OR. MODE .EQ. 1) THEN
-         CALL EXC50(2)
-      END IF
-      IF (MODE .EQ. 4 .OR. MODE .EQ. 1) THEN
-         CALL EXC50(3)
-      END IF
-      IF (MODE .EQ. 5 .OR. MODE .EQ. 1) THEN
-         CALL EXC50(4)
-      END IF
-      IF (MODE .EQ. 6 .OR. MODE .EQ. 1) THEN
-         CALL EXC50(5)
-      END IF
+      INTEGER IC
+      IC = 0
+      CALL GDISC(IC)
+      CALL RCATAL(IC)
+      CALL SETEND(IC,IC)
+      CALL WCATAL(IC)
+      CALL FDISC(IC)
       RETURN
       END

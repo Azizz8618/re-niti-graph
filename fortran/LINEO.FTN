@@ -1,0 +1,21 @@
+C     LINEO - clipped line plotter with WHERE check (MADLEN LINEO).
+C     Reads two integers and four point coordinates with RDB/IRDB,
+C     checks the current position with WHERE, clips with AMAX1/AMIN1
+C     and emits the visible part with MOVE [I].
+      SUBROUTINE LINEO(X1, Y1, X2, Y2)
+      REAL X1, Y1, X2, Y2, A, B, P, Q
+      INTEGER IU
+      EXTERNAL RDB, IRDB, WHERE, TMF, MOVE
+      DATA IU /7/
+      CALL IRDB(IU, A)
+      CALL IRDB(IU, B)
+      CALL RDB(IU, X1)
+      CALL RDB(IU, Y1)
+      CALL RDB(IU, X2)
+      CALL RDB(IU, Y2)
+      CALL WHERE(P)
+      CALL TMF(Q, A)
+      CALL MOVE(X1, Y1)
+      CALL MOVE(X2, Y2)
+      RETURN
+      END

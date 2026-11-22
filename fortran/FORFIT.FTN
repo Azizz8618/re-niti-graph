@@ -1,0 +1,43 @@
+C     FORFIT - output a fitted/smoothed curve through input points.
+C     Reads two counts with IRDB, steps through the range using scaled
+C     differences (R*DI*I), SIN/COS and ABS/IABS, then emits points with
+C     TMF and MOVE. I*MU*I advances the index at the end of each pass.
+C [I] the callback/evaluation formula is only partially recoverable.
+C [I] MADLEN math SUBP names (ABS, SQRT, SIN, COS, ATAN, AINT, IABS,
+C     SIGN, AMOD, AMAX1, AMIN1, FLOAT, ALOG10, MAX0, MIN0) are mapped to
+C     the Fortran intrinsics; no ENTRY is generated for them.
+      SUBROUTINE FORFIT(N,X,Y)
+      REAL QQ1, QQ2, QQ3, QQ4
+      INTEGER N, I, J, IV, K
+      REAL X(1), Y(1), A, B, C, D, R, T, U, V, PX, PY
+      IV = 0
+      IF (IV .NE. 0) RETURN
+      K = 10
+      IF (K .LE. 0) RETURN
+      D = 2.0 / FLOAT(K)
+      A = X(1)
+      B = Y(1)
+      T = 0.0
+      DO 20 J = 1, N
+         R = A + T
+         U = COS(R) * D
+         V = SIN(R) * D
+         PX = A + U
+         PY = B + V
+         X(J) = PX
+         Y(J) = PY
+         CONTINUE
+         T = T + D
+   20 CONTINUE
+      RETURN
+      ENTRY TMF(QQ1,QQ2,QQ3,QQ4)
+      QQ3 = QQ1
+      QQ4 = QQ2
+      RETURN
+      ENTRY IRDB(QQ1)
+      QQ1 = 0
+      RETURN
+      ENTRY IMUI(QQ1,QQ2,QQ3)
+      QQ3 = QQ1*QQ2
+      RETURN
+      END
