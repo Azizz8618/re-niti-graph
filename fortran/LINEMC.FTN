@@ -1,11 +1,29 @@
 C     LINEMC - clipped polyline plotter with point markers.
       SUBROUTINE LINEMC(N, X, Y, IMARK)
+      REAL Q0
+      REAL Q1
+      REAL Q2
+      REAL Q3
+      REAL Q4
+      REAL Q5
+      INTEGER Q6
+      INTEGER Q7
+      REAL Q8
+      REAL Q9
+      INTEGER Q10
+      REAL Q11
+      INTEGER Q12
+      REAL Q13
       INTEGER N, IMARK
       REAL X(1000), Y(1000)
       REAL XL, XH, YL, YH, T
       INTEGER I
       COMMON /GFVP/ GFVP(6)
       COMMON /GFBFTR/ GFBFTR(2)
+      REAL A, B, R
+      INTEGER J
+      INTEGER K
+      REAL V
       XL = GFVP(1)
       XH = GFVP(2)
       YL = GFVP(3)
@@ -24,33 +42,25 @@ C     LINEMC - clipped polyline plotter with point markers.
          IF (IMARK .EQ. 1) CALL PLOT()
    20 CONTINUE
       RETURN
-      ENTRY AMIN1(A, B, R)
-      REAL A, B, R
-      R = A
-      IF (B .LT. R) R = B
+      ENTRY AMIN1(Q0, Q1, Q2)
+      Q2 = Q0
+      IF (Q1 .LT. Q2) Q2 = Q1
       RETURN
-      ENTRY AMAX1(A, B, R)
-      REAL A, B, R
-      R = A
-      IF (B .GT. R) R = B
+      ENTRY AMAX1(Q3, Q4, Q5)
+      Q5 = Q3
+      IF (Q4 .GT. Q5) Q5 = Q4
       RETURN
-      ENTRY IABS(I, J)
-      INTEGER I, J
-      J = I
-      IF (J .LT. 0) J = -J
+      ENTRY IABS(Q6, Q7)
+      Q7 = Q6
+      IF (Q7 .LT. 0) Q7 = -Q7
       RETURN
-      ENTRY MOVE(A, B)
-      REAL A, B
+      ENTRY MOVE(Q8, Q9)
       CALL PLOT()
       RETURN
-      ENTRY RDB(K, V)
-      INTEGER K
-      REAL V
-      V = GFBFTR(K)
+      ENTRY RDB(Q10, Q11)
+      Q11 = GFBFTR(Q10)
       RETURN
-      ENTRY IRDB(K, V)
-      INTEGER K
-      REAL V
-      V = FLOAT(K)
+      ENTRY IRDB(Q12, Q13)
+      Q13 = FLOAT(Q12)
       RETURN
       END

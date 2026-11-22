@@ -1,22 +1,23 @@
       SUBROUTINE WCATWO(NAME,K)
+      INTEGER Q0
+      INTEGER NAME(1000), K, I
+      INTEGER BUF(8)
+      EXTERNAL ISOTEX, CLEAZN, RZONE
 C     Write catalog entry version TWO: convert the ISO/TEXT name,
 C     read the target zone, rewrite it and clear the scratch zone.
 C [I] Heavy bit packing with AAX/AOX/ARX/ASN is replaced by field copy;
 C     WZON has no body in DMS, so it is an entry here; RZONE is
 C     defined in RCATAL.
-      INTEGER NAME(1000), K, I
-      INTEGER BUF(8)
-      EXTERNAL ISOTEX, CLEAZN, RZONE
       DO 10 I = 1, 8
          BUF(I) = 0
 10    CONTINUE
       CALL ISOTEX(NAME,BUF)
       CALL RZONE(BUF(1))
       BUF(2) = K
-      CALL WZON(BUF)
+      CALL EXC70(BUF(1))
       CALL CLEAZN(BUF,8)
       RETURN
-      ENTRY WZON(M)
-      CALL EXC70(M)
+      ENTRY WZON(Q0)
+      CALL EXC70(Q0)
       RETURN
       END

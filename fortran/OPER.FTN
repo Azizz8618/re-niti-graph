@@ -1,14 +1,10 @@
       SUBROUTINE OPER(IE, IV)
+      INTEGER IE, IV
 C     Diagnostics / error report (OPER.mad, 161 commands).
 C     The original formats "ERROR DETECTED IN ROUTINE OPER/)" through
 C     FT*571 and FT*003 with numeric conversion of several parameters.
 C     FT*571 / FT*003 are external error printers of library 22; here
 C     an equivalent PRINT with the ISO text from *0161B is used [I].
-      INTEGER IE, IV
-      INTEGER ITXT(9)
-      DATA ITXT /
-     1  6H(/9HLR , 6HP1 LE , 6H1/32HE, 6HRROR D, 6HETECTE,
-     2  6HD IN R, 6HOUTINE, 6H   OPE, 6HR/)  /
       PRINT 9001, IE, IV
  9001 FORMAT(' ERROR DETECTED IN ROUTINE OPER/)', 2I8)
       RETURN

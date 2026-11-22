@@ -1,6 +1,9 @@
 C     SHEAR - apply a shear to the 4x4 homogeneous matrix *GFMATR*.
 C     Identity is built with HCUNIT, then composed via HCMULT.
       SUBROUTINE SHEAR(SHX, SHY)
+      INTEGER Q0
+      INTEGER Q1
+      INTEGER Q2
       REAL SHX, SHY
       COMMON /GFMATR/ GFMATR(34)
       REAL T(16), H(16)
@@ -20,9 +23,8 @@ C     Identity is built with HCUNIT, then composed via HCMULT.
          GFMATR(I) = T(I)
    30 CONTINUE
       RETURN
-      ENTRY IMUI(I, J, K)
-      INTEGER I, J, K
-      K = I*J
+      ENTRY IMUI(Q0, Q1, Q2)
+      Q2 = Q0*Q1
       RETURN
       END
       SUBROUTINE SHUNIT(A)

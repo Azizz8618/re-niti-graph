@@ -1,9 +1,22 @@
 C     RDACD - compact circular-arc record reader (variant D).
 C     Produces six words from the *GFGEL* element record.
       SUBROUTINE RDACD(MODE, ANG, OUT)
+      REAL Q0
+      INTEGER Q1
+      REAL Q2
+      REAL Q3
+      REAL Q4
+      REAL Q5
+      REAL Q6
+      REAL Q7
       REAL MODE, ANG, OUT(6)
       COMMON /GFGEL/ GFGEL(28)
       REAL R, SA, CA, X0, Y0
+      REAL A
+      INTEGER K
+      REAL X
+      REAL C
+      REAL S
 C [I] The mode word in GFGEL(9) selects the scaled/absolute branch.
       X0 = GFGEL(2)
       Y0 = GFGEL(3)
@@ -17,23 +30,17 @@ C [I] The mode word in GFGEL(9) selects the scaled/absolute branch.
       OUT(5) = Y0 + R*SA
       OUT(6) = GFGEL(7) - GFGEL(6)
       RETURN
-      ENTRY RSTI(A, K, R)
-      REAL A, R
-      INTEGER K
-      R = A*FLOAT(K)
+      ENTRY RSTI(Q0, Q1, Q2)
+      Q2 = Q0*FLOAT(Q1)
       RETURN
-      ENTRY ABS(X)
-      IF (X .LT. 0.0) X = -X
+      ENTRY ABS(Q3)
+      IF (Q3 .LT. 0.0) Q3 = -Q3
       RETURN
-      ENTRY SIN(X, R)
-      REAL X, R
-      REAL C
-      CALL RDADG(X, R, C)
+      ENTRY SIN(Q4, Q5)
+      CALL RDADG(Q4, Q5, C)
       RETURN
-      ENTRY COS(X, R)
-      REAL X, R
-      REAL S
-      CALL RDADG(X, S, R)
+      ENTRY COS(Q6, Q7)
+      CALL RDADG(Q6, S, Q7)
       RETURN
       END
       SUBROUTINE RDADG(A, S, C)

@@ -1,11 +1,28 @@
 C     CIRTAL - arc generator variant with an extra *GFGEL* field.
 C     Uses the third element field (GAM/3) in the coordinate formula.
       SUBROUTINE CIRTAL(XC, YC, A, B, G, A0, A1, N, X, Y)
+      REAL Q0
+      INTEGER Q1
+      REAL Q2
+      REAL Q3
+      REAL Q4
+      REAL Q5
+      REAL Q6
+      REAL Q7
+      REAL Q8
+      REAL Q9
+      REAL Q10
+      REAL Q11
+      REAL Q12
+      REAL Q13
       REAL XC, YC, A, B, G, A0, A1, X(1000), Y(1000)
       INTEGER N
       REAL T, S, C, D, DA
       INTEGER I
       COMMON /GFVP/ GFVP(6)
+      REAL U, R
+      INTEGER K
+      REAL V
       IF (N .LE. 0) RETURN
       DA = (A1 - A0)/FLOAT(N)
       T = A0
@@ -22,36 +39,27 @@ C     Uses the third element field (GAM/3) in the coordinate formula.
    10    T = T + DA
    20 CONTINUE
       RETURN
-      ENTRY RSTI(U, K, R)
-      REAL U, R
-      INTEGER K
-      R = U*FLOAT(K)
+      ENTRY RSTI(Q0, Q1, Q2)
+      Q2 = Q0*FLOAT(Q1)
       RETURN
-      ENTRY ABS(U)
-      IF (U .LT. 0.0) U = -U
+      ENTRY ABS(Q3)
+      IF (Q3 .LT. 0.0) Q3 = -Q3
       RETURN
-      ENTRY SQRT(U)
-      REAL U
-      IF (U .GT. 0.0) U = U**0.5
+      ENTRY SQRT(Q4)
+      IF (Q4 .GT. 0.0) Q4 = Q4**0.5
       RETURN
-      ENTRY ATAN(U, R)
-      REAL U, R
-      R = ATAN2(U, 1.0)
+      ENTRY ATAN(Q5, Q6)
+      Q6 = ATAN2(Q5, 1.0)
       RETURN
-      ENTRY SIGN(U, V, R)
-      REAL U, V, R
-      R = U
-      IF (V .LT. 0.0) R = -R
+      ENTRY SIGN(Q7, Q8, Q9)
+      Q9 = Q7
+      IF (Q8 .LT. 0.0) Q9 = -Q9
       RETURN
-      ENTRY SIN(U, R)
-      REAL U, R
-      REAL C
-      CALL CITL(U, R, C)
+      ENTRY SIN(Q10, Q11)
+      CALL CITL(Q10, Q11, C)
       RETURN
-      ENTRY COS(U, R)
-      REAL U, R
-      REAL S
-      CALL CITL(U, S, R)
+      ENTRY COS(Q12, Q13)
+      CALL CITL(Q12, S, Q13)
       RETURN
       END
       SUBROUTINE CITL(A, S, C)

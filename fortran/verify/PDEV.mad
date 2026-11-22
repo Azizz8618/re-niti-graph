@@ -1,0 +1,7 @@
+ PDEV: ,NАМЕ,PDEV
+	1, VTM,
+ BUF:  ,BSS,64
+	,*50,1210B
+	,*50,1211B
+	13, UJ,
+	,END,

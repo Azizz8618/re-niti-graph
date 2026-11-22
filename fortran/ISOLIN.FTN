@@ -2,12 +2,18 @@ C     ISOLIN - isoline (contour) generator over a rectangular grid.
 C     Marches cells, obtains edge crossings through XPOL/YPOL and
 C     emits segments with LINEO; LOOK maintains the cell record.
       SUBROUTINE ISOLIN(NX, NY, Z, LEV)
+      INTEGER Q0
+      INTEGER Q1
+      INTEGER Q2
+      INTEGER Q3
+      INTEGER Q4
       INTEGER NX, NY
       REAL Z(1000), LEV
       REAL V1, V2, V3, V4, X1, Y1, X2, Y2, T
       INTEGER I, J, NSEG
       COMMON /GFCELL/ GFCELL(9)
       COMMON /GFISOL/ GFISOL(2)
+      INTEGER K
       IF (NX .LT. 2 .OR. NY .LT. 2) RETURN
       GFISOL(1) = GFISOL(1) + 1
       NSEG = 0
@@ -32,14 +38,12 @@ C     emits segments with LINEO; LOOK maintains the cell record.
    30 CONTINUE
       GFISOL(2) = FLOAT(NSEG)
       RETURN
-      ENTRY IABS(I, J)
-      INTEGER I, J
-      J = I
-      IF (J .LT. 0) J = -J
+      ENTRY IABS(Q0, Q1)
+      Q1 = Q0
+      IF (Q1 .LT. 0) Q1 = -Q1
       RETURN
-      ENTRY IMUI(I, J, K)
-      INTEGER I, J, K
-      K = I*J
+      ENTRY IMUI(Q2, Q3, Q4)
+      Q4 = Q2*Q3
       RETURN
       END
       REAL FUNCTION ISOFR(A, B, L)

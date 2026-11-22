@@ -1,10 +1,4 @@
       SUBROUTINE DRACON(LEVEL, NSTEP, IER)
-C     Draws contour lines by root finding and inside/outside tests
-C     (DRACON.mad, 650 commands). Reads the current position with WHERE,
-C     computes step/index values with MOD, finds three roots with
-C     FNROOT, tests INSIDE, emits with TMF/R*ST*I and updates the
-C     geometry tables *DRFN*, *DRINFN* and *DRIN* [I]. The three
-C     FNROOT call sites correspond to the three contour branches.
       COMMON /DRITP/ DRITP(1)
       COMMON /DRINFN/ DRINFN(3)
       COMMON /DRFN/ DRFN(3)
@@ -12,6 +6,12 @@ C     FNROOT call sites correspond to the three contour branches.
       INTEGER NSTEP, IER, I, K, INS
       REAL LEVEL, X, Y, T, R, DX, DY, X1, Y1
       EXTERNAL INSIDE, FNROOT, WHERE, TMF
+C     Draws contour lines by root finding and inside/outside tests
+C     (DRACON.mad, 650 commands). Reads the current position with WHERE,
+C     computes step/index values with MOD, finds three roots with
+C     FNROOT, tests INSIDE, emits with TMF/R*ST*I and updates the
+C     geometry tables *DRFN*, *DRINFN* and *DRIN* [I]. The three
+C     FNROOT call sites correspond to the three contour branches.
       IER = 0
       K = 0
       CALL WHERE(X, Y)
@@ -30,6 +30,6 @@ C     FNROOT call sites correspond to the three contour branches.
          DRIN(3) = LEVEL
          DRFN(1) = LEVEL
          DRINFN(1) = FLOAT(NSTEP)
-   100 CONTINUE
+  100 CONTINUE
       RETURN
       END

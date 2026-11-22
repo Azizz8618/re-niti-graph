@@ -1,6 +1,9 @@
 C     BCD - binary/decimal conversion for numeric labels.
 C     Two paths: integer -> decimal digits, decimal digits -> integer.
       SUBROUTINE BCD(I, ND, IDIG)
+      INTEGER Q0
+      INTEGER Q1
+      INTEGER Q2
       INTEGER I, ND, IDIG(1000)
       INTEGER J, M, K
       M = I
@@ -9,11 +12,10 @@ C     Two paths: integer -> decimal digits, decimal digits -> integer.
          M = M/10
    10 CONTINUE
       RETURN
-      ENTRY DCB(IDIG, ND, I)
-      INTEGER IDIG(1000), ND, I, J
-      I = 0
-      DO 20 J = 1, ND
-         I = 10*I + IDIG(J)
+      ENTRY DCB(Q0, Q1, Q2)
+      Q2 = 0
+      DO 20 J = 1, Q1
+         Q2 = 10*Q2 + Q0(J)
    20 CONTINUE
       RETURN
       END

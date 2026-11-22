@@ -1,0 +1,42 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name NITI01
+*call yesmemory
+*perso:602300
+*perso:602400,cont
+*perso:602410,cont
+*perso:602420,cont
+*perso:602430,cont
+*perso:602440,cont
+*perso:602450,cont
+*perso:602460,cont
+*perso:602470,cont
+*perso:602500,cont
+*perso:602510,cont
+*perso:602520,cont
+*perso:602530,cont
+*perso:602540,cont
+*perso:602550,cont
+*perso:602560,cont
+*perso:602570,cont
+*perso:602600,cont
+*perso:602610,cont
+*perso:602620,cont
+*perso:602630,cont
+*perso:602640,cont
+*TRANS:FOREX3*,,411550
+      PROGRAM MAIN
+      COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
+      CALL PAGE()
+      CALL MOVE(10.0, 10.0)
+      CALL PLOT()
+      CALL ENDPG()
+      PRINT 900, NPLOT
+  900 FORMAT(' NPLOT =', I8)
+      END
+*execute
+*end file
+``````
+еконец

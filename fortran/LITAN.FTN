@@ -1,10 +1,21 @@
 C     LITAN - tangent lines from a point to a circle from *GFGEL*.
       SUBROUTINE LITAN(XP, YP, XC, YC, R, X1, Y1, X2, Y2, IOK)
+      REAL Q0
+      REAL Q1
+      REAL Q2
+      REAL Q3
+      REAL Q4
+      REAL Q5
+      REAL Q6
+      REAL Q7
       REAL XP, YP, XC, YC, R, X1, Y1, X2, Y2
       INTEGER IOK
       REAL DX, DY, D2, L, T, U, V
       COMMON /GFBFTR/ GFBFTR(2)
       COMMON /GFGEL/ GFGEL(28)
+      REAL X
+      REAL C
+      REAL S
       DX = XP - XC
       DY = YP - YC
       D2 = DX*DX + DY*DY
@@ -19,27 +30,20 @@ C     LITAN - tangent lines from a point to a circle from *GFGEL*.
       Y2 = YC + T*DY - U*DX
       IOK = 1
       RETURN
-      ENTRY SQRT(X)
-      REAL X
-      IF (X .GT. 0.0) X = X**0.5
+      ENTRY SQRT(Q0)
+      IF (Q0 .GT. 0.0) Q0 = Q0**0.5
       RETURN
-      ENTRY ATAN(X, R)
-      REAL X, R
-      R = ATAN2(X, 1.0)
+      ENTRY ATAN(Q1, Q2)
+      Q2 = ATAN2(Q1, 1.0)
       RETURN
-      ENTRY ABS(X)
-      REAL X
-      IF (X .LT. 0.0) X = -X
+      ENTRY ABS(Q3)
+      IF (Q3 .LT. 0.0) Q3 = -Q3
       RETURN
-      ENTRY SIN(X, R)
-      REAL X, R
-      REAL C
-      CALL LTCTG(X, R, C)
+      ENTRY SIN(Q4, Q5)
+      CALL LTCTG(Q4, Q5, C)
       RETURN
-      ENTRY COS(X, R)
-      REAL X, R
-      REAL S
-      CALL LTCTG(X, S, R)
+      ENTRY COS(Q6, Q7)
+      CALL LTCTG(Q6, S, Q7)
       RETURN
       END
       SUBROUTINE LTCTG(A, S, C)

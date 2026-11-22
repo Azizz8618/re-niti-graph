@@ -1,10 +1,25 @@
 C     ARCIA - principal arc interpolator; emits points with MOVE.
       SUBROUTINE ARCIA(X0, Y0, A0, DA, N)
+      REAL Q0
+      REAL Q1
+      INTEGER Q2
+      REAL Q3
+      REAL Q4
+      REAL Q5
+      INTEGER Q6
+      REAL Q7
+      REAL Q8
+      REAL Q9
+      REAL Q10
+      REAL Q11
       REAL X0, Y0, A0, DA
       INTEGER N
       REAL A, S, C, R, X, Y
       INTEGER I
       COMMON /GFBFTR/ GFBFTR(2)
+      REAL B
+      INTEGER K
+      REAL V
       R = GFBFTR(1)
       IF (R .LT. 0.0) R = -R
       A = A0
@@ -16,33 +31,23 @@ C     ARCIA - principal arc interpolator; emits points with MOVE.
          A = A + DA
    20 CONTINUE
       RETURN
-      ENTRY MOVE(A, B)
-      REAL A, B
+      ENTRY MOVE(Q0, Q1)
       CALL PLOT()
       RETURN
-      ENTRY RDB(K, V)
-      INTEGER K
-      REAL V
-      V = GFBFTR(K)
+      ENTRY RDB(Q2, Q3)
+      Q3 = GFBFTR(Q2)
       RETURN
-      ENTRY ABS(X)
-      REAL X
-      IF (X .LT. 0.0) X = -X
+      ENTRY ABS(Q4)
+      IF (Q4 .LT. 0.0) Q4 = -Q4
       RETURN
-      ENTRY RSTI(A, K, R)
-      REAL A, R
-      INTEGER K
-      R = A*FLOAT(K)
+      ENTRY RSTI(Q5, Q6, Q7)
+      Q7 = Q5*FLOAT(Q6)
       RETURN
-      ENTRY SIN(X, R)
-      REAL X, R
-      REAL C
-      CALL ARCTG(X, R, C)
+      ENTRY SIN(Q8, Q9)
+      CALL ARCTG(Q8, Q9, C)
       RETURN
-      ENTRY COS(X, R)
-      REAL X, R
-      REAL S
-      CALL ARCTG(X, S, R)
+      ENTRY COS(Q10, Q11)
+      CALL ARCTG(Q10, S, Q11)
       RETURN
       END
       SUBROUTINE ARCTG(A, S, C)

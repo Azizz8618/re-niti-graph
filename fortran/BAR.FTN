@@ -1,9 +1,19 @@
 C     BAR - draw a hatched bar/rectangle with TMF and MOVE.
       SUBROUTINE BAR(X0, Y0, X1, Y1, NH)
+      REAL Q0
+      REAL Q1
+      INTEGER Q2
+      REAL Q3
+      REAL Q4
+      INTEGER Q5
+      REAL Q6
       REAL X0, Y0, X1, Y1
       INTEGER NH
       REAL X, Y, DX, DY, T
       INTEGER I, N
+      REAL U, V
+      INTEGER K
+      REAL R
       CALL PLOT()
       CALL PLOT()
       CALL PLOT()
@@ -22,18 +32,13 @@ C     BAR - draw a hatched bar/rectangle with TMF and MOVE.
          CALL PLOT()
    20 CONTINUE
       RETURN
-      ENTRY MOVE(U, V)
-      REAL U, V
+      ENTRY MOVE(Q0, Q1)
       CALL PLOT()
       RETURN
-      ENTRY IRDB(K, V)
-      INTEGER K
-      REAL V
-      V = FLOAT(K)
+      ENTRY IRDB(Q2, Q3)
+      Q3 = FLOAT(Q2)
       RETURN
-      ENTRY RSTI(U, K, R)
-      REAL U, R
-      INTEGER K
-      R = U*FLOAT(K)
+      ENTRY RSTI(Q4, Q5, Q6)
+      Q6 = Q4*FLOAT(Q5)
       RETURN
       END

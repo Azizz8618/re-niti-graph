@@ -6,6 +6,7 @@ C     to be supplied by MOVE3 [I].
       SUBROUTINE MOVE1(N, X, Y)
       INTEGER N, I
       REAL X(1000), Y(1000), U, V, A, B
+      REAL U1, V1
       COMMON /GFATRN/ GFATRN(7)
       COMMON /GFBLAN/ GFBLAN(11)
       COMMON /GFAFTR/ GFAFTR(2)

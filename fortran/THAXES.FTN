@@ -2,12 +2,36 @@ C     THAXES - draw a 3D axis system with ticks and numeric labels.
 C     Ticks are transformed with TPF/TPF-like projection, drawn with
 C     CIRCLE/MOVE and labelled with NUMBER.
       SUBROUTINE THAXES(N, X, Y, Z, TICK)
+      REAL Q0
+      REAL Q1
+      REAL Q2
+      REAL Q3
+      REAL Q4
+      REAL Q5
+      REAL Q6
+      REAL Q7
+      REAL Q8
+      REAL Q9
+      INTEGER Q10
+      REAL Q11
+      INTEGER Q12
+      REAL Q13
+      REAL Q14
+      INTEGER Q15
+      REAL Q16
+      REAL Q17
+      INTEGER Q18
+      REAL Q19
+      REAL Q20
+      REAL Q21
       INTEGER N
       REAL X(1000), Y(1000), Z(1000), TICK
       REAL A, B, R, S, C, V, X0, Y0
       INTEGER I, J, NT
       COMMON /GFVP/ GFVP(6)
       COMMON /GFBFTR/ GFBFTR(2)
+      REAL U
+      INTEGER K
       IF (N .LE. 0 .OR. TICK .LE. 0.0) RETURN
       X0 = GFVP(1)
       Y0 = GFVP(3)
@@ -33,46 +57,33 @@ C     CIRCLE/MOVE and labelled with NUMBER.
    20    CONTINUE
    30 CONTINUE
       RETURN
-      ENTRY AMAX1(A, B, R)
-      REAL A, B, R
-      R = A
-      IF (B .GT. R) R = B
+      ENTRY AMAX1(Q0, Q1, Q2)
+      Q2 = Q0
+      IF (Q1 .GT. Q2) Q2 = Q1
       RETURN
-      ENTRY AMIN1(A, B, R)
-      REAL A, B, R
-      R = A
-      IF (B .LT. R) R = B
+      ENTRY AMIN1(Q3, Q4, Q5)
+      Q5 = Q3
+      IF (Q4 .LT. Q5) Q5 = Q4
       RETURN
-      ENTRY AMOD(A, B, R)
-      REAL A, B, R
-      R = A - INT(A/B)*B
+      ENTRY AMOD(Q6, Q7, Q8)
+      Q8 = Q6 - INT(Q6/Q7)*Q7
       RETURN
-      ENTRY ABS(U)
-      REAL U
-      IF (U .LT. 0.0) U = -U
+      ENTRY ABS(Q9)
+      IF (Q9 .LT. 0.0) Q9 = -Q9
       RETURN
-      ENTRY RDB(K, V)
-      INTEGER K
-      REAL V
-      V = GFBFTR(K)
+      ENTRY RDB(Q10, Q11)
+      Q11 = GFBFTR(Q10)
       RETURN
-      ENTRY IRDB(K, V)
-      INTEGER K
-      REAL V
-      V = FLOAT(K)
+      ENTRY IRDB(Q12, Q13)
+      Q13 = FLOAT(Q12)
       RETURN
-      ENTRY RPOI(U, K, R)
-      REAL U, R
-      INTEGER K
-      R = U**K
+      ENTRY RPOI(Q14, Q15, Q16)
+      Q16 = Q14**Q15
       RETURN
-      ENTRY RDII(U, K, R)
-      REAL U, R
-      INTEGER K
-      R = U/FLOAT(K)
+      ENTRY RDII(Q17, Q18, Q19)
+      Q19 = Q17/FLOAT(Q18)
       RETURN
-      ENTRY MOVE(U, V)
-      REAL U, V
+      ENTRY MOVE(Q20, Q21)
       CALL PLOT()
       RETURN
       END

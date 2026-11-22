@@ -1,6 +1,11 @@
 C     LESQ - least-squares polynomial fit: normal equations solved
 C     by symmetric matrix inversion (SMINV equivalent).
       SUBROUTINE LESQ(X, Y, N, M, C)
+      INTEGER Q0
+      INTEGER Q1
+      INTEGER Q2
+      INTEGER Q3
+      INTEGER Q4
       INTEGER N, M
       REAL X(1000), Y(1000), C(1000)
       REAL A(11,11), B(11), P, Q
@@ -21,14 +26,12 @@ C     by symmetric matrix inversion (SMINV equivalent).
    30 CONTINUE
       CALL LSSOLV(A, B, C, MX)
       RETURN
-      ENTRY IABS(I, J)
-      INTEGER I, J
-      J = I
-      IF (J .LT. 0) J = -J
+      ENTRY IABS(Q0, Q1)
+      Q1 = Q0
+      IF (Q1 .LT. 0) Q1 = -Q1
       RETURN
-      ENTRY IMUI(I, J, K)
-      INTEGER I, J, K
-      K = I*J
+      ENTRY IMUI(Q2, Q3, Q4)
+      Q4 = Q2*Q3
       RETURN
       END
       SUBROUTINE LSSOLV(A, B, C, N)

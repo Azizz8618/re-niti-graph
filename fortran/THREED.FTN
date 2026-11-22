@@ -1,11 +1,4 @@
       SUBROUTINE THREED(NU, NV, IER)
-C     Three-dimensional surface plotting with hidden-line removal
-C     (THREED.mad, 774 commands). Reads *GFMATR*, *GFCRD*, *GFSUR*,
-C     *GFLIM* and *GFVIEW*; computes grid indices with IABS/MAX0/ISIGN,
-C     transforms with HCNCRD/HCSURF and tests visibility with HCIND,
-C     emitting only the visible strokes [I]. The original writes the
-C     strokes through R*ST*I / I*MU*I (record-start and index helpers);
-C     here the *GFSUR* / *GFCRD* arrays are updated directly.
       COMMON /GFMATR/ GFMATR(34)
       COMMON /GFCRD/ GFCRD(3)
       COMMON /GFSUR/ GFSUR(4)
@@ -15,6 +8,13 @@ C     here the *GFSUR* / *GFCRD* arrays are updated directly.
       REAL X, Y, Z, R, T
       REAL XS(4), YS(4), ZS(4)
       EXTERNAL HCNCRD, HCSURF, HCIND
+C     Three-dimensional surface plotting with hidden-line removal
+C     (THREED.mad, 774 commands). Reads *GFMATR*, *GFCRD*, *GFSUR*,
+C     *GFLIM* and *GFVIEW*; computes grid indices with IABS/MAX0/ISIGN,
+C     transforms with HCNCRD/HCSURF and tests visibility with HCIND,
+C     emitting only the visible strokes [I]. The original writes the
+C     strokes through R*ST*I / I*MU*I (record-start and index helpers);
+C     here the *GFSUR* / *GFCRD* arrays are updated directly.
       IER = 0
       IF (NU .LT. 2 .OR. NV .LT. 2) GOTO 90
       DO 80 I = 1, NU-1
@@ -27,7 +27,7 @@ C     here the *GFSUR* / *GFCRD* arrays are updated directly.
             CALL HCNCRD(X, Y, Z, XS(1), YS(1), ZS(1))
             R = SQRT(XS(1)**2 + YS(1)**2 + ZS(1)**2)
             IF (R .EQ. 0.0) GOTO 70
-            T = ISIGN(1.0, ZS(1))
+            T = SIGN(1.0, ZS(1))
             XS(2) = XS(1) + T
             YS(2) = YS(1) + T
             ZS(2) = ZS(1) + T

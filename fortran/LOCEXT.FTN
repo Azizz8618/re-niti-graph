@@ -1,10 +1,21 @@
 C     LOCEXT - find and mark local extrema of a tabulated function.
       SUBROUTINE LOCEXT(N, X, Y)
+      REAL Q0
+      REAL Q1
+      INTEGER Q2
+      INTEGER Q3
+      INTEGER Q4
+      REAL Q5
+      INTEGER Q6
+      REAL Q7
       INTEGER N
       REAL X(1000), Y(1000)
       REAL D1, D2
       INTEGER I
       COMMON /GFLMN/ GFLMN(4)
+      REAL A, B
+      INTEGER J, K
+      REAL R
       DO 20 I = 2, N-1
          D1 = Y(I) - Y(I-1)
          D2 = Y(I+1) - Y(I)
@@ -13,17 +24,13 @@ C     LOCEXT - find and mark local extrema of a tabulated function.
          CALL PLOT()
    20 CONTINUE
       RETURN
-      ENTRY MOVE(A, B)
-      REAL A, B
+      ENTRY MOVE(Q0, Q1)
       CALL PLOT()
       RETURN
-      ENTRY IMUI(I, J, K)
-      INTEGER I, J, K
-      K = I*J
+      ENTRY IMUI(Q2, Q3, Q4)
+      Q4 = Q2*Q3
       RETURN
-      ENTRY RDII(A, K, R)
-      REAL A, R
-      INTEGER K
-      R = A/FLOAT(K)
+      ENTRY RDII(Q5, Q6, Q7)
+      Q7 = Q5/FLOAT(Q6)
       RETURN
       END
