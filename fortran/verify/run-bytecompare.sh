@@ -3,7 +3,7 @@
 #
 # For each module NAME:
 #   1. compile fortran/NAME.FTN with live FOREX 4.12 (*TRANS:FOREX3*,,411550)
-#      into a PERSO library (disk 2348, zone 0o2310);
+#      into a PERSO library (disk 2348, zone 0o2400);
 #   2. dump the object words;
 #   3. compare them with madlen/bin/NAME.bin using compare_dms.py.
 #
@@ -51,7 +51,7 @@ for NAME in "${MODULES[@]}"; do
         printf '*TRANS:FOREX3*,,411550\n'
         printf '*full list\n'
         cat "$SRC"
-        printf '*to perso:602310\n'
+        printf '*to perso:602400\n'
         printf '*end file\n``````\nеконец\n'
     } > "$WORK/$NAME.deck"
     ( cd "$WORK" && BESM6_PATH="$WORK" timeout 180 ./dispak -l "$NAME.deck" \
@@ -63,7 +63,7 @@ for NAME in "${MODULES[@]}"; do
         echo "FAIL $NAME: compiler error"; continue
     fi
     ( cd "$WORK" && BESM6_PATH="$WORK" besmtool dump 2348-wr \
-        --start=02310 --length=3 --to-file="$NAME.obj" > /dev/null 2>&1 )
+        --start=02400 --length=3 --to-file="$NAME.obj" > /dev/null 2>&1 )
     echo "--- $NAME ---"
     python3 "$ROOT/fortran/verify/compare_dms.py" "$ORIG" "$WORK/$NAME.obj" 2048
 done

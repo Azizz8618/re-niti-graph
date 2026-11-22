@@ -30,10 +30,11 @@
 1. Собрать PERSO-библиотеку из порта:
    - дека по образцу `fortran/verify/run-bytecompare.sh`:
      `DIS 41(2148)^`, `лен 60(2348-wr)^`, `*TRANS:FOREX3*,,411550`,
-     исходники `fortran/*.FTN`, `*to perso:602310`;
+     исходники `fortran/*.FTN`, `*to perso:602400`;
    - каталог PERSO: не более 12 пользовательских модулей на библиотеку
      (`re-forex/docs/plan-f77/08-runtime.md:135`), поэтому нужны зоны
-     `0o2310`, `0o2320`, `0o2330`, ... с картами `*perso:6023NN,cont`;
+     `0o2400`, `0o2410`, `0o2420`, ... с картами `*perso:602400`,
+     `*perso:602410,cont`, `*perso:602420,cont`;
    - проверить каталог парсером из `re-forex/tests/run-f77-runtime.sh`.
 2. Устранить остаточные ошибки трансляции, найденные `compile-all.sh`:
    - псевдо-`ENTRY` (external `SUBP`), `A(*)` (уже заменено на `(1000)`),
@@ -48,7 +49,7 @@
    *name NITI01
    *call yesmemory
    *perso:602300
-   *perso:602310,cont
+   *perso:602400,cont
    *TRANS:FOREX3*,,411550
          PROGRAM MAIN
    C      вызовы PAGE / MOVE / STRMOD / PLOT из порта

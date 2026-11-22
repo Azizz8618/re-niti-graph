@@ -51,7 +51,6 @@ C     the Fortran intrinsics; no ENTRY is generated for them.
       ENTRY GFFALS(QQ1)
       RETURN
       ENTRY IVEST(QQ1,QQ2)
-      IVEST = 1
       RETURN
       ENTRY RSTI(QQ1,QQ2)
       QQ2 = QQ1

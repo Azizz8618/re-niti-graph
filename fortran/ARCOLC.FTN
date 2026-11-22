@@ -45,7 +45,6 @@ C implemented with Fortran intrinsics, no ENTRY is generated for them.
       ENTRY MOVE(QQ1,QQ2,QQ3,QQ4)
       RETURN
       ENTRY IVEST(QQ1,QQ2)
-      IVEST = 1
       RETURN
       ENTRY IDII(QQ1,QQ2)
       QQ2 = QQ1/2
