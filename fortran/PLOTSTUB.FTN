@@ -18,10 +18,10 @@ C
 C     PLOT -> PDEV frame contract (agreed with dispak/dispak/extra.c):
 C       /PDEVXY/ holds INTEGER X/Y in 0.1 mm steps and the pen state.
 C       PDEV is MADLEN and cannot resolve FOREX COMMON symbols by name,
-C       so its absolute addresses are hard-coded in PDEV.mad, the same way
-C       re-forex docs/plan-f77-full/33-arfa-perso-lib.md treats /FILMAP/.
-C       PDEV copies the three words into the 64-word frame at absolute
-C       0o50, which is where ЭК 01211 reads the frame from.
+C       so PLOT passes the frame address as its single argument instead of
+C       relying on a fixed address: PDEV reads it from the accumulator and
+C       no longer depends on how the linker lays out this deck. The frame
+C       stays in /PDEVXY/ and still holds 64 words.
       SUBROUTINE PLOT()
       EXTERNAL PDEV
       COMMON /TRACE/ NEXC50, NEXC70, NEXC72, NEXC74, NPLOT
@@ -38,7 +38,7 @@ C     Words 4..64 must be cleared explicitly: MADLEN BSS is not zeroed.
       FRAME(1) = INT(GFAFTR(1))
       FRAME(2) = INT(GFAFTR(2))
       FRAME(3) = 1
-      CALL PDEV()
+      CALL PDEV(FRAME(1))
       RETURN
       END
 

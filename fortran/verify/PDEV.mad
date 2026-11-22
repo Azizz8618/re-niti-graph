@@ -6,19 +6,24 @@ C       word 1 = Y in steps of 0.1 mm, octal integer
 C       word 2 = pen state (0 = up, 1 = down)
 C       words 3..63 = 0
 C
-C     FORTRAN -> MADLEN calling convention: PLOT() fills the 64-word frame
-C     in COMMON /PDEVXY/ and calls PDEV with no arguments.  MADLEN cannot
-C     resolve FOREX COMMON symbols by name (re-forex
-C     docs/plan-f77-full/33-arfa-perso-lib.md, section 1 item 4), so the
-C     absolute address of that COMMON is hard-coded as 0o3147 in XTA below.
-C     For verify/C1-line.b6 the linker cross-reference says
-C     `*PDEVXY* C 03147`.  ЭК 01211 takes the buffer address from the
-C     accumulator, so XTA loads it before each ЭК.
+C     PLOT() fills the 64-word COMMON /PDEVXY/ and passes FRAME(1) as the
+C     only argument. On entry the accumulator holds the address of that
+C     argument (FORTRAN-to-MADLEN calling convention, see
+C     besm6.net/book/fortran-1976/03-madlen.md, section 46). MADLEN cannot
+C     resolve FOREX COMMON symbols by name, so passing the address removes
+C     the dependency on the linker layout of any particular deck.
+C     ATI saves the address in R11; STX pops the saved accumulator to keep
+C     the stack balanced; ITA reloads the address before each ЭК because
+C     ЭК 01210 may clobber the accumulator. ЭК 01211 takes the frame address
+C     from the accumulator. R11 needs no restoration (registers 8-12 and 14
+C     are freely usable by an autocode subroutine).
  PDEV: ,NAME,PDEV
        1, VTM,
-       ,XTA,=:00000000 00003147
+       ,ATI,11
+       ,STX,
+       ,ITA,11
        ,*50,1210B
-       ,XTA,=:00000000 00003147
+       ,ITA,11
        ,*50,1211B
        13, UJ,
        ,END,

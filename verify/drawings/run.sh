@@ -1,12 +1,10 @@
 #!/bin/bash
 # Test drawings for the NITI/BENSON plotter stand.
-# Each deck is a byte-exact copy of verify/C1-line.b6 with only the two
-# MOVE coordinate constants changed, so the hard-coded /PDEVXY/ address
-# (0o3147 in fortran/verify/PDEV.mad) stays valid. FOREX deduplicates the
-# four coordinate constants: the pool is 4 + 2*Ndistinct octal words, so
-# exactly TWO distinct values are required to keep KOHCTAHT=00010 / addr
-# 0o3147. Three or four distinct values move /PDEVXY/ and the frame decodes
-# to (0,0), giving an empty SVG.
+# PLOTSTUB passes FRAME(1) to PDEV, so /PDEVXY/ may sit at any address the
+# FOREX linker picks: decks can use any number of distinct coordinates and
+# any number of MOVE/PLOT pairs. The /PDEVXY/ address is reported for
+# information only; the pass criterion is the rendered result: a non-empty
+# benson.out and a benson.svg with at least one <path>.
 # Every deck is run twice; benson.out/benson.svg SHA must match between rounds.
 # Overrides: DISPAK_BIN, NITI_2348, TMPDIR, KEEP_WORK, REF2148, TIMEOUT, VERBOSE.
 # All temporary files live under TMPDIR (default /var/tmp). No repository file
@@ -28,7 +26,7 @@ TIMEOUT=${TIMEOUT:-240}
 FATAL_RE='ОШ|ОШИБКА|ОТСУТСТВУЕТ|НЕДОПУСТИМ|НЕТ ТАКОЙ|БЫЛИ ОШИБКИ|ERR [0-9]+|OTCYTCTBYET|OWIBKA|HET TAKO'
 
 CASES=(d01-horizontal d02-vertical d03-diagonal d04-rectangle \
-       d05-zigzag d06-steep d07-shallow d08-tiny)
+       d05-zigzag d06-steep d07-shallow d08-tiny d09-triangle d10-quad)
 
 for f in "$DISPAK" "$DISKDIR/2048" "$DISKDIR/2053" "$DISKDIR/2099" \
          "$REF2148" "$NITI_2348"; do
@@ -59,10 +57,10 @@ echo "disk2348 : $NITI_2348"
 echo "decks    : $HERE"
 echo "env      : BESM6_DUDKA_PLOT=benson BESM6_DUDKA_TEST=1 BESM6_DUBNA_PLOT_KEEP=1"
 echo "workdir  : $WORK"
-echo "adres    : /PDEVXY/ = 0o3147 (все деки сохраняют длину C1-line.b6)"
+echo "adres    : /PDEVXY/ передаётся аргументом; адрес из кросс-ссылки только для справки"
 echo
 
-FMT='%-16s %-4s %-4s %-4s %-4s %-4s %-4s %-4s %-9s %-5s %-13s %-13s %s'
+FMT='%-16s %-4s %-4s %-4s %-5s %-4s %-4s %-4s %-9s %-5s %-13s %-13s %s'
 printf "$FMT\n" CASE SUM END NOERR ADR OUT SVG DET SVG-WxH PATHS OUT-SHA-12 SVG-SHA-12 RESULT
 printf "$FMT\n" ---- --- --- ----- --- --- --- --- ------ ----- ------------ ------------ ------
 
@@ -96,11 +94,12 @@ for name in "${CASES[@]}"; do
         if grep -a -q -E "$FATAL_RE" "$out"; then
             why="$why [r$round: ОШ/ERR в логе]"
         fi
-        # The PDEV bridge hard-codes 0o3147. A longer constant pool moves the
-        # COMMON and the frame is read from the wrong words (empty SVG).
-        if ! grep -a -E -q '\*PDEVXY\* +C +03147' "$out"; then
-            why="$why [r$round: /PDEVXY/ != 0o3147]"
-        fi
+        # Informational only: the address now arrives as an argument, so a
+        # different address is expected for decks with a longer constant pool.
+        adr=$(awk '/\*PDEVXY\*/ && / C / {for (i=1; i<NF; i++) \
+              if ($i == "C") {print $(i+1); exit}}' "$out")
+        [ -n "$adr" ] || adr='?'
+        [ "$round" -eq 1 ] && A_ADR[$name]=$adr
 
         if [ -s "$rundir/benson.out" ]; then
             printf '%s\n' "$(sha256sum "$rundir/benson.out" | cut -d' ' -f1)" \
@@ -125,6 +124,9 @@ for name in "${CASES[@]}"; do
                 svgline=$(grep -a -m1 '<svg' "$svg")
                 w=$(printf '%s\n' "$svgline" | sed -n 's/.* width="\([0-9][0-9]*\)".*/\1/p')
                 h=$(printf '%s\n' "$svgline" | sed -n 's/.* height="\([0-9][0-9]*\)".*/\1/p')
+                if [ -z "$w" ] || [ -z "$h" ] || [ "${w:-0}" -lt 2 ] || [ "${h:-0}" -lt 1 ]; then
+                    why="$why [r1: неразумные размеры SVG ${w:-?}x${h:-?}]"
+                fi
                 A_W[$name]=${w:-?}
                 A_H[$name]=${h:-?}
                 A_PATH[$name]=$np
@@ -147,8 +149,7 @@ for name in "${CASES[@]}"; do
     grep -a -q -F 'NITI: summary' "$WORK/run/$name-r1/out.txt" || s1=N
     grep -a -q -F 'КОНЕЦ ЗАДАЧИ' "$WORK/run/$name-r1/out.txt" || e1=N
     grep -a -q -E "$FATAL_RE" "$WORK/run/$name-r1/out.txt" && err1=N
-    adr=N
-    grep -a -E -q '\*PDEVXY\* +C +03147' "$WORK/run/$name-r1/out.txt" && adr=Y
+    adr=${A_ADR[$name]:-?}
     o1=N; v1=N
     [ -f "$WORK/rows/$name-out-r1" ] && o1=Y
     [ -f "$WORK/rows/$name-svg-r1" ] && v1=Y
@@ -203,6 +204,6 @@ done
 
 echo
 echo "Summary: $passed PASS, $failed FAIL (of ${#CASES[@]} decks)"
-echo "Критерий: минимум 6 PASS"
+echo "Критерий: все ${#CASES[@]} дек PASS (в том числе 3/4-точечные d09/d10)"
 echo "workdir: $WORK"
-[ "$failed" -eq 0 ] && [ "$passed" -ge 6 ]
+[ "$failed" -eq 0 ] && [ "$passed" -eq "${#CASES[@]}" ]
