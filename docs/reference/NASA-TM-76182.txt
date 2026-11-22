@@ -1,0 +1,708 @@
+
+
+======================================================================
+PAGE 1 of 17
+======================================================================
+              N O T I C E
+
+
+
+    THIS DOCUMENT HAS BEEN REPRODUCED FROM
+    MICROFICHE. ALTHOUGH IT IS RECOGNIZED THAT
+CERTAIN PORTIONS ARE ILLEGIBLE, IT IS BEING RELEASED
+    IN THE INTEREST OF MAKING AVAILABLE AS MUCH
+            INFORMATION AS POSSIBLE
+
+======================================================================
+PAGE 2 of 17
+======================================================================
+NASA TECHNICAL MEMORANDUM                              NASA TM 76182
+
+
+
+LINKING OF THE "BENSON" GRAPH-PLOTTER WITH THE "ELEKTRONIKA-100I"
+                            COMPUTER
+
+        I. Ye. Val'tts, N. Ya. Nikolaev, M. V. Popov, and
+                        V. A. Soglasnov
+
+
+      (NkS11-Til-76182) LINKING OF THE BENSON                X181-18673
+     GRAPH-PLOTTER NITH THE ELEKTROMIK1-1001 .
+     CONPUTEB (National Aeronautics and space
+     Adainistration) 16 p HC E02/8F 1101 .CSCL 09B        Onclas
+                                             G3/60 41550
+
+Translation of "Sopryazhenie grafopostroitelya 'BENSON' s EVM
+'Elektronika-100I'", Academy of Sciences USSR, Institute of Space
+        Research, Moscow, Report Pr-448, 1978, pp. 1-17
+
+
+
+
+
+                                                                                      rG
+
+
+
+
+
+         NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+         WASHINGTON, D.C. 20546          SEPTEMBER 1980
+
+======================================================================
+PAGE 3 of 17
+======================================================================
+                                                              STANDARD TITLE PAGE
+  1. Rswe1 so.                          >". Cw  w•M Assesdew Ne.           2: Rod^itwrt's Ge•Iq Ne.
+NASA    — 76182
+ 4. Title sad Subtitle                                             S. now Dots
+LINKING OF THE "BENSON" GRAPH-PLOTTER
+WITH THE "ELEKTRONIKA-IOOI" COMPUTER          i. Pew"IMO10-As«ien C•!•
+
+ 7. Awoke $I                                                   L Port -sting Organisation Rep►t No.
+ I. Ye. Val'tts,  N.- Ya.' Nikolaev, M. V.                                                                   19. %A Wit me. Popov, and V. A. Soglasnov
+ 1. P•Aersdng OrgenisN.sn Mase and AJMess                             11. Gwbast «GeMt No.
+                                             N Sw-3199 Leo" Kanner Associates                                               MTy^e.1 NOW snd P4404 G.•aA Redwood City, California 94063
+                                            Translation12. Sponsoring Agency Maine end ANnss'
+ National Aeronautics and Space Admini-                                                                    1e. A•A••rt" Aiismy Code stration, Washington, D.C. 20546
+is. Sg►1•w•ntwy Mew
+ Translation of "Sopryazhenie grafopostroitelya 'BENSON'   s
+ EVM 'Elektronika-100I"', Academy of Sciences USSR, Institute
+ of Space-Research, Moscow, Report Pr-448,  1978, pp. 1-17
+
+
+
+ 16.  ASsrrscr
+ Described herein is a device, developed by the Institute of
+ Space Research of the Academy of Sciences of the USSR, for
+ linking the "Elektronika-100I" computer with the "BENSON"
+ graph-plotter.   Programs are compiled which provide display
+ of graphic and alphanumeric information.   Instructions for
+ their utilization are given.
+
+
+
+
+
+17. Key M«d• (Wetted by Author(.))                        is. Distribution St«•went
+
+
+                                 Unclassified-Unlimited
+19.  Security Clstsit. (•1 this r y«t)                 ritp Clessil. (oi thl • yp•)      21. No. •1 P•ses     22.
+
+ Unclassified      LUnc las sified
+
+======================================================================
+PAGE 4 of 17
+======================================================================
+F
+
+
+
+
+             LINKING OF THE  " BENSON" GRAPH PLOTTER WITH THE  " ELEKTRONIKA-100I"
+                                         COMPUTER
+
+                   I. Ye. Val'tts, N. Ya. Nikolaev, M. V. Popov, and
+                                    V. A. Soglasnov
+
+
+             Introduction                                                              I3*
+                  Digital units have decisively invaded the technology of
+             modern astrophysical experiments. This has been brought about
+             by the increased complexity of the experiments, the considerable
+             increase in the flow of received information, the necessity of
+             taking into account many parameters in the course of the experi-
+             ment, and the necessity of controlling a complex of instruments
+             as a function of the results of the experiments in real time. The
+             achievements of micro-radioelectronic technology have made it
+             possible to widely utilize small multipurpose digital computers
+             for controlling an experiment. Created in the Institute of Space
+             Research of the Academy of Sciences of the USSR was a complex of
+             equipment for registration and processing of information in radio-
+             astronomical experiments, based on the small "Elektronika-100I"
+             computer. The "Elektronika-100I" computer is a small, rapid-action
+             computer, the basic technical characteristics of which are given
+              in table 1.
+
+
+
+                                          TABLE 1
+                                C10Tew oaAcAeft"            b  ABOavB$a
+                                      Crocod npcACTaaAenu woeA    d  0 4IKuposamol MUTOA
+                                    CACTSMa KOILUMA                f  0AS0aApeonad
+                                        ^SMKOCTb 03Y               h  Ao 32968 s9eax no 12 ABO-
+                                                      awix pa3PRA03
+                                            Buna.vieun onepa4d
+
+                                                     wo                                          j   naosexra                 k   3
+                                                                        r,a               m  I0 mHo                                  1      o  t k,+..a
+
+
+
+
+             *Numbers in the margin indicate pagination in the foreign text.
+
+
+                                                                                                                            1
+
+======================================================================
+PAGE 5 of 17
+======================================================================
+      Key: a. Number system               h. up to 32768 registers
+            b. binary                       on 12 binary digits
+             c. Method of represen-        i. Rate of execution of
+             tation of numoers           operations
+            d. with fixed point             j. addition
+             e. Command system              k.  3 microseconds
+              f.  single-address               1. multiplication
+            g. Capacity of magnetic      m. 10 microseconds
+             memory device
+
+     The registration complex, on the base of the "Elektronika-       /4
+1001" computer, makes it possible to accomplish continuous regis-
+tration of information with a total rate of up to 50 kHz through
+64 analog signal channels. Information recording is carried out
+on magnetic tape in the NML-67 accumulator. Registration of a
+signal with a rate of up to 500 kHz of 12-digit words is accomp-
+lished through the channel of direct access to the memory. In
+this case, the time of continuous registration is 60 milliseconds,
+after which the information is re-recorded on magnetic tape within
+a time of about 1 second. The complex is equipped with devices
+for input of a digital code of up to 24 binary digits, as well
+as devices which cause interruption of the program on signals
+issued by radioastronomical equipment. In accordance with the
+specific program of the experiment, the computer issues control
+signals, which change the operating conditions of the scientific
+equipment. Also carried out in the course of the radioastronomical
+observations is processing of the data on an actual time scale.
+The results of the processing are indicated on an analog display.
+The radioastronomical information registration and processing
+complex was utilized for the study of the parameters of the
+radioastronomical equipment and for radioastronomical observations
+of pulsars, quasars, and other sources of cosmic radiation on
+the RT-22 radiotelescopes in Simeiz and Pushchino, in the decimeter
+range, and on the BSA radiotelescope in Pushchino at a frequency
+of 102.5 MHz. Processing of the obtained information is also
+carried out on the "Elektronika-100I" computer. With a large
+volume of information being processed, both the initial data and
+the results of the processing should desirably by represented in
+descriptive graphic form. Posed for this purpose was the problem     /5
+
+2
+
+======================================================================
+PAGE 6 of 17
+======================================================================
+of matching the "BENSON" graph-plotter with the "Elektronika-100I"
+computer.
+
+1. Characteristics of the Graph-Plotter
+     The model 501 base table graph-plotter from the "BENSON-FRANCE"
+firm has a 50 x 75 cm working field, with electrostatic paper
+securing. Step-type motors ensure movement of the carriage along
+the orthogonal axes X and Y with a eiscrete of 0.1 mm, and a maximum
+rate of 6 cm/second. Located on the carriage is a device for
+securing the removable pen, and a mechanism for its raising and
+lowering. The drawing pens are filled with ink.
+
+     Control of the pen is possible in two modes. With manual
+control, displacement of the carriage is accomplished using a
+hinge-mounted handle. Rough adjustment at great speed is carried
+out in the flush position, while precise adjustment at low speed
+is carried out in the normal position. Movement is possible along
+both coordinates simultaneously.
+
+
+     In the automatic mode, control is carried out according to five
+buses: "+X", "-X", "+Y", "-Y", and "Pen Control". With delivery of
+a positive +5 volt pulse along the appropriate bus, the pen moves
+0.1 mm. The resultant displacement AX, ICY is proportional to
+the number of similar pulses: X=N  1 0.1 mm, Y=N;, 0.1 mm, where
+N  1 , N are the number of pulses. Locking of the "Pen Control" bus
+to the frame corresponds to a lowered pen. The buses lead out
+to junction 11 on the side wall of the graph-plotter.
+
+
+ 2 Device for Linking the Computer with the Graph-Plotter
+     A special interface was developed for controlling the graph-
+plotter from the computer, which makes it possible to include
+access to the graph-plotter in the standard system of commands of
+access to the external devices. The structure of the command of        J6
+ access to the external devices has the following form: the first
+ thzee (significant) bits of the 12-digit computer word designate
+
+                                                                                                             3
+
+======================================================================
+PAGE 7 of 17
+======================================================================
+the code for the command of access to the external device (6 g);
+the next three bits designate the number of the external device,
+and the last three bits permit delivery of the special control
+pulses (VVI). For a given number of a device, the WI pulses
+may be generated along three channels (LNI1, W12, VV13). The
+codes 50 and 51 were selected for the graph-plotter. The list
+of commands for controlling the graph-plotter is given in table 2.
+The scheme of the interface is given in figure 1.
+
+                              TABLE 2
+
+                                          +                65U2
+                                  - Y              6314
+                            + Y               6501
+                                - Y           65A
+                                     "u0"               b5II
+                                    **owl/*           6512
+
+
+
+
+     The command from the buffer register of the computer enters
+two diode decoders, which decode codes 50 9 and 51 9 . In the case
+of appearance of the required code, the decoder gives out an
+authorization potential, which enters the inputs of circuit "u".
+(three "u" circuits per each decoder). Control pulses VVI1, VV12,
+and VV13, respectively, enter the other inputs of the "u" circuit.
+Thus, pulses form at the output of the six "u" circuits which
+correspond to the six external device commands. The pulses are
+amplified and delivered to the input junction of the graph-plotter.
+
+3. Program of Disp lay of the Graphic Information                          /7
+     For operation with the "BENSON" graph-plotter, programs of
+display of graphic and alphanumeric information are composed.
+
+     The program of display of the graphic information provides
+for establishment of the origin of the reacting and the scale along
+the two axes X and Y of the rectangular coordinate system, and
+
+4
+
+======================================================================
+PAGE 8 of 17
+======================================================================
+transfer of the pen of the graph-plotter to any point in this
+coordinate system along a straight line with an accuracy of 0.1 mm.
+In addition, the program provides for plotting of the coordinate
+axes and their marking. The block diagram of the program is de-
+picted in figure 2.
+
+     Control of the program is accomplished from the keyboard of
+the "Konsul" printer. Prior to start of the program, the pen of
+the graph-plotter is set in the initial position, in the required
+control mode. The X and Y coordinates of this position of the
+pen are prescribed according to the inquiry of the computer from
+the keyboard of the "Konsul" in the subprogram "Establishing of
+scale along X and Y axes".
+
+     Then, after printing of the symbol "T", automatic displacement
+of the pen takes place sequentially along the X and Y axes, up to
+receipt of the sign "+" from the "Konsul". For correction of the
+position of the pen, its displacement is possible at low speed
+in the direction of an increase or decrsase in the coordinate
+after printing of the symbols ">" or "<", respectively. The sign
+"+" is t1he indication for stopping of the pen. Then, the symbol
+"x" should be punted, and, according to the inquiry from the
+computer, it is necessary to introduce the value of the corresponding
+coordinate, which is utilized by the program for establishinj the
+scale along the given axis.
+
+     After this, according to the inquiry from the computer, the
+operator prints the parameters, which are required for plotting and
+marking of the axes (X0, YO--the initial point from which the axis
+is drawn; X1, Y1--the end point to which the axis is drawn; DY, DX     /8
+—the spacing along the axis used to accomplish the marking; 7--
+the magnitude of the dashes of the axis marking).
+
+     Operation of the program ends with receipt of the address of
+a specific program, and transmission of control according to this
+address. A program of calculation of a function, the graph of which
+should be depicted, or a program of selection of data from a table
+
+                                                                                                            5
+
+======================================================================
+PAGE 9 of 17
+======================================================================
+and their graphic depiction, may be the specific program. Such a
+specific program should record the values of X and Y in the form
+of numbers with a floating point in registers 0165 and 0170,
+respectively, and access to the subprogram of displacement of the
+pen according to address 1540.
+
+     The block diagram of the program of displacement of the pen is
+depicted in figure 3. Determined first are the magnitude of AX
+and AY, as a function of the previous value of the coordinates.
+Then, the commands "+X", "-X", "+Y", "-Y" are formulated, with
+regard for the sign of AX and AY. The magnitudes of AX and AY
+are denormalized to a form with a fixed point, and pulse counters
+are formed for the subprogram of sending of the pulses to the
+graph-plotter. There are two subprograms for sending the pulses,
+in one of which the cycle with the command " ±X" (AX>AY) is the
+inner cycle, and in the other — the cycle with the command "±Y"
+(AY>AX). The sending of the pulses is provided with a frequency
+of about 500 Hz, by means of organization of a program delay
+between the moments of delivery of the successive pulses. The
+program for establishing the scales, plotting the axes, and dis-
+placing the pen occupies the memory with an address from 0000
+through 2600. The program utilizes a block with a floating point.
+The start address of the program is 0200. With multiple plottings
+of the graphs with an identical scale, the symbol "'-" should be
+printed for the inquiry of the computer on the scale and the axes.
+
+     Given in figure 4 is an example of a graph obtained on the
+graph-plotter. Depicted in the figure are 4 sequential pulses         /9
+of the pulsar PSR 0809+74, obtained as a result of processing of
+observations undertaken on 22 November 1977 on the large RAS FIAN
+cophasal antenna in Pushchino. The inscriptions on the figure are
+made using the program of display of the alphanumeric information.
+
+
+4. Program of Display of the Alphanumeric Information
+
+     The program of display of the alphanumeric information provides
+establishing of the scales along the X and Y axes, orientation of
+
+======================================================================
+PAGE 10 of 17
+======================================================================
+the inscription, and plotting of the symbols. Also, just as in
+the preceding program, the pen of the graph-plotter is set, prior
+to start of the program, at the necessary point on the graph,
+using manual control, and subsequent control is accomplished using
+the ''Konsul" printer. The block diagram of the program is depicted
+in figure 5.
+
+     After start of the program, the operator prints the symbol "A",
+and the computer proceeds to establish the scales and orientation.
+Then, the symbols are printed which designate the code of the scales
+along the Y and X axes and the orientation code. For example,
+Al21 is the scale along the Y axis, first, and along the X axis,
+second, and the orientation, first. In figure 6, the inscription
+"table of symbols" is done in scale 22, orientation 1, and the
+inscription "utilized by graph-plotter"--in scale 44. In all, a
+total of 6 scales are possible along the Y axis, 6 along the X axis,
+and 4 orientation scales. Then, the operator prints any symbols
+(no more than 343 in number), and their accumulation in the memory
+of the computer is carried out.
+
+     After completion of input of the text, it is necessary to
+print the symbol "x", according to which the computer switches to
+analysis of the symbols, their identification, and plotting on
+the graph-plotter.
+
+     The basis of the program is breakdown of the symbols into
+elements and recording of these elements using a ten-digit code.
+The structure of the coding is depicted in the following schematic: /10
+
+
+
+            ^     -Y N ao^era^sa      I
+
+                              ♦ 00 '     0       H Y -j tX 0 baaaYa
+            0    I     2  5 4  5 6    ?  8 9 I0 II
+
+     Key: a. readers           b. pulses
+
+     The zero and first digits in the coding are not utilized. The
+unit of the second digit corresponds to the vertical and horizontal
+
+                                                                                                 7
+
+======================================================================
+PAGE 11 of 17
+======================================================================
+elements, and the zero--to the slopad elements. The digits from
+                                                                                                                                                                                                          g
+the third through the fifth are utilized for formation of the
+commands of direction of the movement of the pen ( +Y, -Y, +X, -X),
+and the sixth digit is utilized for control of the position of the
+pen ("UP" or "DOWN"). The last five digits are assigned to the
+codes of the pulse readers, which provide the size of the element.
+
+     An example of a code is: 1443—depicts an element along the Y
+axis in a positive direction with a lowered pen, and the code "43"
+correbponds to the number of pulses, which is equal to 40. Thus,
+for plotting of the symbols, the program makes it possible to
+utilize over 500 di" rent elements. The subsequent operations
+of the program are displayed in the block diagram, and do not re-
+quire special explanations.
+
+     Depicted in figure 6 are the 77 symbols utilized by the graph-
+plotter. The xymbol "t" is utilized for shifting one symbol up
+a size in a given scale, and the symbol "—" for shifting a symbol
+and interval to the left a size. The keys of the "Konsul"
+"ommission", "line shift", overlining, and underlining are utilized
+according to their direct designation. The "Konsul" symbols "0" and
+"I" are utilized for depicting designations of a degree and angular
+minutes. The angular seconds are depicted using the symbol "quo-
+tation marks". The symbols "I" and " r" are logic "no", while
+0,3", "V", and "deletion" are not plotted and are not utilized in
+the program for special purposes.                          Al
+
+     The program of display of alphanumeric ii.formation occupies a
+memory with an address of 0000 through an address of 6700. The
+start address of the program if 1000, if establishment of scales
+and orientation is required, and 0200 is the previous scales and
+orientation are utilized.
+
+     The "BENSON" graph-plotter— "Elektronika-100I" computer system
+is being utilized successfully in the processing of radioastronomical
+observations cf pulsars with time resolution of 10 microseconds at
+a frequency of 102.5 MHz.
+
+8
+
+======================================================================
+PAGE 12 of 17
+======================================================================
+                                                                     ICA!
+                               i ti nr^cR^     Iy^r!ti^cli H  AP     ^ i
+           S                                                                                                                 i
+
+
+
+
+
+                                    - g^H«r I
+
+
+
+                   65J2                El
+                          9              i
+
+
+
+
+Fig. 1. Schematic of linking of "Elektronika - 100I" computer
+              with "BENSON" graph-plotter.
+
+ Key: a. WI pulses 1, 2, 4      f. pulse amplifier
+       b. Buffer register of           g. WI4
+         digits 3-8                        h.  VV12
+        C. Elektronika-100I                    i.  Wil
+         computer                 ]• "pen"
+      d. Decoder 50
+      e. Decoder 51
+
+
+
+
+
+                                                                                      9
+
+======================================================================
+PAGE 13 of 17
+======================================================================
+                a
+                                                           I    1,10 ra                        '
+                                MMC
+
+     bq    o-Egg=
+    M
+
+
+                  g 1YOU"M      aat
+                                     t      soOWN         nop mom so on y'
+                                                                                                       I o emwmr asssrr
+       i      I             amen""
+                J L—°Pw
+          k%
+
+                                ow^aoa^                                    r - 7;^; t  A^
+                                                     .                                     64
+                    pys"WOOKS
+                                   ee
+
+                     'tep^em<e ^cet^-         tMpeeol^ -                 n
+                 p     nesar• skm                     .
+                              'nporpsaen
+           —
+                 9      itpnew Wtp4_ae  _j
+
+                        Ot?n^pve orpes^tcxfut f J
+                           ^^rD,are
+
+Fig. 2. Blcok diagram of program of display of graphic information.
+Key:  a.  Printing of text of               1. Analysis of symbol
+         "scales"                           m. Establishment of para-
+      b. Receiving of symbol               meters of      R
+       c.  Previous scale retained         n.  Plotting      xes
+      d. Analysis of symbol               o.  Shift of
+      e.  "vk"                                p. Printing    text of
+       f.  Displacement along x axis         "program"
+        with expectancy of symbols     q. Receiving of address
+       g.  Establishing of scale along    r. Transmission of control
+         axes                              to program
+      h.  Displacement alon7; Y axis
+        with expectancy of symbols
+       i.  Printing of text of "axis"
+       j.  Receiving cf symbol
+      k.  Previous a yes plotted
+
+
+1 0              Fp)^• A C IS                              QUAL,ry
+
+======================================================================
+PAGE 14 of 17
+======================================================================
+                          a                                        I' &                    ^      a*,sr
+
+
+
+
+           b      c 1OPMRP »DRnx XOIM X
+                       ^       sre-      ^+ c^ar^xxn >. 1p^mp^R-
+                 JamH                  cc%
+
+
+
+
+                        aa+aV^i       Afl1i'^s      ''  --
+                                                        F+^^tV16R
+
+
+
+
+
+                                                                                                                   I
+
+                       Ck^crrTxa ^cn.^+r+^.»           f   10 V rps^ xxn'r[tsar
+
+
+
+Fig. 3. Block diagram of program of control of displacement of
+                      the pen of the graph-plotter.
+
+Key: a. Formulation of magni-      d. Analysis of magnitudes
+        tudes of Ax, Ay            e. Delivery of pulses to
+     b. Denormalization of            graph-plotter
+        magnitudes of Ax, Ay       f. Delivery of pulses to
+     c. Formulation of commands       graph-plotter
+        and counters of pulses
+
+
+
+
+
+                                                                              11
+
+======================================================================
+PAGE 15 of 17
+======================================================================
+ 1
+
+
+k
+Et
+
+
+
+
+
+                      0         s      M milliseconds
+
+            Fig. 4. Example of display of graphic information
+
+
+
+
+
+                                  ORIGINAL PAGE. IF
+                                OF PO()R QUALITY
+
+
+
+             12
+
+======================================================================
+PAGE 16 of 17
+======================================================================
+                                   BDOA nAP8MOTIMS
+                                        Naoara6os-
+                                    R O ReRTa ^       ^
+
+                               YOTanowe naCUTA
+                              no oom+ Y.Y a opm-
+                            e9"MM
+
+                                11pa" CRxDOSa o
+                                     x^ssxnTypn 4
+                                        "ROMC Ra"              CE
+
+
+                                                e                     •  r    AR aum US c.wisoxa
+
+
+
+                   0TOSABC:DJ[eMHe
+                                                       BaRonxeeae
+                                       TORO 3 a narmTR
+                   ARaims ROAoD
+               9M MONTOD 07-IMM
+
+                   'f"TAMOVIND r: iMGKA
+            1 ' ' x ,  -x , lr •.,.-Y J
+               ^Mpr^npon^ ` RotraR^^
+
+                    ^MA^++±  a    raeua+ca             y                egeT4gRa IINIIYnCOD^
+
+               npRReAemze oaeTw, os            >Veoremm   ifMSOJIOD            R COOTNeTOTIMMU
+
+                   P---.-                       FIFTAYCCD Ra
+                                                               -'i ^ CTOII
+
+
+Fig. 5. Block diagram of program of display of alphanumeric infor-
+                             mation
+
+Key: a. Input of parameters of       i. Formulation of commands
+        scales and orientation               "UP'•  or "DOWN"
+     b. Establishment of scale       j. Analysis and establish-
+        along Y and X axes and          ment of pulse counters
+        orientation                  k. Setting of counters to
+     c. Receiving of symbol from        corresponding scales
+        keyboard 4 of "Konsul"       1. Delivery of pulses to
+     d. Analysis of symbol               graph-plotter
+     e. any symbol                   m. Accumulation of text in
+     f. Identification of symbol        computer memory
+     g. Analysis of codes of         n. Counter of symbol elements
+        symbol elements              o. Symbol counter
+     h. Establishment of commands    p. STOP
+        +X, -X, +Y, -Y
+
+
+
+
+                                                                               13
+
+======================================================================
+PAGE 17 of 17
+======================================================================
+                        TABLE OF SYMBOLS
+             Utilized by the "BENSON" Graph-Plotter
+
+
+            1234567840
+           A 6 B r R E * 3 H 0 K n
+          M Ho n P C T Y T X Li 4
+             W Ul bi b 3 10 9
+         OF.GIJLN0RSUVWZ
+
+                 2'15'71"
+
+                              Fig. 6
+
+
+
+
+
+                                         Uhj(i1.ti«j YAI`F, j
+                                           ,^.r'A,rzy
+
+
+
+
+
+14
