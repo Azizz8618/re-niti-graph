@@ -5,7 +5,6 @@ DIS 41(2148)^
 *name S1LIM
 *call yesmemory
 *perso:602300
-*perso:602400,cont
 *perso:602410,cont
 *perso:602420,cont
 *perso:602430,cont
@@ -13,19 +12,20 @@ DIS 41(2148)^
 *perso:602450,cont
 *perso:602460,cont
 *perso:602470,cont
-*perso:602500,cont
 *perso:602510,cont
 *perso:602520,cont
 *perso:602530,cont
 *perso:602540,cont
 *perso:602550,cont
-*perso:602560,cont
-*perso:602570,cont
-*perso:602600,cont
-*perso:602610,cont
-*perso:602620,cont
 *perso:602630,cont
 *perso:602640,cont
+*perso:602650,cont
+*perso:602660,cont
+*perso:602670,cont
+*perso:602720,cont
+*perso:602730,cont
+*perso:602740,cont
+*perso:602750,cont
 *TRANS:FOREX3*,,411550
 C     S01 - COORD LIMITS: TOUCH X=5000 AND Y=7500, RETURN TO ORIGIN
       PROGRAM S1LIM

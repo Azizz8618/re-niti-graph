@@ -1,8 +1,9 @@
 #!/bin/bash
-# Rebuild the working disk 2348 with the whole Fortran port in PERSO zones
-# 0o2400..0o2640 plus the MADLEN NITI bridge PDEV in 0o2640 and 0o2650.
-# 0o2640 carries PDEV because the stage C decks load zones up to 0o2640;
-# 0o2650 is the dedicated PDEV zone required by the NITI plan.
+# Rebuild the working disk 2348 with the whole Fortran port in free PERSO
+# zones starting at 0o2410 (see ZONES below) and the MADLEN NITI bridge PDEV
+# in the last group zone plus the next free zone.  The pristine image is used
+# as the base, so FOREX runtime 0o2400, GOSTLIB 0o2500/0o2560, Pascal runtime
+# 0o2570..0o2620 and the Glissada-6 trainer 0o2700 stay intact.
 set -euo pipefail
 
 ROOT=$(cd "$(dirname "$0")/../.." && pwd)
@@ -38,6 +39,23 @@ CHUNK=12
 N=${#FILES[@]}
 NGROUPS=$(( (N + CHUNK - 1) / CHUNK ))
 
+# Zones free on the pristine 2348 image (verified by catalog dump), starting
+# at 0o2410 in ascending order.  Occupied zones that must stay intact:
+# 0o2400 FOREX runtime, 0o2500/0o2560 GOSTLIB, 0o2570..0o2620 Pascal runtime
+# (needed by the Glissada-6 trainer in 0o2700), 0o2700..0o2710 trainer.
+ZONES=(
+    2410 2420 2430 2440 2450 2460 2470
+    2510 2520 2530 2540 2550
+    2630 2640 2650 2660 2670
+    2720 2730 2740 2750 2760 2770
+)
+if [ "${#ZONES[@]}" -lt "$((NGROUPS + 1))" ]; then
+    echo "FAIL: need $((NGROUPS + 1)) free zones, have ${#ZONES[@]}" >&2
+    exit 2
+fi
+LAST_GROUP=${ZONES[$((NGROUPS - 1))]}
+PDEV_ZONE=${ZONES[$NGROUPS]}
+
 run_deck() {  # $1 deck name
     local deck=$1
     ( cd "$WORK" && BESM6_PATH="$WORK" timeout 300 ./dispak -l "$deck" \
@@ -58,7 +76,7 @@ run_deck() {  # $1 deck name
 }
 
 for ((g=0; g<NGROUPS; g++)); do
-    zone=$(printf '%04o' $((8#2400 + g*8)))
+    zone=${ZONES[$g]}
     deck="lib$(printf '%02d' "$g").b6"
     {
         printf 'шифр 419999 зс5^\nDIS 41(2148)^\nлен 60(2348-wr)^\nееВ1а3\n'
@@ -81,20 +99,25 @@ for ((g=0; g<NGROUPS; g++)); do
     echo "PERSO 0o$zone: OK"
 done
 
-# Dedicated PDEV library at 0o2650
+# Dedicated PDEV library in the next free zone after the port groups.
 {
     printf 'шифр 419999 зс5^\nDIS 41(2148)^\nлен 60(2348-wr)^\nееВ1а3\n'
     printf '*name PDEV\n*call yesmemory\n*assem\n'
     cat "$PDEV"
-    printf '*to perso:602650\n*end file\n``````\nеконец\n'
+    printf '*to perso:60%s\n*end file\n``````\nеконец\n' "$PDEV_ZONE"
 } > "$WORK/pdev.b6"
 run_deck pdev.b6
-echo 'PERSO 0o2650: OK'
+echo "PERSO 0o$PDEV_ZONE: OK"
 
-BESM6_PATH="$WORK" python3 - "$WORK" "$MANIFEST" "$NGROUPS" <<'PY'
+BESM6_PATH="$WORK" python3 - "$WORK" "$MANIFEST" "$NGROUPS" \
+    "$LAST_GROUP" "$PDEV_ZONE" "${ZONES[@]}" <<'PY'
 import os, sys, subprocess
 from pathlib import Path
 work, manifest, ngroups = Path(sys.argv[1]), Path(sys.argv[2]), int(sys.argv[3])
+last_group, pdev_zone = sys.argv[4], sys.argv[5]
+zones = sys.argv[6:]
+if len(zones) < ngroups + 1:
+    raise SystemExit('zone list too short')
 TEXT = [" ", ".", "Б", "Ц", "Д", "Ф", "Г", "И", "(", ")", "*", "Й",
         "Л", "Я", "Ж", "/", "0", "1", "2", "3", "4", "5", "6", "7",
         "8", "9", "Ь", ",", "П", "-", "+", "Ы", "З", "A", "B", "C",
@@ -104,8 +127,7 @@ TEXT = [" ", ".", "Б", "Ц", "Д", "Ф", "Г", "И", "(", ")", "*", "Й",
 def dec(x):
     return ''.join(TEXT[(x >> (42 - 6*i)) & 0x3F] for i in range(8)).rstrip()
 lines = []
-for g in range(ngroups + 1):
-    zone = f'{0o2400 + g*0o10:04o}'
+for zone in zones[:ngroups + 1]:
     raw = work / f'cat-{zone}.bin'
     subprocess.run(['besmtool', 'dump', '2348', f'--start={int(zone,8)}',
                     '--length=4', f'--to-file={raw}'], cwd=work,
@@ -121,10 +143,10 @@ for g in range(ngroups + 1):
     if not names:
         raise SystemExit(f'empty catalog at 0o{zone}')
     lines.append(f'0o{zone}: ' + ' '.join(names))
-    if any(n == 'PDEV' for n in names) and zone not in ('2640', '2650'):
+    if any(n == 'PDEV' for n in names) and zone not in (last_group, pdev_zone):
         raise SystemExit(f'unexpected PDEV at 0o{zone}')
-for zone in ('0o2640', '0o2650'):
-    if not any(f'{zone}:' in l and 'PDEV' in l for l in lines):
+for zone in (last_group, pdev_zone):
+    if not any(f'0o{zone}:' in l and 'PDEV' in l for l in lines):
         raise SystemExit(f'PDEV missing in catalog 0o{zone}')
 manifest.write_text('\n'.join(lines) + '\n')
 print('catalogs checked:', len(lines))
