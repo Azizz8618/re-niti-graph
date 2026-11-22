@@ -1,0 +1,17 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name SIGPOL
+*call yesmemory
+*perso:602700,cont
+*forex
+      PROGRAM SIGPRG
+      
+      CALL POLREG(15.0, 11.0, 0.0, 10.0, 0.0, 360.0, 0, 0, 0, 0)
+      END
+*library:22
+*execute
+*end file
+``````
+еконец

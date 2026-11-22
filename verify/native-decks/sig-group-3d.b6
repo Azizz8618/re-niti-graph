@@ -1,0 +1,23 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name SIG3D
+*call yesmemory
+*perso:602700,cont
+*forex
+      PROGRAM SIG3D
+C     Prototype check: INIT(0), ISOMET(0), THREED(13), AXES(9), ENDPG(1)
+C     Requires extended SHIM: IRDB, SYMBOL (see GRAFOR-NATIVE-SIGNATURES.md).
+      REAL X(4), Y(4), Z(4), A(4), AR(4)
+      CALL INIT
+      CALL ISOMET
+      CALL THREED(X, Y, Z, 4, 4, 1, 4, 1, 4, 0, 100, A, AR)
+      CALL AXES('X', 6, 1.0, 5, 'Y', 6, 0.3, 4, 0)
+      CALL ENDPG(0)
+      END
+*library:22
+*execute
+*end file
+``````
+еконец

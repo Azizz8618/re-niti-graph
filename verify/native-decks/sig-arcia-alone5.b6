@@ -1,0 +1,20 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name SIGARA
+*call yesmemory
+*perso:602700,cont
+*forex
+      PROGRAM SIGAR5
+      REAL R, A0, DA
+      R = 5.0
+      A0 = 0.0
+      DA = 0.5
+      CALL ARCIA(10.0, 10.0, 0.0, 0.5, 12)
+      END
+*library:22
+*execute
+*end file
+``````
+еконец

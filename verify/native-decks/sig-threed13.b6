@@ -1,0 +1,17 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name SIGTHR
+*call yesmemory
+*perso:602700,cont
+*forex
+      PROGRAM SIGTHR
+      REAL X(4), Y(4), Z(4), A(4), AR(4)
+      CALL THREED(X, Y, Z, 4, 4, 1, 4, 1, 4, 0, 100, A, AR)
+      END
+*library:22
+*execute
+*end file
+``````
+еконец

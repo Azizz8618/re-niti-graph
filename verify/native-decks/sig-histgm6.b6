@@ -1,0 +1,17 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name SIGHIS
+*call yesmemory
+*perso:602700,cont
+*forex
+      PROGRAM SIGHSG
+      REAL Y(20), Z(20)
+      CALL HISTGM(0.0, 1.0, Y, Z, -12, 4)
+      END
+*library:22
+*execute
+*end file
+``````
+еконец

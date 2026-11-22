@@ -1,0 +1,23 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name SIGDRW
+*call yesmemory
+*perso:602700,cont
+*forex
+      PROGRAM SIGDRW
+C     Prototype check: LINEMO(5), POLINE(7), POLREG(10), HISTGM(6), SYMBOL(6)
+C     Requires extended SHIM: IRDB, WDB, IWDB, SYMBOL (see GRAFOR-NATIVE-SIGNATURES.md).
+      REAL X(20), Y(20), Z(20)
+      CALL LINEMO(X, Y, 10, 2, 1)
+      CALL POLINE(X, Y, 10, -1, 1, 0, 1)
+      CALL POLREG(15.0, 11.0, 0.0, 10.0, 0.0, 360.0, 0, 0, 0, 0)
+      CALL HISTGM(0.0, 1.0, X, Z, -12, 4)
+      CALL SYMBOL(1.0, 2.0, 0.8, 'ABCD', 4, 0.0)
+      END
+*library:22
+*execute
+*end file
+``````
+еконец

@@ -1,0 +1,20 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name SIGSEC
+*call yesmemory
+*perso:602700,cont
+*forex
+      PROGRAM SIGSEC
+      CALL PEN(2)
+      CALL GETPEN(3)
+      CALL SET(1)
+      CALL BROKEN(0.5, 0.2, 0.3, 0.2)
+      CALL BRLINE(1.0, 2.0, 10)
+      END
+*library:22
+*execute
+*end file
+``````
+еконец

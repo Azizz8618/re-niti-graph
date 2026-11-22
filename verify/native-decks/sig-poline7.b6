@@ -1,0 +1,17 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name SIGPOL
+*call yesmemory
+*perso:602700,cont
+*forex
+      PROGRAM SIGPLN
+      REAL X(20), Y(20)
+      CALL POLINE(X, Y, 10, -1, 1, 0, 1)
+      END
+*library:22
+*execute
+*end file
+``````
+еконец

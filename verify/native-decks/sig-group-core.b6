@@ -1,0 +1,28 @@
+шифр 419999 зс5^
+DIS 41(2148)^
+лен 60(2348)^
+ееВ1а3
+*name SIGCOR
+*call yesmemory
+*perso:602700,cont
+*forex
+      PROGRAM SIGCOR
+C     Prototype check: MOVE1(3), ARCIA(3), BOX(4), LIMITS(4), MINMAX(4)
+      INTEGER N
+      REAL X(10), Y(10), YMN, YMX
+      N = 2
+      X(1) = 10.0
+      Y(1) = 10.0
+      X(2) = 110.0
+      Y(2) = 110.0
+      CALL MOVE1(N, X, Y)
+      CALL ARCIA(5.0, 0.0, 0.5)
+      CALL BOX(1.0, 1.0, 10.0, 8.0)
+      CALL LIMITS(0.0, 14.0, 0.0, 10.0)
+      CALL MINMAX(Y, N, YMN, YMX)
+      END
+*library:22
+*execute
+*end file
+``````
+еконец
