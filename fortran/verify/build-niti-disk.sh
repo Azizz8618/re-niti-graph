@@ -50,13 +50,11 @@ NGROUPS=${#PGROUPS[@]}
 # 0o2400 FOREX runtime, 0o2500/0o2560 GOSTLIB, 0o2570..0o2620 Pascal runtime
 # (needed by the Glissada-6 trainer in 0o2700), 0o2700..0o2710 trainer.
 ZONES=(
-    2410 2420 2430 2440 2450 2460 2470
-    2510 2520 2530 2540 2550
-    2630 2640 2650 2660 2670
-    2720 2730 2740 2750 2760 2770
+    3050 3060 3070 3100 3110 3120 3130 3140
+    3150 3160 3170 3200 3210 3220 3230 3240
 )
-if [ "${#ZONES[@]}" -lt "$((NGROUPS + 1))" ]; then
-    echo "FAIL: need $((NGROUPS + 1)) free zones, have ${#ZONES[@]}" >&2
+if [ "${#ZONES[@]}" -lt "$NGROUPS" ]; then
+    echo "FAIL: need $NGROUPS free zones, have ${#ZONES[@]}" >&2
     exit 2
 fi
 LAST_GROUP=${ZONES[$((NGROUPS - 1))]}

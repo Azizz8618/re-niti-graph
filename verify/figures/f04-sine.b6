@@ -5,26 +5,22 @@ DIS 41(2148)^
 *name C1LINE
 *call yesmemory
 *perso:602300
-*perso:602410,cont
-*perso:602420,cont
-*perso:602430,cont
-*perso:602440,cont
-*perso:602450,cont
-*perso:602460,cont
-*perso:602470,cont
-*perso:602510,cont
-*perso:602520,cont
-*perso:602530,cont
-*perso:602540,cont
-*perso:602550,cont
-*perso:602630,cont
-*perso:602640,cont
-*perso:602650,cont
-*perso:602660,cont
-*perso:602720,cont
-*perso:602730,cont
-*perso:602740,cont
-*perso:602750,cont
+*perso:603050,cont
+*perso:603060,cont
+*perso:603070,cont
+*perso:603100,cont
+*perso:603110,cont
+*perso:603120,cont
+*perso:603130,cont
+*perso:603140,cont
+*perso:603150,cont
+*perso:603160,cont
+*perso:603170,cont
+*perso:603200,cont
+*perso:603210,cont
+*perso:603220,cont
+*perso:603230,cont
+*perso:603240,cont
 *TRANS:FOREX3*,,411550
 
 C     F04-SINE - two periods, X=50..950, Y=300+150*sin
